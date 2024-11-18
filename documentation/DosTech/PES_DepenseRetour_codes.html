@@ -1,0 +1,611 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_depenseretour_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Dépense Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCessOpp">TYPE TCessOpp</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette information permet d'indiquer à l'ordonnateur l'existence d'une cession ou d'une
+                  opposition sur une ligne de pièce.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Pas de cession-opposition
+                     </li>
+                     <li><b>02</b> : 
+                        Cession-opposition partielle
+                     </li>
+                     <li><b>03</b> : 
+                        Cession-opposition totale
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEtatLigPce">TYPE TEtatLigPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Information retour sur l'état de la ligne de pièce</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Pris en charge
+                     </li>
+                     <li><b>02</b> : 
+                        Rejeté
+                     </li>
+                     <li><b>03</b> : 
+                        Pré visé PEC sans ano
+                     </li>
+                     <li><b>04</b> : 
+                        Pré visé PEC avec ano
+                     </li>
+                     <li><b>05</b> : 
+                        Pré visé rejet forçable
+                     </li>
+                     <li><b>06</b> : 
+                        Pré visé rejet non forçable
+                     </li>
+                     <li><b>07</b> : 
+                        PEC avec anomalies
+                     </li>
+                     <li><b>08</b> : 
+                        PEC sans anomalies
+                     </li>
+                     <li><b>09</b> : 
+                        Rejet
+                     </li>
+                     <li><b>10</b> : 
+                        Rejet non forçable
+                     </li>
+                     <li><b>15</b> : 
+                        Pris en charge avec forçage
+                     </li>
+                     <li><b>16</b> : 
+                        Mis en instance
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEtatPce">TYPE TEtatPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Information retour sur l'état de la pièce</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        En instance
+                     </li>
+                     <li><b>02</b> : 
+                        Prise en charge
+                     </li>
+                     <li><b>04</b> : 
+                        Rejeté
+                     </li>
+                     <li><b>05</b> : 
+                        Soldé
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatInf">TYPE TNatInf</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du retour d'information demandé par l'ordonnateur. Une unique valeur (2 flux
+                  détaillé) est utilisée  pour les flux périodiques et les flux de rejets
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>2</b> : 
+                        Flux détaillé
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatPce">TYPE TNatPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du mandat pour les retours</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Fonctionnement
+                     </li>
+                     <li><b>02</b> : 
+                        Investissement
+                     </li>
+                     <li><b>03</b> : 
+                        Inventaire
+                     </li>
+                     <li><b>04</b> : 
+                        Emprunt
+                     </li>
+                     <li><b>05</b> : 
+                        Régie
+                     </li>
+                     <li><b>06</b> : 
+                        Annulation-Réduction
+                     </li>
+                     <li><b>07</b> : 
+                        Complémentaire
+                     </li>
+                     <li><b>08</b> : 
+                        Reémis
+                     </li>
+                     <li><b>09</b> : 
+                        Annulant un titre
+                     </li>
+                     <li><b>10</b> : 
+                        Annulation du mandat de rattachement
+                     </li>
+                     <li><b>11</b> : 
+                        Paie
+                     </li>
+                     <li><b>12</b> : 
+                        Retenue de garantie
+                     </li>
+                     <li><b>13</b> : 
+                        Dernier acompte sur marché
+                     </li>
+                     <li><b>14</b> : 
+                        Avance forfaitaire
+                     </li>
+                     <li><b>15</b> : 
+                        Autres
+                     </li>
+                     <li><b>18</b> : 
+                        Opération d'ordre liée aux cessions
+                     </li>
+                     <li><b>19</b> : 
+                        Réquisition ordonnateur
+                     </li>
+                     <li><b>20</b> : 
+                        Autre opération avec émargement
+                     </li>
+                     <li><b>21</b> : 
+                        Constatation de frais financier
+                     </li>
+                     <li><b>22</b> : 
+                        Débits d'office
+                     </li>
+                     <li><b>23</b> : 
+                        Dépenses domiciliées
+                     </li>
+                     <li><b>24</b> : 
+                        Rbt retenue de garantie
+                     </li>
+                     <li><b>25</b> : 
+                        Rbt retenue de garantie manuel
+                     </li>
+                     <li><b>26</b> : 
+                        Remboursement échéance emprunt
+                     </li>
+                     <li><b>27</b> : 
+                        Secours d'urgence
+                     </li>
+                     <li><b>28</b> : 
+                        Vacation police
+                     </li>
+                     <li><b>29</b> : 
+                        Divers
+                     </li>
+                     <li><b>30</b> : 
+                        Pénalités de retard
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TObsEtat">TYPE TObsEtat</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Motif de rejet ou de mise en instance.  Les motif (s) d'erreur (1 à n) sont sélectionnable(s)
+                  par le Comptable pour une décision de rejet ou de mise en instance d'un mandat.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Absence totale ou invalidité des pièces justificatives
+                     </li>
+                     <li><b>02</b> : 
+                        Insuffisance pièces justificatives
+                     </li>
+                     <li><b>03</b> : 
+                        Insuffisance de crédits budgétaires
+                     </li>
+                     <li><b>04</b> : 
+                        Liquidation erronée
+                     </li>
+                     <li><b>05</b> : 
+                        Absence certification service fait et caractère exécutoire
+                     </li>
+                     <li><b>06</b> : 
+                        Autre motif
+                     </li>
+                     <li><b>07</b> : 
+                        Double paiement
+                     </li>
+                     <li><b>09</b> : 
+                        Domiciliation bancaire absente ou erronée
+                     </li>
+                     <li><b>10</b> : 
+                        Récupération avance non effectuée
+                     </li>
+                     <li><b>11</b> : 
+                        Incompétence du donneur d'ordre
+                     </li>
+                     <li><b>13</b> : 
+                        Prescription et déchéance
+                     </li>
+                     <li><b>16</b> : 
+                        Mandant non établi au nom du véritable créancier
+                     </li>
+                     <li><b>23</b> : 
+                        Erreur d'imputation comptable et budgétaire
+                     </li>
+                     <li><b>24</b> : 
+                        Rejet technique
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TOrgEma">TYPE TOrgEma</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nouvelle codification pour le domaine DEPENSE dédiée à la définition de l'origine
+                  de l'émargement portant sur une ligne dont le mandat doit être pris en compte dans
+                  les retours PES périodiques.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        « Paiement réel » si l'émargement est établi entre la ligne de mandat et le paiement
+                        associé à la ligne
+                     </li>
+                     <li><b>02</b> : 
+                        « Ordre de paiement Pénalités de retard » si l'émargement est établi entre la ligne
+                        de mandat et la ligne de mandat typée Ordre de paiement pénalité de retards
+                     </li>
+                     <li><b>03</b> : 
+                        « Ordre de paiement Retenue de garantie » si l'émargement est établi entre la ligne
+                        de mandat et la ligne de mandat typée Ordre de paiement retenue de garantie.
+                     </li>
+                     <li><b>04</b> : 
+                        « COP » si l' émargement est établi entre la ligne de mandat et un OPC de nature «
+                        Paiement à un Tiers opposant »
+                     </li>
+                     <li><b>05</b> : 
+                        « Ordre de paiement comptable » si l'émargement est établi entre la ligne de mandat
+                        et un OPC de nature autre que « Paiement à Tiers opposant »
+                     </li>
+                     <li><b>06</b> : 
+                        « Ordre de reversement » si  l'émargement est établi entre la ligne de mandat et la
+                        ligne de titre typé « Ordre de reversement »
+                     </li>
+                     <li><b>07</b> : 
+                        « Mandat correctif » si l'émargement est établi entre la ligne de mandat et la ligne
+                        d'un mandat correctif
+                     </li>
+                     <li><b>08</b> : 
+                        « Mandat » si la ligne de mandat est établi entre la ligne de mandat et la ligne d'un
+                        mandat autre que correctif
+                     </li>
+                     <li><b>09</b> : 
+                        « Titre correctif » si l' émargement est établi entre la ligne de mandat et la ligne
+                        d'un titre correctif
+                     </li>
+                     <li><b>10</b> : 
+                        « Titre » si l'émargement est établi entre la ligne de mandat et la ligne d'un titre
+                        autre que correctif, ou entre la ligne de mandat et un sous article de rôle (se rapportant
+                        à un rôle simple) ou un extrait de rôle
+                     </li>
+                     <li><b>11</b> : 
+                        « Liste de non valeur » si  l' émargement est établi entre la ligne de mandat et la
+                        liste de non valeurs
+                     </li>
+                     <li><b>12</b> : 
+                        « Encaissement » si l'émargement est établi entre la ligne de mandat et une pièce
+                        d'encaissement.
+                     </li>
+                     <li><b>13</b> : 
+                        « Avance sur marché d'investissement » : - si la ligne de mandat  (mandat ordinaire
+                        ou mandat sur marché de nature « Investissement ») est émargée avec une ligne de titre
+                        ordinaire de nature « Marché »  de compte nature  typé 2228 (comptes 237 et 238) ou,
+                        <br>- si la ligne de mandat  (mandat sur marché ou mandat d'ordre budgétaire de nature
+                        « Investissement ») est émargée avec une ligne de titre d'ordre budgétaire de nature
+                        « Investissement» de compte nature typé 2228 (comptes 237 et 238).
+                     </li>
+                     <li><b>14</b> : 
+                        « Avance sur marché de fonctionnement »  si la ligne de mandat  (mandat ordinaire
+                        ou mandat sur marché de nature « Fonctionnement » avec une référence Marché) est émargée
+                        avec une ligne d'un ordre de paiement ordonnateur  de nature « Avance» de compte nature
+                        typé 2229 (compte 4091).
+                     </li>
+                     <li><b>15</b> : 
+                        « Divers » pour tous les autres cas.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypBord">TYPE TTypBord</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de bordereau. Le type de bordereau 04 «Bordereau de régularisation» est utilisé
+                  afin de transmettre à l'ordonnateur des demandes de régularisation (demande d'émission
+                  de titre, ou demande d'émission de mandat).
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Annulation/réduction
+                     </li>
+                     <li><b>03</b> : 
+                        Ordres de paiement
+                     </li>
+                     <li><b>04</b> : 
+                        Bordereau de régularisation
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypConv">TYPE TTypConv</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de convention.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Autorisation de paiement
+                     </li>
+                     <li><b>03</b> : 
+                        Convention sur mandat global
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypPce">TYPE TTypPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Informations destinées à déterminer le type de pièce. Le type de pièce 12 : « Demande
+                  d'émission de mandat » est utilisé pour que l'ordonnateur transmette des mandats émis
+                  après paiement suite à paiement d'OPC. Le type de pièce 14 : « Demande d'émission
+                  de titre » est utilisé pour que l'ordonnateur transmette des titres suite à comptabilisation
+                  de pénalités de retard induites par la prise en charge de mandat sur marché porteurs
+                  d'un montant de pénalités.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Mandat ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Mandat correctif
+                     </li>
+                     <li><b>03</b> : 
+                        Mandat d'ordre budgétaire
+                     </li>
+                     <li><b>04</b> : 
+                        Mandat d'ordre mixte
+                     </li>
+                     <li><b>05</b> : 
+                        Mandat émis après paiement
+                     </li>
+                     <li><b>06</b> : 
+                        Mandat global
+                     </li>
+                     <li><b>07</b> : 
+                        Mandat d'admission en non valeurs
+                     </li>
+                     <li><b>08</b> : 
+                        Mandat collectif
+                     </li>
+                     <li><b>09</b> : 
+                        Mandat sur marché
+                     </li>
+                     <li><b>10</b> : 
+                        Mandat de rattachement
+                     </li>
+                     <li><b>11</b> : 
+                        Ordre de paiement
+                     </li>
+                     <li><b>12</b> : 
+                        Demande émission mandat
+                     </li>
+                     <li><b>13</b> : 
+                        Charges constatées d'avance
+                     </li>
+                     <li><b>14</b> : 
+                        Demande d'émission de titre
+                     </li>
+                     <li><b>15</b> : 
+                        Ordre de paiement de retenue de garantie
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypRestit">TYPE TTypRestit</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de restitution offerte par le flux retour. Il s'agit du type de flux qui est
+                  généré.<br>Rejet = mandats rejetés et mis en instance.<br>Périodique = mandats ayant eu des événements sur la période et dépenses à régulariser
+                  sur la période
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Rejet
+                     </li>
+                     <li><b>02</b> : 
+                        Périodique
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>

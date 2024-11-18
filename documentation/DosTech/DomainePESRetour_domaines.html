@@ -1,0 +1,63 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_pes_retour_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine PES Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="PES_Retour">TYPE PES_Retour</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Enveloppe</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TEnveloppe">TEnveloppe</a></td>
+               <td>Enveloppe d'identification du flux</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTetePES</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TEnTetePES">TEnTetePES</a></td>
+               <td>En-Tête du PES</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_DepenseRetour</td>
+               <td>0..1</td>
+               <td><a href="PES_DepenseRetour_blocs.html#TPES_DepenseRetour">TPES_DepenseRetour</a></td>
+               <td>Domaine PES Dépense Retour</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_RecetteRetour</td>
+               <td>0..1</td>
+               <td><a href="#TPES_RecetteRetour">TPES_RecetteRetour</a></td>
+               <td>Domaine PES Recette Retour</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_ClientRetour</td>
+               <td>0..1</td>
+               <td><a href="#TPES_ClientRetour">TPES_ClientRetour</a></td>
+               <td>Domaine PES Client Retour</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomainePESRetour.html#docimage'">Retour Domaine PES Retour</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

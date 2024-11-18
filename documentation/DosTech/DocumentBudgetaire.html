@@ -1,0 +1,62 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_budget.css">
+      <link rel="icon" href="favicon.ico"/>
+      <script type="text/javascript" src="src/js/version.j"></script>
+      <script type="text/javascript">
+      <!--
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/documentbudgetaire/DocumentBudgetaire_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/documentbudgetaire/DocumentBudgetaire_xmlspy.png';
+      }
+      //-->
+    </script>
+    <title>Document Budgétaire</title>
+   </head>
+   <body class="normal">
+     <iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+     <div class="section">
+         <h1 class="titreligne num" id="h1">Document Budgétaire</h1>
+         <h2 class="titreligne num" id="h2Presentation">Présentation</h2>
+         <p class="normal">Le document budgétaire est transmis dans un flux PES PJ du PES V2 Aller, la PJ étant
+            intégrée dans la balise <a href="PES_PJAller.html#h3SchemaXML">"Fichier"</a> du contenu d'une PJ.<br>
+            Après décompression et désencodage cette PJ respecte le schéma XSD suivant.
+         </p>
+         <h2 class="titreligne num" id="h2SchemaXML">Schéma XML</h2>
+           <img src="src/img/documentbudgetaire/DocumentBudgetaire_xmlspy.png" alt="DocumentBudgetaire" border="0" usemap="#mapBudget" id="docimage" name="docimage"/>
+           <map name="mapBudget" id="mapBudget">
+            <area shape="rect" coords="11,352,147,372" href="DocumentBudgetaire_blocs.html#TDocumentBudgetaire" alt="Document Budgétaire" title="Document Budgétaire" onMouseOver="chg('01')" onMouseOut="rst()">
+            <area shape="rect" coords="319,39,429,58" href="DocumentBudgetaire_simples.html#Base_Version" alt="Version Schéma" title="Version Schéma" onMouseOver="chg('02')" onMouseOut="rst()">
+            <area shape="rect" coords="320,111,403,130" href="DocumentBudgetaire_blocs.html#TBlocEditeur" alt="Bloc Editeur" title="Bloc Editeur" onMouseOver="chg('03')" onMouseOut="rst()">
+            <area shape="rect" coords="319,180,413,203" href="DocumentBudgetaire_blocs.html#TVersionOutil" alt="Version Outil" title="Version Outil" onMouseOver="chg('04')" onMouseOut="rst()">
+            <area shape="rect" coords="322,289,403,310" href="DocumentBudgetaire_blocs.html#TScellement" alt="Scellement" title="Scellement" onMouseOver="chg('05')" onMouseOut="rst()">
+            <area shape="rect" coords="321,360,459,380" href="DocumentBudgetaire_blocs.html#TEnTeteDocBudgetaire" alt="En Tête Doc Budgétaire" title="En Tête Doc Budgétaire" onMouseOver="chg('06')" onMouseOut="rst()">
+            <area shape="rect" coords="319,535,380,556" href="DocumentBudgetaire_blocs.html#TBudget" alt="Budget" title="Budget" onMouseOver="chg('07')" onMouseOut="rst()">
+            <area shape="rect" coords="472,453,570,474" href="DocumentBudgetaire_blocs.html#TEnTeteBudget" alt="En Tête Budget" title="En Tête Budget" onMouseOver="chg('08')" onMouseOut="rst()">
+            <area shape="rect" coords="469,487,554,505" href="DocumentBudgetaire_blocs.html#TBlocBudget" alt="Bloc Budget" title="Bloc Budget" onMouseOver="chg('09')" onMouseOut="rst()">
+            <area shape="rect" coords="469,518,621,539" href="DocumentBudgetaire_blocs.html#TInformationsGenerales" alt="Informations Générales" title="Informations Générales" onMouseOver="chg('10')" onMouseOut="rst()">
+            <area shape="rect" coords="473,566,563,587" href="DocumentBudgetaire_blocs.html#TLigneBudget" alt="Ligne budget" title="Ligne Budget" onMouseOver="chg('11')" onMouseOut="rst()">
+            <area shape="rect" coords="472,618,540,639" href="DocumentBudgetaire_blocs.html#TAnnexes" alt="Annexes" title="Annexes" onMouseOver="chg('12')" onMouseOut="rst()">
+            <area shape="rect" coords="320,666,606,687" href="BlocSignatureElectronique.html#PESSignatureGroup" alt="PES Signature Group" title="PES Signature Group" onMouseOver="chg('13')" onMouseOut="rst()">
+           </map>
+           
+           <h2 class="titreligne num" id="h2Details">Détails</h2>
+			<p class="normal">Pour visualiser les blocs, les codes ou les types simples de ce domaine, cliquez sur les boutons ci-dessous.</p>
+			<button type="button" class="encadre" onclick="self.location='DocumentBudgetaire_blocs.html'">Visualiser les blocs</button>
+			&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='DocumentBudgetaire_codes.html'">Visualiser les codes</button>
+			<br/><br/>
+			<button type="button" class="encadre" onclick="self.location='DocumentBudgetaire_simples.html'">Visualiser les types simples</button>
+
+      </div>
+   </body>
+</html>

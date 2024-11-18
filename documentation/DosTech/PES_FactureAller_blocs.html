@@ -1,0 +1,1843 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_facturealler_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Facture Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPESFacture">TYPE TPESFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>PES_Facture encapsulé dans un PESPJ pour la transmission à destination de la DGFIP.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>Numéro de version - Mettre à «&nbsp;2&nbsp;».<br>Si le numéro de version est erroné, rejet de l'ensemble du PESFacture.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Annee</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Exercice.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumSequence</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num4">Base_Num4</a></td>
+               <td>En cas d'émission périodique, indique le numéro de la séquence.</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeFact</td>
+               <td>0..1</td>
+               <td><a href="PES_FactureAller_codes.html#TTypeFacture">TTypeFacture</a></td>
+               <td>Type de Facturation.<br>Le TypeFact ASAP=09 est nécessaire et obligatoire pour permettre l'édition centralisée
+                  des ASAP.<br>Le TypeFact ASAP=10 est nécessaire et obligatoire pour permettre l'édition centralisée
+                  des ASAP de type Patients.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Date</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'émission de la facture ou de l'état de facturation.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Emetteur</td>
+               <td> 1..1</td>
+               <td><a href="#TTiersEmetteur">TTiersEmetteur</a></td>
+               <td>Ce bloc définit l'émetteur de la facture.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Tiers</td>
+               <td>0..12</td>
+               <td><a href="#TTiersFacture">TTiersFacture</a></td>
+               <td>Les tiers communs à l'ensemble de la facture&nbsp;; utilisés dans le cadre du PES_Facture
+                  typé ASAP.<br>Pour un PES_Facture ASAP, bloc Tiers Obligatoire pour le Centre des Finances Publiques
+                  et le Centre d'encaissement. <br>Présence obligatoire d'un et un seul TypeTiers = 25 (centre d'encaissement) et d'un
+                  et un seul TypeTiers = 26 (Centre des Finances Publiques). A défaut, rejet du PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FactureIndiv</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TFacturePESIndiv">TFacturePESIndiv</a></td>
+               <td>Ce bloc définit les données individuelles de facturation. Un PES_Facture peut contenir
+                  de 1 à n factures individuelles.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Nomenclatures</td>
+               <td> 1..1</td>
+               <td><a href="#TNomenclatureFacture">TNomenclatureFacture</a></td>
+               <td>Nomenclatures utilisées (Paramétrage du progiciel).<br>En cas d'évolution des nomenclatures, les anciens codes doivent être précisés (de
+                  façon incrémentale).<br>Non repris sur l'édition de l'ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">RepartitionParNature</td>
+               <td>0..1</td>
+               <td><a href="#TRepartitionParNature">TRepartitionParNature</a></td>
+               <td>Répartition des dépenses par Nature (et budget le cas échéant).<br>Ne pas renseigner pour un PES_Facture ASAP, non repris sur l'édition.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TNomenclatureFacture">TYPE TNomenclatureFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Nomenclatures utilisées (Paramétrage du progiciel).<br>En cas d'évolution des nomenclatures, les anciens codes doivent être précisés (de
+                  façon incrémentale).<br>Non repris sur l'édition de l'ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomenclatureProduit</td>
+               <td>0..1</td>
+               <td><a href="#TNomenclature">TNomenclature</a></td>
+               <td>Nomenclature des rubriques de Facturation (nécessaire en cas d'état de facturation
+                  collectif).<br>Non repris sur l'édition ASAP ; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomenclatureNature</td>
+               <td>0..1</td>
+               <td><a href="#TNomenclature">TNomenclature</a></td>
+               <td>Nomenclature des Code Natures (catégorisation préalable à l'imputation budgétaire).<br>Non repris sur l'édition ASAP ; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomenclatureBudget</td>
+               <td>0..1</td>
+               <td><a href="#TNomenclature">TNomenclature</a></td>
+               <td>Nomenclature des Budgets.<br>Non repris sur l'édition ASAP ; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRepartitionParNature">TYPE TRepartitionParNature</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Répartition des dépenses par Nature (et budget le cas échéant).<br>Ne pas renseigner pour un PES_Facture ASAP, non repris sur l'édition.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Repartition</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TLigneRepartition">TLigneRepartition</a></td>
+               <td>Bloc LigneRepartition.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTiersEmetteur">TYPE TTiersEmetteur</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc définit l'émetteur de la facture.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoTiers</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoTiersFacture">TInfoTiersFacture</a></td>
+               <td>Identification du tiers émetteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td>0..1</td>
+               <td><a href="PES_FactureAller_codes.html#TAdresseFacture">TAdresseFacture</a></td>
+               <td>Adresse du tiers émetteur.<br>Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CptBancaire</td>
+               <td>0..1</td>
+               <td><a href="#TBancaireFacture">TBancaireFacture</a></td>
+               <td>Compte Bancaire du Tiers émetteur.<br>Ne pas renseigner pour un PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoTVAEmetteur</td>
+               <td>0..1</td>
+               <td><a href="#TInformationTvaEmetteur">TInformationTvaEmetteur</a></td>
+               <td>Informations concernant la TVA du Tiers l'émetteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoSuppl</td>
+               <td>0..1</td>
+               <td><a href="#TInfoSuppl">TInfoSuppl</a></td>
+               <td>Informations pratiques de la collectivité (horaires, téléphone, et informations nécessaires
+                  dans le cadre de Payfip). PayFip&nbsp;: nouvelle appellation de TIPI<br>Ce bloc ne doit être utilisé que dans le cadre du PESFacture typé ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Signataire</td>
+               <td>0..1</td>
+               <td><a href="#TSignataire">TSignataire</a></td>
+               <td>Signataire de l'avis des sommes à payer.<br>A ne renseigner que dans le cadre du PES_Facture de type ASAP.<br>Attention, ce bloc est Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInformationTvaEmetteur">TYPE TInformationTvaEmetteur</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Informations concernant la TVA du Tiers l'émetteur.<br>Saisie du numéro de TVA intracommunautaire
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumTVA</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Numéro de TVA de l&#x2019;émetteur de la facture</td>
+            </tr>
+            <tr>
+               <td colspan="2">Service</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Code d'identification du service de l'ordonnateur</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoSuppl">TYPE TInfoSuppl</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc ne doit être utilisé que dans le cadre du PESFactureTypéASAP.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumTel</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte20">Base_Texte20</a></td>
+               <td>Numéro de téléphone de la collectivité ou du service de la collectivité qui peut apporter
+                  tout éclaircissement au débiteur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">HorairesOuv</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Horaires d'ouverture des services de la collectivité.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeTipi</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num7_Light">Base_Num7_Light</a></td>
+               <td>Identifiant de la structure publique au regard de Payfip (nouvelle appellation de
+                  TIPI).<br>PES_Facture ASAP&nbsp;: cette balise fonctionne avec la balise AdrTipi&nbsp;; si AdrTipi est
+                  renseignée, alors CodeTipi doit être renseigné. A défaut, rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">AdresseMelEmetteur</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Adresse courriel du service de la collectivité émettrice de la facture</td>
+            </tr>
+            <tr>
+               <td colspan="2">AdrTipi</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte200">Base_Texte200</a></td>
+               <td>Adresse internet de l'accès au portail de la structure publique ou portail Payfip
+                  (nouvelle appellation de TIPI) pour permettre le paiement par internet .<br>PES_Facture ASAP&nbsp;: cette balise fonctionne avec la balise CodeTipi&nbsp;; si CodeTipi est
+                  renseignée, alors AdrTipi doit être renseignée. A défaut, rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">RefBdf</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum13">Base_Alphanum13</a></td>
+               <td>Obligatoire pour un PESFacture ASAP , sinon rejet du&nbsp; PesFacture ASAP.<br>Si édition avec TIP ,référence Banque de France du budget collectivité&nbsp; : ICS. La
+                  structure de l'ICS doit être respectée, à défaut rejet du PES_Facture ASAP.<br>Si édition avec Talon, numéro émetteur associé au budget collectivité.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoCode2D</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte64">Base_Texte64</a></td>
+               <td>A ne servir que dans le cadre du Pes facture ASAP&nbsp;;<br>Informations nécessaires à la construction du code2D pour paiement de l'ASAP par smartphone.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TSignataire">TYPE TSignataire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Signataire de l'avis des sommes à payer.<br>A ne renseigner que dans le cadre du PES_Facture de type ASAP.<br>Attention, ce bloc est Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Personne</td>
+               <td> 1..1</td>
+               <td><a href="#TPersonneSignataire">TPersonneSignataire</a></td>
+               <td>La personne qui signe</td>
+            </tr>
+            <tr>
+               <td colspan="2">Role</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Rôle de la personne qui est autorisée à signer les ASAP.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPersonneSignataire">TYPE TPersonneSignataire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Nom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom du signataire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom du signataire.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTiersFacture">TYPE TTiersFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Information sur le Débiteur ou le destinataire</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoTiers</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoTiersFacture">TInfoTiersFacture</a></td>
+               <td>Identification du tiers</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoSupplTiers</td>
+               <td>0..1</td>
+               <td><a href="#TInfoSupplTiersFacture">TInfoSupplTiersFacture</a></td>
+               <td>Informations pratiques sur le Centre des finances publiques (horaires, téléphone)
+                  TypTiers = 26.<br>Ce bloc ne doit être utilisé que dans le cadre du PESFacture typé ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td>0..1</td>
+               <td><a href="PES_FactureAller_codes.html#TAdresseFacture">TAdresseFacture</a></td>
+               <td>Adresse du tiers<br>Pour un PES_Facture ASAP : le bloc Adresse du Débiteur est obligatoire, à défaut rejet
+                  du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteBancaire</td>
+               <td>0..1</td>
+               <td><a href="#TBancaireFacture">TBancaireFacture</a></td>
+               <td>Compte bancaire du tiers débiteur.<br>Pour PES_Facture ASAP, il s'agit du compte bancaire repris sur le TIP de l'édition.
+                  Compte bancaire du tiers destinataire&nbsp;: ces informations ne sont pas valorisées par
+                  Hélios
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoTiersFacture">TYPE TInfoTiersFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Identification du Tiers.<br>Ce bloc est commun aux blocs&nbsp;:<br>- PES_Facture Emetteur <br>- PES_Facture Tiers<br>- PES_Facture FactureIndiv Debiteur<br>- PES_Facture FactureIndiv Destinataire
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum18">Base_Alphanum18</a></td>
+               <td>Identifiant national du tiers : Identifiant stable et national d'une personne de type
+                  siret, siren, finess, NIR, TVAIntraCo, Hors UE,TAHITI, RIDET&nbsp;, FRWF ou EnCoursImm<br>Pour un PES_Facture ASAP : cet identifiant n'est utilisé que s'il s'agit d'un SIRET
+                  (NatIdTiers = 02 ). Il est alors repris sur l'édition ASAP. Ceci n'est pas vrai s'il
+                  s'agit d'un ASAP CPP puisque dans ce cas c'est le SIRET du débiteur du titre qui est
+                  repris (ce SIRET étant obligatoire sur un titre CPP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TNatIdTiers">TNatIdTiers</a></td>
+               <td>Type d'identifiant.<br>Pour un PES_Facture ASAP&nbsp;: ne pas renseigner&nbsp;; non repris sur l'édition.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour de l'identifiant stable par le comptable.<br>Pour un PES_Facture ASAP&nbsp;: ne pas renseigner&nbsp;; non repris sur l'édition.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Référence attribuée au tiers par l'ordonnateur : Zone destinée à recevoir une référence
+                  ou un identifiant, éventuellement géré par l'ordonnateur, autorisant le regroupement
+                  des pièces comptables.<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CatTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TCatTiers">TCatTiers</a></td>
+               <td>Information destinée à identifier la catégorie du tiers.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatJur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TNatJur">TNatJur</a></td>
+               <td>Information destinée à identifier la nature juridique du tiers.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TTypTiersFacture">TTypTiersFacture</a></td>
+               <td>Type de tiers.<br>- Contrainte pour le bloc parent Emetteur: Non repris sur l'édition ASAP (PES_Facture
+                  ASAP).<br>- Contrainte pour le bloc parent Debiteur&nbsp;: Non repris sur l'édition ASAP (PES_Facture
+                  ASAP).<br>- Contrainte pour le bloc parent Destinataire&nbsp;: Non repris sur l'édition ASAP (PES_Facture
+                  ASAP).<br>- Contrainte pour le bloc parent Tiers&nbsp;:<br>  + Si PES_Facture ASAP, les valeurs autorisées sont 25 ou 26. Toute autre valeur
+                  aboutit au rejet du PES_Facture ASAP.<br>  + Si la valeur est 25, le Tiers est le Centre d'Encaissement.<br>  + Si la valeur est 26, le Tiers est le Centre des Finances Publiques.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Civilite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Etat civil du tiers : Zone destinée à recevoir de manière abrégée l'état civil (Mr,
+                  Mme,&#x2026;).<br>- Contrainte pour le bloc parent Tiers&nbsp;: Pour un PES_Facture ASAP, ne pas renseigner.
+                  Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Nom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Raison sociale / Nom : Norme postale.<br>- Contrainte pour le bloc parent Tiers&nbsp;:<br>  + Si TypeTiers = 25, alors Nom = CENTRE D'ENCAISSEMENT (en majuscules).<br>  + Si Type Tiers = 26 (Centre des Finances Publiques), il s'agit de la dénomination
+                  du poste comptable (ex Trésorerie de xxx).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ComplNom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément de nom : Norme postale.<br>- Contrainte pour le bloc parent Tiers&nbsp;: Si TypeTiers = 25,  alors ComplNom = DES
+                  FINANCES PUBLIQUES (en majuscules).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom.<br>- Contrainte pour le bloc parent Emetteur: Pour un PES_Facture ASAP, ne pas renseigner.
+                  Non repris sur l'édition ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: Pour un PES_Facture ASAP, ne pas renseigner.
+                  Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoSupplTiersFacture">TYPE TInfoSupplTiersFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Informations pratiques du Centre des finances publiques (horaires, téléphone).<br>Ce bloc ne doit être utilisé que dans le cadre du PESFacture typé ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumTel2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte20">Base_Texte20</a></td>
+               <td>Numéro de téléphone du Centre des finances publiques ou du service du Centre des finances
+                  publiques susceptible de renseigner le débiteur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">HorairesOuv2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Horaires d'accueil du Centre des finances publiques.</td>
+            </tr>
+            <tr>
+               <td colspan="2">AdresseMelCFP</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Adresse courriel du Centre des finances publiques</td>
+            </tr>
+            <tr>
+               <td colspan="2">PaiementTel</td>
+               <td>0..1</td>
+               <td><a href="#TPaiementTel">TPaiementTel</a></td>
+               <td>Informations pratiques pour le paiement par téléphone du Centre des Finances publiques.<br>Repris uniquement sur TypeFacture=10.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPaiementTel">TYPE TPaiementTel</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Informations pratiques pour le paiement par téléphone du Centre des Finances publiques
+                  si celui-ci le propose.<br>Repris uniquement sur TypeFacture=10.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModalitesPaiTel</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte27">Base_Texte27</a></td>
+               <td>Servir dans le cas des Centres des finances publiques bénéficiant d'un standard téléphonique
+                  de paiement par carte bancaire.<br>Dans ce cas ModalitesPaiTel =&nbsp;''- Payer par carte bancaire au :''.<br>Repris uniquement sur les éditions ASAP Patients à éditer.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumTel3</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte20">Base_Texte20</a></td>
+               <td>Numéro de téléphone du Centre des finances publiques dédié au paiement par carte bancaire.<br>Repris uniquement sur les éditions ASAP Patients à éditer
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">HorairesOuv3</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Horaires d'accueil du standard dédié au paiement par carte bancaire du Centre des
+                  finances publiques.<br>Repris uniquement sur les éditions ASAP Patients à éditer
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTalonOptique2Lignes">TYPE TTalonOptique2Lignes</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Talon Optique pour paiement via centre d'encaissement.<br>Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP + respect
+                  de la norme HEL.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Ligne1</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num60TalonOptique">Base_Num60TalonOptique</a></td>
+               <td>Première ligne du talon optique calculée et fournie par ordonnateur.<br>Chiffres de 0 à 9 autorisés et espaces autorisés . Lettres uniquement MAJUSCULES autorisées.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Ligne2</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num60TalonOptique">Base_Num60TalonOptique</a></td>
+               <td>Deuxième ligne du talon optique calculée et fournie par ordonnateur.<br>Chiffres de 0 à 9 autorisés et espaces autorisés . Lettres uniquement MAJUSCULES autorisées.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRefTitre">TYPE TRefTitre</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Référence au titre lié à l'avis des sommes à payer.<br>Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Exercice</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>L'exercice du titre auquel se rattache la facture de recette ASAP</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumBordereau</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num7">Base_Num7</a></td>
+               <td>Le numéro du bordereau de titre</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumTitre</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num13">Base_Num13</a></td>
+               <td>Le numéro de titre auquel se rattache la facture de recette ASAP<br>Un même numéro (et même exercice) ne doit pas figurer sur plusieurs factures individuelles
+                  du même flux PES Facture, à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumLigne</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num6">Base_Num6</a></td>
+               <td>A valoriser obligatoirement à 1.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneFacture">TYPE TLigneFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Détail de chaque ligne de facture.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>Date</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Dates de réalisation de la prestation</td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°2</b></td>
+               <td>DateDebut</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du début de la prestation</td>
+            </tr>
+            <tr>
+               <td>DateFin</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de la fin de la prestation</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeProduit</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Code du produit.<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeNature</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Code Nature.<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Libelle</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte200">Base_Texte200</a></td>
+               <td>Libellé détaillé du produit.<br>PES_Facture ASAP&nbsp;: la zone Libellé est à renseigner de l'objet de la ligne de facture&nbsp;;<br>Si la ligne de facture concerne une remise, indiquer «&nbsp;remise&nbsp;» dans cette zone libellé
+                  afin d'informer le débiteur (pas de contrôle sur le contenu de cette zone).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Unite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nature de l'unité d'&#x153;uvre.<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°3)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="5" nowrap><b>n°1</b></td>
+               <td>Quantite</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Quantite">Base_Quantite</a></td>
+               <td>Quantité d'unités.<br>La taille maximum autorisée est 6 chiffres (hors virgule), à défaut rejet du PES_Facture
+                  ASAP.<br>Jusqu'à 4 décimales significatives possibles
+               </td>
+            </tr>
+            <tr>
+               <td>Unite1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5">Base_Texte5</a></td>
+               <td>Unité de mesure de la valeur indiquée dans Quantite<br>PES_Facture ASAP&nbsp;: si la balise est renseignée, Quantite doit être valorisé, à défaut
+                  rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td>Quantite2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Quantite">Base_Quantite</a></td>
+               <td>Quantité 2 d'unités.<br>La taille maximum autorisée est 6 chiffres (hors virgule), à défaut rejet du PES_Facture
+                  ASAP.<br>Jusqu'à 4 décimales significatives possibles
+               </td>
+            </tr>
+            <tr>
+               <td>Unite2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5">Base_Texte5</a></td>
+               <td>Unité de mesure de la valeur indiquée dans Quantite2<br>PES_Facture ASAP&nbsp;: si la balise est renseignée, Quantite2 doit être valorisé, à défaut
+                  rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td>MtUnitaire</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Prix de chaque Unité.<br>PES_Facture ASAP&nbsp;: si la balise est renseignée, le montant doit être strictement positif,
+                  à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="1" nowrap><b>n°2</b></td>
+               <td>MtBase</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Base de calcul du prix.<br>PES_Facture ASAP&nbsp;: si la balise est renseignée, le montant doit être strictement positif,
+                  à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="1" nowrap><b>n°3</b></td>
+               <td>MtRemise</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de la Remise TTC.<br>La remise doit apparaître sur une ligne de facture spécifique.<br>Le montant de la remise apparaît en positif.<br>PES_Facture ASAP&nbsp;: si la balise est valorisée, le montant doit être strictement positif
+                  sinon rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Taux</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtHT</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT de la Ligne.<br>PES_Facture ASAP&nbsp;: le montant doit être strictement positif, à défaut rejet du PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TauxTVA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux_Light">Base_Taux_Light</a></td>
+               <td>Taux de TVA appliqué à cette ligne.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTVA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant de la TVA appliquée à la ligne.<br>PES_Facture ASAP&nbsp;: le montant doit être positif, à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTTC</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant TTC de la prestation de cette ligne.<br>PES_Facture ASAP&nbsp;: le montant doit être strictement positif, à défaut rejet du PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Ordre</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Numéro d'ordre de la ligne de prestation.<br>Cette balise permet de déterminer l'ordre d'affichage des lignes de facture sur l'édition
+                  ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">OrdreEdition</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Numéro d'ordre dans l'affichage de la facture.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Commentaire</td>
+               <td>0..&#x221e;</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Commentaire dans l'ordre d'affichage de la prestation.<br>Il est possible de valoriser une ou plusieurs balises Commentaire.<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDetailTVA">TYPE TDetailTVA</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Détail de la TVA.<br>Ne pas renseigner pour un PES_Facture ASAP&nbsp;; non repris sur l'édition.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TauxTVA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux_Light">Base_Taux_Light</a></td>
+               <td>Taux TVA applicable.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtBaseHT</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de la base d'application de taux de TVA.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTVA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant de la TVA correspondant au taux mentionné.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTotalAPayer">TYPE TTotalAPayer</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Montant total à payer</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTotalHT</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant Total HT de la facture.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTotalTVA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant total de la TVA applicable à la facture.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTotalTTC</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant total de la prestation TTC.<br>PES_Facture ASAP&nbsp;: le montant doit être strictement positif, à défaut rejet du PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TFacturePESIndiv">TYPE TFacturePESIndiv</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc définit les données individuelles de facturation. Un PES_Facture peut contenir
+                  de 1 à n factures individuelles.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateEmission</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'émission de la facture.<br>Pour PES_Facture ASAP, à renseigner de la date d'émission du titre de recette.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateReglement</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date limite de paiement.<br>Ne pas renseigner pour un PES_Facture ASAP&nbsp;; non repris sur l'édition.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroFacture</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Identifiant de la Facture.<br>Non repris sur l'édition ASAP _ non utilisé pour CPP facture inter collectivités (PES_Facture
+                  ASAP). Il sera indiqué en référence en cas de rejet.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Debiteur</td>
+               <td> 1..1</td>
+               <td><a href="#TTiersFacture">TTiersFacture</a></td>
+               <td>Information sur le Débiteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Destinataire</td>
+               <td>0..1</td>
+               <td><a href="#TTiersFacture">TTiersFacture</a></td>
+               <td>Information sur le Destinataire. A renseigner uniquement si destinataire différent
+                  du débiteur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Objet</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte160">Base_Texte160</a></td>
+               <td>Objet de la Facture<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="3" nowrap><b>n°1</b></td>
+               <td>LigneFacture</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TLigneFacture">TLigneFacture</a></td>
+               <td>Détail de chaque ligne de facture.</td>
+            </tr>
+            <tr>
+               <td>DetailTVA</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TDetailTVA">TDetailTVA</a></td>
+               <td>Détail de la TVA.<br>Pour un PES_Facture ASAP : non repris sur l'édition ; ne pas renseigner pour un PES_Facture
+                  ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td>TotalAPayer</td>
+               <td> 1..1</td>
+               <td><a href="#TTotalAPayer">TTotalAPayer</a></td>
+               <td>Montant total à payer.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°2</b></td>
+               <td>DossierPatient</td>
+               <td> 1..1</td>
+               <td><a href="#TDossierPatient">TDossierPatient</a></td>
+               <td>Détail des informations sur les tiers de la facture.</td>
+            </tr>
+            <tr>
+               <td>LigneFacturePatient</td>
+               <td> 1..1</td>
+               <td><a href="#TLigneFacturePatient">TLigneFacturePatient</a></td>
+               <td>Détail de la facture.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTitre</td>
+               <td>0..1</td>
+               <td><a href="#TRefTitre">TRefTitre</a></td>
+               <td>Référence au titre lié à l'avis des sommes à payer.<br>Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TalonOptique2Lignes</td>
+               <td>0..1</td>
+               <td><a href="#TTalonOptique2Lignes">TTalonOptique2Lignes</a></td>
+               <td>Talon Optique pour paiement via centre d'encaissement.<br>Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP + respect
+                  de la norme HEL.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModalitesReglement</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte250">Base_Texte250</a></td>
+               <td>Description des modalités de règlement.<br>Pour le PES_Facture ASAP&nbsp;: il s'agit de la description des modalités de prélèvement,
+                  pour assurer le prélèvement automatique des dettes à venir. Mention reprise au verso
+                  de l'édition.<br>Exemple&nbsp;: «&nbsp;Démarche non prévue par la collectivité&nbsp;», ou «&nbsp;Prendre contact avec le
+                  service de &#x2026;&nbsp;».
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModalitesContestation</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte420">Base_Texte420</a></td>
+               <td>Dans le cadre du PESFacture typé ASAP&nbsp;: Zone de texte libre permettant de renseigner
+                  les modalités de contestation de la dette (mention du tribunal compétent et du lieu
+                  notamment).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModeRecouvrement</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Obligatoire dans le cadre du PES facture typé ASAP, sinon rejet du PES_Facture ASAP.<br>PES_Facture ASAP :<br>Si Edition avec TIP : 0 ou False.<br>Si Edition sans TIP (avec Talon) : 1 ou True.<br>Si edition avec TIP, alors la balise MtTotalTTC doit être inférieure ou égale à 150
+                  000,00 euros, à défaut rejet du PES_Facture ASAP.<br>Si Pes_Facture_ASAP_Patient, le code 1 ou True est obligatoire; à défaut rejet du
+                  flux.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TexteGenerateur</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte160">Base_Texte160</a></td>
+               <td>Champ à renseigner en matière de facture de recette associé à un titre.<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ConditionsGen</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte250">Base_Texte250</a></td>
+               <td>Conditions Générales de Facturation.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">RepartitionBudget</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TRepartitionBudget">TRepartitionBudget</a></td>
+               <td>Répartition du budget.<br>Non repris sur l'édition ASAP ; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDossierPatient">TYPE TDossierPatient</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Dossier du patient<br>Ne renseigner que pour le TypeFacture=10, sinon rejet du flux
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Beneficiaire</td>
+               <td> 1..1</td>
+               <td><a href="#TBeneficiaire">TBeneficiaire</a></td>
+               <td>Identification du tiers bénéficiaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">Assure</td>
+               <td>0..1</td>
+               <td><a href="#TAssure">TAssure</a></td>
+               <td>Identification du tiers assuré</td>
+            </tr>
+            <tr>
+               <td colspan="2">EtabSoins</td>
+               <td> 1..1</td>
+               <td><a href="#TEtabSoins">TEtabSoins</a></td>
+               <td>Informations sur l'établissement ayant effectué les soins.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBeneficiaire">TYPE TBeneficiaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Information sur le bénéficiaire.<br>A renseigner pour le TypeFacture=10, à défaut rejet du flux.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumDossier</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum20">Base_Alphanum20</a></td>
+               <td>Correspond au numéro d'entrée du malade.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumPatient</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum20">Base_Alphanum20</a></td>
+               <td>Correspond à l'IPP (Identifiant Permanent Patient).</td>
+            </tr>
+            <tr>
+               <td colspan="2">NomBeneficiaire</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom du malade</td>
+            </tr>
+            <tr>
+               <td colspan="2">PrenomBeneficiaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom du malade</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteNaissanceBeneficiaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de naissance du malade</td>
+            </tr>
+            <tr>
+               <td colspan="2">NIRBeneficiaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum15">Base_Alphanum15</a></td>
+               <td>NIR du malade</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeRisque</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum2">Base_Alphanum2</a></td>
+               <td>Code risque attribué par l'ordonnateur.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAssure">TYPE TAssure</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Information sur l'assuré.<br>A renseigner pour le TypeFacture=10
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomAssure</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom de l'assuré</td>
+            </tr>
+            <tr>
+               <td colspan="2">PrenomAssure</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom de l'assuré</td>
+            </tr>
+            <tr>
+               <td colspan="2">NIRAssure</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum15">Base_Alphanum15</a></td>
+               <td>NIR de l'assuré</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEtabSoins">TYPE TEtabSoins</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Informations spécifiques liées à l'établissement prestataire des soins reprises uniquement
+                  sur l'édition ASAP Patients (TypeFacture=10)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomEtabSoins</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom de l'établissement de soins</td>
+            </tr>
+            <tr>
+               <td colspan="2">FinJurEtabSoins</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte20">Base_Texte20</a></td>
+               <td>Finess juridique de l'établissement de soins</td>
+            </tr>
+            <tr>
+               <td colspan="2">FinGeoEtabSoins</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum20">Base_Alphanum20</a></td>
+               <td>Finess géographique de l'établissement de soins</td>
+            </tr>
+            <tr>
+               <td colspan="2">SiretEtabSoins</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14">Base_Num14</a></td>
+               <td>Siret de l'établissement de soins</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneFacturePatient">TYPE TLigneFacturePatient</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Détail de la ligne de facture.<br>A renseigner que TypeFacture=10, sinon rejet du flux
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateDebut</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du début de la prestation</td>
+            </tr>
+            <tr>
+               <td colspan="2">DateFin</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de la fin de la prestation</td>
+            </tr>
+            <tr>
+               <td colspan="2">LibellePresta</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte200">Base_Texte200</a></td>
+               <td>Détail de la prestation</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtPecSecu</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant de la prise en charge de la part de la sécurité sociale.<br>Le montant doit être strictement positif ou nul
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtPecCompl</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant de la prise en charge de la part de la complémentaire santé ou mutuelle.<br>Le montant doit être strictement positif ou nul
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtRestantDu</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant restant à la charge du débiteur.<br>Le montant doit être strictement positif ou nul
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>Sequence</i></b></td>
+               <td>0..1</td>
+               <td><a href="#"></a></td>
+               <td>Le MtAvance et le MtRestantDuApresAvance sont renseignés concomitamment</td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap></td>
+               <td>MtAvance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant du (ou des) avance(s) versée(s) par le débiteur.<br>Le montant doit être strictement positif ou nul<br>Cette balise devient obligatoire si présence de la balise MtRestantDuApresAvance.
+               </td>
+            </tr>
+            <tr>
+               <td>MtRestantDuApresAvance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant final restant à la charge du débiteur après prise en compte du montant des
+                  prises en charge et des avances.<br>Le montant doit être strictement positif ou nul.<br>Cette balise devient obligatoire si présence de la balise MtAvance.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CommentaireHop</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte140">Base_Texte140</a></td>
+               <td>Commentaires de l'ordonnateur.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRepartitionBudget">TYPE TRepartitionBudget</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Répartition du budget.<br>Non repris sur l'édition ASAP ; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeBudget</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Code du budget de comptabilisation.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>Taux</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>(si répartition au prorata).<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>Mt</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>(si répartition forfaitaire).<br>Pour un PES_Facture ASAP, ne pas renseigner. Non repris sur l'édition ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAdresseFacture">TYPE TAdresseFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Adresse du Tiers.<br>Obligatoire pour les Tiers du PES_Facture ASAP, à défaut rejet du PES_Facture ASAP.<br>Ce bloc est commun aux blocs<br>- PES_Facture Emetteur<br>- PES_Facture FactureIndiv Tiers<br>- PES_Facture FactureIndiv Debiteur<br>- PES_Facture FactureIndiv Destinataire
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypAdr</td>
+               <td> 1..1</td>
+               <td><a href="PES_FactureAller_codes.html#TTypAdr">TTypAdr</a></td>
+               <td>Type d'adresse.<br>Par défaut à valoriser à 1.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément distribution&nbsp;: norme postale.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PES_Facture ASAP&nbsp;: Adr1 ne doit pas être
+                  renseignée si TypeTiers = 25. Si renseignée, rejet du PES_Facture ASAP.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Adresse du tiers: Norme postale.<br>(Numéro de voie, voie)<br>- Contrainte pour le bloc parent Emetteur&nbsp;: Obligatoire pour un PES_Facture ASAP.
+                  Sinon, rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PES_Facture ASAP :<br>  + Adr2 ne doit pas être renseignée si TypeTiers = 25. Si renseignée, rejet du PESFacture
+                  ASAP.<br>  + Adr2 est obligatoire si TypeTiers=26. A défaut.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: Adr 2 obligatoire.
+                  A défaut, rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Destinataire: PES_Facture ASAP&nbsp;: Adr 2 obligatoire.
+                  A défaut, rejet du PES_Facture ASAP.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr3</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Lieu dit ou complément d'adresse: Norme postale.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PESFacture ASAP&nbsp;: pour TypeTiers = 25, à
+                  renseigner de l'éventuel TSA.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CP</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5">Base_Texte5</a></td>
+               <td>Code postal : Norme postale.<br>Ou Numéro de CEDEX&nbsp;: Norme postale.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Ville</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Localité de destination : Norme postale.<br>Ou Libellé CEDEX&nbsp;: Norme postale.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodRes</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>0 pour résident en France 1 pour non résident.<br>- Contrainte pour le bloc parent Emetteur&nbsp;: Pour un PES_Facture ASAP, seule valeur
+                  autorisée = 0. Sinon, rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: Pour un PES_Facture ASAP, seule valeur autorisée
+                  = 0. Sinon, rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodPays</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Référence Insee du pays Référence Insee du pays Obligatoire pour un tiers non résident.<br>- Contrainte pour le bloc parent Emetteur&nbsp;: Non repris sur l'édition ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: Non repris sur l'édition ASAP.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: CodPays obligatoire
+                  si CodRes = 1&nbsp;; à défaut, rejet du PESFacture ASAP.La balise CodPays est obligatoirement
+                  non valorisée ou valorisée à 100 si CodRes est à 0, sinon rejet du PESFacture ASAP.<br>- Contrainte pour le bloc parent Destinataire: PES_Facture ASAP&nbsp;: CodPays obligatoire
+                  si CodRes = 1&nbsp;; à défaut, rejet du PESFacture ASAP.La balise CodPays est obligatoirement
+                  non valorisée ou valorisée à 100 si CodRes est à 0, sinon rejet du PESFacture ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTypAdr">TYPE TTypAdr</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Type d'adresse.<br>Par défaut, à valoriser à 1.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><i>Attribut </i>V
+               </td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>0</b> : 
+                        Non précisé.
+                     </li>
+                     <li><b>1</b> : 
+                        Principal.
+                     </li>
+                     <li><b>2</b> : 
+                        Secondaire.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBancaireFacture">TYPE TBancaireFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Compte bancaire du Tiers.<br>Obligatoire pour le Tiers Centre des Finances Publiques (PES_Facture ASAP), à défaut
+                  rejet du PES_Facture ASAP.<br>Ce bloc est commun aux blocs <br>- PES_Facture Emetteur <br>- PES_Facture FactureIndiv Tiers<br>- PES_Facture FactureIndiv Debiteur
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="6" nowrap><b>n°1</b></td>
+               <td>IdPayInt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum4">Base_Alphanum4</a></td>
+               <td>Identification internationale du pays.<br>Cette zone permet d'obtenir les références bancaires internationales (IBAN).<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PESFacture ASAP&nbsp;: si valorisation, la
+                  valeur doit être connue et valide sinon rejet du PESFacture ASAP.<br>Une valorisation à vide est interdite sinon rejet du PESFacture ASAP.<br>La balise IdPayInt est obligatoirement valorisée si IdBancInt est servie. Si la balise
+                  IdPayInt n'est pas valorisée alors qu'IdBancInt l'est, rejet du PESFacture ASAP contenant
+                  le RIB incomplet.
+               </td>
+            </tr>
+            <tr>
+               <td>IdBancInt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum11">Base_Alphanum11</a></td>
+               <td>Identification internationale de la banque.<br>Cette zone permet d'obtenir les références bancaires internationales (IBAN).<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PESFacture ASAP&nbsp;: si valorisation, la
+                  valeur doit être connue et valide sinon rejet du PESFacture ASAP.<br>Une valorisation à vide est interdite sinon rejet du PESFacture ASAP.<br>La balise IdBancInt est obligatoirement valorisée si IdPayInt est servie. Si la balise
+                  IdBancInt n'est pas valorisée alors qu'IdPayInt l'est, rejet du PESFacture ASAP contenant
+                  le RIB incomplet.
+               </td>
+            </tr>
+            <tr>
+               <td>CodeEtab</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum5">Base_Alphanum5</a></td>
+               <td>Code de l'établissement bancaire.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: 4 balises doivent être
+                  valorisées en même temps et RIB correct sinon rejet du PES_Facture ASAP qui comprend
+                  le Tiers qui porte ce RIB incomplet, erroné ou avec balises à vide.
+               </td>
+            </tr>
+            <tr>
+               <td>CodeGuic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum5_Light">Base_Alphanum5_Light</a></td>
+               <td>Code du guichet de l'établissement bancaire.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: 4 balises doivent être
+                  valorisées en même temps et RIB correct sinon rejet du PES_Facture ASAP qui comprend
+                  le Tiers qui porte ce RIB incomplet, erroné ou avec balises à vide
+               </td>
+            </tr>
+            <tr>
+               <td>IdCpte</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte11">Base_Texte11</a></td>
+               <td>Numéro du compte du client de l'établissement bancaire.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: 4 balises doivent être
+                  valorisées en même temps et RIB correct sinon rejet du PES_Facture ASAP qui comprend
+                  le Tiers qui porte ce RIB incomplet, erroné ou avec balises à vide.
+               </td>
+            </tr>
+            <tr>
+               <td>CleRib</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_Light">Base_Num2_Light</a></td>
+               <td>Clé RIB du compte client.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: 4 balises doivent être
+                  valorisées en même temps et RIB correct sinon rejet du PES_Facture ASAP qui comprend
+                  le Tiers qui porte ce RIB incomplet, erroné ou avec balises à vide.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°2</b></td>
+               <td>BIC</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte11BIC">Base_Texte11BIC</a></td>
+               <td>Bank International Code.<br>Tous les caractères alphabétiques du BIC doivent être en majuscules, sinon rejet du
+                  flux.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: le BIC doit être connu
+                  et valide sinon rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PESFacture ASAP, pour TypeTiers = 26&nbsp;: le
+                  BIC doit être connu et valide, sinon rejet du PESFacture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td>IBAN</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte34IBAN">Base_Texte34IBAN</a></td>
+               <td>International Bank Account Number.<br>Tous les caractères alphabétiques de l'IBAN doivent être en majuscules, sinon rejet
+                  du flux.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: L''IBAN doit être connu,
+                  valide et correspondre à une domiciliation française&nbsp;(les deux premiers caractères
+                  alpha doivent être FR,GP,GF,MQ, RE, YT,MC,NC,PF,PM,TF,WF). A défaut, rejet du PES_Facture
+                  ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PESFacture ASAP, pour TypeTiers = 26&nbsp;: L'IBAN
+                  doit être connu et valide, sinon rejet du PESFacture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TitCpte</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Nom du titulaire du compte.<br>Cette zone reprend la désignation du titulaire du compte à créditer telle qu'elle
+                  est précisée sur le relevé d'identité bancaire.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: la balise doit être
+                  présente si le bloc BancaireFacture est présent.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneNomenclature">TYPE TLigneNomenclature</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Non repris sur l'édition de l'ASAP (PES_Facture ASAP).</td>
+            </tr>
+            <tr>
+               <td colspan="2">Libelle</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Libellé de la Rubrique.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Code</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Code de la Rubrique.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TNomenclature">TYPE TNomenclature</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Non repris sur l'édition ASAP ; ne pas renseigner dans le cadre d'un PES_Facture ASAP.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Description</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Description du rôle de la nomenclature ou de ses spécificités.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Correspondance</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TLigneNomenclature">TLigneNomenclature</a></td>
+               <td>Non repris sur l'édition de l'ASAP (PES_Facture ASAP).</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneRepartition">TYPE TLigneRepartition</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc LigneRepartition.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Libelle</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Non repris sur l'édition ASAP (PES_Facture ASAP).</td>
+            </tr>
+            <tr>
+               <td colspan="2">Code</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Code Nature.<br>Non repris sur l'édition ASAP (PES_Facture ASAP).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeFonction</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Dans le cas d'une imputation par fonction.<br>Non repris sur l'édition ASAP&nbsp;; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeBudget</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Dans le cas d'une imputation multi-budget.<br>Non repris sur l'édition ASAP&nbsp;; ne pas renseigner dans le cadre d'un PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Mt</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Non repris sur l'édition ASAP (PES_Facture ASAP).</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

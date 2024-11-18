@@ -1,0 +1,523 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_recettealler_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Recette Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCodAssDeb">TYPE TCodAssDeb</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Code égalité assuré / débiteur. Information reconduite du protocole Htitre (hôpitaux).<br>Si l'assuré est le débiteur du titre hospitalier alors le code est égal à 1.<br>Si l'assuré n'est pas le débiteur du titre hospitalier alors le code est égal à 2.<br>Dans les autres cas, le code est égal à 3. Zone concernant uniquement les instructions
+                  M21et M22.<br>Toute présence de la balise hors M21ou M22 aboutit au rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        oui
+                     </li>
+                     <li><b>2</b> : 
+                        non
+                     </li>
+                     <li><b>3</b> : 
+                        indéterminé
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCodAyantDroit">TYPE TCodAyantDroit</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Code permettant de déterminer la nature de l'ayant droit. Zone concernant uniquement
+                  les instructions M21et M22.<br>Toute présence de la balise hors M21ou M22 aboutit au rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Conjoint.
+                     </li>
+                     <li><b>02</b> : 
+                        Enfant.
+                     </li>
+                     <li><b>03</b> : 
+                        Autres.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEdition">TYPE TEdition</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Code permettant de déterminer le type de traitement de l'Avis des Sommes A Payer par
+                  les services DGFIP
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Avis des sommes à payer à éditer.
+                     </li>
+                     <li><b>02</b> : 
+                        Avis des sommes à payer CPP.
+                     </li>
+                     <li><b>03</b> : 
+                        Avis des sommes à payer ORMC CPP
+                     </li>
+                     <li><b>04</b> : 
+                        Avis des sommes à payer sans traitement DGFIP
+                     </li>
+                     <li><b>05</b> : 
+                        Avis des sommes à payer Patients à éditer
+                     </li>
+                     <li><b>06</b> : 
+                        Avis des sommes à payer ORMC ENSU à éditer
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TModRegl">TYPE TModRegl</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Moyen de règlement.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Numéraire
+                     </li>
+                     <li><b>02</b> : 
+                        Chèque
+                     </li>
+                     <li><b>03</b> : 
+                        Virement
+                     </li>
+                     <li><b>04</b> : 
+                        Virement appli externe
+                     </li>
+                     <li><b>05</b> : 
+                        Virement gros montant
+                     </li>
+                     <li><b>06</b> : 
+                        Virement à l'étranger
+                     </li>
+                     <li><b>07</b> : 
+                        Opération budget rattaché
+                     </li>
+                     <li><b>08</b> : 
+                        Prélèvement
+                     </li>
+                     <li><b>09</b> : 
+                        Virement interne
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatPce">TYPE TNatPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du titre.<br>A utiliser en fonction du TypBord et de TypPce (cf grille des triplets en annexe).<br>Toute autre nature aboutit à un rejet du flux.<br>Si elle est servie, rejet du bordereau.<br>Le triplet du PESV2 fonctionne avec l'association TypBord TypPce NatPce. Le tableau
+                  des triplets doit être respecté. Toute valorisation non prévue dans le tableau doit
+                  aboutir à un rejet du bordereau concerné ou de l'ensemble des PPEM du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Fonctionnement
+                     </li>
+                     <li><b>02</b> : 
+                        Investissement
+                     </li>
+                     <li><b>03</b> : 
+                        Inventaire
+                     </li>
+                     <li><b>04</b> : 
+                        Emprunt
+                     </li>
+                     <li><b>05</b> : 
+                        Régie
+                     </li>
+                     <li><b>06</b> : 
+                        Annulation-Réduction
+                     </li>
+                     <li><b>07</b> : 
+                        Complémentaire
+                     </li>
+                     <li><b>08</b> : 
+                        Réémis
+                     </li>
+                     <li><b>09</b> : 
+                        Annulant un mandat
+                     </li>
+                     <li><b>10</b> : 
+                        Annulation du titre de rattachement
+                     </li>
+                     <li><b>11</b> : 
+                        Marché
+                     </li>
+                     <li><b>18</b> : 
+                        Opération d'ordre liée aux cessions
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatPceOrig">TYPE TNatPceOrig</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature de la pièce d'origine.<br>Eléments du Bloc RattachPiece.<br>Attention, en dépense : les natures 01 et 02 sont inversées.<br>Attention la valeur 04 liste de non valeur n'est pas possible en recette si valeur
+                  04 en recette, rejet du bordereau.<br>La valeur 05 n'est autorisée qu'avec le triplet 01 09 01.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Titres
+                     </li>
+                     <li><b>02</b> : 
+                        Mandats
+                     </li>
+                     <li><b>03</b> : 
+                        Encaissements
+                     </li>
+                     <li><b>05</b> : 
+                        Liste de majoration
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatPrel">TYPE TNatPrel</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Mode de prélèvement.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Fichier remis aux organismes bancaire par le Trésor.
+                     </li>
+                     <li><b>02</b> : 
+                        Fichier remis aux organismes bancaires par l'ordonnateur.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TPerPrel">TYPE TPerPrel</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Périodicité du prélèvement.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Bimestrielle
+                     </li>
+                     <li><b>02</b> : 
+                        Mensuelle
+                     </li>
+                     <li><b>03</b> : 
+                        Bimensuelle
+                     </li>
+                     <li><b>04</b> : 
+                        Trimestrielle
+                     </li>
+                     <li><b>05</b> : 
+                        Semestrielle
+                     </li>
+                     <li><b>06</b> : 
+                        Annuelle
+                     </li>
+                     <li><b>07</b> : 
+                        Unique
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TSequencePres">TYPE TSequencePres</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Séquence de présentation.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        OOFF
+                     </li>
+                     <li><b>02</b> : 
+                        FRST
+                     </li>
+                     <li><b>03</b> : 
+                        RCUR
+                     </li>
+                     <li><b>04</b> : 
+                        FNAL
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypBordAller">TYPE TTypBordAller</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Informations destinées à déterminer le type de bordereau transmis par l'ordonnateur.<br>A utiliser en fonction du TypPce et de NatPce (cf grille des triplets en annexe).<br>Les types 01 02 sont ceux utilisés dans Hélios et pour lesquels les éditeurs au PESV2
+                  ont réalisé les développements.<br>Le type 04 ne fonctionne pas en PES Aller : s'il est utilisé , rejet du bordereau.<br>Toute valeur différente de celles prévues= rejet du flux.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Annulation/réduction
+                     </li>
+                     <li><b>03</b> : 
+                        Ordres de recette
+                     </li>
+                     <li><b>04</b> : 
+                        
+                     </li>
+                     <li><b>05</b> : 
+                        
+                     </li>
+                     <li><b>06</b> : 
+                        Ordres de recette multi créanciers (ORMC)
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypFlux">TYPE TTypFlux</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de flux.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Informations des recouvrements à destination de l'ordonnateur.
+                     </li>
+                     <li><b>02</b> : 
+                        Information d'encaissement en provenance d'un centre d'encaissement.<br>Le code 02 est uniquement à usage interne et n'a pas à être utilisé par les ordonnateurs.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypPce">TYPE TTypPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Informations destinées à déterminer le type de pièce transmis par l'ordonnateur. Cette
+                  zone permet d'effectuer des contrôles avec le type de bordereau.<br>Le type de pièce : « Demande d'émission de titre » n'est utilisé qu'en retour d'information
+                  (du comptable vers l'ordonnateur). Il est utilisé pour transmettre des demandes d'émission
+                  de titres lors d'un encaissement avant émission de titre.<br>Tout autre type que les valeurs 01 à 07, 09 à 12 et 14 et 15 aboutit au rejet du flux.<br>A utiliser en fonction du TypBord et de NatPce (cf grille des triplets en annexe)
+                  sinon rejet du bordereau ou de l'ensemble des PPEM du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Titre ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Titre correctif
+                     </li>
+                     <li><b>03</b> : 
+                        Titre d'ordre budgétaire
+                     </li>
+                     <li><b>04</b> : 
+                        Titre d'ordre mixte
+                     </li>
+                     <li><b>05</b> : 
+                        Titre émis après paiement
+                     </li>
+                     <li><b>06</b> : 
+                        Titre récapitulatif avec rôle
+                     </li>
+                     <li><b>07</b> : 
+                        Titre récapitulatif sans rôle
+                     </li>
+                     <li><b>09</b> : 
+                        Titre de majoration
+                     </li>
+                     <li><b>10</b> : 
+                        Titre en plusieurs années
+                     </li>
+                     <li><b>11</b> : 
+                        Titre de rattachement
+                     </li>
+                     <li><b>12</b> : 
+                        Ordre de recette ordonnateur
+                     </li>
+                     <li><b>14</b> : 
+                        Produits constatés d'avance
+                     </li>
+                     <li><b>15</b> : 
+                        Titre ORMC
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>

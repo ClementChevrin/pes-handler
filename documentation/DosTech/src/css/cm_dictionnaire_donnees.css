@@ -1,0 +1,18 @@
+body
+{
+  counter-reset: h1counter 3;
+}
+
+ul.nomargin
+{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+tr.titre
+{
+	background-color: #CFCFCF;
+	height:30px;
+	text-align: center;
+	vertical-align: middle;
+}

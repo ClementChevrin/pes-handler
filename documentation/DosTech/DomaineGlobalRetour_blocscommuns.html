@@ -1,0 +1,398 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_global_retour_blocscommuns.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Global PES Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h2 class="titreligne num" id="h2DetailBlocsCommuns">Détail des blocs communs</h2>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnveloppe">TYPE TEnveloppe</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>L'enveloppe contient les éléments d'identification du flux (fichier, émetteur et récepteur)</td>
+            </tr>
+            <tr>
+               <td colspan="2">Parametres</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TParametres">TParametres</a></td>
+               <td>Caractéristiques du fichier</td>
+            </tr>
+            <tr>
+               <td colspan="2">Emetteur</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TCarteVisite">TCarteVisite</a></td>
+               <td>Carte de visite de l'émetteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Recepteur</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TCarteVisite">TCarteVisite</a></td>
+               <td>Carte de visite du récepteur</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TParametres">TYPE TParametres</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Caractéristiques du fichier</td>
+            </tr>
+            <tr>
+               <td colspan="2">Version</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>Numéro de version du message. Ce numéro est relatif à l'enveloppe. Doit être valorisé
+                  à 1
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypFic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Code du type de fichier : <br>- PES2R_DEP pour le PES_Retour Dépense
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomFic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Nom du fichier.<br>- pour le PES Retour Dépense : PES2R_DEP__NatureRestit_CodColl_CodBud_Codique_DateSituation_Date_Traitement_TimeStamp.xml.<br>NatureRestit = R pour flux de mandats rejetés/mis en instance, P pour flux périodique
+                  RR pour ré émission flux de mandats rejetés ou mis en instance, RP pour ré émission
+                  Flux périodiques.<br>-pour le PES Retour Recette et PES Retour Client&nbsp;: <br>PES2R_RCE__NatureRestit_CodColl_CodBud_Codique_DateSituation_Date_Traitement_TimeStamp.xml.<br>NatureRestit = R pour flux de mandats titres rejetés/mis en instance , P pour flux
+                  titre périodique, S pour flux titre stock, RR pour réémission flux de titres rejetés
+                  ou mis en instance, RP pour réémission Flux titre périodique, RS pour réémission flux
+                  titre stock, RO pour flux ORMC rejetés/mis en instance, PO pour flux ORMC Périodique,
+                  SO pour flux ORMC stock, RRO pour réémission flux ORMC rejetés/mis en instance<br>RPO pour réémission flux ORMC Périodique, RSO pour réémission flux ORMC stock, CO
+                  pour flux ORMC Client, RCO pour réémission flux ORMC Client.<br><br>- pour tous les PES Retour&nbsp;: <br>CodColl = Code Collectivité<br>CodBud = Code Budget<br>Codique= codique du poste comptable<br>DateSituation : Date de l'extraction des éléments (Dte structure)<br>Date_Traitement : date de constitution du flux<br>TimeStamp = Horodatage : AAAAMMJJhhmmss.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TCarteVisite">TYPE TCarteVisite</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Carte de visite du partenaire émetteur / récepteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Sigle</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Sigle de l'émetteur / récepteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Adresse physique de l'émetteur / récepteur</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnTetePES">TYPE TEnTetePES</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>En-Tête du PES</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteStr</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'émission de la structure.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPost</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_TexteCodique7">Base_TexteCodique7</a></td>
+               <td>Identification permanente du poste comptable (numéro codique). Le codique doit être
+                  sur 6 à 7 chiffres ou il doit commercer par 02A, 02B suivi de 3 à 4 chiffres. Les
+                  lettres doivent être en majuscule.<br>Le poste doit exister dans Hélios.<br>Valorisation erronée = rejet du flux
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibellePoste</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Libelle «court» du poste.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdColl</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num14">Base_Num14</a></td>
+               <td>Identification numérique permanente du budget collectivité / Identifiant national
+                  Siret.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FinJur</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum20">Base_Alphanum20</a></td>
+               <td>Finess juridique. Obligatoire dans le contexte M21 et M22.<br>Obligatoire si M21 ou M22 (doit correspondre à celui du BC dans Hélios).. Interdit
+                  pour les autres nomenclatures (si présent pour une autre nomenclature= rejet du flux)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodColl</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum3">Base_Alphanum3</a></td>
+               <td>Code collectivité. : identification de la collectivité ou du budget collectivité.<br>Le budget doit exister dans le poste et ne doit  être ni inactif , ni dissous.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodBud</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum2">Base_Alphanum2</a></td>
+               <td>Code budget.<br>Le budget doit exister dans le poste et ne doit  être ni inactif , ni dissous.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibelleColBud</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Libelle du budget ou de la collectivité.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAdresse">TYPE TAdresse</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Le bloc Adresse comprend l'adresse du tiers. Si l'adresse principale du tiers a pour
+                  origine La Poste via les référentiels DGFIP, alors le bloc adresse n'est pas renseigné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypAdr</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TTypAdr">TTypAdr</a></td>
+               <td>Type d'adresse. Cette zone permet de déterminer l'adresse principale d'un tiers et
+                  les éventuelles adresses secondaires. <br>Lorsque le type d'adresse est positionné dans le PES sur « non précisé », il sera
+                  entré dans Hélios en « principal » si la base ne contient aucune adresse principale
+                  ou sur « secondaire » si la base contient déjà une adresse principale.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément distribution&nbsp;: norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Adresse du tiers: Norme postale(Numéro de voie, voie).</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr3</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Lieu dit ou complément d'adresse: Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CP</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte5">Base_Texte5</a></td>
+               <td>Code postal : Norme postale ou Numéro de CEDEX : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Ville</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Localité de destination  : Norme postale ou Libellé CEDEX : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodRes</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Code résidence. Donnée permettant de déterminer si le tiers est résident en France.
+                  Valeurs : 0=résident, 1= non résident. Par défaut sur 0.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodPays</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Code du pays du tiers: cette information permet de déterminer le pays du tiers si
+                  celui-ci n'est pas résident. Cette zone utilise la codification de l'INSEE.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteAdr</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour des éléments de la nouvelle adresse par le comptable.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Valide</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Donnée permettant de déterminer si l'adresse principale du tiers Hélios rattaché au
+                  créancier ou au débiteur est valide ou pas (NPAI ou pli non distribué). Valeurs :
+                  0= valide, 1= invalide. Par défaut sur 0.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTypAdr">TYPE TTypAdr</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Type d'adresse</td>
+            </tr>
+            <tr>
+               <td colspan="2"><i>Attribut </i>V
+               </td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>0</b> : 
+                        Non précisé
+                     </li>
+                     <li><b>1</b> : 
+                        Principal
+                     </li>
+                     <li><b>2</b> : 
+                        Secondaire
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TCpteBancaire">TYPE TCpteBancaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Le bloc CpteBancaire représente les information bancaires.</td>
+            </tr>
+            <tr>
+               <td colspan="2">BIC</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte11BIC">Base_Texte11BIC</a></td>
+               <td>Bank International Code.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IBAN</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte34IBAN">Base_Texte34IBAN</a></td>
+               <td>International Bank Account Number.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Valide</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Donnée permettant de déterminer si le compte bancaire par défaut du tiers Hélios rattaché
+                  au créancier ou au débiteur est valide ou pas (Est_Actif = FALSE ou Date_Fin_Validite
+                  &lt; date du jour). Valeurs : 0= valide, 1= invalide. Par défaut sur 0.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibBanc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Libellé de l'établissement bancaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">TitCpte</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Nom du titulaire du compte client.Cette zone reprend la désignation du titulaire du
+                  compte à créditer telle qu'elle est précisée sur le relevé d'identité bancaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteBanc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour des éléments de la domiciliation bancaire par le comptable.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalRetour.html'">Retour Domaine Global PES Retour</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

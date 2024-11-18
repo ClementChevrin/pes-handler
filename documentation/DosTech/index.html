@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <script type="text/javascript" src="src/js/gestion_div.j"></script>
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_index.css">
+  <link rel="icon" href="favicon.ico"/>
+  <script type="text/javascript">
+  <!--
+    eraseCookie('v_doc');
+    eraseCookie('hd_maj');
+    eraseCookie('v_helios');
+    
+    
+    
+    function gestionDiv(baliseId)
+    {
+      if (document.getElementById && document.getElementById(baliseId) != null)
+      {
+        if (document.getElementById('AL'+baliseId).className == 'btn')
+        {
+          // Le bouton est vert
+          document.getElementById('AL'+baliseId).className = 'btnoff'
+          afficheId(baliseId);
+        //document.styleSheets.reload();
+        //return false;
+        }
+        else if (document.getElementById('AL'+baliseId).className == 'btnoff')
+        {
+          // le bouton est rouge
+          document.getElementById('AL'+baliseId).className = 'btn'
+          cacheId(baliseId);
+        }
+        
+        if (document.getElementById('AL'+baliseId).className == 'btn10')
+        {
+          // Le bouton est vert
+          document.getElementById('AL'+baliseId).className = 'btnoff10'
+          afficheId(baliseId);
+        //document.styleSheets.reload();
+        //return false;
+        }
+        else if (document.getElementById('AL'+baliseId).className == 'btnoff10')
+        {
+          // le bouton est rouge
+          document.getElementById('AL'+baliseId).className = 'btn10'
+          cacheId(baliseId);
+        }
+        
+      }
+    }
+    
+  //-->
+  </script>
+  <title>Syst&egrave;me d'&eacute;change des donn&eacute;es du PES - Protocole d'&eacute;changes standard</title>
+</head>
+<body class="normal">
+
+  
+<iframe src="EnTete.html" marginwidth="0" marginheight="0" frameborder="0" height="51" width="100%" scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titredoc">Syst&egrave;me d'&eacute;change des donn&eacute;es du PES<br/>PROTOCOLE D'ECHANGES STANDARD</h1>
+
+<div class="section" align="center">
+<iframe src="PageGestion_changements.html" marginwidth="0" marginheight="0" frameborder="0" height="115" width="100%" scrolling="no"></iframe>
+<table class="bloc" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<!--     <td class="droite"><a href="PageGestion.html" class="info">+ d&eacute;tail des versions</a></td> -->
+    <td class="droite"><button type="button" class="encadrepetit" onclick="self.location='PageGestion.html'">+ d&eacute;tail des versions</button></td>
+  </tr>
+</table>
+</div>
+
+<h1 class="titretoc">Table des mati&egrave;res</h1>
+
+<h1 class="toc num"><a href="Objet.html">Objet</a></h1>
+<h1 class="toc num"><a href="#" class="btn" id="ALPrincipesGenerauxDesEchanges" name="ALPrincipesGenerauxDesEchanges" onclick="gestionDiv('PrincipesGenerauxDesEchanges'); return false;"></a><a href="PrincipesGenerauxDesEchanges.html" class="h1">Principes g&eacute;n&eacute;raux des &eacute;changes</a></h1>
+<div id="PrincipesGenerauxDesEchanges">
+<h2 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h2CanauxCommunication">Canaux de communication Ordonnateur / HELIOS</a></h2>
+<h2 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h2FluxCommunication">Flux de communication</a></h2>
+<h3 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h3FluxAller">Flux Aller</a></h3>
+<h4 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h4PrincipesBase">Principes de base</a></h4>
+<h4 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h4ModeDelivranceAcquit">Mode de d&eacute;livrance des messages d'acquit</a></h4>
+<h3 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h3FluxRetour">Flux retour</a></h3>
+<h2 class="toc num"><a href="PrincipesGenerauxDesEchanges.html#h2SecuriteEchange">S&eacute;curit&eacute; des &eacute;changes</a></h2>
+</div>
+<h1 class="toc num"><a href="PrincipesOrganisationDesSchemasXML_PESv2.html">Principes d'organisation des sch&eacute;mas XML du PES V2</a></h1>
+<h1 class="toc num"><a href="#" class="btn" id="ALDictionnaireDesDonneesAller" name="ALDictionnaireDesDonneesAller" onclick="gestionDiv('DictionnaireDesDonneesAller'); return false;"></a><a href="DictionnaireDesDonneesAller.html" class="h1">Dictionnaire des donn&eacute;es du PES Aller</a></h1>
+<div id="DictionnaireDesDonneesAller">
+<h2 class="toc num"><a href="DictionnaireDesDonneesAller.html#h2RepresentationDonneesElementaires">Repr&eacute;sentation des donn&eacute;es &eacute;l&eacute;mentaires</a></h2>
+<h3 class="toc num"><a href="DictionnaireDesDonneesAller.html#h3Generalites">G&eacute;n&eacute;ralit&eacute;s</a></h3>
+<h2 class="toc num"><a href="DictionnaireDesDonneesAller.html#h2BlocDeclarationTypesElementaires">Bloc de d&eacute;claration des types &eacute;l&eacute;mentaires</a></h2>
+<h3 class="toc num"><a href="DictionnaireDesDonneesAller.html#h3TypesDonneesBase">Types de donn&eacute;es de base</a></h3>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h3BaseString">Base String</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h3BaseAlphanum">Base Alphanum</a></h4>
+<h3 class="toc num"><a href="DictionnaireDesDonneesAller.html#h3TypesDonnees">Types de donn&eacute;es</a></h3>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4Alphanumerique">Variable de type alphanum&eacute;rique</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4AlphanumeriqueLibre">Variable de type alphanum&eacute;rique libre</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4NumeriquePositif">Variable de type num&eacute;rique positif</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4Numerique">Variable de type num&eacute;rique</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4DecimalMontant">Variable de type d&eacute;cimal montant</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4DecimalMontantLibre">Variable de type d&eacute;cimal montant libre</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4DecimalTaux">Variable de type d&eacute;cimal taux</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4DecimalTauxLibre">Variable de type d&eacute;cimal taux libre</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4Texte">Variable de type texte</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4TexteSEPA">Variable de type texte SEPA</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4NomPJ">Variable de type Nom PJ</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4AlphanumeriqueTiers">Variable de type Alphanum&eacute;rique Tiers</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4AlphanumeriqueCP">Variable de type Alphanum&eacute;rique CP</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4IdLigneOrig">Variable de type Id Ligne Orig</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4Annee">Variable Ann&eacute;e</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4Booleen">Variable bool&eacute;en</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesAller.html#h4Date">Variable Date</a></h4>
+<h2 class="toc num"><a href="DictionnaireDesDonneesAller_simples.html#h2DetailSimples">D&eacute;tail des types Simples</a></h2>
+</div>
+<h1 class="toc num"><a href="#" class="btn" id="ALDictionnaireDesDonneesRetour" name="ALDictionnaireDesDonneesRetour" onclick="gestionDiv('DictionnaireDesDonneesRetour'); return false;"></a><a href="DictionnaireDesDonneesRetour.html" class="h1">Dictionnaire des donn&eacute;es du PES Retour</a></h1>
+<div id="DictionnaireDesDonneesRetour">
+<h2 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h2RepresentationDonneesElementaires">Repr&eacute;sentation des donn&eacute;es &eacute;l&eacute;mentaires</a></h2>
+<h3 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h3Generalites">G&eacute;n&eacute;ralit&eacute;s</a></h3>
+<h2 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h2BlocDeclarationTypesElementaires">Bloc de d&eacute;claration des types &eacute;l&eacute;mentaires</a></h2>
+<h3 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h3TypesDonnees">Types de donn&eacute;es</a></h3>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4Alphanumerique">Variable de type alphanum&eacute;rique</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4Numerique">Variable de type num&eacute;rique</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4DecimalMontant">Variable de type d&eacute;cimal montant</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4Texte">Variable de type texte</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4AlphanumeriqueTiers">Variable de type Alphanum&eacute;rique Tiers</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4Annee">Variable Ann&eacute;e</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4Booleen">Variable bool&eacute;en</a></h4>
+<h4 class="toc num"><a href="DictionnaireDesDonneesRetour.html#h4Date">Variable Date</a></h4>
+<h2 class="toc num"><a href="DictionnaireDesDonneesRetour_simples.html#h2DetailSimples">D&eacute;tail des types Simples</a></h2>
+</div>
+<h1 class="toc num"><a href="#" class="btn" id="ALDomaineGlobalAller" name="ALDomaineGlobalAller" onclick="gestionDiv('DomaineGlobalAller'); return false;"></a><a href="DomaineGlobalAller.html" class="h1">Domaine Global du PES Aller</a></h1>
+<div id="DomaineGlobalAller">
+<h2 class="toc num"><a href="DomaineGlobalAller.html#h2ClassSchemasCommuns">Class_SchemasCommuns</a></h2>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3SimpleType">Simple_Type</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3CodificationDomainesPES">Codification des domaines du PES</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3TEnveloppe">Class_Enveloppe</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3TEnTetePES">En-t&ecirc;te PES</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3BlocAdresse">Bloc Adresse</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3CompteBancaire">Compte bancaire</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalAller.html#h3BlocReferencePJ">Bloc r&eacute;f&eacute;rence de pi&egrave;ce jointe</a></h3>
+<h2 class="toc num"><a href="DomaineGlobalAller_blocscommuns.html#h2DetailBlocsCommuns">D&eacute;tail des blocs communs</a></h2>
+<h2 class="toc num"><a href="DomaineGlobalAller_codescommuns.html#h2DetailCodes">D&eacute;tail des codes communs</a></h2>
+</div>
+<h1 class="toc num"><a href="#" class="btn" id="ALDomaineGlobalRetour" name="ALDomaineGlobalRetour" onclick="gestionDiv('DomaineGlobalRetour'); return false;"></a><a href="DomaineGlobalRetour.html" class="h1">Domaine Global du PES Retour</a></h1>
+<div id="DomaineGlobalRetour">
+<h2 class="toc num"><a href="DomaineGlobalRetour.html#h2ClassSchemasCommunsRetour">Class_SchemasCommuns_Retour</a></h2>
+<h3 class="toc num"><a href="DomaineGlobalRetour.html#h3SimpleType">Simple_Type_Retour</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalRetour.html#h3CodificationDomainesPES">Codification des domaines du PES Retour</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalRetour.html#h3TEnveloppe">Class_Enveloppe_Retour</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalRetour.html#h3TEnTetePES">En-t&ecirc;te PES Retour</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalRetour.html#h3BlocAdresse">Bloc Adresse Retour</a></h3>
+<h3 class="toc num"><a href="DomaineGlobalRetour.html#h3CompteBancaire">Compte bancaire Retour</a></h3>
+<h2 class="toc num"><a href="DomaineGlobalRetour_blocscommuns.html#h2DetailBlocsCommuns">D&eacute;tail des blocs communs</a></h2>
+<h2 class="toc num"><a href="DomaineGlobalRetour_codescommuns.html#h2DetailCodes">D&eacute;tail des codes communs</a></h2>
+</div>
+<h1 class="toc num"><a href="#" class="btn" id="ALBlocSignatureElectronique" name="ALBlocSignatureElectronique" onclick="gestionDiv('BlocSignatureElectronique'); return false;"></a><a href="BlocSignatureElectronique.html" class="h1">Bloc signature &eacute;lectronique</a></h1>
+<div id="BlocSignatureElectronique">
+<h2 class="toc num"><a href="BlocSignatureElectronique.html#h2FormatSignatureEspaceNoms">Format de signature et espace de noms</a></h2>
+<h2 class="toc num"><a href="BlocSignatureElectronique.html#h2GenerationElementSignature">G&eacute;n&eacute;ration de l'&eacute;l&eacute;ment ds:signature</a></h2>
+<h3 class="toc num"><a href="BlocSignatureElectronique.html#h3GenerationElementsReferences">G&eacute;n&eacute;ration des &eacute;l&eacute;ments r&eacute;f&eacute;rences</a></h3>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4GenerationPremiereReference">G&eacute;n&eacute;ration de la premi&egrave;re r&eacute;ference</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4GenerationSecondeReference">G&eacute;n&eacute;ration de la seconde r&eacute;ference</a></h4>
+<h3 class="toc num"><a href="BlocSignatureElectronique.html#h3QualifyingProperties">El&eacute;ment xad:QualifyingProperties</a></h3>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4SignedSignatureProperties">Element SignedSignatureProperties</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4SigningTime">Element SigningTime</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4SigninGCertificate">Element SigninGCertificate</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4SignaturePolicyIdentifier">Element SignaturePolicyIdentifier</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4Signatureproductionplace">Element Signatureproductionplace</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4Signerrole">Element Signerrole</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4UnsignedSignatureProperties">Element UnsignedSignatureProperties</a></h4>
+<h4 class="toc num"><a href="BlocSignatureElectronique.html#h4SignatureTimeStamp">Element SignatureTimeStamp</a></h4>
+<h2 class="toc num"><a href="BlocSignatureElectronique.html#h2BlocChiffrement">Bloc chiffrement</a></h2>
+<h2 class="toc num"><a href="BlocSignatureElectronique.html#h2InformationsObligatoires">Informations obligatoires pour la signature &eacute;lectronique</a></h2>
+<h2 class="toc num"><a href="BlocSignatureElectronique.html#h2ListeCertificatsSignature">Liste des certificats de signature</a></h2>
+</div>
+<h1 class="toc num"><a href="#" class="btn" id="ALDomainePESAller" name="ALDomainePESAller" onclick="gestionDiv('DomainePESAller'); return false;"></a><a href="DomainePESAller.html" class="h1">Domaines PES Aller</a></h1>
+<div id="DomainePESAller">
+<h2 class="toc num"><a href="DomainePESAller.html#h2PresentationPESAller">Pr&eacute;sentation du PES Aller</a></h2>
+<h3 class="toc num"><a href="DomainePESAller.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="DomainePESAller.html#h3Details">D&eacute;tails communs aller</a></h3>
+<h3 class="toc num"><a href="DomainePESAller_domaines.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h2 class="toc num"><a href="PES_DepenseAller.html#h2PES_DepenseAller">PES D&eacute;pense Aller</a></h2>
+<h3 class="toc num"><a href="PES_DepenseAller.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_DepenseAller.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_DepenseAller_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="PES_DepenseAller_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<h2 class="toc num"><a href="PES_RecetteAller.html#h2PES_RecetteAller">PES Recette Aller</a></h2>
+<h3 class="toc num"><a href="PES_RecetteAller.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_RecetteAller.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_RecetteAller_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="PES_RecetteAller_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<h2 class="toc num"><a href="PES_FactureAller.html#h2PES_Facture">PES Facture</a></h2>
+<h3 class="toc num"><a href="PES_FactureAller.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_FactureAller.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_FactureAller_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="PES_FactureAller_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<h2 class="toc num"><a href="PES_MarcheAller.html#h2PES_Marche">PES Marche</a></h2>
+<h3 class="toc num"><a href="PES_MarcheAller.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_MarcheAller.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_MarcheAller_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="PES_MarcheAller_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<h2 class="toc num"><a href="PES_PJAller.html#h2PES_PJ">PES PJ</a></h2>
+<h3 class="toc num"><a href="PES_PJAller.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_PJAller.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_PJAller_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+</div>
+<h1 class="toc num"><a href="#" class="btn10" id="ALDomainePESRetour" name="ALDomainePESRetour" onclick="gestionDiv('DomainePESRetour'); return false;"></a><a href="DomainePESRetour.html" class="h1">Domaines PES Retour</a></h1>
+<div id="DomainePESRetour">
+<h2 class="toc num"><a href="DomainePESRetour.html#h2PresentationPESRetour">Pr&eacute;sentation du PES Retour</a></h2>
+<h3 class="toc num"><a href="DomainePESRetour.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="DomainePESRetour.html#h3Details">D&eacute;tails communs retour</a></h3>
+<h2 class="toc num"><a href="PES_DepenseRetour.html#h2PES_DepenseRetour">PES D&eacute;pense Retour</a></h2>
+<h3 class="toc num"><a href="PES_DepenseRetour.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_DepenseRetour.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_DepenseRetour_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="PES_DepenseRetour_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<h2 class="toc num"><a href="PES_RecetteRetour.html#h2PES_RecetteRetour">PES Recette Retour</a></h2>
+<h3 class="toc num"><a href="PES_RecetteRetour.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_RecetteRetour.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_RecetteRetour_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="PES_RecetteRetour_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<!-- PES_ClientRetour 5.3 -->
+<h2 class="toc num"><a href="PES_ClientRetour.html#h2PES_ClientRetour">PES Client Retour</a></h2>
+<h3 class="toc num"><a href="PES_ClientRetour.html#h3SchemaXML">Sch&eacute;ma XML</a></h3>
+<h3 class="toc num"><a href="PES_ClientRetour.html#h3Details">D&eacute;tails</a></h3>
+<h3 class="toc num"><a href="PES_ClientRetour_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<!-- <h3 class="toc num"><a href="PES_ClientRetour_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3> -->
+<!-- PES_AsapRetour 5.20 -->
+<!-- <h2 class="toc num"><a href="PES_AsapRetour.html#h2PES_AsapRetour">PES Asap Retour</a></h2> -->
+<!-- <h3 class="toc num"><a href="PES_AsapRetour.html#h3SchemaXML">Sch&eacute;ma XML</a></h3> -->
+<!-- <h3 class="toc num"><a href="PES_AsapRetour.html#h3Details">D&eacute;tails</a></h3> -->
+<!-- <h3 class="toc num"><a href="PES_AsapRetour_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3> -->
+<!-- <h3 class="toc num"><a href="PES_AsapRetour_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3> -->
+</div>
+<h1 class="toc num"><a href="#" class="btn10" id="ALDocumentBudgetaire" name="ALDocumentBudgetaire" onclick="gestionDiv('DocumentBudgetaire'); return false;"></a><a href="DocumentBudgetaire.html" class="h1">Document Budg&eacute;taire</a></h1>
+<div id="DocumentBudgetaire">
+<h2 class="toc num"><a href="DocumentBudgetaire.html#h2Presentation">Pr&eacute;sentation</a></h2>
+<h2 class="toc num"><a href="DocumentBudgetaire.html#h2SchemaXML">Sch&eacute;ma XML</a></h2>
+<h2 class="toc num"><a href="DocumentBudgetaire.html#h2Details">D&eacute;tails</a></h2>
+<h3 class="toc num"><a href="DocumentBudgetaire_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="DocumentBudgetaire_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+<h2 class="toc num"><a href="DocumentBudgetaire_simples.html#h2DetailSimples">D&eacute;tail des types Simples</a></h2>
+</div>
+<h1 class="toc num"><a href="#" class="btn10" id="ALAcquittement" name="ALAcquittement" onclick="gestionDiv('Acquittement'); return false;"></a><a href="Acquittement.html" class="h1">Pr&eacute;sentation et d&eacute;finition de l'acquittement</a></h1>
+<div id="Acquittement">
+<h2 class="toc num"><a href="Acquittement.html#h2Presentation">Pr&eacute;sentation</a></h2>
+<h2 class="toc num"><a href="Acquittement.html#h2SchemaXML">Sch&eacute;ma XML</a></h2>
+<h2 class="toc num"><a href="Acquittement.html#h2Details">D&eacute;tails</a></h2>
+<h3 class="toc num"><a href="Acquittement_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="Acquittement_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+</div>
+<!-- PES_AcquitRetour v5.3 -->
+<h1 class="toc num"><a href="#" class="btn10" id="ALAcquittementRetour" name="ALAcquittementRetour" onclick="gestionDiv('AcquittementRetour'); return false;"></a><a href="AcquittementRetour.html" class="h1">Pr&eacute;sentation et d&eacute;finition de l'acquittement retour</a></h1>
+<div id="AcquittementRetour">
+<h2 class="toc num"><a href="AcquittementRetour.html#h2Presentation">Pr&eacute;sentation</a></h2>
+<h2 class="toc num"><a href="AcquittementRetour.html#h2SchemaXML">Sch&eacute;ma XML</a></h2>
+<h2 class="toc num"><a href="AcquittementRetour.html#h2Details">D&eacute;tails</a></h2>
+<h3 class="toc num"><a href="AcquittementRetour_blocs.html#h3DetailBlocs">D&eacute;tail des blocs</a></h3>
+<h3 class="toc num"><a href="AcquittementRetour_codes.html#h3DetailCodes">D&eacute;tail des codes</a></h3>
+</div>
+<!-- end PES_AcquitRetour v5.3 -->
+<h1 class="toc num"><a href="#" class="btn10" id="ALAnnexes" name="ALAnnexes" onclick="gestionDiv('Annexes'); return false;"></a><a href="Annexes.html" class="h1">Annexes</a></h1>
+<div id="Annexes">
+<h2 class="toc num"><a href="Annexes.html#h2Annexe1Depense">Annexe 1 - Correspondance Type de bordereau / Type de pi&egrave;ce / Nature de pi&egrave;ce en D&eacute;pense</a></h2>
+<h2 class="toc num"><a href="Annexes.html#h2Annexe2Recette">Annexe 2 - Correspondance Type de bordereau / Type de pi&egrave;ce / Nature de pi&egrave;ce en Recette</a></h2>
+<h2 class="toc num"><a href="Annexes.html#h2Annexe3Tiers">Annexe 3&nbsp;- Correspondance cat&eacute;gorie de tiers et nature juridique des tiers</a></h2>
+</div>
+
+<br />
+<p class="normal"></p>
+
+<script type="text/javascript">
+  <!--
+//   setTimeout(function() {
+// 	// Code a executer
+	  
+// 	}, 1000);
+  
+  cacheId('PrincipesGenerauxDesEchanges');
+  cacheId('DictionnaireDesDonneesAller');
+  cacheId('DictionnaireDesDonneesRetour');
+  cacheId('DomaineGlobalAller');
+  cacheId('DomaineGlobalRetour');
+  cacheId('BlocSignatureElectronique');
+  cacheId('DomainePESAller');
+  cacheId('DomainePESRetour');
+  cacheId('DocumentBudgetaire');
+  cacheId('Acquittement');
+  cacheId('AcquittementRetour');
+  cacheId('Annexes')
+  
+  //-->
+  </script>
+
+
+<div class="section" align="center">
+<iframe src="PageAnnexes_iframe.html" marginwidth="0" marginheight="0" frameborder="0" height="180" width="100%" scrolling="no"></iframe>
+<table class="bloc" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<!--     <td class="droite"><a href="PageAnnexes.html" class="info">+ d�tail des annexes</a></td> -->
+    <td class="droite"><button type="button" class="encadrepetit" onclick="self.location='PageAnnexes.html'">+ d&eacute;tail des annexes</button></td>
+  </tr>
+</table>
+</div>
+
+
+
+</div>
+</body></html>

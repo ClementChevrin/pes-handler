@@ -1,0 +1,91 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_pes_aller_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine PES Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="PES_Aller">TYPE PES_Aller</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Enveloppe</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TEnveloppe">TEnveloppe</a></td>
+               <td>Enveloppe d'identification du flux.</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTetePES</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TEnTetePES">TEnTetePES</a></td>
+               <td>En-Tête du PES.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_DepenseAller</td>
+               <td>0..1</td>
+               <td><a href="PES_DepenseAller_blocs.html#TPES_DepenseAller">TPES_DepenseAller</a></td>
+               <td>Domaine Dépense Aller.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_RecetteAller</td>
+               <td>0..1</td>
+               <td><a href="PES_RecetteAller_blocs.html#TPES_RecetteAller">TPES_RecetteAller</a></td>
+               <td>Domaine Recette Aller.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_Facture</td>
+               <td>0..1</td>
+               <td><a href="PES_FactureAller_blocs.html#TPESFacture">TPESFacture</a></td>
+               <td>PES_Facture encapsulé dans un PESPJ pour la transmission à destination de la DGFIP.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_Marche</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_blocs.html#TPES_MarcheAller">TPES_MarcheAller</a></td>
+               <td>Domaine Marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">PES_PJ</td>
+               <td>0..1</td>
+               <td><a href="PES_PJAller_blocs.html#TPES_PJs">TPES_PJs</a></td>
+               <td>Domaine PJ.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PESSignatureGroup</td>
+               <td>0..1</td>
+               <td><a href="BlocSignatureElectronique.html#PESSignatureGroup">PESSignatureGroup</a></td>
+               <td>
+                  										Signature
+                  									
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><i>Attribut </i>Id
+               </td>
+               <td>0..1</td>
+               <td>Identifiant unique</td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomainePESAller.html#docimage'">Retour Domaine PES Aller</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

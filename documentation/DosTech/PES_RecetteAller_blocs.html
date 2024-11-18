@@ -1,0 +1,1428 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_recettealler_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Recette Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPES_RecetteAller">TYPE TPES_RecetteAller</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTeteRecette</td>
+               <td> 1..1</td>
+               <td><a href="#EnTeteRecette">EnTeteRecette</a></td>
+               <td>En-tête.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Bordereau</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TBordereau">TBordereau</a></td>
+               <td>Bordereau. Un bordereau comprend n pièces, constituées elle même de n lignes de pièces.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="EnTeteRecette">TYPE EnTeteRecette</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>En-tête.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>N° de version du PES recette. &#x2013; Mettre à « 2 ». A défaut rejet du flux.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoDematerialisee</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Précise si les blocs recette véhiculent des bordereaux &amp; mandats dématérialisées (1)
+                  ou non (0).<br>La valeur (0) n'empêche pas de communiquer des pièces justificatives dématérialisées
+                  et leurs références (PJRef)<br>Si non présent considéré à '0'<br>La valeur 1 ne peut être autorisée qu'avec une signature électronique. Si valeur=
+                  1 et absence de signature électronique, rejet du flux.<br>La valeur 0 et la présence d'une signature électronique aboutissent au rejet du flux.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBordereau">TYPE TBordereau</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc définit le contenu des bordereaux.</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocBordereau</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocBordereau">TBlocBordereau</a></td>
+               <td>Caractéristiques du bordereau</td>
+            </tr>
+            <tr>
+               <td colspan="2">Piece</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TPiece">TPiece</a></td>
+               <td>Contenu de la pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PESSignatureGroup</td>
+               <td>0..1</td>
+               <td><a href="BlocSignatureElectronique.html#PESSignatureGroup">PESSignatureGroup</a></td>
+               <td>Signature électronique éventuelle.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><i>Attribut </i>Id
+               </td>
+               <td>0..1</td>
+               <td>Identifiant unique</td>
+               <td>Obligatoire si dématérialisation.<br>Fournit la référence pour la signature électronique du bordereau.<br>Doit être unique dans le fichier XML.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPiece">TYPE TPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocPiece</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocPiece">TBlocPiece</a></td>
+               <td>Informations pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">LigneDePiece</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TLigneDePiece">TLigneDePiece</a></td>
+               <td>Contenu de la ligne de pièce</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneDePiece">TYPE TLigneDePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocLignePiece</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocLignePiece">TBlocLignePiece</a></td>
+               <td>Identification de la pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Tiers</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TTiers">TTiers</a></td>
+               <td>Bloc Tiers</td>
+            </tr>
+            <tr>
+               <td colspan="2">Recouvrement</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TRecouvrement">TRecouvrement</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTiers">TYPE TTiers</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoTiers</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoTiersRecette">TInfoTiersRecette</a></td>
+               <td>Identification du tiers</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TAdresse">TAdresse</a></td>
+               <td>Adresse du tiers</td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteBancaire</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TBancaire">TBancaire</a></td>
+               <td>Compte bancaire du tiers</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocBordereau">TYPE TBlocBordereau</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Exer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num4">Base_Num4</a></td>
+               <td>Millésime de l'exercice de rattachement budgétaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdBord</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num7">Base_Num7</a></td>
+               <td>Identifiant du bordereau récapitulatif de titres de recette.<br>Le numéro de bordereau est unique par exercice et par type de bordereau pour un budget
+                  collectivité. Un contrôle de séquentialité du numéro est effectué. Si le numéro est
+                  déjà connu dans Hélios ou les boîtes après la vérification du schéma, rejet du bordereau
+                  pour cause de doublon.<br>Pour un  bordereau de type ORMC (Ordre de Recette Multi Créanciers) IdBord correspondra
+                  au numéro de rôle dans Hélios ; le numéro de rôle est unique par exercice et par type
+                  de rôle pour un budget collectivité.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteBordEm</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date à laquelle le bordereau est émis par l'ordonnateur.<br>Elle est obligatoire dans le PES recette aller et le format doit être respecté sinon
+                  rejet du flux.<br>Pour un  bordereau de type ORMC DteBordE correspondra à la DateEmission du rôle dans
+                  Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypBord</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TTypBordAller">TTypBordAller</a></td>
+               <td>Informations destinées à déterminer le type de bordereau transmis par l'ordonnateur.<br>Le type de bordereau : « En tête P503 » n'est utilisé qu'en retour d'information (du
+                  comptable vers l'ordonnateur). Il est utilisé pour transmettre des demandes d'émission
+                  de titres lors d'encaissement(s) avant émission de titre.<br>Seules les valeurs 01 02 03, 06 sont possibles.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NbrPce</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num5">Base_Num5</a></td>
+               <td>Nombre total de pièces véhiculées par le bordereau.<br>Il est forcément supérieur ou égal à 1 sinon rejet du  flux.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtCumulAnnuel</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Cumul annuel du bordereau.<br>Obligatoire si dématérialisation avec InfoDematerialisee = 1 ou True et type bordereau
+                  différent de ORMC (06). Si la balise est absente ou égale à 0 rejet du bordereau ou
+                  des PPEM constituant le bordereau.<br>L'information peut être présente et doit être mise à disposition pour affichage dans
+                  Hélios même si absence de signature fonctionnelle.<br>Information nécessaire à l'autoportabilité de l'objet.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtBordHt</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT du bordereau.<br>Obligatoire dans le PES recette avec ou sans signature.<br>Doit être &gt;0,00 sinon rejet du flux.<br>Pour un  bordereau de type BORDEREAU _ORMC,  le MontantHt du rôle correspond à la
+                  somme des montants Ht des lignes de titre ORMC.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtBordTVA</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant TVA du bordereau.<br>Zone à  remplir si TVA, montant à 0  aboutit à rejet du bordereau si la balise est
+                  présente.<br>Si un montant est saisi donc supérieur à 0,00,  au moins une Ligne de Piece du Bordereau
+                  doit comporter une balise MtTVA, servie avec un montant supérieur à 0,00. Sinon rejet
+                  du bordereau<br>Pour un  bordereau de type BORDEREAU_ORMC, le MontantTva du rôle correspond à la somme
+                  des montants TVA des lignes de titres ORMC.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteAsp</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'envoi de l'avis des sommes à payer. Cette date peut correspondre à la date
+                  de départ des poursuites. Cette date doit être supérieure ou égale à la DteBordEm.<br>Balise exploitée uniquement pour les bordereaux de type BORDEREAU_ORMC : Date d'envoi
+                  de l'avis des sommes à payer au niveau du rôle : s'applique à tous les articles de
+                  rôles ne possédant pas eux mêmes une date d'envoi de l'avis des sommes à payer.Cette
+                  date n'est exploitée que pour les ASAP transmis à l'usager par l'ordonnateur et non
+                  pas traités par Hélios, par conséquent sans objet pour les titres ORMC dont la balise
+                  Edition vaut 03 ASAP CPP ORMC ou 06 ASAP ORMC ENSU à éditer.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Objet</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte160">Base_Texte160</a></td>
+               <td>Objet global sur le bordereau ORMC : correspond à l'objet du rôle.<br>Balise exploitée uniquement pour les bordereaux de type BORDEREAU_ORMC.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocPiece">TYPE TBlocPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Informations pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodServ</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Code d'identification du service de l'ordonnateur émettant le bordereau. Pour un TypPce
+                  Titre ORMC (15),, le code service n'est pas servi, car il est de niveau ligne pièce
+                  ( sous article de rôle) dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Affect</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Critère d'affectation : Zone libre permettant à l'ordonnateur de déterminer l'affectation
+                  du dossier dans les services du comptable.<br>Les critères d'affectation résultent d'une convention entre l'ordonnateur et le comptable.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPce</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num8">Base_Num8</a></td>
+               <td>Identifiant de la pièce : Numéro du titre de recette.<br>Cette valeur doit être strictement supérieure à 0, à défaut, rejet du flux.<br>Pour un TypPce Titre ORMC (15), IdPce correspond au numéro de l'article de rôle. Le
+                  titre ORMC doit être mono-débiteur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TTypPce">TTypPce</a></td>
+               <td>Informations destinées à déterminer le type de pièce transmis par l'ordonnateur. Le
+                  type de pièce doit être compatible avec le type de bordereau (cf annexe 2).<br>Le type de pièce : « Demande d'émission de titre » n'est utilisé qu'en retour d'information
+                  (du comptable vers l'ordonnateur). Il est utilisé pour transmettre des demandes d'émission
+                  de titres lors d'un encaissement avant émission de titre.<br>Le TyPce 08 et le TypPce 13 ne sont pas possibles. Ces valeurs aboutissent au rejet
+                  du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TNatPce">TNatPce</a></td>
+               <td>Nature du titre.<br>La NatPce est possible et définie en association avec TypBord, TypPce et doit être
+                  conforme à la grille triplet de recette. Toute autre combinaison aboutit à un rejet
+                  du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdRol</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num7">Base_Num7</a></td>
+               <td>Identifiant du numéro (Idbord) du bordereau ORMC concerné ( N° de rôle dans Hélios).
+                  Cette zone concerne uniquement la nature de titre " titre récapitulatif avec rôle
+                  ". Elle permet le rapprochement d'un rôle et d'un titre récapitulatif avec rôle .<br>IdRol n'est possible qu'avec le triplet de recette 01 06 01. Toute présence de cette
+                  balise avec un autre triplet aboutit au rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteAsp</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'envoi de l'avis des sommes à payer. Cette date peut correspondre à la date
+                  de départ des poursuites. Cette date doit être supérieure ou égale à la DteBordEm.
+                  Cette date n'est exploitée que pour les ASAP transmis à l'usager par l'ordonnateur
+                  et non pas traités par Hélios, par conséquent sans objet pour les titres dont la balise
+                  Edition vaut 01 ASAP à éditer ou 02 ASAP CPP  ou 03 ASAP CPP ORMC ou 05 ASAP Patient
+                  à éditer ou 06 ASAP ORMC ENSU à éditer.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Edition</td>
+               <td>0..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TEdition">TEdition</a></td>
+               <td>Balise nécessaire pour déterminer le type de traitement de l'Avis des Sommes A Payer
+                  ( PJ 006 type facture09) et l'Avis des Sommes à Payer Patient à éditer (PJ 006 type
+                  facture 10) par les services de la DGFIP.<br><br>- Si valorisée à 01 (ASAP à éditer), le titre doit être mono débiteur, doit respecter
+                  les types et natures de pièces autorisés (cf annexe 2). Il doit comporter une référence
+                  de PJ. Nous offrons désormais la possibilité de fusionner un document à la facture
+                  produite par Hélios mais ce document doit être annoncé dans un bloc PJReference de
+                  type «&nbsp;011&nbsp;» (Document complémentaire à l'ASAP ENSU à éditer). Si ce n'est pas le
+                  cas aucun document ne sera fusionné à la facture même en présence d'une PJ autonome
+                  de ce type.<br><br>- Si la valeur Edition 02 (ASAP CPP) est servie pour un titre alors ce titre doit
+                  être mono débiteur, doit respecter les types et natures de pièces autorisés (idem
+                  annexe 2), doit avoir la balise NatIdTiers servie à 01 Siret et un IdTiers valide,
+                  doit avoir une référence PJ se rapportant à une PJ de type 006 PES Facture avec un
+                  type de facture 09 ASAP , doit avoir un NumeroFacture valorisé dans le BlocPiece.<br><br>- Si la valeur Edition 03 (ASAP ORMC CPP) est servie pour un titre ORMC alors ce titre
+                  doit avoir la balise NatIdTiers servie à 01 Siret et un IdTiers valide, doit avoir
+                  une référence PJ se rapportant à une PJ de type 007 PES Facture ORMC, doit avoir un
+                  NumeroFacture valorisé dans le BlocPiece.<br><br>- Si la valeur Edition 04 (Sans traitement DGFIP) est servie, l'ASAP sera consultable
+                  par le comptable, mais ne fera l'objet d'aucun traitement par les services de la DGFIP.<br><br>- Si la valeur Edition 05 (ASAP Patients à éditer) est servie pour un titre alors
+                  le titre doit être mono débiteur, doit respecter les types et natures de pièces autorisés
+                  (cf annexe 2). Il doit comporter une référence de PJ. Nous offrons désormais la possibilité
+                  de fusionner un document à la facture produite par Hélios mais ce document doit être
+                  annoncé dans un bloc PJReference de type «&nbsp;011&nbsp;» (Document complémentaire à l'ASAP
+                  ENSU à éditer). Si ce n'est pas le cas aucun document ne sera fusionné à la facture
+                  même en présence d'une PJ autonome de ce type.<br><br>- Si la valeur Edition 06 (ASAP ORMC ENSU à éditer) est servie pour un titre ORMC
+                  alors le titre doit être mono débiteur, doit respecter les types et natures de pièces
+                  autorisés (cf annexe 2).<br>De plus la PJ de type 010&nbsp;» (Facture ASAP ORMC ENSU à éditer) correspondant à la facture
+                  à éditer doit être annoncée dans un bloc PJReference ainsi que l'éventuelle PJ de
+                  type «&nbsp;011&nbsp;» (Document complémentaire à l'ASAP ENSU à éditer) si un document doit
+                  être fusionné à cette facture.<br>Le guichet se contente de vérifier l'existence d'une PJ mais ne s'assure pas que parmi
+                  les blocs PJReference il trouve au moins une PJ typée 010&nbsp;» (Facture ASAP ORMC ENSU
+                  à éditer)). Toutefois si ce n'est pas le cas, le comptable ne pourra pas enregistrer
+                  l'article de rôle correspondant. Par ailleurs, pour qu'un document soit fusionné il
+                  doit être annoncé dans un bloc PJReference de type «&nbsp;011&nbsp;» (Document complémentaire
+                  à l'ASAP ENSU à éditer). Si ce n'est pas le cas aucun document ne sera fusionné avec
+                  la facture même en présence d'une PJ autonome de ce type.<br><br>Sans valorisation de cette balise, l'ASAP ne sera pas consultable par le comptable
+                  et ne fera l'objet d'aucun traitement par les services de la DGFIP.<br><br>Point d'attention sur les règles à respecter pour éviter un rejet de niveau de pièce,
+                  par le comptable, dans l'application Hélios&nbsp;:<br>La valeur Edition 01 ou 02 ou 04 ou 05 n'est pas autorisée pour un titre ORMC (TypPce
+                  15).<br>La valeur Edition 03 ou 06 n'est pas autorisée pour un titre différent de titre ORMC
+                  (TypPce 15).<br><br>Si ces règles ne sont pas respectées, rejet du bordereau.<br><br>Quelle que soit la valorisation de cette balise, le PES facture ASAP doit respecter
+                  les régles pour ce type de facture, sinon la PJ est rejetée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjPce</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte160">Base_Texte160</a></td>
+               <td>Objet de la pièce. Zone libre.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DebFact</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de début de la période de facturation. Cette zone concerne uniquement les hôpitaux.<br>La valorisation de cette balise en dehors d'une nomenclature M21 ou M22 aboutira à
+                  un rejet du bordereau. Elle reste facultative pour les M21 et M22.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FinFact</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de fin de la période de facturation. Cette zone concerne uniquement les hôpitaux.<br>La valorisation de cette balise en dehors d'une nomenclature M21 ou M22 aboutira à
+                  un rejet du bordereau. Elle est facultative même pour les M21 M22.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumDette</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num15">Base_Num15</a></td>
+               <td>Numéro de dette attribué au débiteur par l'ordonnateur, ce numéro correspond au NumeroFacture
+                  de l'article de rôle dans Hélios.<br>Balise exploitée uniquement pour les titres de type ORMC.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Per</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num1_Light">Base_Num1_Light</a></td>
+               <td>Période : complément au n° de dette attribué au débiteur par l'ordonnateur. Correspond
+                  à la Période de l'article de rôle dans Hélios.<br>Balise exploitée uniquement pour les titres de type ORMC.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Cle1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num1_Light">Base_Num1_Light</a></td>
+               <td>Clé de contrôle de l'article de rôle. Cette clé d'identification est calculée selon
+                  le modulo 11 ( sur le code collectivité + le code nature + 2 dernier chiffres de l'exercice
+                  + la période + le numéro de dette).<br>Balise exploitée uniquement pour les titres de type ORMC.<br>Pour le mode de calcul se référer à l'ANNEXE_TECHNIQUE_PES_SEPA_ORMC
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Cle2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum1_Light">Base_Alphanum1_Light</a></td>
+               <td>Clé de contrôle de l'article de rôle. Clé calculée selon le modulo 23 ( sur les deux
+                  derniers chiffres de l'exercice + la période + 00 + le numéro de dette).<br>Balise exploitée uniquement pour les titres de type ORMC.<br>Pour le mode de calcul se référer à l'ANNEXE_TECHNIQUE_PES_SEPA_ORMC
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PJRef</td>
+               <td>0..&#x221e;</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TPJReference">TPJReference</a></td>
+               <td>Pour chaque PJ associée à l'objet, référence unique de la PJ.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroFacture</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_NumFactureCPP20">Base_NumFactureCPP20</a></td>
+               <td>Identifiant de la Facture pour CPP (Edition 02 ou 03).<br>Les caractères spéciaux suivants sont autorisés :<br>- espace (" ")<br>- tiret ("-")<br>- signe "+"<br>- tiret bas (underscore : "_")<br>- barre oblique (slash : "/")
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroMarche</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Numéro de marché pour CPP (Edition 02 ou 03).</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroEngagement</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Numéro d'engagement pour CPP (Edition 02 ou 03).</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeService</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100_Light">Base_Texte100_Light</a></td>
+               <td>Code du service débiteur  pour CPP (Edition 02 ou 03).</td>
+            </tr>
+            <tr>
+               <td colspan="2">NomService</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Nom du service débiteur  pour CPP (Edition 02 ou 03).</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocLignePiece">TYPE TBlocLignePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoLignePiece</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoLignePiece">TInfoLignePiece</a></td>
+               <td>Identification de la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td>0..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>InfoPrelevement</td>
+               <td>0..1</td>
+               <td><a href="#TInfoPrelevement">TInfoPrelevement</a></td>
+               <td>Ce bloc peut être utilisé lorsque les prélèvements sont remis aux organismes bancaires
+                  par l'ordonnateur (NatPrel 02)<br>Pour un titre ORMC : les données de chaque ligne de ce titre doivent être identiques
+                  (hormis le montant). La somme des montants de prélèvement des lignes d'un titre ORMC
+                  correspond au montant du prélèvement de l'article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>InfoPrelevementSEPA</td>
+               <td>0..1</td>
+               <td><a href="#TInfoPrelevementSEPA">TInfoPrelevementSEPA</a></td>
+               <td>Pour les prélèvements au format SEPA.<br>Pour un titre ORMC : les données de chaque ligne de ce titre doivent être identiques
+                  (hormis le montant). La somme des montants de prélèvement des lignes d'un titre ORMC
+                  correspond au montant du prélèvement de l'article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoAssure</td>
+               <td>0..1</td>
+               <td><a href="#TInfoAssure">TInfoAssure</a></td>
+               <td>Informations spécifiques aux nomenclatures « Hospitalières »</td>
+            </tr>
+            <tr>
+               <td colspan="2">RattachPiece</td>
+               <td>0..1</td>
+               <td><a href="#TRattachPiece">TRattachPiece</a></td>
+               <td>Rattachements éventuels à d'autres pièces (annulation &#x2026;)</td>
+            </tr>
+            <tr>
+               <td colspan="2">LiensIdent</td>
+               <td>0..1</td>
+               <td><a href="#TLiensIdent">TLiensIdent</a></td>
+               <td>Identifiants complémentaires : régie, n° d'inventaire, n° emprunt, marché&#x2026;)</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoLignePiece">TYPE TInfoLignePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdLigne</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num6">Base_Num6</a></td>
+               <td>N° de ligne de pièce : Numéro permettant de subdiviser le titre lorsqu'il concerne
+                  plusieurs débiteurs (titres collectifs) ou plusieurs imputations (titres à imputation
+                  multiple). Dans le cas général des titres individuels n'ayant qu'une imputation budgétaire
+                  le n° de ligne est mis à 1.<br>Cette valeur est forcément supérieure ou égale à 1 sinon rejet du bordereau.<br>Pour les titres ORMC :<br>- Le numéro de ligne correspond au numéro de sous-article de rôle dans Hélios.<br>- Le titre ORMC doit être un titre mono débiteur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjLignePce</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte160">Base_Texte160</a></td>
+               <td>Objet de la ligne de pièce.<br>Zone libre.<br>Pour les titres ORMC :<br>- La zone ObjLignePce correspondra à l'ObjetPiece du sous-article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodProdLoc</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum4">Base_Alphanum4</a></td>
+               <td>Code produit local : Information destinée à identifier la nature du produit chez l'ordonnateur.<br>Le CodProdLoc est soit défini localement soit correspond aux codes produit nationaux.
+                  Il est associé dans Hélios à un Code produit national. Utilisation dans toute nomenclature.<br>Pour les titres ORMC :<br>- Pour les lignes qui comportent un code produit géré par un budget collectivité bénéficiaire
+                  autre que le budget collectivité gestionnaire, les zones IdCollBen, CodCollBen, CodBudBen
+                  sont à compléter. Ce code produit local figure dans une Convention RMC (Rôle multi
+                  collectivités) active dans Hélios sur le budget collectivité gestionnaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FinGeo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum9_Light">Base_Alphanum9_Light</a></td>
+               <td>Finess géographique.<br>Zone facultative concernant uniquement les hôpitaux. Cette donnée permet d'afficher
+                  le Finess géographique.<br>Elle reste purement facultative.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodEtGeo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum3">Base_Alphanum3</a></td>
+               <td>Code établissement géographique.<br>Cette zone concerne uniquement les nomenclatures M21 et M22. Et reste purement facultative.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Nature</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num12">Base_Num12</a></td>
+               <td>Pour les titres ORMC : proposition de valorisation  à 588.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Fonction</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num10_Light">Base_Num10_Light</a></td>
+               <td>Compte fonction. Zone concernant seulement les collectivités utilisant les instructions
+                  M14, M52, M57 et M71.<br>Si valorisation sur des nomenclatures autres, rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Operation</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum10">Base_Alphanum10</a></td>
+               <td>Opération. Zone concernant seulement les collectivités utilisant l'instruction M14,
+                  M4x, M52, M57, M61 et M71.<br>Balise utilisée dans le cadre des opérations d'ordre ou d'équipement pour les collectivités
+                  à budget voté par nature ou nature avec référence fonctionnelle.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TxTva</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>Taux de TVA. A servir si MtTVA.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Majo</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Zone permettant de savoir si la ligne de titre est majorable ou non. (Valeurs: 0=non
+                  majorable, 1=majorable. Par défaut servie à 0).<br>Toute autre valeur aboutit à rejet du bordereau.<br>Si Majo valorisée à 1 ou TRUE, Bloc RattachPiece doit être ouvert et la valeur de
+                  NatPceOrig doit être égale à 05 sinon rejet du bordereau.<br>Pour les titres ORMC :<br>- La zone Majo correspondra au booléen EstMajorable du sous-article de rôle dans Hélios
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteMajo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de majoration de la ligne de pièce. Si Majo à 1, cette date doit être valorisée
+                  sinon rejet du bordereau et Bloc RattachPiece doit avoir une NatPceOrig=05 sinon rejet
+                  du bordereau.<br>Sinon la balise ne doit pas être dans le bordereau. Si elle est présente et Majo valorisée
+                  à 0 rejet du bordereau.<br>Pour les titres ORMC :<br>- La zone DteMajo correspondra à la date de majoration du sous-article de rôle dans
+                  Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TxMajo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>Taux de majoration de la ligne de pièce.<br>Si Majo à 1 ce taux doit être servi sinon rejet du bordereau et bloc RattachPiece
+                  doit avoir une NatPceOrig=05.<br>Sinon la balise ne doit pas être dans le bordereau. Si elle est présente et Majo valorisée
+                  à 0 rejet du bordereau.<br>Pour les titres ORMC :<br>- La zone TxMajo correspondra au Taux de Majoration du sous-article de rôle dans Hélios
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num12">Base_Num12</a></td>
+               <td>Compte de tiers</td>
+            </tr>
+            <tr>
+               <td colspan="2">TvaIntraCom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Information permettant de déterminer si la ligne de pièce comporte de la TVA intra-communautaire.<br>(Valeurs : 0=pas de Tva intra-communautaire, 1= Tva intra-communautaire. Par défaut
+                  sur 0).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TVAImportation</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Information permettant de déterminer si la ligne de pièce comporte de la TVA à l'importation<br>(Valeurs : 0=pas de TVA à l'importation, 1= TVA à l'importation. Par défaut sur 0).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtHT</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT ou TTC si TVA non remplie.<br>Pas de valeur à vide ou 0,00 sinon rejet du bordereau.<br>Pour les titres ORMC :<br>- La zone MtHT correspond au MontantHT du sous-article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTVA</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant TVA.<br>Le montant ne peut être négatif ou égal à 0. Soit la balise est absente soit elle
+                  est valorisée avec un montant supérieur à 0.<br>Si cette balise est valorisée, la balise MtBordTVA doit aussi être présente et avoir
+                  un montant différent de 0.<br>Pour les titres ORMC :<br>- La zone MtTVA correspond au MontantTVA du sous-article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtNonMajo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de l'assiette non majorable.<br>Pour les titres ORMC :<br>- La zone MtNonMajo correspondra au MontantNonMajo du sous-article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoCollBen</td>
+               <td>0..1</td>
+               <td><a href="#TInfoCollBen">TInfoCollBen</a></td>
+               <td>Bloc exploité uniquement dans le cadre d'un titre ORMC. A renseigner  si CodProdLoc
+                  concerne un budget collectivité bénéficiaire différent du budget collectivité gestionnaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PJRef</td>
+               <td>0..&#x221e;</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TPJReference">TPJReference</a></td>
+               <td>Pour chaque PJ associée à l'objet, référence unique de la PJ</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoPrelevement">TYPE TInfoPrelevement</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc peut être utilisé lorsque les prélèvements sont remis aux organismes bancaires
+                  par l'ordonnateur (NatPrel 02)<br>Pour un titre ORMC : les données de chaque ligne de ce titre doivent être identiques
+                  (hormis le montant). La somme des montants de prélèvement des lignes d'un titre ORMC
+                  correspond au montant du prélèvement de l'article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPrel</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TNatPrel">TNatPrel</a></td>
+               <td>Mode de prélèvement :<br>- Pour tout fichier remis aux organismes bancaire par l'ordonnateur, c'est le bloc
+                  InfoPrelevement qui doit être utilisé<br>- Pour tout fichier remis aux organismes bancaire par le Trésor, c'est le bloc InfoPrelevementSEPA
+                  qui doit être utilisé. La présence de références bancaires est obligatoire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PerPrel</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TPerPrel">TPerPrel</a></td>
+               <td>Périodicité du prélèvement<br>A privilégier l'usage de la valeur 07 Unique, cette valeur correspond à la notion
+                  de prélèvement unique.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePrel</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de prélèvement. Date d'échéance correspond à date de règlement interbancaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtPrel</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant du prélèvement. Zone de contrôle.<br>Montant strictement positif.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoPrelevementSEPA">TYPE TInfoPrelevementSEPA</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Pour les prélèvements au format SEPA.<br>Pour un titre ORMC : les données de chaque ligne de ce titre doivent être identiques
+                  (hormis le montant). La somme des montants de prélèvement des lignes d'un titre ORMC
+                  correspond au montant du prélèvement de l'article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPrel</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TNatPrel">TNatPrel</a></td>
+               <td>Mode de prélèvement.<br>Pour tout prélèvement à émettre par le Trésor, la présence de références bancaires
+                  est obligatoire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PerPrel</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TPerPrel">TPerPrel</a></td>
+               <td>Périodicité du prélèvement.<br>A privilégier l'usage de la valeur 07 Unique, cette valeur correspondre à la notion
+                  de prélèvement unique.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePrel</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de prélèvement. Date d'échéance correspondant à date de règlement interbancaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtPrel</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant du prélèvement. Zone de contrôle.<br>Montant strictement positif.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">SequencePres</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TSequencePres">TSequencePres</a></td>
+               <td>Séquence de présentation .</td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignMandat</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de signature du mandat.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefUniMdt</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte35SEPA">Base_Texte35SEPA</a></td>
+               <td>Référence Unique du Mandat (RUM).<br>Caractères autorisés : abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ0123456789/-?().,:'+Espace
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibPrel</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte140SEPA">Base_Texte140SEPA</a></td>
+               <td>Libellé du prélèvement : Zone libre.<br>Caractères autorisés : abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ0123456789/-?().,:'+Espace
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">AncienRUM</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte35SEPA">Base_Texte35SEPA</a></td>
+               <td>Ancienne référence unique du mandat<br>Caractères autorisés : abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ0123456789/-?().,:'+Espace
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">AncienICS</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum13">Base_Alphanum13</a></td>
+               <td>Ancien ICS ou Ancien NNE<br>Si la balise est présente, elle doit contenir une valeur de 6 caractères (ancien NNE)
+                  ou 13 caractères (ancien ICS). Si ce n'est pas le cas, rejet du bordereau.<br>Si la balise contient 13 caractères, la structure de l'ICS doit être respectée. Si
+                  ce n'est pas le cas, rejet du bordereau.<br>Si la balise contient 6 caractères, alors elle ne doit contenir que des chiffres (et
+                  tous les chiffres sont significatifs). Si ce n'est pas le cas, rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">AncienTiersCreancier</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte70SEPA">Base_Texte70SEPA</a></td>
+               <td>Ancien nom du créancier figurant sur le mandat de prélèvement.<br>Caractères autorisés : abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ0123456789/-?().,:'+Espace
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">AncienneBanque</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Ancienne banque (valeur 0 ou 1).<br>La valeur 1 signifie un changement de banque du débiteur.<br>Si non présent considéré à « 0 » (false).<br>Ancienne banque et Ancien IBAN sont exclusif l'un de l'autre
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">AncienIBAN</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte34IBAN">Base_Texte34IBAN</a></td>
+               <td>Ancien Numéro de compte bancaire du débiteur<br>Ancienne banque et Ancien IBAN sont exclusif l'un de l'autre
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TitCpteDiff</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Doit être renseigné à 1 (true) si titulaire du compte bancaire est différent du débiteur<br>Si non présent considéré à 0 (false).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoAssure">TYPE TInfoAssure</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodAssDeb</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TCodAssDeb">TCodAssDeb</a></td>
+               <td>Code égalité assuré / débiteur. Si l'assuré est le débiteur du titre hospitalier alors
+                  le code est égal à 1. Si l'assuré n'est pas le débiteur du titre hospitalier alors
+                  le code est égal à 2. Dans les autres cas, le code est égal à 3. Zone concernant uniquement
+                  les instructions M21 et M22.<br>Si usage dans autre nomenclature que M21ou M22 , rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodAyantDroit</td>
+               <td>0..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TCodAyantDroit">TCodAyantDroit</a></td>
+               <td>Code permettant de déterminer la nature de l'ayant droit. Zone concernant uniquement
+                  les instructions M21et M22.<br>Si utilisation dans nomenclature autre que M21 M22, rejet du bordereau
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRattachPiece">TYPE TRattachPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPceOrig</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TNatPceOrig">TNatPceOrig</a></td>
+               <td>Nature de la pièce d'origine à rattacher.<br>Pour 02 02 06 ou 01 02 09 ou 02 02 10 01 14 01, bloc RattachPiece complet et obligatoire,
+                  valeur possible 01 ou 02.<br>Valeur 03 possible avec le seul TypPce 05 sinon rejet du bordereau.<br>Valeur NatPceOrig 05, le seul triplet possible est TypBord 01, TypPce 09, NatPce 01
+                  ; sinon rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ExerRat</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Exercice de rattachement : Exercice d'origine du titre à annuler ou à réduire, ou
+                  de la pièce à émarger. En cas d'annulation en cours d'exercice, cet exercice est identique
+                  à celui indiqué dans la zone EXER.<br>Si 02 02 06 ExerRat= Exer du flux.<br>Si 01 02 09 ExerRat différent Exer du flux ou égal à Exer du flux - N.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPceOrig</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num13">Base_Num13</a></td>
+               <td>N° de la pièce d'origine : Numéro d'origine du titre à annuler ou à réduire (annulation
+                  en cours d'exercice) ou n° d'origine du mandat à annuler ou à réduire (annulation
+                  sur exercice clos), ou n° de la pièce (d'encaissement ou liste).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdLigneOrig</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num6_NonVide">Base_Num6_NonVide</a></td>
+               <td>N° de ligne de pièce : Numéro de ligne du titre d'origine à annuler ou à réduire,
+                  ou n° de ligne de la pièce.<br>Si NatPceOrig = 01 ou 02 IdLigneOrig supérieur ou égal à 1 sinon rejet du bordereau.<br>Si NatPceOrig= 03 ou 05 IdLigneOrig avec valeur à zéro ou balise absente du bloc.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLiensIdent">TYPE TLiensIdent</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdConv</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte25">Base_Texte25</a></td>
+               <td>N° de convention : Cette zone permet de faire le lien entre une ligne de pièce et
+                  une fiche convention.<br>Exemple : Convention sur titre en plusieurs années, convention de partenariat (autorisation
+                  de poursuite).<br>Balise obligatoire dans le cadre d'un triplet 01 10 01 ou 01 10 02 sinon rejet du
+                  bordereau.<br>Le numéro à valoriser est le numéro de convention attribué par Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdMarche</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>N° de marché : Cette zone permet de faire le lien entre une ligne de pièce et une
+                  fiche marché existant dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdCaution</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>N° caution : Cette zone permet de faire le lien entre une ligne de pièce et une fiche
+                  caution existant dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdEmpruntOrdo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>N° d'emprunt ordonnateur: Cette zone permet de faire le lien entre une ligne de pièce
+                  et une fiche emprunt existant dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdActif</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte25">Base_Texte25</a></td>
+               <td>N° d'inventaire : Cette zone permet de faire le lien entre une ligne de pièce et une
+                  fiche inventaire existant dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdRegie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>N° de régie : Cette zone permet de faire le lien entre une ligne de pièce et une fiche
+                  régie existant dans Hélios.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoCollBen">TYPE TInfoCollBen</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc exploité uniquement dans le cadre d'un titre ORMC. A renseigner  si CodProdLoc
+                  concerne un budget collectivité bénéficiaire différent du budget collectivité gestionnaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdCollBen</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14_Light">Base_Num14_Light</a></td>
+               <td>Identifiant national de la collectivité bénéficiaire du produit (SIRET).<br>La zone IdCollBen correspond à l'Immatriculation Beneficiaire du sous-article de rôle.
+                  Ce SIRET correspond à celui associé au code produit local et de la Convention RMC
+                  concernée sur le budget collectivité gestionnaire dans Hélios).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodCollBen</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum3">Base_Alphanum3</a></td>
+               <td>Identification de la collectivité ou du budget collectivité bénéficiaire du produit.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodBudBen</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum2_Light">Base_Alphanum2_Light</a></td>
+               <td>Identification du budget collectivité bénéficiaire du produit.<br>Si non valorisé , le système intègre dans Hélios la valeur « 00 ».
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRecouvrement">TYPE TRecouvrement</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypFlux</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TTypFlux">TTypFlux</a></td>
+               <td>Type de flux. Cette zone permet d'indiquer l'origine (information aller) ou la destination
+                  (information retour) du recouvrement.<br>- Information retour : Informations des recouvrements à destination de l'ordonnateur
+                  (code 01) <br>- Information aller : Information d'encaissement en provenance d'un centre d'encaissement(
+                  code 02).Le code 02 est uniquement à usage interne et n'a pas à être utilisé par les
+                  ordonnateurs.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModRegl</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteAller_codes.html#TModRegl">TModRegl</a></td>
+               <td>Code indiquant le moyen de règlement utilisé par le débiteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteReco</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du recouvrement chez le comptable.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdEncaissement</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num12">Base_Num12</a></td>
+               <td>Identifiant métier de l'encaissement.<br>Cet identifiant concerne un encaissement portant sur une ligne de pièce.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtReco</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de l'encaissement réalisé au niveau de la ligne de pièce.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoTiersRecette">TYPE TInfoTiersRecette</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte4_80">Base_Texte4_80</a></td>
+               <td>Identifiant national du tiers : Identifiant stable et national d'une personne de type
+                  siret, siren, finess, NIR, Hors UE,TAHITI, RIDET ou EnCoursImm.,IREP ou NFP<br>Cette balise doit être servie en fonction de NatIdTiers : 01= Siret, 02= Siren 03=Finess
+                  04= NIR 05 = TVAIntraCo, 06= Hors UE, 07= TAHITI, 08= RIDET, 09= EnCoursImm ou 10=FRWF
+                  11=IREP 12=NFP<br>Pour les seuls identifiants de type SIRET, SIREN, FINESS et NIR, des contrôles de
+                  validité sont effectués. La clé de l'identifiant doit être valide, et les longueurs
+                  possibles sont 9 pour le Siren et le finess géo, 14 pour le Siret et 15 pour le Nir,
+                  sinon, rejet du bordereau.<br>Les longueurs possibles sont:entre 4 et 18 caractères pour TVA intracommunautaire,9
+                  caractères pour le TAHITI, entre 9 à 10 chiffres pour le RIDET,au maximum 18 caractères
+                  commençant par FRWF pour FRWF,au plus 18 caractères pour Hors UE,13 chiffres pour
+                  le NFP,jusqu'à 80 caractères et commençant par 5 chiffres pour l'IREP,sinon rejet
+                  du bordereau.<br>Les identifiants NIR,NFP et IREP sont réservés aux débiteurs «Personne physique».<br><br>IdTiers ne peut être valorisée que si NatIdTiers est valorisé.<br>Si valorisation NatIdTiers, IdTiers doit avoir la valeur correspondante, si balise
+                  vide= rejet du bordereau ou de l'ensemble des PPEM du bordereau.<br>Le NFP (Numéro des Finances Publiques ) n'est autorisé que pour les tiers «&nbsp;Personne
+                  physique&nbsp;» ne détenant pas d'autre identifiant national.<br>Le n° de sécurité sociale est uniquement possible lorsque le code égalité "assuré
+                  / débiteur" = O (oui) ou si le tiers est égal à "assuré". En outre, l'utilisation
+                  du n° de sécurité sociale est réservée au domaine hospitalier.et seulement en nomenclature
+                  M21 M22 sinon rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteNaissance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de naissance du Tiers :<br>- A ne renseigner que pour les tiers « personne physique » CatTiers = 01 (aucune restriction
+                  sur la nature juridique du tiers), toute autre catégorie de tiers aboutira au rejet
+                  du bordereau dans le cadre du Guichet xml.<br>- Pour les budgets collectivités assujettis à l'instruction M21 ou M22 et pour le
+                  type de tiers « TypTiers » = 06 Malade, cette date correspondra à la date de naissance
+                  du malade.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TNatIdTiers">TNatIdTiers</a></td>
+               <td>Type d'identifiant.<br>NatIdTiers ne peut être valorisé que si IdTiers est valorisé.<br>Valeurs possibles 01 02 03 04 05 06 07 08 09 10 11 12 toute autre valeur, rejet du
+                  bordereau qui comprend ce tiers. Par ailleurs, le tiers doit être en concordance avec
+                  IdTiers, sinon rejet du bordereau ou de l'ensemble des PPEM du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour par le comptable de l'identifiant national du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Référence locale attribuée au tiers par l'ordonnateur. Cette zone est destinée à recevoir
+                  une référence ou un identifiant, géré par l'ordonnateur, autorisant le regroupement
+                  des dettes d'un même débiteur.<br>Elle pourra être celle du numéro d'entrée du Malade en M21 M22.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CatTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TCatTiers">TCatTiers</a></td>
+               <td>Information destinée à identifier la catégorie du tiers.<br>Balise en cohérence avec NatJur. Seules les associations de la grille correspondance
+                  catégorie de tiers et nature juridique des tiers sont autorisées.<br>Pour un titre dont l'édition est typée '05' (ASAP Patients à éditer) et si le TypTiers
+                  est typé '01' (Débiteur principal), alors CatTiers doit obligatoirement être valorisé
+                  à '01' , sinon rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatJur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TNatJur">TNatJur</a></td>
+               <td>Information destinée à identifier la nature juridique du tiers.<br>Les couples CatTiers et NatJur sont décrits dans la grille Cat Nat des tiers et identiques
+                  à la dépense.<br>Si les valeurs ne sont pas celles décrites dans la grille et les associations prévues
+                  dans la grille en annexe, rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TTypTiersRecette">TTypTiersRecette</a></td>
+               <td>Type de tiers : Zone indiquant le type de tiers.<br>Le code 05 « Employeur » est réservé au domaine hospitalier dans le cadre des accidents
+                  du travail.<br>Valorisation dans toute autre nomenclature aboutit à rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Civilite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Etat civil du tiers : Zone destinée à recevoir de manière abrégée l'état civil (Mr,
+                  Mme,&#x2026;), la qualité (Cdt,...) du tiers.<br>Obligatoire si Cat du tiers 01 sinon rejet du bordereau ou de l'ensemble des PPEM
+                  du bordereau.<br>Liste des civiltés précisée et arrêtée, toute autre valeur aboutit à rejet du bordereau.<br>La civilité de type Mademoiselle n'existe plus. En cas d'utilisation, rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Nom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Raison sociale / Nom : Norme postale.<br>L'absence aboutit à rejet du bordereau ou de l'ensemble des PPEM du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ComplNom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément de nom : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom Obligatoire si Cat 01 personne physique absence pour un tiers personne physique
+                  aboutit à rejet du bordereau ou de l'ensemble des PPEM du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LieuNaissance</td>
+               <td>0..1</td>
+               <td><a href="#TLieuNaissance">TLieuNaissance</a></td>
+               <td>A ne renseigner que pour les tiers "Personne Physique" CatTiers=01, toute autre catégorie
+                  de tiers aboutira au rejet du bordereau dans le cadre du Guichet XML.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLieuNaissance">TYPE TLieuNaissance</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">NeEnFrance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Zone permettant de déterminer si le tiers est né en France ou à l'étranger.<br>Valeurs '0' = Né à l'étranger / Valeur '1' = Né en France<br>Suivant la valeur utilisée, le bloc enfant MetropoleDomCom ou le bloc enfant Etranger
+                  sera éventuellement utilisé
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>MetropoleDomCom</td>
+               <td> 1..1</td>
+               <td><a href="#TMetropoleDomCom">TMetropoleDomCom</a></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '1', sinon rejet du bordereau.</td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>Etranger</td>
+               <td> 1..1</td>
+               <td><a href="#TEtranger">TEtranger</a></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '0' (né à l'étranger), sinon
+                  rejet du bordereau.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TMetropoleDomCom">TYPE TMetropoleDomCom</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '1', sinon rejet du bordereau.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeDeptDomCom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte_CodeDepartement_2_3">Base_Texte_CodeDepartement_2_3</a></td>
+               <td>Code INSEE du département ou COM de naissance&nbsp;:<br>- si naissance en métropole&nbsp;: XX dont 2A ou 2B et XX compris entre 01 (inclus) et
+                  95 (inclus)<br>- si naissance dans un DOM ou COM&nbsp;: XXX<br>Si le code INSEE du département ou COM est inconnu, rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeCommune</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte_CodeCommune_2_3">Base_Texte_CodeCommune_2_3</a></td>
+               <td>Code INSEE de la commune de naissance<br>-si naissance en métropole&nbsp;: XXX<br>-si naissance dans un DOM ou COM&nbsp;: XX<br>Si le couple code département ou COM naissance &#x2013; code INSEE de la commune est inconnu,
+                  rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibelleCommune</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte_Libelle_Naissance_70">Base_Texte_Libelle_Naissance_70</a></td>
+               <td>Libellé de la commune de naissance si le tiers est né en métropole, dans un DOM ou
+                  dans un COM (En majuscules)
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEtranger">TYPE TEtranger</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '0' (né à l'étranger), sinon
+                  rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>CodePays</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte_CodePays_3">Base_Texte_CodePays_3</a></td>
+               <td>Code du pays de naissance<br>Si le code du pays est inconnu, rejet du bordereau (activé en 5.10)
+               </td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>LibellePays</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte_Libelle_Naissance_70">Base_Texte_Libelle_Naissance_70</a></td>
+               <td>Libellé du pays de naissance (En majuscules)</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteAller.html#docimage'">Retour Domaine Recette Aller</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

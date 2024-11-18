@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_pes_facturealler.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+	    function chg(num_image) 
+	    {
+	      document.docimage.src = 'src/img/facturealler/TPES_Facture_xmlspy_'+num_image+'.png';
+	    }
+	    function rst()
+	    {
+	      document.docimage.src = 'src/img/facturealler/TPES_Facture_xmlspy.png';
+	    }
+    //-->
+    </script>
+    <title>PES Facture</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h2 class="titreligne num" id="h2PES_Facture">PES Facture</h2>
+<h3 class="titreligne num" id="h3SchemaXML">Schéma XML</h3>
+<p class="normal">
+<img src="src/img/facturealler/TPES_Facture_xmlspy.png" alt="PES Facture Aller" border="0" usemap="#mapPESFactureAller" id="docimage" name="docimage">
+<map name="mapPESFactureAller" id="mapPESFactureAller">
+	<area shape=rect coords="8,180,93,200" href="PES_FactureAller_blocs.html#TPESFacture" alt="TPESFacture" title="TPESFacture" onMouseOver="chg('00')" onMouseOut="rst()">
+	<area shape=rect coords="176,102,246,122" href="PES_FactureAller_blocs.html#TTypeFacture" alt="TTypeFacture" title="TTypeFacture" onMouseOver="chg('01')" onMouseOut="rst()">
+	<area shape=rect coords="176,166,248,185" href="PES_FactureAller_blocs.html#TTiersEmetteur" alt="TTiersEmetteur" title="TTiersEmetteur" onMouseOver="chg('02')" onMouseOut="rst()">
+	<area shape=rect coords="176,198,228,217" href="PES_FactureAller_blocs.html#TTiersFacture" alt="TTiersFacture" title="TTiersFacture" onMouseOver="chg('03')" onMouseOut="rst()">
+	<area shape=rect coords="176,258,264,278" href="PES_FactureAller_blocs.html#TFacturePESIndiv" alt="TFacturePESIndiv" title="TFacturePESIndiv" onMouseOver="chg('04')" onMouseOut="rst()">
+	<area shape=rect coords="176,318,281,338" href="PES_FactureAller_blocs.html#TNomenclatureFacture" alt="TNomenclatureFacture" title="TNomenclatureFacture" onMouseOver="chg('05')" onMouseOut="rst()">
+	<area shape=rect coords="176,351,311,370" href="PES_FactureAller_blocs.html#TRepartitionParNature" alt="TRepartitionParNature" title="TRepartitionParNature" onMouseOver="chg('06')" onMouseOut="rst()">
+	<area shape=rect coords="402,187,468,206" href="PES_FactureAller_blocs.html#TTiersFacture" alt="TTiersFacture" title="TTiersFacture" onMouseOver="chg('07')" onMouseOut="rst()">
+	<area shape=rect coords="402,209,468,228" href="PES_FactureAller_blocs.html#TTiersFacture" alt="TTiersFacture" title="TTiersFacture" onMouseOver="chg('08')" onMouseOut="rst()">
+	<area shape=rect coords="402,263,494,282" href="PES_FactureAller_blocs.html#TLigneFacture" alt="TLigneFacture" title="TLigneFacture" onMouseOver="chg('09')" onMouseOut="rst()">
+	<area shape=rect coords="401,305,475,324" href="PES_FactureAller_blocs.html#TDetailTVA" alt="TDetailTVA" title="TDetailTVA" onMouseOver="chg('10')" onMouseOut="rst()">
+	<area shape=rect coords="401,352,488,371" href="PES_FactureAller_blocs.html#TTotalAPayer" alt="TTotalAPayer" title="TTotalAPayer" onMouseOver="chg('11')" onMouseOut="rst()">
+	<area shape=rect coords="401,384,466,403" href="PES_FactureAller_blocs.html#TRefTitre" alt="TRefTitre" title="TRefTitre" onMouseOver="chg('12')" onMouseOut="rst()">
+	<area shape=rect coords="401,421,539,440" href="PES_FactureAller_blocs.html#TTalonOptique2Lignes" alt="TTalonOptique2Lignes" title="TTalonOptique2Lignes" onMouseOver="chg('13')" onMouseOut="rst()">
+	<area shape=rect coords="402,582,521,601" href="PES_FactureAller_blocs.html#TRepartitionBudget" alt="TRepartitionBudget" title="TRepartitionBudget" onMouseOver="chg('14')" onMouseOut="rst()">
+</map>
+</p>
+
+<h3 class="titreligne num" id="h3Details">Détails</h3>
+<p class="normal">Pour visualiser les blocs ou les codes de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='PES_FactureAller_blocs.html'">Visualiser les blocs</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='PES_FactureAller_codes.html'">Visualiser les codes</button>
+
+
+
+
+
+
+
+</div>
+</body></html>

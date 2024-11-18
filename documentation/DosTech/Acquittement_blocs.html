@@ -1,0 +1,245 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_acquittement_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Acquittement</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPES_ACQUIT">TYPE TPES_ACQUIT</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Enveloppe</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TEnveloppe">TEnveloppe</a></td>
+               <td>Description de l'enveloppe</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTetePES</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TEnTetePES">TEnTetePES</a></td>
+               <td>Description de l'entête du PES Acquit</td>
+            </tr>
+            <tr>
+               <td colspan="2">ACQUIT</td>
+               <td> 1..1</td>
+               <td><a href="#TACQUIT">TACQUIT</a></td>
+               <td>Description de l'Acquit</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TACQUIT">TYPE TACQUIT</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTeteAcquit</td>
+               <td> 1..1</td>
+               <td><a href="#TEnTeteAcquit">TEnTeteAcquit</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">ElementACQUIT</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TElementACQUIT">TElementACQUIT</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnTeteAcquit">TYPE TEnTeteAcquit</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_Light">Base_Num2_Light</a></td>
+               <td>Version de l'Acquit (2)</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TElementACQUIT">TYPE TElementACQUIT</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">DomaineAck</td>
+               <td> 1..1</td>
+               <td><a href="Acquittement_codes.html#TDomaineAck">TDomaineAck</a></td>
+               <td>Domaine. Voir codification.</td>
+            </tr>
+            <tr>
+               <td colspan="2">EtatAck</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Permet de déterminer si le Ack pour l'élément concerné (Bordereau ou PJ ou marché
+                  ou contrat de concession) est OK (valeur 1), ou KO (valeur 0).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°3)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>NumBord</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num7_Light">Base_Num7_Light</a></td>
+               <td>Numéro de bordereau transmis dans le fichier d'origine</td>
+            </tr>
+            <tr>
+               <td>ExerciceBord</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num4_Light">Base_Num4_Light</a></td>
+               <td>Exercice du bordereau</td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>IdMarche</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte18_Light">Base_Texte18_Light</a></td>
+               <td>Identifiant du marché public ou du contrat de concession. Ce n° se décompose en 4
+                  caractères pour l'année et 10 caractères pour la référence du marché ou du contrat
+                  de concession suivi d'un tiret et de la séquence d'envoi sur 3 caractères.
+               </td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°3</b></td>
+               <td>IdUnique</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum50_Light">Base_Alphanum50_Light</a></td>
+               <td>Identifiant unique de la PJ.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Erreur</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TErreur">TErreur</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">DetailPiece</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TDetailPiece">TDetailPiece</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TErreur">TYPE TErreur</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumAnoAck</td>
+               <td>0..1</td>
+               <td><a href="Acquittement_codes.html#TNumAnoAck">TNumAnoAck</a></td>
+               <td>Codification de l'anomalie</td>
+            </tr>
+            <tr>
+               <td colspan="2">LibelleAnoAck</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte500_Light">Base_Texte500_Light</a></td>
+               <td>Libellé de l'anomalie (voir guide pratique dédié)</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDetailPiece">TYPE TDetailPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumPiece</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num13_Light">Base_Num13_Light</a></td>
+               <td>Numéro de la pièce concernée par l'erreur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Erreur</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TErreur">TErreur</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">DetailLigne</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TDetailLigne">TDetailLigne</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDetailLigne">TYPE TDetailLigne</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumLigne</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num13_Light">Base_Num13_Light</a></td>
+               <td>Numéro de la ligne de pièce concernée par l'erreur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Erreur</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TErreur">TErreur</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='Acquittement.html#docimage'">Retour Acquittement</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

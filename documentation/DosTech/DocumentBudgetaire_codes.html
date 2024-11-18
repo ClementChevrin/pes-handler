@@ -1,0 +1,580 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_budget_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Schéma Document Budgétaire</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="3" id="TPJReference">TYPE TPJReference</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Nom</td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td></td>
+               <td>Pièce jointes éventuelles</td>
+            </tr>
+            <tr>
+               <td>Support</td>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        
+                     </li>
+                     <li><b>02</b> : 
+                        
+                     </li>
+                     <li><b>03</b> : 
+                        
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+            <tr>
+               <td>IdUnique</td>
+               <td><a href="DocumentBudgetaire_simples.html#Base_Alphanum50">Base_Alphanum50</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>NomPJ</td>
+               <td><a href="DocumentBudgetaire_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>TypeAnnexe</td>
+               <td><a href="DocumentBudgetaire_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TBudgPrec">TYPE TBudgPrec</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Budget précédent.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Primitif.
+                     </li>
+                     <li><b>2</b> : 
+                        Cumulé.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="4" id="TCarac_Sup">TYPE TCarac_Sup</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Nom</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>Code</td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Nombre de caractères maximal : 30<br></td>
+            </tr>
+            <tr>
+               <td>V</td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCodRD">TYPE TCodRD</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette zone permet de déterminer le sens (recette - dépense) du crédit concerné.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>R</b> : 
+                        Recette.
+                     </li>
+                     <li><b>D</b> : 
+                        Dépense.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="4" id="TInformationGenerale">TYPE TInformationGenerale</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Nom</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>Code</td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Nombre de caractères maximal : 30<br></td>
+            </tr>
+            <tr>
+               <td>V</td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Nombre de caractères maximal : 100<br></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="4" id="TMontant_Sup">TYPE TMontant_Sup</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Nom</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>Code</td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Nombre de caractères maximal : 30<br></td>
+            </tr>
+            <tr>
+               <td>V</td>
+               <td> 1..1</td>
+               <td>Décimal</td>
+               <td>
+                  Nombre de chiffres total : 14<br>
+                  Nombre de chiffres après la virgule : 2<br></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="4" id="TMontantCalculated">TYPE TMontantCalculated</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Nom</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>V</td>
+               <td> 1..1</td>
+               <td>Décimal</td>
+               <td>
+                  Nombre de chiffres total : 14<br>
+                  Nombre de chiffres après la virgule : 2<br></td>
+            </tr>
+            <tr>
+               <td>calculated</td>
+               <td>0..1</td>
+               <td>Calculé</td>
+               <td>Permet d'indiquer qu'un tel montant a été calculé</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatDec">TYPE TNatDec</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature de la décision. Les termes "autorisation budgétaire" et "reports de crédits"
+                  sont utilisés pour les instructions M21 et M22.<br>Seules les valeurs 01 Budget primitif, 02 Décision Modificative, 03 Budget Supplémentaire
+                  sont autorisées et 10 CFU.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Budget primitif, (autorisation budgétaire).
+                     </li>
+                     <li><b>02</b> : 
+                        Décision modificative.
+                     </li>
+                     <li><b>03</b> : 
+                        Budget supplémentaire.
+                     </li>
+                     <li><b>09</b> : 
+                        Compte administratif.
+                     </li>
+                     <li><b>10</b> : 
+                        CFU.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatFonc">TYPE TNatFonc</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Le budget est voté par nature.
+                     </li>
+                     <li><b>2</b> : 
+                        Le budget est voté par fonction.
+                     </li>
+                     <li><b>3</b> : 
+                        Le vote du budget est mixte.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatVote">TYPE TNatVote</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Niveau de vote du budget : indique si le budget est voté au niveau du chapitre ou
+                  de l'article pour chaque section (fonctionnement et investissement).
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>FcIc</b> : 
+                        Pour la section de fonctionnement et pour la section d'investissement, le vote est
+                        au niveau du chapitre.
+                     </li>
+                     <li><b>FaIc</b> : 
+                        Pour la section de fonctionnement le vote est au niveau de l'article et pour la section
+                        d'investissement le vote est au niveau du chapitre.
+                     </li>
+                     <li><b>FcIa</b> : 
+                        Pour la section de fonctionnement le vote est au niveau du chapitre, et pour la section
+                        d'investissement, le vote est au niveau de l'article.
+                     </li>
+                     <li><b>FaIa</b> : 
+                        Pour la section de fonctionnement et pour la section d'investissement, le vote est
+                        au niveau de l'article.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="4" id="TNomenclature">TYPE TNomenclature</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Nom</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>V</td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>La liste des codes autorisés est publiée sur le site http://odm-budgetaire.org/ onglet
+                  Documents editeurs, sous-onglet Description des nomenclatures. Ce champ contient "norme"-"declinaison
+                  de norme" (exemple : M14-M14_COM_SUP500).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TOpBudg">TYPE TOpBudg</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>0</b> : 
+                        Opération réelle ou mixte
+                     </li>
+                     <li><b>1</b> : 
+                        Opération d'ordre
+                     </li>
+                     <li><b>T</b> : 
+                        Total
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TReprRes">TYPE TReprRes</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette balise indique la reprise ou non des résultats de l'exercice N-1.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Sans reprise de résultat de l'exercice n-1.
+                     </li>
+                     <li><b>2</b> : 
+                        Avec reprise anticipée de résultat de l'exercice n-1.
+                     </li>
+                     <li><b>3</b> : 
+                        Avec reprise anticipée de résultat de l'exercice n-1 après le vote du compte administratif
+                        de l'exercice n-1.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TSpecifBudget">TYPE TSpecifBudget</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette balise permet de présenter les spécificités budgétaires liées aux EPCI, ASA,
+                  AFR&#x2026;).<br>1- Présente les spécificités budgétaires liées aux EPCI non dotés d'une fiscalité
+                  propre ou aux syndicats mixtes associant des communes et des EPCI.<br>2- Présente les spécificités budgétaires liées aux ASA AFR.<br>3- Présente les spécificités budgétaires liées aux SIVU non dotés d'une fiscalité
+                  propre.<br>4- Présente les spécificités budgétaires liées aux SIVU non dotés d'une fiscalité
+                  propre.<br>5- Présente les spécificités budgétaires liées aux budgets annexes d'opération d'aménagement
+                  (type ZAC lotissement...).
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        M14_COM_INF500, M14_COM_500_3500, M14_COM_SUP3500.
+                     </li>
+                     <li><b>2</b> : 
+                        M14_COM_INF500.
+                     </li>
+                     <li><b>3</b> : 
+                        SIVU doté d'une fiscalité propre.
+                     </li>
+                     <li><b>4</b> : 
+                        SIVU non doté d'une fiscalité propre.
+                     </li>
+                     <li><b>5</b> : 
+                        M14_COM_INF500, M14_COM_500_3500, M14_COM_SUP3500.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypOpBudg">TYPE TTypOpBudg</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette zone permet de déterminer si une opération d'ordre est effectuée à l'intérieur
+                  d'une même section ou bien de section à section.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Opération à l'intérieur d'une section.
+                     </li>
+                     <li><b>2</b> : 
+                        Opération de section à section.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypOpe">TYPE TTypOpe</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Pour une opération, son type est "Pour Vote"
+                     </li>
+                     <li><b>2</b> : 
+                        Pour une opération, son type est "Pour Information"
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypProv">TYPE TTypProv</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette balise permet de déterminer le régime de comptabilisation des provisions, semi
+                  budgétaire ou budgétaire.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Semi Budgétaire.
+                     </li>
+                     <li><b>2</b> : 
+                        Budgétaire.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="ATCodTypBud">TYPE ATCodTypBud</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Cette balise indique le type de budget, P pour principal, A pour Annexe.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>P</b> : 
+                        Principal.
+                     </li>
+                     <li><b>A</b> : 
+                        Annexe.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DocumentBudgetaire.html#docimage'">Retour Schéma Document Budgétaire</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>

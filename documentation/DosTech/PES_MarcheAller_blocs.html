@@ -1,0 +1,2813 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_marchealler_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Marché Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPES_MarcheAller">TYPE TPES_MarcheAller</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTeteMarche</td>
+               <td> 1..1</td>
+               <td><a href="#EnTeteMarche">EnTeteMarche</a></td>
+               <td>En-tête.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td>Le PES Marche Aller doit avoir au moins un Marché ou une Concession.</td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>Marches</td>
+               <td> 1..1</td>
+               <td><a href="#TMarches">TMarches</a></td>
+               <td>Marché public.</td>
+            </tr>
+            <tr>
+               <td>Concessions</td>
+               <td>0..1</td>
+               <td><a href="#TConcessions">TConcessions</a></td>
+               <td>Contrat de concession.</td>
+            </tr>
+            <tr>
+               <td rowspan="1" nowrap><b>n°2</b></td>
+               <td>Concessions</td>
+               <td> 1..1</td>
+               <td><a href="#TConcessions">TConcessions</a></td>
+               <td>Contrat de concession.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="EnTeteMarche">TYPE EnTeteMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>En-tête.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>Numéro de version - Mettre à «&nbsp;2&nbsp;».<br>Si le numéro de version est erroné, rejet de l'ensemble du flux PESMarche.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TMarches">TYPE TMarches</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Marché Public</td>
+            </tr>
+            <tr>
+               <td colspan="2">Marche</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TMarche">TMarche</a></td>
+               <td>Bloc Marche, correspond au marché actualisé</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TIdentifiantMarche">TYPE TIdentifiantMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc IdentifianMarche :  Identifiant du marché +  N° de séquence d'envoi + Correctif
+                  erreur matérielle
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdContrat</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num4_Texte1_10">Base_Num4_Texte1_10</a></td>
+               <td>Identifiant du marché public.<br>Ce numéro se décompose en 4 caractères pour l'année (année de notification du marché
+                  public) et 10 caractères pour la référence du marché.<br>Valeur alphanumérique dont le nombre de caractères est compris entre 5 et 14.<br>Dans le cadre des groupements d'achat, cet identifiant du marché doit être le même
+                  pour tous les budgets collectivités membres du groupement.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroOrdreModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2">Base_Num2_2</a></td>
+               <td>Numéro d'ordre de la modification (deux caractères, 00 si pas de modification (contrat
+                  initial), 01 si première modification, etc.).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">SequenceEnvoi</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Numéro de séquence d'envoi (entier naturel compris entre 1 et 999) <br>Il ne doit pas y avoir de rupture sur cette séquence.<br>Le marché initial doit être envoyé sur la séquence 1.<br>Toute correction ou modification sur le même marché doit être émise avec une séquence
+                  d'envoi N &gt; 1 seulement après réception chez l'ordonnateur de l'acquittement sur l'enregistrement
+                  précédent de séquence d'envoi N-1.<br>En cas de rupture de séquence (le numéro de séquence de l'enregistrement ne correspond
+                  pas au dernier numéro de séquence sur le même marché intégré dans Hélios +1, le numéro
+                  de séquence de l'enregistrement &lt;&gt; 1 alors que le marché n'existe pas dans Hélios,
+                  le numéro de séquence de l'enregistrement = 1 alors que l'enregistrement est «&nbsp;correctif
+                  erreur matérielle&nbsp;»), le Marché sera rejeté.<br>Les Marchés de nature 05 (marché subséquent) doivent avoir un IdContrat différent
+                  de l&#x2019;IdAccordCadre pour les séquences 1 et 2, sinon le marché sera rejeté.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CaractereCorrectifEnregistrement</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Correctif erreur matérielle.<br>Valeurs : <br>- 1 = l'enregistrement est correctif, <br>- 0&nbsp;= l'enregistrement n'est pas correctif.<br>Valeur par défaut : 0.<br><br>Tout flux correctif de SequenceEnvoi = N annule et remplace le flux de SequenceEnvoi
+                  = N-1 sur le même contrat.<br>Un flux correctif ne peut être utilisé que sur un contrat initial non suivi de modification
+                  ou sur le flux de dernière modification ou sur le flux correctif qui le précède.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TMarche">TYPE TMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc Marche, correspond au contrat initial notifié (soit un marché sans modification)
+                  ou à un marché actualisé ou marché modifié comportant n &gt;=1  modification(s). Sont
+                  actualisés&nbsp;: les opérateurs économiques, les montants et durée portés par le marché,
+                  les «&nbsp;ventilations titulaires&nbsp;» et les «&nbsp;ventilations sous-traitants&nbsp;».
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdentifiantMarche</td>
+               <td> 1..1</td>
+               <td><a href="#TIdentifiantMarche">TIdentifiantMarche</a></td>
+               <td>Bloc IdentifiantMarche :  Identifiant du marché +  N° de séquence d'envoi  + Correctif
+                  erreur matérielle
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">URLProfilAcheteur</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte500_Light">Base_Texte500_Light</a></td>
+               <td>URL du profil d'acheteur correspondant au pouvoir adjudicateur notifiant le marché
+                  public.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PA</td>
+               <td>0..1</td>
+               <td><a href="#TPA">TPA</a></td>
+               <td>Pouvoir adjudicateur du marché (PA).<br>Si le marché est un  marché multi-acheteurs pour lequel le pouvoir adjudicateur est
+                  inconnu d'Hélios (exemple&nbsp;: une centrale d'achats), alors le bloc &lt;PA&gt; doit être obligatoirement
+                  renseigné.<br>Si le marché est un  marché multi-acheteurs pour lequel le pouvoir adjudicateur est
+                  connu d'Hélios mais se distingue de l'entité connue d'Hélios référencée dans l'EnTetePES,
+                  alors le bloc &lt;PA&gt; doit être obligatoirement renseigné.<br>Dans les autres cas, le pouvoir adjudicateur correspond à l'entité connue d'Hélios
+                  référencée dans l'EnTetePES, le bloc &lt;PA&gt; bien que facultatif peut être renseigné
+                  sous la responsabilité de l'ordonnateur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Acheteurs</td>
+               <td> 1..1</td>
+               <td><a href="#TAcheteurs">TAcheteurs</a></td>
+               <td>Acheteurs du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatureMarche</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatureMarche">TNatureMarche</a></td>
+               <td>Nature du marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Objet</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Objet principal du marché public. Zone libre limitée à 256 caractères.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeCPV</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num8_Num1">Base_Num8_Num1</a></td>
+               <td>Code principal du Vocabulaire commun pour les marchés publics (CPV).<br>Format&nbsp;: 8 chiffres + '-' + 1 chiffre (c de contrôle).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ProcedureMarche</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TProcedureMarche">TProcedureMarche</a></td>
+               <td>Procédure de passation du marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">LieuExecution</td>
+               <td> 1..1</td>
+               <td><a href="#TLieuExecution">TLieuExecution</a></td>
+               <td>Lieu principal  d'exécution des prestations</td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeEnMois</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Durée exprimée en mois pour l'exécution des prestations correspondant au montant notifié
+                  (valeur arrondie à l'entier supérieur, exemple 1 pour 2 semaines) pour un marché public.<br>Valeur minimum : 1.<br>Pour les marchés prorogeables avec tacite reconduction, la durée totale doit être
+                  considérée.<br>Pour un flux de modification impactant la durée, la dureeEnMois doit être la durée
+                  du marché actualisée avec la modification présentée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeEnMoisMaximumPossible</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Durée maximum possible exprimée en mois (valeur arrondie à l'entier supérieur, exemple
+                  1 pour 2 semaines).<br>Valeur minimum : 1.<br>La durée inclut toutes les tranches et toutes les possibilités de reconductions éventuelles
+                  prévues au marché. C'est la durée pendant laquelle les prestations prévues peuvent
+                  contractuellement être exécutées. Quant aux marchés de travaux, la durée doit correspondre
+                  aux prestations correspondant à chaque contrat (ou lot) recensé et non à la durée
+                  totale d'une opération.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateDebutExecution</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du début de l'exécution des prestations (ex : date ordre de service pour un marché
+                  public).<br>A renseigner si l'information est connue à la notification du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT du marché qui a été notifié (par exemple montant de la tranche ferme).
+                  Il ne comprend pas les éventuels montants prévisionnels (montant des tranches optionnelles).<br>Pour les marchés prorogeables avec tacite reconduction, le montant notifié correspond
+                  au montant total. A défaut un montant estimé doit être privilégié.<br>Pour un flux de modification impactant le montant HT notifie, le MontantHTNotifie
+                  doit être le montant HT notifié du marché actualisé avec le cas échéant la modification
+                  présentée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CaractereEstimatifMontantNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Valeur 1 : le montant est estimatif.<br>Valeur 0: le montant est ferme.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVANotifie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant de la TVA du marché correspondant au montant notifié du marché (supérieur
+                  ou égal à zéro).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTEstime</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant estimé HT sur toute la durée du contrat, toutes tranches cumulées, toutes
+                  reconductions possibles incluses.<br>Pour les marchés à tranches : montant HT total qui comprend le montant de la tranche
+                  ferme et celles des tranches optionnelles.<br>Pour un accord-cadre : montant prévisionnel HT, estimation du total des marchés subséquents
+                  ou des bons de commande prévisibles.<br>Le montant HT estimé, s'il est renseigné, doit être supérieur ou égal au montant HT
+                  notifié du marché, sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Nouveau montant HT du marché suite à une actualisation</td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVAActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Nouveau montant TVA du marché suite à une actualisation</td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignature</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de la Signature du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">NomSignataireAcheteur</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom du représentant du Pouvoir Adjudicateur.<br>Si cette balise est renseignée, elle doit impérativement contenir le nom (sans le
+                  prénom) de la personne physique qui représente le Pouvoir Adjudicateur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">RefActeDelegationSignature</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Référence de l'acte de délégation de signature accordée à la personne physique représentant
+                  le pouvoir adjudicateur du marché.<br>Cette information devrait être portée dans l'une des PJ pièces contractuelles du marché.
+                  Mais elle pourrait correspondre à une référence d'Acte portée par un document papier.<br>Cette information est nécessaire au contrôle de légalité externe du comptable qui
+                  lui impose de s'assurer de la compétence du signataire côté pouvoir adjudicateur,
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateDebutMarche</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de début du marché public.<br>La date de début du marché peut être antérieure à la date de début d'exécution (date
+                  d'effet du marché) (notamment pour les marchés à bons de commande), et être mentionnée
+                  dans l'acte d'engagement. La date de début du marché peut être différente de la date
+                  de prise d'effet . Date du début de l'exécution du contrat des prestations (étant
+                  donné que la date de début d'exécution du contrat est la date d'effet du contrat qui
+                  est la date de notification sauf stipulation contractuelle contraire (ex : date ordre
+                  de service pour un marché public). A renseigner si l'information est connue à la notification
+                  du marché.<br>DateNotification &lt;= DateDebutMarche &lt;= DateDebutExecution.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Reconductibilite</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TReconductibilite">TReconductibilite</a></td>
+               <td>Modalités de reconduction du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">Penalite</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Pénalités de retard.<br>Valeurs :<br>- 0 = aucune pénalité prévue ;<br>- 1 = pénalités de retard prévues au contrat.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DelaiGarantie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>Délai de garantie. Ce délai est exprimé en mois. Si le bloc Garantie dans le sous
+                  bloc "ConditionsExexcutionTitulaire" est servi alors la balise "délaiGarantie" devient
+                  obligatoire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateNotification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de notification du marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePublicationDonnees</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de publication des données du contrat initial.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Operateurs</td>
+               <td>0..1</td>
+               <td><a href="#TOperateurs">TOperateurs</a></td>
+               <td>Opérateur(s) économique(s) intervenant sur le marché public [sont donc exclus les
+                  anciens titulaires/co-traitants/sous-traitants].<br>Si la nature du marché diffère de la valeur '04' Accord Cadre Avec Marché Subséquent
+                  Ou Mixte&nbsp;: présence obligatoire de ce bloc, sinon rejet du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ConditionsExecution</td>
+               <td> 1..1</td>
+               <td><a href="#TConditionsExecution">TConditionsExecution</a></td>
+               <td>Conditions d'exécution du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">PJRefs</td>
+               <td>0..1</td>
+               <td><a href="#TPJRefs">TPJRefs</a></td>
+               <td>Liste des Références PJ correspondant aux pièces contractuelles du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">VentilationsAcheteurs</td>
+               <td>0..1</td>
+               <td><a href="#TVentilationsAcheteurs">TVentilationsAcheteurs</a></td>
+               <td>Ventilation du marché par acheteurs. Si la nature du marché a une valeur différente
+                  de 04 "Accord Cadre Avec Marché Subséquent Ou Mixte", présence obligatoire de ce bloc,
+                  sinon rejet du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModificationsMarche</td>
+               <td>0..1</td>
+               <td><a href="#TModificationsMarche">TModificationsMarche</a></td>
+               <td>Modifications destinées à la publication nationale.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPA">TYPE TPA</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc Pouvoir adjudicateur du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14_14_Light">Base_Num14_14_Light</a></td>
+               <td>SIRET du Pouvoir adjudicateur.<br>Valeur constituée de 14 chiffres [0-9] et pouvant commencer par 0
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomPA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom du Pouvoir adjudicateur.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAcheteurs">TYPE TAcheteurs</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Acheteurs du marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Acheteur</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TAcheteur">TAcheteur</a></td>
+               <td>Les éléments d'identification de l'acheteur ainsi que le montant HT estimé du marché
+                  affecté à cet acheteur.<br>Dans le cas d'un marché notifié pour un groupement d'achat, tous les membres du groupement
+                  d'achat doivent être référencés dans la liste d'acheteurs.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAcheteur">TYPE TAcheteur</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Acheteur du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdAcheteur</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14_14_Light">Base_Num14_14_Light</a></td>
+               <td>SIRET de l'acheteur (Siret du budget collectivité).<br>Valeur constituée de 14 chiffres [0-9] et pouvant commencer par 0.<br>Le SIRET doit correspondre à un budget collectivité actif dans Hélios, sinon rejet
+                  du Marché.<br>Un SIRET donné ne peut figurer qu'une seule fois dans la liste des acheteurs du marché,
+                  sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomAcheteur</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom d'un acheteur (ex : membre d'un groupement de commandes), soit Libellé du budget
+                  collectivité dans le SPL.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTEstime</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Part du montant estimé du marché pour l'acheteur.<br>La somme des montants HT estimés des acheteurs doit correspondre au montant HT estimé
+                  du marché, sinon rejet du Marché.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConditionsExecution">TYPE TConditionsExecution</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Conditions d'exécution du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdAccordCadre</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5_14">Base_Texte5_14</a></td>
+               <td>Identifiant de l'accord-cadre (14 caractères : concaténation du millésime sur 4 caractères
+                  et d'un numéro interne au maximum sur 10 caractères) permettant de raccrocher les
+                  marchés subséquents ou mixtes y afférents.<br>Valeur alphanumérique dont le nombre de caractères est compris entre 5 et 14.<br>Cette balise est obligatoire si la nature du marché est égale à 05 "Marché Subséquent"
+                  sinon rejet du marché
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">SiretPAAccordCadre</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14_14_Light">Base_Num14_14_Light</a></td>
+               <td>SIRET du pouvoir adjudicateur à l'origine de l'accord-cadre.<br>Ce SIRET est obligatoire pour tous les marchés subséquents qui se rapportent à l'accord-cadre,
+                  notamment pour les marchés subséquents notifiés par les membres d'un groupement d'achat.<br>Cette balise est obligatoire si la nature du marché est égale à 05 "Marché Subséquent"
+                  sinon rejet du marché
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ModaliteExecution</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TModaliteExecution">TModaliteExecution</a></td>
+               <td>Modalités d'exécution.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MultiBudget</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Zone permettant de déterminer si le marché concerne ou non plusieurs budgets collectivité
+                  d'une même collectivité.<br>Valeurs :<br>- 0 = mono budget,<br>- 1 = multi-budget.<br>Si la collectivité du flux est un budget annexe, alors la zone doit être obligatoirement
+                  valorisée à 0, sinon rejet du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodesCPVSec</td>
+               <td>0..1</td>
+               <td><a href="#TCodesCPVSec">TCodesCPVSec</a></td>
+               <td>Codes CPV secondaires (de 0 à 3 codes secondaires) précisant le code CPV principal.<br>Il se compose de&nbsp;: 8 chiffres +&nbsp;«-» + 1 chiffre (caractère de contrôle).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NbTotalPropositionsRecu</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Nombre total des propositions reçues.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NbTotalPropositionsDemat</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Nombre total de propositions dématérialisées (NbTotalPropositionsDemat inférieur ou
+                  égal à NbTotalPropositionRec).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CarteAchat</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Valeurs&nbsp;:<br>- 1 = carte achat utilisée ;<br>- 0 = carte achat non utilisée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ClauseSociale</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Valeurs&nbsp;:<br>- 1 = Mise en &#x153;uvre d'une clause sociale ;<br>- 0 = Absence de clause sociale.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ClauseEnvironnementale</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Valeurs&nbsp;:<br>- 1 = Mise en &#x153;uvre d'une clause environnementale ;<br>- 0 = Absence de clause environnementale.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeGroupement</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeGroupement">TTypeGroupement</a></td>
+               <td>Type de groupement.<br>Zone obligatoire si groupement.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NbEntreprisesGroupees</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>Nombre total d'entreprises, qu'il s'agisse ou non d'un groupement, nombre total réel
+                  incluant le titulaire (ou attributaire principal) et tous les co-titulaires&nbsp;:<br>-Si le contrat n'a qu'un seul titulaire, on portera le nombre 00.<br>-Si un autre titulaire est partie au contrat, on inscrira le nombre "02" (titulaire
+                  principal inclus).<br>-S'il y a deux autres titulaires, on portera le nombre "03" (titulaire principal +
+                  2), etc.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CCAGReference</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TCCAGReference">TCCAGReference</a></td>
+               <td>CCAG (Cahier des Clauses Administratives Générales) de référence</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TCodesCPVSec">TYPE TCodesCPVSec</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Liste de Code CPV secondaire (de 0 à 3 codes secondaires précisant le code CPV principal)<br>Il se compose de&nbsp;: 8 chiffres +&nbsp;«-» + 1 chiffre (caractère de contrôle).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeCPVSec</td>
+               <td>1..3</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num8_Num1">Base_Num8_Num1</a></td>
+               <td>Code CPV secondaire (de 0 à 3 codes secondaires précisant le code CPV principal)<br>Il se compose de&nbsp;: 8 chiffres +&nbsp;«-» + 1 chiffre (caractère de contrôle).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConditionsExecutionTitulaire">TYPE TConditionsExecutionTitulaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Définition des conditions d'exécution du marché pour le titulaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NaturePrestations</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>zone libre pour préciser la nature des prestations</td>
+            </tr>
+            <tr>
+               <td colspan="2">RegimeAvance</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TRegimeAvance">TRegimeAvance</a></td>
+               <td>Type d'avance.<br>Le Régime d'avance doit être renseigné de manière significative soit autre que Aucune
+                  et Refusée si le Montant d'Avance est renseigné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de l'avance accordée au titulaire (versement d'une partie du montant d'un
+                  marché public au titulaire de ce marché avant tout commencement d'exécution de ses
+                  prestations). Elle constitue, à la différence de l'acompte , une dérogation à la règle
+                  du « service fait » .<br>Si le Montant de l'avance est renseigné, le Régime d'avance doit être renseigné de
+                  manière significative soit autre que Aucune et Refusée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeGarantieAvance</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeGarantieAvance">TTypeGarantieAvance</a></td>
+               <td>Type de garantie liée à l'avance.<br>Si le MontantGarantieAvance est renseigné, le Type de garantie de l'avance doit être
+                  renseigné de manière significative&nbsp;: soit Garantie à première demande soit Caution
+                  personnelle et solidaire soit Autres.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantGarantieAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de garantie de l'avance accordée au titulaire, à renseigner uniquement pour
+                  le type de garantie indiqué soit Garantie à première demande soit Caution personnelle
+                  et solidaire soit Autres.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateReceptionGarantieAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>date de réception de la garantie liée à l'avance due au contractant (cette date correspondrait
+                  à la date de transmission prévue par le titulaire de la garantie à première demande
+                  ou de la caution personnelle et solidaire).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PourcentageAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>Pourcentage de l'avance.<br>Obligatoire sur marché donnant lieu à avance.<br>Nombre décimal (5,2) &gt; 0
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Garantie</td>
+               <td>0..1</td>
+               <td><a href="#TGarantie">TGarantie</a></td>
+               <td>Définition de la garantie sur le marché.</td>
+            </tr>
+            <tr>
+               <td colspan="2">FormePrix</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TFormePrix">TFormePrix</a></td>
+               <td>Forme du prix du marché public applicable au contractant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">VariationPrix</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TVariationPrix">TVariationPrix</a></td>
+               <td>Variation du prix du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">IndicesReference</td>
+               <td>0..1</td>
+               <td><a href="#TIndicesReference">TIndicesReference</a></td>
+               <td>Indice de référence M0 retenu pour les prix lors de la notification du marché public
+                  (à la date de notification du marché)
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConditionsExecutionSousTraitantPaiementDirect">TYPE TConditionsExecutionSousTraitantPaiementDirect</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Conditions d'exécution du marché pour le sous-traitant à paiement direct</td>
+            </tr>
+            <tr>
+               <td colspan="2">NaturePrestations</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>zone libre pour préciser la nature des prestations</td>
+            </tr>
+            <tr>
+               <td colspan="2">AutoliquidationTVA</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>L'autoliquidation de TVA consiste pour le sous-traitant à facturer hors taxe, ainsi
+                  lors de l'exécution du marché les mandats qui le concernent seront sans TVA, la TVA
+                  sera incluse dans les mandats au bénéfice de son titulaire.<br>Si Autoliquidation = 1, le MontantTVANotifie, ou le MontantActualiseTVA si une actualisation
+                  du montant a été effectuée, de la VentilationSousTraitantPaiementDirect ne doit pas
+                  être servi.<br>Si Autoliquidation = 0, le MontantTVANotifie, ou le MontantActualiseTVA si une actualisation
+                  du montant a été effectuée, de la VentilationSousTraitantPaiementDirect doit être
+                  servi.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">RegimeAvance</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TRegimeAvance">TRegimeAvance</a></td>
+               <td>Type d'avance.<br>Le Régime d'avance doit être renseigné de manière significative soit autre que Aucune
+                  et Refusée si le Montant d'Avance est renseigné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de l'avance accordée au sous-traitant (versement d'une partie du montant d'un
+                  marché public au sous-traitant de ce marché avant tout commencement d'exécution de
+                  ses prestations). Elle constitue, à la différence de l'acompte , une dérogation à
+                  la règle du « service fait » .<br>Si le Montant de l'avance est renseigné, le Régime d'avance doit être renseigné de
+                  manière significative soit autre que Aucune et Refusée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeGarantieAvance</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeGarantieAvance">TTypeGarantieAvance</a></td>
+               <td>Type de garantie liée à l'avance.<br>Si le MontantGarantieAvance est renseigné, le Type de garantie de l'avance doit être
+                  renseigné de manière significative&nbsp;: soit Garantie à première demande soit Caution
+                  personnelle et solidaire soit Autres.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantGarantieAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de garantie de l'avance accordée au sous-traitant, à renseigner uniquement
+                  pour le type de garantie indiqué soit Garantie à première demande soit Caution personnelle
+                  et solidaire soit Autres.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PourcentageAvance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>Pourcentage de l'avance.<br>Obligatoire sur marché donnant lieu à avance.<br>Nombre décimal (5,2) &gt; 0
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FormePrix</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TFormePrix">TFormePrix</a></td>
+               <td>Forme du prix du marché public applicable au sous-traitant à paiement direct.</td>
+            </tr>
+            <tr>
+               <td colspan="2">VariationPrix</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TVariationPrix">TVariationPrix</a></td>
+               <td>Variation du prix du marché public applicable au sous-traitant à paiement direct.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IndicesReference</td>
+               <td>0..1</td>
+               <td><a href="#TIndicesReference">TIndicesReference</a></td>
+               <td>Indice de référence M0 retenu pour les prix lors de la notification du marché public
+                  (à la date de notification du marché)
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TGarantie">TYPE TGarantie</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Définition de la garantie sur le marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeGarantie</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeGarantie">TTypeGarantie</a></td>
+               <td>Type de garantie applicable.</td>
+            </tr>
+            <tr>
+               <td colspan="2">TauxGarantie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Taux">Base_Taux</a></td>
+               <td>Taux de retenue de la garantie</td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantGarantie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant de la garantie ou montant de la caution</td>
+            </tr>
+            <tr>
+               <td colspan="2">DateReceptionGarantie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>date de réception de la garantie du contractant</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TIndicesReference">TYPE TIndicesReference</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">IndiceReference</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TIndiceReference">TIndiceReference</a></td>
+               <td>Indice de référence</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TIndiceReference">TYPE TIndiceReference</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Indice de référence</td>
+            </tr>
+            <tr>
+               <td colspan="2">Indice</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte20_Light">Base_Texte20_Light</a></td>
+               <td>Indice-index de référence.<br>Exemples : ICHT-E, 3511153 , 205903, FSD 2.<br>Valeur&nbsp;: Texte comportant au maximum 20 caractères.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MoisAnnee</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_DateMoisAnnee">Base_DateMoisAnnee</a></td>
+               <td>Mois-Année de la valeur de l'indice de référence.<br>Format:MM-AAAA.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Valeur</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Decimal14_4">Base_Decimal14_4</a></td>
+               <td>Valeur de l'indice de référence.<br>Exemple : 138,2 pour l'indice 35111403 au 09/2016, 1,8449 pour l'indice IM au 10/2016.<br>Nombre positif avec au maximum 14 chiffres et 4 chiffres après la virgule.<br>Valeur&nbsp;: nombre décimal (14,4).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FormuleRevPrix</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte160_Light">Base_Texte160_Light</a></td>
+               <td>Formule de révision des prix. La formule peut être exprimée par indice ou un ensemble
+                  d'indices.<br>Exemple : En M0 : P0 = 0,38 S (alaires) + 0,34 A (ciers) + 0,28 D (ivers).<br>En Mn : 0,38 S + 0,39 A + 0,27 D <br>P = P0 [0,125 + 0,85 BT51n/BT510]<br>P = P0 [0,15 + 0,85 In /I 0]<br>Valeur&nbsp;: Texte comportant au maximum 160 caractères.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPJRefs">TYPE TPJRefs</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Pour chaque PJ associée au marché (PJ&nbsp;«&nbsp;pièce contractuelle du marché&nbsp;»), référence
+                  unique de la PJ.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">PJRef</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TPJRef">TPJRef</a></td>
+               <td>Pour chaque PJ associée au marché (PJ&nbsp;«&nbsp;pièce contractuelle du marché&nbsp;»), référence
+                  unique de la PJ.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPJRef">TYPE TPJRef</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>PJ associée au marché (PJ&nbsp;«&nbsp;pièce contractuelle du marché&nbsp;»), référence unique de
+                  la PJ.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Support</td>
+               <td> 1..1</td>
+               <td><a href="#TSupport">TSupport</a></td>
+               <td>Support de la PJ référencée.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdUnique</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum50">Base_Alphanum50</a></td>
+               <td>Identifiant unique de la pièce quel que soit le domaine, l'objet, l'exercice et l'acheteur
+                  concerné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypePJ</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TPJMarche">TPJMarche</a></td>
+               <td>Type de pièce justificative.<br>Valeur possible :<br>- 009 «&nbsp;Pièce contractuelle Marché&nbsp;» (nouveau type de PJ pour CCAP/ CCAG / CCTG /
+                  CCTP / acte d'engagement / acte de notification du marché, etc).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomPJ</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Nom de la PJ sur 100 caractères maximum, destiné à préciser le référencement de PJ.<br>Une PJ qui ne dispose pas d'extension ou bien a une extension d'une longueur supérieur
+                  à 4 caractères doit être rejetée par le Guichet XML.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TModificationsMarche">TYPE TModificationsMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc des modifications intervenues sur le marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">ModificationMontantDuree</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TModificationMontantDuree">TModificationMontantDuree</a></td>
+               <td>Bloc de modification du montant(s) et/ou de la durée du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">ModificationTitulaire</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TModificationTitulaire">TModificationTitulaire</a></td>
+               <td>Bloc de modification du titulaire du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">DeclarationSousTraitancePaiementDirect</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TDeclarationSousTraitancePaiementDirect">TDeclarationSousTraitancePaiementDirect</a></td>
+               <td>Bloc de déclaration d'une sous-traitance en paiement direct pour le marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">ModificationSousTraitancePaiementDirect</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TModificationSousTraitancePaiementDirect">TModificationSousTraitancePaiementDirect</a></td>
+               <td>Bloc de modification d'une sous-traitance en paiement direct pour le marché</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TModificationMontantDuree">TYPE TModificationMontantDuree</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc ModificationsMarche recense les modifications intervenues sur le marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjetModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Description synthétique de la modification apportée au marché (ex : Augmentation de
+                  la durée du marché, diminution de&nbsp;% &#x20ac; du montant HT notifié du marché, augmentation
+                  de&nbsp;% &#x20ac; du montant HT estimé suite à modification sur la tranche affermie&nbsp;% .
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroActe</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2Light">Base_Num2_2Light</a></td>
+               <td>Numéro de modification.<br>Valeur&nbsp;: de 01 à 99
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignatureModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de notification par l'acheteur de la modification apportée au marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePublicationDonneesModification</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de publication des données incluant la modification apportée au marché initial.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>DureeEnMois</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3_Light">Base_Num3_Light</a></td>
+               <td>Durée de la modification&nbsp;: nouvelle durée en mois actualisée du marché.</td>
+            </tr>
+            <tr>
+               <td>DeltaDureeEnMois</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Entier3_Relatif">Base_Entier3_Relatif</a></td>
+               <td>Delta de la durée de la modification. <br>Il s'agit d'une durée signée. Selon le signe, ce delta s'ajoute ou se retranche à
+                  la précédente durée en mois du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT notifié de la modification&nbsp;: nouveau montant HT notifié actualisé du marché.</td>
+            </tr>
+            <tr>
+               <td>DeltaMontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Relatif">Base_Montant_Relatif</a></td>
+               <td>Delta du montant HT notifié de la modification. <br>Il s'agit d'un montant signé. Selon le signe, ce delta s'ajoute ou se retranche au
+                  précédent montant HT notifié du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>MontantHTEstime</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT estimé actualisé du marché (ex&nbsp;: pour un marché à tranches vérifiant MontantHTEstime
+                  &gt; MontantHTNotifie, une modification portant sur une augmentation du montant HT notifié
+                  d'une tranche affermie peut induire une revalorisation du montant HT estimé du marché).
+               </td>
+            </tr>
+            <tr>
+               <td>DeltaMontantHTEstime</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Relatif">Base_Montant_Relatif</a></td>
+               <td>Delta du montant HT estimé de la modification. <br>Il s'agit d'un montant signé. Selon le signe, ce delta s'ajoute ou se retranche au
+                  précédent montant HT estimé du marché.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TModificationTitulaire">TYPE TModificationTitulaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjetModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Description synthétique de la modification apportée au marché (ex : Modification du
+                  marché&nbsp;: nouveau titulaire&nbsp;%NomRaisonSociale en remplacement de l'ancien titulaire%NomRaisonSociale).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroActe</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2Light">Base_Num2_2Light</a></td>
+               <td>Numéro de la modification.<br>Valeur&nbsp;: de 01 à 99
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignatureModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de signature par l'acheteur de la modification apportée au marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePublicationDonneesModification</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de publication des données incluant la modification apportée au marché initial.<br>Par défaut : date d'émission du flux de modification par l'ordonnateur vers Hélios
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Titulaires</td>
+               <td> 1..1</td>
+               <td><a href="#TTitulairesLight">TTitulairesLight</a></td>
+               <td>Liste des titulaires&nbsp;: cette liste comprend tous les «&nbsp;titulaire/co-traitants&nbsp;» participant
+                  toujours au marché après un changement de titulaire (avenant de transfert).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeGroupement</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeGroupement">TTypeGroupement</a></td>
+               <td>Type de groupement</td>
+            </tr>
+            <tr>
+               <td colspan="2">NbEntreprisesGroupees</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>En cas de groupement, nombre d'entreprises groupées.<br>Le nombre d'entreprises groupées &gt; 0 si et seulement le Type de Groupement = 02 «&nbsp;Groupement
+                  solidaire&nbsp;» ou 03 «&nbsp;Groupement conjoint&nbsp;», sinon rejet du Marché.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDeclarationSousTraitancePaiementDirect">TYPE TDeclarationSousTraitancePaiementDirect</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjetModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Description synthétique de la modification apportée au marché (ex : acte spécial :
+                  nouveau sous-traitant&nbsp;%NomRaisonSociale à paiement direct).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroActeSousTraitance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2Light">Base_Num2_2Light</a></td>
+               <td>Numéro d'acte spécial.<br>Valeur&nbsp;: de 01 à 99
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignatureModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de signature par l'acheteur de la modification apportée au marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">SousTraitantPaiementDirect</td>
+               <td> 1..1</td>
+               <td><a href="#TSousTraitantPaiementDirectLight">TSousTraitantPaiementDirectLight</a></td>
+               <td>Informations synthétiques relatives au sous-traitant faisant l'objet d'une déclaration
+                  de sous-traitance (acte spécial).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT notifié au sous-traitant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">VariationPrix</td>
+               <td>0..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TVariationPrix">TVariationPrix</a></td>
+               <td>Variation du prix du marché public applicable au sous-traitant en paiement direct.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeEnMois</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3_Light">Base_Num3_Light</a></td>
+               <td>Durée exprimée en mois de la sous-traitance.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TModificationSousTraitancePaiementDirect">TYPE TModificationSousTraitancePaiementDirect</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjetModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Description synthétique de la modification apportée au marché (ex : modification sur
+                  acte spécial&nbsp;: sous-traitant&nbsp;%NomRaisonSociale&nbsp;: réduction du montant HT notifié).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroActe</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2Light">Base_Num2_2Light</a></td>
+               <td>Numéro de modification sur acte spécial.<br>Valeur&nbsp;: de 01 à 99
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroActeSousTraitance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2Light">Base_Num2_2Light</a></td>
+               <td>Numéro d'acte spécial.<br>Valeur&nbsp;: de 01 à 99
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignatureModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de signature par l'acheteur de la modification apportée au marché public.</td>
+            </tr>
+            <tr>
+               <td colspan="2">SousTraitantPaiementDirect</td>
+               <td> 1..1</td>
+               <td><a href="#TSousTraitantPaiementDirectLight">TSousTraitantPaiementDirectLight</a></td>
+               <td>Informations synthétiques relatives au sous-traitant faisant l'objet d'une modification
+                  de sous-traitance (modification sur acte spécial).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DeltaMontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Relatif">Base_Montant_Relatif</a></td>
+               <td>Delta du montant HT notifié au sous-traitant. <br>Il s'agit d'un montant signé. Selon le signe, ce delta s'ajoute ou se retranche au
+                  précédent montant HT notifié du sous-traitant.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeEnMois</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3_Light">Base_Num3_Light</a></td>
+               <td>Durée en mois actualisée de la sous-traitance.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TVentilationsAcheteurs">TYPE TVentilationsAcheteurs</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ventilation des montants par acheteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">VentilationAcheteur</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TVentilationAcheteur">TVentilationAcheteur</a></td>
+               <td>Ventilation des montants par acheteur.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TVentilationAcheteur">TYPE TVentilationAcheteur</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ventilation du montant par acheteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdAcheteur</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14_14_Light">Base_Num14_14_Light</a></td>
+               <td>SIRET de l'acheteur (Siret du budget collectivité).<br>Le SIRET doit être référencé dans la liste des acheteurs du marché (cf. bloc &lt;Acheteur&gt;),
+                  sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT qui a été notifié à cet acheteur. <br><br>Le montant HT notifié de l'acheteur doit être égal à la somme des montants HT notifiés
+                  aux titulaires et aux sous-traitants référencés dans la «&nbsp;VentilationsTitulaire&nbsp;»
+                  associée à l'acheteur, sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CaractereEstimatifMontantNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Caractère estimatif du montant notifié.<br>Valeur 1 : le montant est estimatif.<br>Valeur 0 : le montant est ferme.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVANotifie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de la TVA correspondant au montant HT notifié et affecté à cet acheteur.<br><br>Le montant TVA notifié de l'acheteur doit être égal à la somme des montants TVA notifiés
+                  aux titulaires et aux sous-traitants référencés dans la «&nbsp;VentilationsTitulaire&nbsp;»
+                  associée à l'acheteur, sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT actualisé affecté à cet acheteur, supérieur ou égal à zéro.<br><br>Le montant HT actualisé de l'acheteur doit être égal à la somme des montants HT actualisé
+                  des titulaires et aux sous-traitants référencés dans la «&nbsp;VentilationsTitulaire&nbsp;»
+                  associée à l'acheteur, sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVAActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de la TVA correspondant au montant HT actualisé affecté à cet acheteur.<br><br>Le montant actualisé de TVA de l'acheteur doit être égal à la somme des montants actualisés
+                  de TVA notifiés aux titulaires et aux sous-traitants référencés dans la «&nbsp;VentilationsTitulaire&nbsp;»
+                  associée à l'acheteur, sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">VentilationsTitulaire</td>
+               <td> 1..1</td>
+               <td><a href="#TVentilationsTitulaire">TVentilationsTitulaire</a></td>
+               <td>Ventilation des montants par titulaires</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TVentilationsTitulaire">TYPE TVentilationsTitulaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ventilation des montants par titulaires</td>
+            </tr>
+            <tr>
+               <td colspan="2">VentilationTitulaire</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TVentilationTitulaire">TVentilationTitulaire</a></td>
+               <td>Ventilation des montants par titulaires.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TVentilationTitulaire">TYPE TVentilationTitulaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ventilation du montant par titulaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdTitulaire</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national de l'opérateur économique.<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI, <br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdTitulaire</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national du titulaire de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;IdTitulaire&gt; est un alphanumérique de 9 à 80 caractères.<br><br>Pour les seuls identifiants de type SIRET des contrôles de validité sont effectués.
+                  La clé de l'identifiant doit être valide, sinon rejet du Marché. Les longueurs possibles
+                  sont 14 pour le Siret, au moins 9 pour TVA, 18 pour HORS-UE (les deux premiers caractères
+                  doivent correspondre au code pays ISO 3166), 9 pour Tahiti (9 chiffres), 9 ou 10 pour
+                  Ridet (10 chiffres), 18 caractères au maximum pour FRWF (en plus&nbsp;: les 4 premiers
+                  caractères = FRWF), 80 caractères au maximum pour IREP (les 5 premiers caractères
+                  sont des chiffres).<br><br>Le titulaire doit être référencé dans la liste des opérateurs [Titulaire] du marché,
+                  sinon rejet du Marché.<br>Le titulaire doit être référencé pour un acheteur donné une seule fois dans la «&nbsp;VentilationTitulaire&nbsp;»,
+                  sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT qui a été notifié à ce titulaire.<br>Pour chaque acheteur, la somme des montants HT notifiés aux titulaires et à leurs
+                  sous-traitants doit être égale au montant HT notifié à l'acheteur, sinon rejet du
+                  Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CaractereEstimatifMontantNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Caractère estimatif du montant notifié.<br>Valeur 1 : le montant est estimatif.<br>Valeur 0 : le montant est ferme.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVANotifie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de la TVA correspondant au montant notifié et affecté à ce titulaire par l'acheteur
+                  (supérieur ou égal à zéro).<br>Pour chaque acheteur, la somme des montants TVA notifiés aux titulaires et à leurs
+                  sous-traitants doit être égale au montant TVA notifié de l'acheteur, sinon rejet du
+                  Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT actualisé pour le titulaire, supérieur ou égal à zéro.<br>Pour chaque acheteur, la somme des montants HT actualisés pour les titulaires et à
+                  leurs sous-traitants doit être égale au montant actualisé HT à l'acheteur, sinon rejet
+                  du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVAActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant actualisé de la TVA correspondant au montant actualisé et affecté à ce titulaire
+                  par l'acheteur (supérieur ou égal à zéro).<br>Pour chaque acheteur, la somme des montants TVA actualisés pour les titulaires et
+                  à leurs sous-traitants doit être égale au montant TVA actualisé de l'acheteur, sinon
+                  rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">VentilationsSousTraitantPaiementDirect</td>
+               <td>0..1</td>
+               <td><a href="#TVentilationsSousTraitantPaiementDirect">TVentilationsSousTraitantPaiementDirect</a></td>
+               <td>Ventilation des montants par sous-traitant du titulaire</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TVentilationsSousTraitantPaiementDirect">TYPE TVentilationsSousTraitantPaiementDirect</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ventilation des montants par sous-traitants des titulaires</td>
+            </tr>
+            <tr>
+               <td colspan="2">VentilationSousTraitantPaiementDirect</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TVentilationSousTraitantPaiementDirect">TVentilationSousTraitantPaiementDirect</a></td>
+               <td>Ventilation des montants par sous-traitants des titulaires.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TVentilationSousTraitantPaiementDirect">TYPE TVentilationSousTraitantPaiementDirect</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ventilation du montant par sous-traitant du titulaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdSousTraitant</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national de l'opérateur économique.<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI, <br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP,
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdSousTraitant</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national du sous-traitant de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;IdSousTraitant&gt; est un alphanumérique de 9 à 80 caractères.<br><br>Pour les seuls identifiants de type SIRET des contrôles de validité sont effectués.
+                  La clé de l'identifiant doit être valide, sinon rejet du Marché. <br>Les longueurs possibles sont 14 pour le Siret, au moins 9 pour TVA, 18 pour HORS-UE
+                  (les deux premiers caractères doivent correspondre au code pays ISO 3166), 9 pour
+                  Tahiti (9 chiffres), 9 ou 10 pour Ridet (10 chiffres), 18 caractères au maximum pour
+                  FRWF (en plus&nbsp;: les 4 premiers caractères = FRWF), 80 caractères au maximum pour IREP
+                  (les 5 premiers caractères sont des chiffres).<br><br>Le sous-traitant doit être référencé dans la liste des opérateurs |Sous-traitant]
+                  du marché, sinon rejet du Marché.<br>Le sous-traitant doit être référencé une seule fois dans la «VentilationSousTraitantPaiementDirect»
+                  pour un (titulaire, acheteur) donné, sinon rejet du Marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT qui a été notifié à ce sous-traitant.<br>Ce montant HT notifié au sous-traitant n'est pas compris dans le montant HT notifié
+                  au titulaire/co-traitant auquel il est rattaché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CaractereEstimatifMontantNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Caractère estimatif du montant notifié.<br>Valeur 1 : le montant est estimatif.<br>Valeur 0 : le montant est ferme.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVANotifie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant de la TVA correspondant au montant notifié et affecté à ce sous-traitant (supérieur
+                  ou égal à zéro).<br>Balise à servir pour un sous-traitant uniquement si la TVA lui est versée [ne sont
+                  concernées que les sous-traitances sur les marchés exclus du dispositif de l'autoliquidation].<br>Sur un marché bénéficiant du dispositif de l'autoliquidation de la TVA en cas de sous-traitance,
+                  le montant de TVA doit être reporté sur le titulaire/co-traitant (donneur d'ordre)
+                  auquel est rattaché le sous-traitant.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant HT actualisé pour ce sous-traitant, supérieur ou égal à zéro.<br>Ce montant HT actualisé de ce sous-traitant n'est pas compris dans le montant HT notifié
+                  au titulaire/co-traitant auquel il est rattaché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTVAActualise</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeEnMois</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Durée exprimée en mois pour l'exécution des prestations correspondant au montant HT
+                  notifié (valeur arrondie à l'entier supérieur, exemple 1 pour 2 semaines) pour un
+                  marché public.<br>Valeur minimum : 1.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ConditionsExecutionSousTraitantPaiementDirect</td>
+               <td>0..1</td>
+               <td><a href="#TConditionsExecutionSousTraitantPaiementDirect">TConditionsExecutionSousTraitantPaiementDirect</a></td>
+               <td>Conditions d'exécution du marché pour le sous-traitant à paiement direct</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConcessions">TYPE TConcessions</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Concession</td>
+            </tr>
+            <tr>
+               <td colspan="2">Concession</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TConcession">TConcession</a></td>
+               <td>Bloc concession</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TIdentifiantConcession">TYPE TIdentifiantConcession</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc IdentifianConcession :  Identifiant du contrat de concession +  N° de séquence
+                  d'envoi  +  caractère correctif de l'enregistrement «&nbsp;erreur matérielle&nbsp;»
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdContrat</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5_14">Base_Texte5_14</a></td>
+               <td>Identifiant du contrat de concession.<br>Ce numéro se décompose en 4 caractères pour l'année (année de notification du contrat
+                  de concession) et 10 caractères pour la référence du contrat.<br>Valeur alphanumérique dont le nombre de caractères est compris entre 5 et 14.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroOrdreModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2">Base_Num2_2</a></td>
+               <td>Numéro d'ordre de la modification (deux caractères, 00 si pas de modification (contrat
+                  initial), 01 si première modification, etc.)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">SequenceEnvoi</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Numéro de séquence d'envoi (entier naturel compris entre 1 et 999) pour un contrat
+                  de concession donné (IdContrat) sur l'autorité concédante concernée (cf. bloc &lt;EnTetePES&gt;).<br>A servir dès la notification du contrat initial et à chaque modification ou correctif
+                  erreur matérielle (cf. caractereCorrectifEnregistrement=1).<br>Le contrat de concession initial doit être envoyé sur la séquence 1.<br>Toute correction ou modification sur le même contrat de séquence d'envoi N &gt; 1 ne
+                  doit être émise qu'après réception chez l'ordonnateur de l'acquittement sur l'enregistrement
+                  précédent de séquence d'envoi N-1.<br>En cas de rupture de séquence (le numéro de séquence de l'enregistrement ne correspond
+                  pas au dernier numéro de séquence sur la même concession intégrée dans Hélios +1,
+                  le numéro de séquence de l'enregistrement &lt;&gt; 1 alors que la concession n'existe pas
+                  dans Hélios, le numéro de séquence de l'enregistrement = 1 alors que l'enregistrement
+                  est « correctif erreur matérielle »), la concession sera rejetée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CaractereCorrectifEnregistrement</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Valeurs :<br>- 1 = l'enregistrement est correctif,<br>- 0&nbsp;= l'enregistrement n'est pas correctif.<br>Valeur par défaut : 0.<br>Correctif erreur matérielle sur contrat initial ou modification<br>Tout flux correctif de SequenceEnvoi = N annule et remplace le flux de SequenceEnvoi
+                  = N-1 sur le même contrat.<br>Un flux correctif ne peut être utilisé que sur un contrat initial non suivi de modification
+                  ou sur le flux de dernière modification ou sur le flux correctif qui le précède.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConcession">TYPE TConcession</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Contrat de concession</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdentifiantConcession</td>
+               <td> 1..1</td>
+               <td><a href="#TIdentifiantConcession">TIdentifiantConcession</a></td>
+               <td>Bloc IdentifiantConcession :  Identifiant du  contrat de concession +  N° de séquence
+                  d'envoi  + caractère correctif de l'enregistrement «&nbsp;erreur matérielle&nbsp;»
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">URLProfilAcheteur</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte500_Light">Base_Texte500_Light</a></td>
+               <td>URL du profil d'acheteur correspondant à l'autorité concédante,</td>
+            </tr>
+            <tr>
+               <td colspan="2">Concessionnaires</td>
+               <td> 1..1</td>
+               <td><a href="#TConcessionnaires">TConcessionnaires</a></td>
+               <td>Concessionnaires du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatureConcession</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatureConcession">TNatureConcession</a></td>
+               <td>Nature du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Objet</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Objet principal du contrat de concession. Zone libre limitée à 256 caractères.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ProcedureConcession</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TProcedureConcession">TProcedureConcession</a></td>
+               <td>Procédure de passation du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">LieuExecution</td>
+               <td> 1..1</td>
+               <td><a href="#TLieuExecution">TLieuExecution</a></td>
+               <td>Lieu  d'exécution des prestations</td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeMoisInitiale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Durée initiale exprimée en mois pour un contrat de concession (balise non modifiable).<br>Valeur minimum : 1.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ValeurGlobale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Valeur globale attribuée à un contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantSubventionPublique</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant en euros des subventions ou de tout autre avantage financier octroyés par
+                  des tiers pour l'exploitation de la concession.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignature</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de signature du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePublicationDonnees</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de publication du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DateDebutExecution</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date début d'exécution du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DonneesExecution</td>
+               <td>0..1</td>
+               <td><a href="#TDonneesExecution">TDonneesExecution</a></td>
+               <td>Données d'exécution d'un contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ModificationsConcession</td>
+               <td>0..1</td>
+               <td><a href="#TModificationsConcession">TModificationsConcession</a></td>
+               <td>Blocs ModificationsConcession recense les modifications intervenues sur le contrat
+                  depuis le dernier flux envoyé<br>Ce bloc ne doit pas être présent au premier envoi ou en cas de correction d'un premier
+                  envoi.<br>Dans le cas d'un flux correctif du flux de modifications précédentes s'il est absent
+                  ceci signifie que l'ensemble des modifications précédentes sont annulées.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConcessionnaires">TYPE TConcessionnaires</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Concessionnaires du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Concessionnaire</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TConcessionnaire">TConcessionnaire</a></td>
+               <td>Concessionnaires du contrat de concession.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TConcessionnaire">TYPE TConcessionnaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Tous les ans, l'autorité concédante publie les données d'exécution jusqu'à la fin
+                  du contrat de concession. Ces données ne sont transmises qu'à partir de la première
+                  année et non pas lors de la publication initiale des données faisant suite à la notification.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdConcessionnaire</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national du concessionnaire&nbsp;:<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI,<br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdConcessionnaire</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national du concessionnaire de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;Idconcessionnaire&gt; est un alphanumérique de 9 à 80 caractères.<br>Un concessionnaire ne doit figurer qu'une seule fois dans la liste des concessionnaires,
+                  sinon rejet de la concession. Pour les seuls identifiants de type SIRET des contrôles
+                  de validité sont effectués. La clé de l'identifiant doit être valide, sinon rejet
+                  de la concession.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DenominationSociale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom du concessionnaire intervenant sur le contrat de concession.<br>Raison sociale / Nom : Norme postale.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDonneesExecution">TYPE TDonneesExecution</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Données d'exécution d'un contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DonneeAnnuelle</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TDonneeAnnuelle">TDonneeAnnuelle</a></td>
+               <td>Données d'exécution d'un contrat de concession.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TDonneeAnnuelle">TYPE TDonneeAnnuelle</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Principaux tarifs à la charge des usagers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePublicationDonneesExecution</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date à laquelle les données d'exécution ont été publiées.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DepensesInvestissement</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant des dépenses d'investissement réalisées par le concessionnaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Tarifs</td>
+               <td> 1..1</td>
+               <td><a href="#TTarifs">TTarifs</a></td>
+               <td>Principaux tarifs à la charge des usagers.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTarifs">TYPE TTarifs</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Tarif à la charge des usagers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Tarif</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TTarif">TTarif</a></td>
+               <td>Principaux tarifs à la charge des usagers.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTarif">TYPE TTarif</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Tarif à la charge des usagers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IntituleTarif</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Intitulé du tarif.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantTarif</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant_Light">Base_Montant_Light</a></td>
+               <td>Montant du tarif.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TModificationsConcession">TYPE TModificationsConcession</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Modifications d'un contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ModificationConcession</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TModificationConcession">TModificationConcession</a></td>
+               <td>Modifications d'un contrat de concession.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TModificationConcession">TYPE TModificationConcession</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Tous les ans, l'autorité concédante publie les données d'exécution jusqu'à la fin
+                  du contrat de concession. Ces données ne sont transmises qu'à partir de la première
+                  année et non pas lors de la publication initiale des données faisant suite à la notification.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjetModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Description synthétique de la modification apportée au contrat de concession (ex :
+                  Modification du concessionnaire. Nouveau concessionnaire : xxxxxxxSAS).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePublicationDonneesModification</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de publication des données incluant la modification apportée au contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DateSignatureModification</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de signature de la modification au contrat de concession.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DureeMois</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Nouvelle durée exprimée en mois (valeur arrondie au nombre supérieur).<br>Obligatoire si la modification porte sur la durée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ValeurGlobale</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Nouvelle valeur globale du contrat de concession.<br>Obligatoire en cas de modification de la valeur globale.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLieuExecution">TYPE TLieuExecution</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Lieu d'exécution des prestations (marché public ou contrat de concession).</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeLieuExecution</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5">Base_Texte5</a></td>
+               <td>Code du lieu d'exécution (code postal, commune, canton, arrondissement, département,
+                  région , pays).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeCode</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeCode">TTypeCode</a></td>
+               <td>Type de code pour désigner le lieu d'exécution. Hormis «&nbsp;Code postal&nbsp;», les codes
+                  sont des codes géographiques gérés par l'INSEE.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomLieuExecution</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte50">Base_Texte50</a></td>
+               <td>Nom du lieu d'exécution, si possible dérivé du code INSEE (très important si l'identifiant
+                  du lieu est un code postal, car un code postal peut recouvrir plusieurs communes).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TOperateurs">TYPE TOperateurs</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Opérateurs économiques du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">Titulaire</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TTitulaire">TTitulaire</a></td>
+               <td>Titulaire/ co-traitants du marché<br>A minima 1 élémént.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">SousTraitantPaiementDirect</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TSousTraitantPaiementDirect">TSousTraitantPaiementDirect</a></td>
+               <td>Sous-traitants à paiement direct</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTitulaire">TYPE TTitulaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Titulaire/ co-traitant du marché</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeTitulaireMarche</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeTitulaireMarche">TTypeTitulaireMarche</a></td>
+               <td>Type opérateur économique.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdTitulaire</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national de l'opérateur économique.<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI, <br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdTitulaire</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national de l'opérateur économique de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;IdTitulaire&gt; est un alphanumérique de 9 à 80 caractères.<br><br>Pour les seuls identifiants de type SIRET des contrôles de validité sont effectués.
+                  La clé de l'identifiant doit être valide, sinon rejet du Marché. Les longueurs possibles
+                  sont 14 pour le Siret, au moins 9 pour TVA, 18 pour HORS-UE (les deux premiers caractères
+                  doivent correspondre au code pays ISO 3166), 9 pour Tahiti (9 chiffres), 9 ou 10 pour
+                  Ridet (10 chiffres), 18 caractères au maximum pour FRWF (en plus&nbsp;: les 4 premiers
+                  caractères = FRWF), 80 caractères au maximum pour IREP (les 5 premiers caractères
+                  sont des chiffres).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DenominationSociale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom de l'opérateur économique intervenant sur le marché public.<br>Raison sociale / Nom : Norme postale
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ComplNom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément de nom : Norme postale</td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Réservé aux opérateurs «&nbsp;personne physique&nbsp;». Obligatoire pour les personnes physiques.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Référence attribuée au titulaire/co-traitant par l'ordonnateur : zone destinée à recevoir
+                  une référence ou un identifiant, éventuellement géré par l'ordonnateur
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CatTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TCatTiers">TCatTiers</a></td>
+               <td>Information destinée à identifier la catégorie de l'opérateur économique.<br>Par défaut : valeur 50 correspondant à une personne morale de droit privé dans Hélios.<br><br>L'association Cat Nat doit être en concordance avec les speext du PESV2 sinon :<br>- si la catégorie est «&nbsp;Personne morale de droit privé&nbsp;», le marché n'est pas rejeté
+                  mais la nature juridique est forcée à «Société»&nbsp;;<br>- si la catégorie est «&nbsp;Personne morale de droit public&nbsp;», le marché n'est pas rejeté
+                  mais la nature juridique est forcée à «&nbsp;Inconnue&nbsp;»&nbsp;;<br>- si la catégorie n'est ni «&nbsp;Personne morale de droit public&nbsp;» ni «&nbsp;Personne morale
+                  de droit privé&nbsp;», le marché n'est pas rejeté mais la catégorie est forcée à «&nbsp;Personne
+                  morale de droit privé&nbsp;» et la nature juridique à «Société» et les attributs obligatoires
+                  pour une «&nbsp;Personne Physique&nbsp;» ne sont pas retenus.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatJur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TNatJur">TNatJur</a></td>
+               <td>Information destinée à identifier la nature juridique de l'opérateur économique.<br>Valeur par défaut : 03 Société.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Civilite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Etat civil de l'opérateur économique.<br>Zone destinée à recevoir de manière abrégée l'état civil (Mr, Mme,&#x2026;), la qualité (Cdt,...)
+                  de l'opérateur économique.<br>Obligatoire si Cat de l'opérateur économique = Personne physique.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TAdresse">TAdresse</a></td>
+               <td>Adresse du titulaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteBancaire</td>
+               <td> 1..1</td>
+               <td><a href="#TBancaireMarche">TBancaireMarche</a></td>
+               <td>Référence bancaire du titulaire  (un contrôle négatif [clé RIB ou clé IBAN erronée,
+                  domiciliation erronée, BIC absent à tort sur IBAN non français) génère le rejet du
+                  marché).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ConditionsExecutionTitulaire</td>
+               <td> 1..1</td>
+               <td><a href="#TConditionsExecutionTitulaire">TConditionsExecutionTitulaire</a></td>
+               <td>Conditions d'exécution du marché pour le titulaire</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TSousTraitantPaiementDirect">TYPE TSousTraitantPaiementDirect</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Sous-traitant à paiement direct</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumeroActeSousTraitance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_2Light">Base_Num2_2Light</a></td>
+               <td>Numéro d'acte de sous-traitance.<br>Valeur&nbsp;: de 01 à 99.<br>Le numéro de sous-traitance est discriminant sur un marché public, ce numéro ne doit
+                  pas exister pour un autre sous-traitant du marché, sinon rejet du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdSousTraitant</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national de l'opérateur économique.<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI, <br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdSousTraitant</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national de l'opérateur économique de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;IdSousTraitant&gt; est un alphanumérique de 9 à 80 caractères.<br><br>Pour les seuls identifiants de type SIRET des contrôles de validité sont effectués.
+                  La clé de l'identifiant doit être valide, sinon rejet du Marché. Les longueurs possibles
+                  sont 14 pour le Siret, au moins 9 pour TVA, 18 pour HORS-UE (les deux premiers caractères
+                  doivent correspondre au code pays ISO 3166), 9 pour Tahiti (9 chiffres), 9 ou 10 pour
+                  Ridet (10 chiffres), 18 caractères au maximum pour FRWF (en plus&nbsp;: les 4 premiers
+                  caractères = FRWF), 80 caractères au maximum pour IREP (les 5 premiers caractères
+                  sont des chiffres).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DenominationSociale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom de l'opérateur économique intervenant sur le marché public.<br>Raison sociale / Nom : Norme postale
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ComplNom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément de nom : Norme postale</td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Réservé aux opérateurs «&nbsp;personne physique&nbsp;». Obligatoire pour les personnes physiques.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Référence attribuée au titulaire par l'ordonnateur : zone destinée à recevoir une
+                  référence ou un identifiant, éventuellement géré par l'ordonnateur
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CatTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TCatTiers">TCatTiers</a></td>
+               <td>Information destinée à identifier la catégorie de l'opérateur économique.<br>Par défaut : valeur 50 correspondant à une personne morale de droit privé dans Hélios.<br><br>L'association Cat Nat doit être en concordance avec les speext du PESV2 sinon&nbsp;:<br>- si la catégorie est «&nbsp;Personne morale de droit privé&nbsp;», le marché n'est pas rejeté
+                  mais la nature juridique est forcée à «Société»&nbsp;;<br>- si la catégorie est «&nbsp;Personne morale de droit public&nbsp;», le marché n'est pas rejeté
+                  mais la nature juridique est forcée à «&nbsp;Inconnue&nbsp;»&nbsp;;<br>- si la catégorie n'est ni «&nbsp;Personne morale de droit public&nbsp;» ni «&nbsp;Personne morale
+                  de droit privé&nbsp;», le marché n'est pas rejeté mais la catégorie est forcée à «&nbsp;Personne
+                  morale de droit privé&nbsp;» et la nature juridique à «Société» et les attributs obligatoires
+                  pour une «&nbsp;Personne Physique&nbsp;» ne sont pas retenus.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatJur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TNatJur">TNatJur</a></td>
+               <td>Information destinée à identifier la nature juridique de l'opérateur économique.<br>Valeur par défaut : 03 Société.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Civilite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Etat civil de l'opérateur économique.<br>Zone destinée à recevoir de manière abrégée l'état civil (Mr, Mme,&#x2026;), la qualité (Cdt,...)
+                  de l'opérateur économique.<br>Obligatoire si Cat de l'opérateur économique = Personne physique.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TAdresse">TAdresse</a></td>
+               <td>Adresse du sous-traitant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteBancaire</td>
+               <td> 1..1</td>
+               <td><a href="#TBancaireMarche">TBancaireMarche</a></td>
+               <td>Référence bancaire du sous-traitant (un contrôle négatif [clé RIB ou clé IBAN erronée,
+                  domiciliation erronée, BIC absent à tort sur IBAN non français) pourra générer le
+                  rejet du marché).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTitulairesLight">TYPE TTitulairesLight</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Acheteur du marché public</td>
+            </tr>
+            <tr>
+               <td colspan="2">Titulaire</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TTitulaireLight">TTitulaireLight</a></td>
+               <td>Titulaire/ co-traitant du marché (dont les attributaires d'un accord-cadre)<br>A minima 1 titulaire.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTitulaireLight">TYPE TTitulaireLight</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Opérateur économique intervenant sur le marché public :<br>- titulaire du marché/co-traitant
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypeTitulaireMarche</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TTypeTitulaireMarche">TTypeTitulaireMarche</a></td>
+               <td>Type opérateur économique.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatId</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national de l'opérateur économique.<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI, <br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Id</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national de l'opérateur économique de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;Id&gt; est un alphanumérique de 9 à 80 caractères.<br><br>Pour les seuls identifiants de type SIRET des contrôles de validité sont effectués.
+                  La clé de l'identifiant doit être valide. <br>Les longueurs possibles sont 14 pour le Siret, au moins 9 pour TVA, 18 pour HORS-UE
+                  (les deux premiers caractères doivent correspondre au code pays ISO 3166), 9 pour
+                  Tahiti (9 chiffres), 9 ou 10 pour Ridet (10 chiffres), 18 caractères au maximum pour
+                  FRWF (en plus&nbsp;: les 4 premiers caractères = FRWF), 80 caractères au maximum pour IREP
+                  (les 5 premiers caractères sont des chiffres).<br><br>Le titulaire doit être référencé dans la liste des opérateurs [Titulaire] du marché.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DenominationSociale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom de l'opérateur économique intervenant sur le marché public.<br>Raison sociale / Nom : Norme postale
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MontantHTNotifie</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT du marché qui a été notifié au titulaire/co-traitant.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TSousTraitantPaiementDirectLight">TYPE TSousTraitantPaiementDirectLight</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Informations sous-traitant</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatId</td>
+               <td> 1..1</td>
+               <td><a href="PES_MarcheAller_codes.html#TNatIdTiersMarche">TNatIdTiersMarche</a></td>
+               <td>Type d'Identifiant national de l'opérateur économique.<br>- 01 SIRET<br>- 05 TVA,<br>- 06 HORS UE<br>- 07 TAHITI, <br>- 08 RIDET,<br>- 09 EN COURS IMMATRICULATION,<br>- 10 FRWF,<br>- 11 IREP
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Id</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte9_80">Base_Texte9_80</a></td>
+               <td>Identifiant national de l'opérateur économique de type :<br>- numéro siret (SIREN+NIC), (identifiant français, 14 chiffres)<br>- numéro de TVA intracommunautaire (numéro de TVA intracommunautaire, pour les entreprises
+                  de pays membres de l'Union européenne) au moins 9 caractères<br>- HORS-UE (identifiants pour les entreprises de pays non membres de l'Union Européenne.
+                  Code pays ISO 3166 + 16 premiers caractères de la dénomination sociale. Ex. : BRDASILVAMOTORES)<br>- Tahiti (identifiants pour Tahiti et la Polynésie française, 9 chiffres)<br>- Ridet (identifiants pour la Nouvelle-Calédonie, 10 chiffres),<br>- EN_COURS_IMMATRICULATION,<br>- FRWF (identifiants pour Wallis-et-Futuna, " FRWF " + 14 premières lettres de la
+                  raison sociale. Ex. : FRWFDURANDCHAUFFAG),<br>- IREP (personnes physiques françaises, 5 chiffres + LIEU DE NAISSANCE + NOM + PRENOM.
+                  Ex. : 18102VANNESDURANDMATHIEU), 80 caractères au maximum.<br><br>Nb&nbsp;: la balise &lt;Id&gt; est un alphanumérique de 9 à 80 caractères.<br><br>Pour les seuls identifiants de type SIRET des contrôles de validité sont effectués.
+                  La clé de l'identifiant doit être valide. <br>Les longueurs possibles sont 14 pour le Siret, au moins 9 pour TVA, 18 pour HORS-UE
+                  (les deux premiers caractères doivent correspondre au code pays ISO 3166), 9 pour
+                  Tahiti (9 chiffres), 9 ou 10 pour Ridet (10 chiffres), 18 caractères au maximum pour
+                  FRWF (en plus&nbsp;: les 4 premiers caractères = FRWF), 80 caractères au maximum pour IREP
+                  (les 5 premiers caractères sont des chiffres).<br><br>Le sous-traitant doit être référencé dans la liste des opérateurs |Sous-traitant]
+                  du marché.<br>Le sous-traitant doit être référencé dans la «VentilationSousTraitantPaiementDirect»
+                  pour au moins un titulaire donné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DenominationSociale</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom de l'opérateur économique intervenant sur le marché public.<br>Raison sociale / Nom : Norme postale
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBancaireMarche">TYPE TBancaireMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Le bloc CpteBancaire représente les information bancaires.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°3)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="6" nowrap><b>n°1</b></td>
+               <td>IdPayInt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum4">Base_Alphanum4</a></td>
+               <td>Identification internationale du pays.<br>Cette zone permet d'obtenir les références bancaires internationales (IBAN).<br>Si valorisation la valeur doit être connue et valide sinon rejet du marché .<br>La balise IdPayInt est obligatoirement valorisée si IdBancInt est servie. Si la balise
+                  IdPayInt n'est pas valorisée alors qu'IdBancInt l'est, rejet du marché contenant le
+                  RIB incomplet.
+               </td>
+            </tr>
+            <tr>
+               <td>IdBancInt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum11">Base_Alphanum11</a></td>
+               <td>Identification internationale de la banque.<br>Cette zone permet d'obtenir les références bancaires internationales (IBAN).<br>Si valorisation la valeur doit être connue et valide sinon rejet du marché.<br>La balise IdBancInt est obligatoirement valorisée si IdPayInt est servie. Si la balise
+                  IdBancInt n'est pas valorisée alors qu'IdPayInt l'est, rejet du marché contenant le
+                  RIB incomplet.
+               </td>
+            </tr>
+            <tr>
+               <td>CodeEtab</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum5">Base_Alphanum5</a></td>
+               <td>Code de l'établissement bancaire.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du marché
+                  qui comprend le titulaire ou sous-traitant qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td>CodeGuic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum5_Light">Base_Alphanum5_Light</a></td>
+               <td>Code du guichet de l'établissement bancaire.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du marché
+                  qui comprend le titulaire ou sous-traitant qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td>IdCpte</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte11">Base_Texte11</a></td>
+               <td>Numéro du compte du client de l'établissement bancaire.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du marché
+                  qui comprend le titulaire ou sous-traitant qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td>CleRib</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_Light">Base_Num2_Light</a></td>
+               <td>Clé RIB du compte client.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du marché
+                  qui comprend le titulaire ou sous-traitant qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°2</b></td>
+               <td>BIC</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte11BIC">Base_Texte11BIC</a></td>
+               <td>Bank International Code.<br>Tous les caractères alphabétiques du BIC doivent être en majuscules, sinon rejet du
+                  flux.<br>Doit être un code connu et valide<br>sinon rejet du marché<br>La balise est obligatoire pour toute domiciliation à l'étranger, sinon rejet du marché
+                  .
+               </td>
+            </tr>
+            <tr>
+               <td>IBAN</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte34IBAN">Base_Texte34IBAN</a></td>
+               <td>International Bank Account Number<br>Tous les caractères alphabétiques de l'IBAN doivent être en majuscules, sinon rejet
+                  du flux.<br>Doit être complet et valide sinon rejet du marché.
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°3</b></td>
+               <td>CodePays</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte2">Base_Texte2</a></td>
+               <td>Code pays du compte bancaire étranger : cette information permet de déterminer le
+                  pays du compte bancaire hors zone SEPA pour un opérateur économique de nature d'identifiant
+                  «&nbsp;06 Hors UE&nbsp;». Cette zone utilise la codification de l'INSEE (Code_Alpha2_Pays).
+                  Tout CodePays qui n'existe pas aboutit au rejet du marché.<br>Autorisé uniquement pour les opérateurs économiques de nature d'identifiant 06 Hors
+                  UE intervenant sur les marchés publics.
+               </td>
+            </tr>
+            <tr>
+               <td>NumeroCompteEtranger</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte34">Base_Texte34</a></td>
+               <td>Numéro de compte étranger hors zone SEPA.<br>Equivalent du BBAN&nbsp;:<br>Exemple pour les États-Unis&nbsp;: code ABA (9 chiffres) numéro de routage ou routing transit
+                  number (RTN) + numéro de compte ACCT (account number&nbsp;: maximum 17 caractères (tirets
+                  acceptés)).<br>Autorisé uniquement pour les opérateurs économiques de nature d'identifiant 06 Hors
+                  UE intervenant sur les marchés publics.<br>Le numéro de compte étranger ne fait l'objet d'aucun contrôle particulier en dehors
+                  du type associé à la balise (Base_Texte36).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibBanc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Libellé de l'établissement bancaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">TitCpte</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Nom du titulaire du compte client.<br>Cette zone reprend la désignation du titulaire du compte à créditer telle qu'elle
+                  est précisée sur le relevé d'identité bancaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteBanc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour des éléments de la domiciliation bancaire.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

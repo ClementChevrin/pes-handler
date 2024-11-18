@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_pes_retour.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+      rst_inactif();	
+    
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/pesretour/PES_Retour_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/pesretour/PES_Retour_xmlspy.png';
+        rst_inactif();
+      }
+      function inactif(p_h2, p_domaine)
+      {
+        createCookie('p_pes','retour', 0);
+        createCookie('p_domaine', p_domaine, 0);
+        createCookie('p_h1', '8', 0);
+        createCookie('p_h2', p_h2, 0);
+      }
+      function rst_inactif()
+      {
+        eraseCookie('p_pes');
+        eraseCookie('p_domaine');
+        eraseCookie('p_h1');
+        eraseCookie('p_h2');
+      }
+    //-->
+    </script>
+    <title>Domaines PES Retour</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Domaines PES Retour</h1>
+
+<h2 class="titreligne num" id="h2PresentationPESRetour">Présentation du PES Retour</h2>
+
+<p class="normal">
+<img src="src/img/pesretour/PES_Retour_xmlspy.png" alt="PES Retour" border="0" usemap="#mapPESRetour" id="docimage" name="docimage">
+<map name="mapPESRetour" id="mapPESRetour">
+  <area shape=rect coords="10,53,94,73" href="DomainePESRetour_domaines.html#PES_Retour" alt="PES Retour" title="PES Retour" onMouseOver="chg('00')" onMouseOut="rst()">
+  <area shape=rect coords="178,5,256,25" href="DomaineGlobalRetour.html#h3TEnveloppe" alt="Enveloppe" title="Enveloppe" onMouseOver="chg('01')" onMouseOut="rst()">
+  <area shape=rect coords="178,37,257,57" href="DomaineGlobalRetour.html#h3TEnTetePES" alt="En Tete PES" title="En Tete PES" onMouseOver="chg('02')" onMouseOut="rst()">
+  <area shape=rect coords="178,69,311,89" href="PES_DepenseRetour.html" alt="PES DepenseRetour" title="PES Depense Retour" onMouseOver="chg('03')" onMouseOut="rst()">
+  <area shape=rect coords="178,101,304,121" href="PES_RecetteRetour.html" alt="PES Recette Retour" title="PES Recette Retour" onMouseOver="chg('04')" onMouseOut="rst()">
+  <area shape=rect coords="178,137,291,158" href="PES_ClientRetour.html" alt="PES Client Retour" title="PES Client Retour" onMouseOver="chg('05')" onMouseOut="rst()"> 
+</map>
+</p>
+
+<h3 class="titreligne num" id="h3Details">Détails</h3>
+<p class="normal">Pour visualiser les blocs de ce domaine, cliquez sur le bouton ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='DomainePESRetour_domaines.html'">Visualiser les blocs</button>
+
+<h3 class="titreligne num" id="h3Details">Détails communs retour</h3>
+<p class="normal">Pour visualiser les blocs, les codes ou les types simples communs de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_blocscommuns.html'">Visualiser les blocs communs retour</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_codescommuns.html'">Visualiser les codes communs retour</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html'">Visualiser les types simples communs retour</button>
+
+
+
+</div>
+</body></html>

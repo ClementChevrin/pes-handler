@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_acquittementretour.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/acquittementretour/acquittementretour_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/acquittementretour/acquittementretour_xmlspy.png';
+      }
+    //-->
+    </script>
+    <title>Présentation et définition de l'acquittement retour</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Présentation et définition de l'acquittement retour</h1>
+<h2 class="titreligne num" id="h2Presentation">Pr&eacute;sentation</h2>
+<p class="normal">Le fichier d'acquit retour est utilisé par l'ordonnateur pour informer le guichet xml de l'intégration des éléments pes retour transmis.</p>
+<p class="normal">Il est utilisé pour la toute fonctionnalité ou domaine du PES retour en production : dépense, recette. Le DomaineAckRetour sera enrichi en fonction des besoins pour les nouvelles fonctionnalités ou domaines mis en production.</p>
+<h2 class="titreligne num" id="h2SchemaXML">Sch&eacute;ma XML</h2>
+<p class="normal">
+<img src="src/img/acquittementretour/acquittementretour_xmlspy.png" alt="Acquittement Retour" border="0" usemap="#mapAcquittementRetour" id="docimage" name="docimage">
+<map name="mapAcquittementRetour" id="mapAcquittementRetour">
+  <area shape="rect" coords="1,40,136,60" href="AcquittementRetour_blocs.html#TPES_ACQUIT_RETOUR" alt="PES_ACQUIT_RETOUR" title="PES_ACQUIT_RETOUR" onMouseOver="chg('00')" onMouseOut="rst()">
+  <area shape="rect" coords="228,7,305,27" href="DomaineGlobalRetour_blocscommuns.html#TEnveloppe" alt="Enveloppe" title="Enveloppe" onMouseOver="chg('01')" onMouseOut="rst()">
+  <area shape="rect" coords="228,40,305,60" href="DomaineGlobalRetour_blocscommuns.html#TEnTetePES" alt="EnTetePES" title="EnTetePES" onMouseOver="chg('02')" onMouseOut="rst()">
+  <area shape="rect" coords="228,73,337,93" href="AcquittementRetour_blocs.html#TACQUIT_RETOUR" alt="ACQUIT_RETOUR" title="ACQUIT_RETOUR" onMouseOver="chg('03')" onMouseOut="rst()">
+</map>
+</p>
+
+<h2 class="titreligne num" id="h2Details">Détails</h2>
+<p class="normal">Pour visualiser les blocs ou les codes de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='AcquittementRetour_blocs.html'">Visualiser les blocs</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='AcquittementRetour_codes.html'">Visualiser les codes</button>
+
+
+
+</div>
+</body></html>

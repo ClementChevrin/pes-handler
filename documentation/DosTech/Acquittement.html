@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_acquittement.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/acquittement/acquittement_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/acquittement/acquittement_xmlspy.png';
+      }
+    //-->
+    </script>
+    <title>Présentation et définition de l'acquittement</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Présentation et définition de l'acquittement</h1>
+<h2 class="titreligne num" id="h2Presentation">Pr&eacute;sentation</h2>
+<p class="normal">Le fichier d'acquit constitue le seul type de fichier retourné par le guichet xml pour informer l'ordonnateur de l'intégration ou du rejet des éléments transmis. Cet acquit est versionné et destiné à évoluer.</p>
+<p class="normal">Il est utilisé pour toute fonctionnalité ou domaine du PES en production : dépense, recette, pièce justificative, budget, facture. Le DomaineAck sera enrichi en fonction des besoins pour les nouvelles fonctionnalités ou domaines mis en production.</p>
+<h2 class="titreligne num" id="h2SchemaXML">Sch&eacute;ma XML</h2>
+<p class="normal">
+<img src="src/img/acquittement/acquittement_xmlspy.png" alt="Acquittement" border="0" usemap="#mapAcquittement" id="docimage" name="docimage">
+<map name="mapAcquittement" id="mapAcquittement">
+  <area shape="rect" coords="2,46,89,67" href="Acquittement_blocs.html#TPES_ACQUIT" alt="PES_ACQUIT" title="PES_ACQUIT" onMouseOver="chg('00')" onMouseOut="rst()">
+  <area shape="rect" coords="175,10,252,30" href="DomaineGlobalAller_blocscommuns.html#TEnveloppe" alt="Enveloppe" title="Enveloppe" onMouseOver="chg('01')" onMouseOut="rst()">
+  <area shape="rect" coords="175,42,253,62" href="DomaineGlobalAller_blocscommuns.html#TEnTetePES" alt="EnTetePES" title="EnTetePES" onMouseOver="chg('02')" onMouseOut="rst()">
+  <area shape="rect" coords="175,72,236,92" href="Acquittement_blocs.html#TACQUIT" alt="ACQUIT" title="ACQUIT" onMouseOver="chg('03')" onMouseOut="rst()">
+</map>
+</p>
+
+<h2 class="titreligne num" id="h2Details">Détails</h2>
+<p class="normal">Pour visualiser les blocs ou les codes de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='Acquittement_blocs.html'">Visualiser les blocs</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='Acquittement_codes.html'">Visualiser les codes</button>
+
+
+
+</div>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_Asapretour_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Asap Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPES_AsapRetour">TYPE TPES_AsapRetour</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTeteAsap</td>
+               <td> 1..1</td>
+               <td><a href="#TEnTeteAsap">TEnTeteAsap</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">Asap</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TAsap">TAsap</a></td>
+               <td>Bordereau. Un bordereau comprend n pièces, constituées elle même de n lignes de pièces.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnTeteAsap">TYPE TEnTeteAsap</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>N° de version du PES ASAP &#x2013; Mettre à « 2 »</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAsap">TYPE TAsap</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc ASAP</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdUniquePJASAP</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum50">Base_Alphanum50</a></td>
+               <td>Identification unique de la PJ ayant véhiculé  la facture au format PES Facture pour
+                  les titres de recette ou la facture au format PDF pour les titres ORMC.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdUniquePJCplt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum50">Base_Alphanum50</a></td>
+               <td>Identification unique de la PJ ayant véhiculé le document complémentaire (format PDF)
+                  à l&#x2019;ASAP  d&#x2019;un titre de recette.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Exer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Millésime de l'exercice de rattachement budgétaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdBord</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num12">Base_Num12</a></td>
+               <td>Identifiant du bordereau</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypBord</td>
+               <td> 1..1</td>
+               <td><a href="PES_AsapRetour_codes.html#TTypBord">TTypBord</a></td>
+               <td>Type du bordereau</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPce</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num13">Base_Num13</a></td>
+               <td>Identifiant de la pièce</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_AsapRetour_codes.html#TTypPce">TTypPce</a></td>
+               <td>Type de pièce</td>
+            </tr>
+            <tr>
+               <td colspan="2">EtatPJComplt</td>
+               <td>0..1</td>
+               <td><a href="PES_AsapRetour_codes.html#TEtatPJComplt">TEtatPJComplt</a></td>
+               <td>Présent uniquement pour les titres de recette comportant une PJ complémentaire, indique
+                  si la PJ complémentaire a été adjointe dans la facture ou pas
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°3)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>Postalisation</td>
+               <td> 1..1</td>
+               <td><a href="#TPostalisation">TPostalisation</a></td>
+               <td>Bloc valorisé si l&#x2019;ASAP a fait l&#x2019;objet d&#x2019;une postalisation</td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>NotificationParMail</td>
+               <td> 1..1</td>
+               <td><a href="#TNotificationParMail">TNotificationParMail</a></td>
+               <td>Bloc valorisé si l&#x2019;ASAP a fait l&#x2019;objet d&#x2019;une notification par mail (redevables reconnus
+                  ayant opté pour la dématérialisation)
+               </td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°3</b></td>
+               <td>Rejet</td>
+               <td> 1..1</td>
+               <td><a href="#TRejet">TRejet</a></td>
+               <td>Bloc valorisé si l&#x2019;ASAP a fait l&#x2019;objet d&#x2019;un rejet de l&#x2019;éditique ou du Pilote de Notification
+                  Par Mail
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPostalisation">TYPE TPostalisation</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc valorisé si l&#x2019;ASAP a fait l&#x2019;objet d&#x2019;une postalisation</td>
+            </tr>
+            <tr>
+               <td colspan="2">DatePostalisation</td>
+               <td> 1..1</td>
+               <td>Date</td>
+               <td>Date de remise de l'ASAP à La Poste par le centre éditique de la DGFiP.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TNotificationParMail">TYPE TNotificationParMail</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc valorisé si l&#x2019;ASAP a fait l&#x2019;objet d&#x2019;une notification par mail (redevables reconnus
+                  ayant opté pour la dématérialisation). A noter que dans le cas ou DateNotification
+                  et Date1ereLecture ne sont pas concomittantes (au regard de la périodicité du flux
+                  ) un PES retour ASAP sera produit pour chacune de ces dates, le deuxième comportant
+                  les 2 dates.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateNotification</td>
+               <td>0..1</td>
+               <td>Date</td>
+               <td>Date de notification par mail indiquant à l'usager la disponibilité de l'ASAP dans
+                  son espace ENSU.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Date1ereLecture</td>
+               <td>0..1</td>
+               <td>Date</td>
+               <td>Date de première lecture indiquant que l'usager a pris connaissance du document à
+                  ladite date dans son espace ENSU.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRejet">TYPE TRejet</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc valorisé si l&#x2019;ASAP a fait l&#x2019;objet d&#x2019;un rejet de l&#x2019;éditique ou du Pilote de Notification
+                  Par Mail (redevables reconnus ayant opté pour la dématérialisation)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DateRejet</td>
+               <td> 1..1</td>
+               <td>Date</td>
+               <td>Date du rejet transmise par l&#x2019;éditique</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>MotifRejetPostalisation</td>
+               <td> 1..1</td>
+               <td><a href="PES_AsapRetour_codes.html#TMotifRejetPostalisation">TMotifRejetPostalisation</a></td>
+               <td>Motif de rejet transmis par l&#x2019;éditique</td>
+            </tr>
+            <tr>
+               <td>IndicRelanceAsap</td>
+               <td>0..1</td>
+               <td>Booléen</td>
+               <td>Présent et valorisé à 1, TRUE dans le cas où un titre de recette comporte une PJ complémentaire
+                  et que l&#x2019;erreur éditique ne concerne pas l&#x2019;adresse. En effet Hélios transmet alors
+                  à nouveau la facture à l&#x2019;éditique sans y adjoindre la PJ complémentaire. A l&#x2019;issue
+                  de cette deuxième présentation l&#x2019;ASAP se retrouvera soit dans les ASAP postalisés
+                  (cas nominal, pas de raison que la facture Hélios soit non éditable) soit à nouveau
+                  dans les ASAP rejetés
+               </td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>MotifRejetNotificationParMail</td>
+               <td> 1..1</td>
+               <td><a href="PES_AsapRetour_codes.html#TMotifRejetNotification">TMotifRejetNotification</a></td>
+               <td>Motif de rejet transmis par le Pilote de Notification Par Mail</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

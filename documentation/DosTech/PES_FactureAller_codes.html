@@ -1,0 +1,196 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_facturealler_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Facture Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypeFacture">TYPE TTypeFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de Facturation.<br>Le TypeFact ASAP=09 est nécessaire et obligatoire pour permettre l'édition centralisée
+                  des ASAP.<br>Le TypeFact ASAP=10 est nécessaire et obligatoire pour permettre l'édition centralisée
+                  des ASAP Patients
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        FACTURE  une facture
+                     </li>
+                     <li><b>02</b> : 
+                        COMMANDE  une commande
+                     </li>
+                     <li><b>03</b> : 
+                        AVOIR  un avoir
+                     </li>
+                     <li><b>04</b> : 
+                        DEVIS  un devis
+                     </li>
+                     <li><b>05</b> : 
+                        PRO FORMA  une facture pro forma
+                     </li>
+                     <li><b>06</b> : 
+                        CARTE ACHAT  un relevé de carte achat
+                     </li>
+                     <li><b>07</b> : 
+                        AVIS ECHEANCE  un avis d'échéance
+                     </li>
+                     <li><b>08</b> : 
+                        QUITTANCE  une quittance
+                     </li>
+                     <li><b>09</b> : 
+                        ASAP Avis des  sommes à payer
+                     </li>
+                     <li><b>10</b> : 
+                        ASAP Avis des  sommes à payer Patients
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAdresseFacture">TYPE TAdresseFacture</td>
+            </tr>
+            <tr class="titre">
+               <td class="type" colspan="2">Nom</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Adresse du Tiers.<br>Obligatoire pour les Tiers du PES_Facture ASAP, à défaut rejet du PES_Facture ASAP.<br>Ce bloc est commun aux blocs<br>- PES_Facture Emetteur<br>- PES_Facture FactureIndiv Tiers<br>- PES_Facture FactureIndiv Debiteur<br>- PES_Facture FactureIndiv Destinataire
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypAdr</td>
+               <td> 1..1</td>
+               <td><a href="#TTypAdr">TTypAdr</a></td>
+               <td>Type d'adresse.<br>Par défaut à valoriser à 1.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément distribution&nbsp;: norme postale.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PES_Facture ASAP&nbsp;: Adr1 ne doit pas être
+                  renseignée si TypeTiers = 25. Si renseignée, rejet du PES_Facture ASAP.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Adresse du tiers: Norme postale.<br>(Numéro de voie, voie)<br>- Contrainte pour le bloc parent Emetteur&nbsp;: Obligatoire pour un PES_Facture ASAP.
+                  Sinon, rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PES_Facture ASAP :<br>  + Adr2 ne doit pas être renseignée si TypeTiers = 25. Si renseignée, rejet du PESFacture
+                  ASAP.<br>  + Adr2 est obligatoire si TypeTiers=26. A défaut.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: Adr 2 obligatoire.
+                  A défaut, rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Destinataire: PES_Facture ASAP&nbsp;: Adr 2 obligatoire.
+                  A défaut, rejet du PES_Facture ASAP.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr3</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Lieu dit ou complément d'adresse: Norme postale.<br>- Contrainte pour le bloc parent Tiers&nbsp;: PESFacture ASAP&nbsp;: pour TypeTiers = 25, à
+                  renseigner de l'éventuel TSA.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CP</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte5">Base_Texte5</a></td>
+               <td>Code postal : Norme postale.<br>Ou Numéro de CEDEX&nbsp;: Norme postale.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Ville</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Localité de destination : Norme postale.<br>Ou Libellé CEDEX&nbsp;: Norme postale.<br>Recommandation normes postales&nbsp;: saisir en majuscule, sans accent, sans caractère
+                  de ponctuation
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodRes</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>0 pour résident en France 1 pour non résident.<br>- Contrainte pour le bloc parent Emetteur&nbsp;: Pour un PES_Facture ASAP, seule valeur
+                  autorisée = 0. Sinon, rejet du PES_Facture ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: Pour un PES_Facture ASAP, seule valeur autorisée
+                  = 0. Sinon, rejet du PES_Facture ASAP.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodPays</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Référence Insee du pays Référence Insee du pays Obligatoire pour un tiers non résident.<br>- Contrainte pour le bloc parent Emetteur&nbsp;: Non repris sur l'édition ASAP.<br>- Contrainte pour le bloc parent Tiers&nbsp;: Non repris sur l'édition ASAP.<br>- Contrainte pour le bloc parent Debiteur&nbsp;: PES_Facture ASAP&nbsp;: CodPays obligatoire
+                  si CodRes = 1&nbsp;; à défaut, rejet du PESFacture ASAP.La balise CodPays est obligatoirement
+                  non valorisée ou valorisée à 100 si CodRes est à 0, sinon rejet du PESFacture ASAP.<br>- Contrainte pour le bloc parent Destinataire: PES_Facture ASAP&nbsp;: CodPays obligatoire
+                  si CodRes = 1&nbsp;; à défaut, rejet du PESFacture ASAP.La balise CodPays est obligatoirement
+                  non valorisée ou valorisée à 100 si CodRes est à 0, sinon rejet du PESFacture ASAP.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypAdr">TYPE TTypAdr</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type d'adresse.<br>Par défaut, à valoriser à 1.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>0</b> : 
+                        Non précisé.
+                     </li>
+                     <li><b>1</b> : 
+                        Principal.
+                     </li>
+                     <li><b>2</b> : 
+                        Secondaire.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_FactureAller.html#docimage'">Retour Domaine Facture Aller</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_pes_clientretour.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/clientretour/TPES_ClientRetour_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/clientretour/TPES_ClientRetour_xmlspy.png';
+      }
+    //-->
+    </script>
+    <title>PES Client Retour</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h2 class="titreligne num" id="h2PES_ClientRetour">PES Client Retour</h2>
+<h3 class="titreligne num" id="h3SchemaXML">Schéma XML</h3>
+<p class="normal">
+<img src="src/img/clientretour/TPES_ClientRetour_xmlspy.png" alt="PES Client Retour" border="0" usemap="#mapPESClientRetour" id="docimage" name="docimage">
+<map name="mapPESClientRetour" id="mapPESClientRetour">
+  <area shape="rect" coords="10,62,129,83" href="PES_ClientRetour_blocs.html#TPES_ClientRetour" alt="PESClientRetour" title="PESClientRetour" onMouseOver="chg('00')" onMouseOut="rst()">
+  <area shape="rect" coords="213,5,302,25" href="PES_ClientRetour_blocs.html#TEnTeteClient" alt="EnTeteClient" title="EnTeteClient" onMouseOver="chg('01')" onMouseOut="rst()">
+  <area shape="rect" coords="213,120,304,149" href="PES_ClientRetour_blocs.html#TClient" alt="Client" title="Client" onMouseOver="chg('02')" onMouseOut="rst()">
+  <area shape="rect" coords="357,72,424,91" href="PES_ClientRetour_blocs.html#TClient" alt="RefTiers" title="RefTiers" onMouseOver="chg('03')" onMouseOut="rst()">
+  <area shape="rect" coords="357,170,477,193" href="PES_ClientRetour_blocs.html#TResteARecouvrer" alt="ResteARecouvrer" title="ResteARecouvrer" onMouseOver="chg('04')" onMouseOut="rst()">  
+  <area shape="rect" coords="566,137,654,157" href="PES_ClientRetour_blocs.html#TResteARecouvrer" alt="CodProdLoc" title="CodProdLoc" onMouseOver="chg('05')" onMouseOut="rst()">
+  <area shape="rect" coords="566,170,617,190" href="PES_ClientRetour_blocs.html#TResteARecouvrer" alt="Rar" title="Rar" onMouseOver="chg('06')" onMouseOut="rst()">
+  <area shape="rect" coords="566,203,632,223" href="PES_ClientRetour_blocs.html#TResteARecouvrer" alt="RarFrais" title="RarFrais" onMouseOver="chg('07')" onMouseOut="rst()">
+</map>
+</p>
+
+<h3 class="titreligne num" id="h3Details">Détails</h3>
+<p class="normal">Pour visualiser les blocs ou les codes de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='PES_ClientRetour_blocs.html'">Visualiser les blocs</button>
+<!-- &nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='PES_ClientRetour_codes.html'">Visualiser les codes</button> -->
+
+</div>
+</body></html>

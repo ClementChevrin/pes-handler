@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <script type="text/javascript" src="src/js/gestion_div.j"></script>
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_page_gestion.css">
+  <link rel="icon" href="favicon.ico"/>
+  <title>Page de gestion</title>
+</head>
+<body class="normal">
+<script type="text/javascript">
+    <!--
+      var indiceMax = 29; //TODO à modifier à chaque insertion de ligne
+      var pasAffichage = 4;
+    //-->
+</script>
+<iframe src="EnTete.html" marginwidth="0" marginheight="0" frameborder="0" height="51" width="100%" scrolling="no"></iframe>
+
+<div class="section" align="center">
+<h1 class="titrepdg">Page de gestion</h1>
+
+
+<table class="bloc" border="0" cellpadding="10" cellspacing="0">
+  <tr>
+  	<td width="5000">&nbsp;</td>
+<!--     <td class="droite" id="moinsinfos" nowrap="nowrap"><a href="#" class="info" onclick='masquerLignes(indiceMinLigneACacher()+pasAffichage); return false;'>- d'infos</a></td> -->
+<!--     <td class="droite" id="plusinfos" nowrap="nowrap"><a href="#" class="info" onclick='afficherLignes(indiceMaxLigneAAfficher()-pasAffichage); return false;'>+ d'infos</a></td> -->
+    <td class="droite" nowrap="nowrap">
+    	<button type="button" id="moinsinfos" class="encadrepetit" onclick="masquerLignes(indiceMinLigneACacher()+pasAffichage); return false;" >- d'infos</button>
+    	<span id="moinsinfosespace" class="encadrepetit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </td>
+    <td class="droite" nowrap="nowrap">
+    	<button type="button" id="plusinfos" class="encadrepetit" onclick="afficherLignes(indiceMaxLigneAAfficher()-pasAffichage); return false;">+ d'infos</button>
+    	<span id="plusinfosespace" class="encadrepetit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </td>
+  </tr>
+</table>
+
+<table class="bloc" border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <td class="titre centre">Version</td>
+    <td class="titre centre">Date</td>
+    <td class="titre centre">Rédacteur(s)</td>
+    <td class="titre centre">Nature de la modification</td>
+  </tr>
+  <!--tr id="ligne">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr-->
+  <tr id="ligne29">
+    <td>7.24</td>
+    <td>25/10/2022</td>
+    <td>BSI5</td>
+    <td>Livraison du dossier technique v5.19<br>
+   	§9.2 : Depense Aller
+		<ul>
+		<li>Bloc InfoLignePce : ajout balise TVAImportation</li>
+		</ul>
+	§9.3 : Recette Aller
+		<ul>
+		<li>Bloc InfoLignePce : ajout balise TVAImportation</li>
+		</ul>
+    §9.5 : Marché : 
+    <ul>
+		<li>Bloc Marche : ajout balises MontantHTActualise, MontantTVAActualise</li>
+		<li>Bloc VentilationAcheteur  : ajout balises MontantHTActualise, MontantTVAActualise</li>
+    	<li>Bloc VentilationTitulaire : ajout balises MontantHTActualise, MontantTVAActualise</li>
+		<li>Bloc VentilationSousTraitantPaiementDirect : ajout balises MontantHTActualise, MontantTVAActualise</li>
+	</ul>
+    </td>
+  </tr> 
+  <tr id="ligne28">
+    <td>7.23</td>
+    <td>25/05/2022</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.18<br>
+    §11 : Budget Aller
+    <ul>
+    	<li>CFU M57 Abrégée et Fonction-CFU M4X
+		<ul>
+    		<li>Mise à jour de la balise Groupe Bloc Ligne Budget</li>
+    	</ul>
+    	</li>
+    </ul>
+    §9.4 : Facture :
+    <ul>
+    	<li>Adresse ASAP TIPI -> Payfip
+    	<ul>
+    		<li>En description des balises dédiées « Tipi » : 
+    		<br>Remplacement du terme Tipi par PayFip, avec le complément d'information « nouvelle appellation » pour la transition.</li>
+    		<li>Balise &lt;AdrTipit>
+    		<br>modification de l'exemple donnée suite à élargissement des possibilités de renseignement</li>
+    	</ul>
+    	</li>
+    </ul>
+    §9.5 : Marché : 
+    <ul>
+    	<li>Mise à jour des nouveaux CCAG publiés</li>
+    </ul>
+    </td>
+  </tr>
+  <tr id="ligne27">
+    <td>7.22</td>
+    <td>15/03/2022</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.17<br>
+    Circularisation NFP Tiers IREP (taille IdTiers à 80 caractères)
+    <ul>
+    	<li>§9.2 Dépense Aller</li>
+    	<li>§9.3 Recete Aller</li>
+    	<li>§10.2 Dépense Retour</li>
+    	<li>§10.3 Recete Retour</li>
+    </ul>
+    Circularisation NFP Tiers IREP (NatIdTiers ajout IREP, NFP)
+    <ul>
+    	<li>§9.2 Commun Aller</li>
+    	<li>§10.2 Commun Retour</li>
+    </ul>
+    §9.5 : Marché : Commentaires
+    <ul>
+    	<li>Bloc Conditions execution : ajout descriptif balise IdAccordCadre</li>
+    	<li>Bloc Identifiant marché : ajout condition numéro de séquence pour marchés de type 05</li>
+    </ul>
+    </td>
+  </tr>
+  <tr id="ligne26">
+    <td>7.21</td>
+    <td>07/12/2021</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.16
+    </td>
+  </tr>
+  <tr id="ligne25">
+    <td>7.20</td>
+    <td>15/07/2021</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.15<br/>    	    	
+		§10.3 : Recette Retour : Evolution Démat SATD Pole emploi :
+		<ul>
+		<li>Modification commentaire : champ "CodeSuspPour" valeur 36  modifiée en « SATD Positive »</li>		
+		</ul><br/>
+		§11 : Budget : Evolution Gestion des doublons de groupes :
+		<ul>
+		<li>Modification commentaire : expliciter l'utilisation de la balise « InfoAPCP » et « OpBudg »</li></ul><br/>
+    </td>
+  </tr> 
+  <tr id="ligne24">
+    <td>7.19</td>
+    <td>13/04/2021</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.14<br/>    	    	
+		§11 : Budget : Evolution CFU  :
+		<ul>
+		<li>Modification de Ligne budget
+		</ul><br/>
+		§9.2 : Dépense Aller
+		<ul>
+		<li>Modification type CarteAchatNiveau1</li></ul><br/>
+    </td>
+  </tr>
+  <tr id="ligne23">
+    <td>7.18</td>
+    <td>05/11/2020</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.13<br/>    	    	
+		§11 : Budget : Evolution CFU  :
+		<ul>
+		<li>MàJ NatDec (création 10 CFU)
+		<li>ajout de nouvelles Ligne budget : Groupe, MtPrevCalcul, MtCumulDM,CredAnnules, MtCumul, MtCumulCA, MtdtTitreEmis, TypNumCpteTiers, TypNumCpteTiersCourt, FonctionOperation, ChapitreFonction, ChapitreNature, RegroupFonction, RegroupNature, InfoOpe, InfoAPCP, APCP, OperationEtAPCP
+		<li>Ajout balises Code, TxReal3112,MtOpeCumul et ProdChaRat - Ajout balises NatVoteInv et NatVoteFonc
+		<li>Ajout bloc Ano
+		</ul><br/>
+		§9.5 : Marcher Aller : Evolution PES Marché
+		<ul>
+		<li>PA hors Hélios, Marchés innovants : Ajout sous-bloc facultatif "PA" rattaché au bloc "Marche"</li></ul><br/>
+		§9.3 : Recette Aller : Evolution Date de notification des actes déposés dans l'ENSU
+		<ul>
+		<li>Précision des commentaires</li></ul><br/>
+		§9.4 : Facture Aller : Evolution ASAP : 
+		<ul>
+		<li>Ajout "AdresseMelEmetteur", "AdresseMelCFP"
+		<li>Ajout "MtAvance", "MtRestantDuApresAvance" pour ASAP Patients
+		<li>Activation bloc "InfoTVAEmetteur pour factures ASAP
+		<li>Correction balises "MtPecSecu", "MtPecCompl"," MtRestantDu"
+		</ul><br/>
+		§10.3 : Recette Retour : Evolution Démat SATD CAF
+		<ul>
+		<li>remplacement terme « OTD » par « SATD »
+		<li>modification libellé pour valeurs 17, 18 et 19 de « EtapePce »</ul>
+    </td>
+  </tr>
+  <tr id="ligne22">
+    <td>7.17</td>
+    <td>07/02/2020</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.12<br/>    	    	
+		§9.6 : PJ : « ASAP ORMC » modif TypePJ, blocPJ, Domaine, TypeObjet, Identifiant, ComplementIdentifiant<br/>
+		§9.6 : PJ : « CFU » Création domaine CFU 07 et 2 nouveaux TypePJ 012 et 013<br/>
+		§9.3 : Recette Aller : « ASAP ORMC » nouveau type d'Edition<br/>
+		§6.1 : Schemas Communs Aller : « ASAP ORMC » ajout balise typePJ dans PJRef, nouveaux types de PJ : 010 et 011, modification du nom des PJ 007 et 008<br/>
+		§6.1 : Schemas Communs Aller : « CFU » MàJ Domaine (Création 07 CFU) et TypePJ (012 et 013)<br/>
+    </td>
+  </tr>
+  <tr id="ligne21">
+    <td>7.16</td>
+    <td>26/06/2019</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.11<br/>    	    	
+    	§9.6 : PJ : « Avis des sommes à payer », « Document complémentaire à l'ASAP »<br/>
+    	§9.6 : PJ : « CFU états ordonnateur », « CFU états annexes »<br/>
+    	§9.5 : Marche : 
+    </td>
+  </tr>
+  <tr id="ligne20">
+    <td>7.15</td>
+    <td>04/04/2019</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.9<br/>    	    	
+    	§9.3 : Recette Aller : « ASAP Patients », Date de naissance<br/>
+    	§9.4 : FactureAller : « ASAP Patients »
+    </td>
+  </tr>
+  <tr id="ligne19">
+    <td>7.14</td>
+    <td>10/07/2018</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.8<br/>    	
+    	§9.5 : Marche Aller : Lot 2
+    </td>
+  </tr>
+  <tr id="ligne18">
+    <td>7.13</td>
+    <td>31/10/2018</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.7<br/>    	
+    	§9.3 : Recette Aller : Modification type « NumeroFacture » pour facture CPP
+    </td>
+  </tr>
+  <tr id="ligne17">
+    <td>7.12</td>
+    <td>05/03/2018</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.6<br/>    	
+    	§9.5 : Marche Aller : Création<br/>
+    	§12.2 : Acquittement : Prise en compte du marché dans l'acquittement<br/>
+    	§6.3, §7.3 : Ajout d'un nouvel identifiant du tiers « FRWF »<br/>
+    	§9.4 : Facture Aller : Création du bloc « Destinataire »<br/>
+    	§11.3.1 : Document Budgétaire : Changement de type NumDec en numérique
+    </td>
+  </tr>
+  <tr id="ligne16">
+    <td>7.11</td>
+    <td>23/11/2017</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.5<br/>
+        §9.3 : Recette Aller : ORMC_ATLAS_ORC_CDG-D : commentaire BlocPiece - IdRol<br/>
+    	§6.1 : Schemas Commun Aller : Bloc Emetteur obligatoire<br/>
+    	§6.1 : Schémas Communs Aller : Bloc Recepteur facultatif
+    </td>
+  </tr>
+  <tr id="ligne15">
+    <td>7.10</td>
+    <td>23/02/2017</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.4<br/>
+        §10.3 et 10.4 : Pes Retour Recette et Client : création<br/>
+        §13 : Acquittement Retour : création<br/>
+        §6.1 : Schémas Communs Aller : nouvelle règle pour le code postal (OTD CAF)
+    </td>
+  </tr>
+  <tr id="ligne14">
+    <td>7.09</td>
+    <td>23/02/2017</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.3</td>
+  </tr>
+  <tr id="ligne13">
+    <td>7.08</td>
+    <td>09/12/2016</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.2<br/>
+    §9 : Facture Aller, Schémas communs aller et retour : Simplification des règles SEPA et IBAN uniquement : la balise BIC devient facultative<br/>
+    §9.3 : Recette Aller : modification de commentaires (SequencePres + InfoPrelevement + NatPrel)<br/>
+    §11 : Budget Aller : chapitres globalisés, comptes subdivisés, RAR (MtRARPrec, MtPropNouv, MtPrev et OpeCpteTiers de LigneBudget)    
+    </td>
+  </tr>
+  <tr id="ligne12">
+    <td>7.07</td>
+    <td>17/02/2016</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v5.1</td>
+  </tr>  
+  <tr id="ligne11">
+    <td>7.06</td>
+    <td>17/02/2016</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v491</td>
+  </tr>
+  <tr id="ligne10">
+    <td>7.05</td>
+    <td>13/11/2015</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v481</td>
+  </tr>
+  <tr id="ligne9">
+    <td>7.04</td>
+    <td>06/07/2015</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v471</td>
+  </tr>
+  <tr id="ligne8">
+    <td>7.03</td>
+    <td>03/04/2015</td>
+    <td>P.&nbsp;VA</td>
+    <td>Livraison du dossier technique v461</td>
+  </tr>
+  <tr id="ligne7">
+    <td>7.02</td>
+    <td>15/07/2014</td>
+    <td>F.&nbsp;NC</td>
+    <td>Livraison Dostech V451</td>
+  </tr>
+  <tr id="ligne6">
+    <td>7.01</td>
+    <td>15/07/2014</td>
+    <td>P.&nbsp;VA</td>
+    <td>Mise en place du PES Retour Dépense §10</td>
+  </tr>
+  <tr id="ligne5">
+    <td>6.1</td>
+    <td>25/11/2013</td>
+    <td>P.&nbsp;VA</td>
+    <td>Mise à jour du domaine BUDGET §8 (Version v54 schéma DGCL)</td>
+  </tr>
+<!-- <div id="div10"> -->
+  <tr id="ligne4">
+    <td>5.21</td>
+    <td>13/06/2013</td>
+    <td>F.&nbsp;NC</td>
+    <td>Mise à jour  domaine FACTURE Facture individuelle §7.5<br />
+        Type de données pour lignes 1 et 2 du talon optique : 
+        Chiffres de 0 à  9 autorisés et espaces autorisés. Lettres interdites.
+    </td>
+  </tr>
+  <tr id="ligne3">
+    <td>5.20</td>
+    <td>28/05/2013</td>
+    <td>F.&nbsp;NC</td>
+    <td>Mise à jour § 13 Acquittement 206382 EVL _GXML_Acquittement<br />
+        Remplacement de l'ensemble du §13 par un renvoi à H1_3_ET_DOSTEC_ACQUIT_1.3.doc et H1_3_ET_DOSTEC_ACQUIT_2.0.doc
+    </td>
+  </tr>
+  <tr id="ligne2">
+    <td>5.19</td>
+    <td>13/02/2013</td>
+    <td>V.&nbsp;BOUDELLAL</td>
+    <td>Mise à jour du domaine Recette<br />
+        Mise à jour du domaine Recette ORMC SEPA lot 3 199684 EVL
+    </td>
+  </tr>
+  <tr id="ligne1">
+    <td>5.18</td>
+    <td>14/01/2013</td>
+    <td>V.&nbsp;BOUDELLAL</td>
+    <td>Mise à jour selon les schèmas XSD du bloc Facture</td>
+  </tr>
+<!-- </div> -->
+</table>
+
+<script type="text/javascript">
+   <!--
+   cacheId('moinsinfosespace');
+   cacheId('plusinfosespace');
+   masquerLignes(indiceMax-1);
+   //-->
+</script>
+
+<br /><br /><br />
+
+<iframe src="PageGestion_changements.html" marginwidth="0" marginheight="0" frameborder="0" height="260" width="100%"></iframe>
+
+</div>
+</body></html>

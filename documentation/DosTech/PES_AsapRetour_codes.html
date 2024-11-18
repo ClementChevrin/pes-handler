@@ -1,0 +1,196 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_Asapretour_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Asap Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEtatPJComplt">TYPE TEtatPJComplt</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Etat de la PJ complémentaire (cas des titres de recette)</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        PJ complémentaire adjointe à l&#x2019;ASAP
+                     </li>
+                     <li><b>02</b> : 
+                        PJ complémentaire n&#x2019;a pu être adjointe à l&#x2019;ASAP (soit PJ trop volumineuse, soit PJ
+                        faisant dépasser le nombre de pages maximal d&#x2019;un ASAP)
+                     </li>
+                     <li><b>03</b> : 
+                        PJ complémentaire non ajointe à l&#x2019;ASAP car deuxième présentation de la facture à l&#x2019;éditique
+                        suite à réception d&#x2019;un rejet de l&#x2019;éditique
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TMotifRejetNotification">TYPE TMotifRejetNotification</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Informations destinées à déterminer les motifs de rejet détectés par le Pilote de
+                  Notification par Mail (redevables reconnus ayant opté pour la dématérialisation)
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Adresse mail blacklistée
+                     </li>
+                     <li><b>02</b> : 
+                        Adresse mail erroné
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TMotifRejetPostalisation">TYPE TMotifRejetPostalisation</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Motifs de rejet détectés par la filière éditique de la DGFiP</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        ERR008 - Différence majeure détectée entre les lignes d'adresse renseignées dans l'index
+                        et le bloc adresse
+                     </li>
+                     <li><b>02</b> : 
+                        ERR012 - Anomalie dans le bloc adresse destinataire
+                     </li>
+                     <li><b>03</b> : 
+                        ERR020 - Erreur de conversion du PDF en AFP
+                     </li>
+                     <li><b>04</b> : 
+                        ERR021 - Erreur de recto verso
+                     </li>
+                     <li><b>05</b> : 
+                        ERR022 - Non-respect de la zone de silence de la marge de droite
+                     </li>
+                     <li><b>06</b> : 
+                        ERR023 - Non-respect de la zone de silence au-dessus du pavé adresse
+                     </li>
+                     <li><b>07</b> : 
+                        WAR022 - Non-respect de la zone de silence autour du CODE 2D
+                     </li>
+                     <li><b>08</b> : 
+                        Autre
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypBord">TYPE TTypBord</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de bordereau.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Annulation-réduction
+                     </li>
+                     <li><b>07</b> : 
+                        Ordres de recette multi créanciers_Reversement BC bénéficiaire
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypPce">TYPE TTypPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de pièce</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Titre ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Titre correctif
+                     </li>
+                     <li><b>10</b> : 
+                        Titre en plusieurs années
+                     </li>
+                     <li><b>15</b> : 
+                        Titre ORMC (Ordre de recette multi créanciers)
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_AsapRetour.html#docimage'">Retour Domaine Asap Retour</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>

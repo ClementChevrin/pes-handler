@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/cm_principes_organisation.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <title>Principes d'organisation des schémas XML du PES V2</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Principes d'organisation des schémas XML du PES V2</h1>
+
+<p class="normal">Le Protocole d'Echange Standard est construit dans une approche d'assemblage par composants.</p>
+
+<p class="normal">Il incorpore :</p>
+  <ul>
+    <li>Des schémas XML externes identifiés par un espace de nom (ensemble de jeux de balises définissant une grammaire donné) normalisé.</li>
+    <li>Les schémas XML spécifiques du PES.</li>
+  </ul>
+
+<p class="normal">Ces composants sont réalisés sous forme de schémas XML « Schémas XML » selon une structure arborescente décrite ci-dessous.</p>
+
+
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+  <td align="center" nowrap><b>Répertoire des schémas XML du PES V2</b></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td align="center"><img src="src/3_image1.png" alt="explorer répertoire"></td>
+  <td valign="top">
+    <p class="normal">Les principes d'organisation sont les suivants :</p>
+    <p class="normal">Le répertoire racine SCHEMAS_PES comprend l'ensemble des schémas du PES. Il comprend les répertoires suivants :</p>
+    <ul>
+      <li><b>XMLDSIG</b> : répertoire de dépôt du schéma XML <i>"xmldsig-core-schema"</i> de la recommandation XML Signature, associé à l'espace de nom d'URI <i>"http://www.w3.org/2000/9/xmldsig#"</i>.</li>
+      <li><b>XADES</b> : répertoire de dépôt du schéma XML <i>"XAdES-core-schema"</i> de la recommandation XML Signature, associé à l'espace de nom d'URI <i>"http://uri:etsi.ord/0193/v1.1.1#"</i></li>
+      <li><b>XMLENC</b> : répertoire de dépôt du schéma XML <i>"xenc-schema"</i> de la recommandation XML Signature, associé à l'espace de nom d'URI <i>"http://www.w3.org/2001/4/xmlenc#"</i>
+      	<br />
+      </li>
+      <li><b>PES_V2</b> : répertoire de dépôt des schémas XML du PES V2. Ce répertoire contient :
+        <ul>
+          <li>Les schémas XML servant de composants communs aux différents domaines, déclarant le "NameSpace" d'URI <i>"http://www.minefi.gouv.fr/cp/helios/pes_v2/commun"</i></li>
+          <li>Les sous répertoire PES_V2/Rev<b><i>x</i></b> comprenant les schémas XML racine associé à la révision d'indice <b><i>x</i></b> du PES_V2. Dans le cadre du présent document, il s'agit de la révision <b><i>"0"</i></b>.</li>
+          <li>Les répertoires (NS_Depense, NS_Recette, ...) selon les domaines fonctionnels du PES.
+            <br />Le sous-répertoire NS_DF_<b><i>Rx</i></b> contient les schémas XML du domaine DF à la révision <b><i>Rx</i></b>. On y trouve en particulier un ou deux schémas racine spécifique au domaine (correspondant respectivement aux protocoles Aller et Retour). Chacun de ces schémas racine déclare un "NameSpace", lui même incorporé dans les schémas XML racines du répertoire PES_V2/<b><i>Rx</i></b>.
+            <br />
+          </li>
+          <li>Le répertoire PES_V2/Rev<i>x</i> comprend les schémas XML racines (PES_Aller, PES_Retour, PES_Ack, PES_Nack) des messages du PES. Ces messages déclarent selon les cas les espaces de noms d'URI <i>"http://www.minefi.gouv.fr/cp/helios/pes_v2/Rev<b>x</b>/Aller"</i> et <i>"http://www.minefi.gouv.fr/cp/helios/pes_v2/Rev<b>x</b>/Retour"</i> et incorporent :
+            <ul>
+              <li>Les espaces de noms de XML Signature, Xades et Encryption</li>
+              <li>Les espaces de noms spécifiques aux domaines fonctionnels du PES dans la version correspondant à la publication de Rev<i>x</i>.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <br />
+    <p class="normal">La déclaration des messages (PES Aller, PES_Retour, PES_Acquit) positionne l'indicateur «ElementFormDefault» à «unqualified», de sorte que les instances d'éléments ne seront pas qualifiées (la référence aux NameSpace sera masquée dans les déclarations de balise) dans les documents instances, à l'exception de l'élément racine du document. Toutefois, ce point ne s'applique pas aux références des éléments issus des syntaxes normalisées (XML Signature,&#8230;) qui sont pleinement qualifiées.</p>
+  </td>
+</tr>
+</table>
+<br />
+
+</div>
+</body></html>

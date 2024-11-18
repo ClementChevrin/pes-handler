@@ -1,0 +1,563 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_global_blocscommuns.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Global PES Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h2 class="titreligne num" id="h2DetailBlocsCommuns">Détail des blocs communs</h2>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnveloppe">TYPE TEnveloppe</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>L'enveloppe contient les éléments d'identification du flux (fichier, émetteur et récepteur).</td>
+            </tr>
+            <tr>
+               <td colspan="2">Parametres</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TParametres">TParametres</a></td>
+               <td>Caractéristiques du fichier.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Emetteur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TCarteVisite">TCarteVisite</a></td>
+               <td>Carte de visite du partenaire émetteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Recepteur</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TCarteVisiteRecepteur">TCarteVisiteRecepteur</a></td>
+               <td>Carte de visite du partenaire récepteur.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TParametres">TYPE TParametres</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Caractéristiques du fichier.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Version</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>Numéro de version du message. Ce numéro est relatif à l'enveloppe. Doit être valorisé
+                  à 2.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypFic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Code du type de fichier :<br>- PESALR1 pour le PES_Aller<br>- PESORMC pour l'ORMC
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomFic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Nom du fichier.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TCarteVisite">TYPE TCarteVisite</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Carte de visite du partenaire émetteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Sigle</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Nom de l'éditeur émetteur du flux</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Nom et version de l'application</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TCarteVisiteRecepteur">TYPE TCarteVisiteRecepteur</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Carte de visite du partenaire récepteur</td>
+            </tr>
+            <tr>
+               <td colspan="2">Sigle</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Nom du récepteur du flux</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Adresse du récepteur du flux</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnTetePES">TYPE TEnTetePES</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>En-Tête du PES</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteStr</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'émission de la structure.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPost</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_TexteCodique7">Base_TexteCodique7</a></td>
+               <td>Identification permanente du poste comptable (numéro codique). Le codique doit être
+                  sur 6 à 7 chiffres ou il doit commercer par 02A, 02B suivi de 3 à 4 chiffres. Les
+                  lettres doivent être en majuscule.<br>Le poste doit exister dans Hélios.<br>Valorisation erronée = rejet du flux
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibellePoste</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Libelle «court» du poste.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdColl</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num14_Light">Base_Num14_Light</a></td>
+               <td>Identification numérique permanente du budget collectivité / Identifiant national
+                  Siret.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FinJur</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum20_Light">Base_Alphanum20_Light</a></td>
+               <td>Finess juridique. Obligatoire dans le contexte M21 et M22.<br>Obligatoire si M21 ou M22 (doit correspondre à celui du BC dans Hélios). Interdit
+                  pour les autres nomenclatures (si présent pour une autre nomenclature= rejet du flux).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodCol</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_CodeCol3">Base_CodeCol3</a></td>
+               <td>Code collectivité. : identification de la collectivité ou du budget collectivité.<br>Le budget doit exister dans le poste et ne doit être ni inactif , ni dissous.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodBud</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_CodeBud2">Base_CodeBud2</a></td>
+               <td>Code budget.<br>Le budget doit exister dans le poste et ne doit être ni inactif , ni dissous.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibelleColBud</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Libellé du budget collectivité.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TAdresse">TYPE TAdresse</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Le bloc Adresse comprend l'adresse du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypAdr</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TTypAdr">TTypAdr</a></td>
+               <td>Type d'adresse. Cette zone permet de déterminer l'adresse principale d'un tiers et
+                  les éventuelles adresses secondaires. <br>Lorsque le type d'adresse est positionné dans le PES sur « non précisé », il sera
+                  entré dans Hélios en « principal » si la base ne contient aucune adresse principale
+                  ou sur « secondaire » si la base contient déjà une adresse principale.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément distribution&nbsp;: norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr2</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Adresse du tiers: Norme postale(Numéro de voie, voie).</td>
+            </tr>
+            <tr>
+               <td colspan="2">Adr3</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Lieu dit ou complément d'adresse: Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CP</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num5_Light">Base_Num5_Light</a></td>
+               <td>Code postal : Norme postale ou Numéro de CEDEX : Norme postale.<br>Le code postal doit être numérique sur 5 caractères obligatoires, sinon rejet du bordereau.
+                  <br>Consigne&nbsp;: Lorsque le tiers réside à l'étranger, mettre «&nbsp;99999&nbsp;» dans code postal
+                  (le cas échéant le code postal du pays étranger devra être positionné dans la zone
+                  ville).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Ville</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Localité de destination  : Norme postale ou Libellé CEDEX : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodRes</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Code résidence. Donnée permettant de déterminer si le tiers est résident en France.
+                  Valeurs : 0=résident, 1= non résident. Par défaut sur 0.<br><br>La balise CodRes à 1 ou non résident oblige à la valorisation de la balise CodPays.
+                  Si CodRes=1 et CodPays absent = rejet du bordereau.<br>La balise CodRes à 0, ou résident, oblige à la non valorisation ou à la valorisation
+                  à 100 de la balise CodPays. Sinon, rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodPays</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num3">Base_Num3</a></td>
+               <td>Code du pays du tiers: cette information permet de déterminer le pays du tiers si
+                  celui-ci n'est pas résident. Cette zone utilise la codification de l'INSEE. Tout CodPays
+                  qui n'existe pas intègre Hélios mais aboutit à un traitement incidenté dans Hélios.<br><br>La balise CodPays est obligatoire si CodRes à 1 sinon rejet du bordereau.<br>La balise CodPays est obligatoirement non valorisée ou valorisée à 100 si CodRes est
+                  à 0, sinon rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteAdr</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour de la nouvelle adresse.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTypAdr">TYPE TTypAdr</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Type d'adresse.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><i>Attribut </i>V
+               </td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>0</b> : 
+                        Non précisé.
+                     </li>
+                     <li><b>1</b> : 
+                        Principal.
+                     </li>
+                     <li><b>2</b> : 
+                        Secondaire.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBancaire">TYPE TBancaire</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Le bloc CpteBancaire représente les information bancaires.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="6" nowrap><b>n°1</b></td>
+               <td>IdPayInt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum4">Base_Alphanum4</a></td>
+               <td>Identification internationale du pays.<br>Cette zone permet d'obtenir les références bancaires internationales (IBAN).<br>Si valorisation la valeur doit être connue et valide sinon rejet du bordereau ou de
+                  l'ensemble des PPEM du bordereau.<br>La balise IdPayInt est obligatoirement valorisée si IdBancInt est servie. Si la balise
+                  IdPayInt n'est pas valorisée alors qu'IdBancInt l'est, rejet du bordereau contenant
+                  le RIB incomplet.
+               </td>
+            </tr>
+            <tr>
+               <td>IdBancInt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum11">Base_Alphanum11</a></td>
+               <td>Identification internationale de la banque.<br>Cette zone permet d'obtenir les références bancaires internationales (IBAN).<br>Si valorisation la valeur doit être connue et valide sinon rejet du bordereau ou de
+                  l'ensemble des PPEM du bordereau.<br>La balise IdBancInt est obligatoirement valorisée si IdPayInt est servie. Si la balise
+                  IdBancInt n'est pas valorisée alors qu'IdPayInt l'est, rejet du bordereau contenant
+                  le RIB incomplet.
+               </td>
+            </tr>
+            <tr>
+               <td>CodeEtab</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum5">Base_Alphanum5</a></td>
+               <td>Code de l'établissement bancaire.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du bordereau
+                  qui comprend le tiers qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td>CodeGuic</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum5_Light">Base_Alphanum5_Light</a></td>
+               <td>Code du guichet de l'établissement bancaire.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du bordereau
+                  qui comprend le tiers qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td>IdCpte</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte11">Base_Texte11</a></td>
+               <td>Numéro du compte du client de l'établissement bancaire.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du bordereau
+                  qui comprend le tiers qui porte ce RIB incomplet ou erroné.
+               </td>
+            </tr>
+            <tr>
+               <td>CleRib</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Num2_Light">Base_Num2_Light</a></td>
+               <td>Clé RIB du compte client.<br>4 balises doivent être valorisées en même temps et RIB correct sinon rejet du bordereau
+                  qui comprend le tiers qui porte ce RIB incomplet ou erroné .
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°2</b></td>
+               <td>BIC</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte11BIC">Base_Texte11BIC</a></td>
+               <td>Bank International Code.<br>Tous les caractères alphabétiques du BIC doivent être en majuscules, sinon rejet du
+                  flux.<br>Doit être un code connu et valide<br>sinon rejet du bordereau ou de l'ensemble des PPEM du bordereau<br>La balise est obligatoire pour toute domiciliation à l'étranger, sinon rejet du bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td>IBAN</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte34IBAN">Base_Texte34IBAN</a></td>
+               <td>International Bank Account Number<br>Tous les caractères alphabétiques de l'IBAN doivent être en majuscules, sinon rejet
+                  du flux.<br>Doit être complet et valide sinon rejet du bordereau ou de l'ensemble des PPEM du
+                  bordereau.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibBanc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>Libellé de l'établissement bancaire.</td>
+            </tr>
+            <tr>
+               <td colspan="2">TitCpte</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte32">Base_Texte32</a></td>
+               <td>Nom du titulaire du compte client.<br>Cette zone reprend la désignation du titulaire du compte à créditer telle qu'elle
+                  est précisée sur le relevé d'identité bancaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteBanc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour des éléments de la domiciliation bancaire.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPJReference">TYPE TPJReference</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Support</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalAller_blocscommuns.html#TSupport">TSupport</a></td>
+               <td>Précise la forme de l'élément référencé.<br><br>Si absence en PJ Ref rejet du flux complet .<br>Les valeurs 02 ou 03 interdisent d'avoir un bloc PJ.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdUnique</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Alphanum50">Base_Alphanum50</a></td>
+               <td>Identifiant unique de la pièce pour la CEPL quel que soit le domaine, l'objet comptable,
+                  l'exercice et le budget concerné.<br>Si absence en PJ Ref rejet du flux.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NomPJ</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesAller_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Nom de la PJ sur 100 caractères maximum &#x2013; optionnel, destiné à préciser le référencement
+                  de PJ non électronique (i.e. qui ne sont pas "en ligne").
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypePJ</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalAller_codescommuns.html#TPJ">TPJ</a></td>
+               <td>Type de la pièce référencée.<br>Pour un titre ORMC dont la balise Edition est valorisé à «&nbsp;06&nbsp;» &nbsp;(Avis des sommes
+                  à payer ORMC ENSU à éditer)&nbsp;:<br>- la PJ de type «&nbsp;010&nbsp;» (Facture ASAP ORMC ENSU à éditer) doit être véhiculée dans
+                  un bloc PJ Reference avec son type afin qu'Hélios puisse identifier de façon explicite
+                  la PJ devant servir de facture. Il n'y a pas de rejet dans le guichet mais toutefois
+                  le comptable ne pourra pas enregistrer l'article de rôle correspondant.<br>- l'éventuelle PJ de type «&nbsp;011&nbsp;» (Document complémentaire à l'ASAP ENSU à éditer)
+                  devant être fusionné à la facture doit être véhiculée dans un bloc PJ Reference avec
+                  son type afin qu'Hélios puisse identifier de façon explicite cette PJ. <br>Pour un titre dont la balise Edition est valorisé à 01 (Avis des sommes à payer à
+                  éditer) ou 05 (Avis des sommes à payer Patients à éditer)<br>- l'éventuelle PJ de type «&nbsp;011&nbsp;» (Document complémentaire à l'ASAP ENSU à éditer)
+                  devant être fusionné avec la facture doit être véhiculée dans un bloc PJ Reference
+                  avec son type afin qu'Hélios puisse identifier de façon explicite cette PJ.<br>Pour les autres contextes, la balise est facultative.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TSupport">TYPE TSupport</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Type de support.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><i>Attribut </i>V
+               </td>
+               <td> 1..1</td>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Support électronique.
+                     </li>
+                     <li><b>02</b> : 
+                        Support papier.
+                     </li>
+                     <li><b>03</b> : 
+                        Support cdrom/dvdrom.
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='DomaineGlobalAller.html'">Retour Domaine Global PES Aller</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

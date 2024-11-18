@@ -1,0 +1,1243 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_recetteretour_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Recette Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPES_RecetteRetour">TYPE TPES_RecetteRetour</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTeteRecette</td>
+               <td> 1..1</td>
+               <td><a href="#TEnTeteRecette">TEnTeteRecette</a></td>
+               <td>Description de l'entête du PES retour Recette</td>
+            </tr>
+            <tr>
+               <td colspan="2">Bordereau</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TBordereau">TBordereau</a></td>
+               <td>Bordereau. Un bordereau comprend n pièces, constituées elle même de n lignes de pièces.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnTeteRecette">TYPE TEnTeteRecette</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypRestit</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte2">Base_Texte2</a></td>
+               <td>Information permettant de préciser le type de restitution effectué par le flux retour</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>N° de version du PES Recette &#x2013; Mettre à « 2 »</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatInf</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TNatInf">TNatInf</a></td>
+               <td>Nature du retour d'information demandé par l'ordonnateur. La valeur 2 'flux détaillé'
+                  est utilisée  pour les flux périodiques et les flux de rejets ( titres ou ORMC). La
+                  valeur 1 'stock détaillé' est utilisée pour les stocks ( titres ou ORMC).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBordereau">TYPE TBordereau</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bordereau. Un bordereau comprend n pièces, constituées elle même de n lignes de pièces.</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td rowspan="2" nowrap><b>n°1</b></td>
+               <td>BlocBordereau</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocBordereau">TBlocBordereau</a></td>
+               <td>Caractéristiques du bordereau.</td>
+            </tr>
+            <tr>
+               <td>Piece</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TPiece">TPiece</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>BordereauORMCGlobal</td>
+               <td> 1..1</td>
+               <td><a href="#TBordereauORMCGlobal">TBordereauORMCGlobal</a></td>
+               <td>Ce bloc est utlisé pour véhiculer les évènements globaux affectant l'ensemble des
+                  articles du bordereau(PEC,MEI ou rejet global)
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPiece">TYPE TPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocPiece</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocPiece">TBlocPiece</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">LigneDePiece</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TLigneDePiece">TLigneDePiece</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneDePiece">TYPE TLigneDePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocLignePiece</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocLignePiece">TBlocLignePiece</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">Tiers</td>
+               <td>0..1</td>
+               <td><a href="#TTiers">TTiers</a></td>
+               <td>Bloc Tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">EncaissementEmargement</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TEncaissementEmargement">TEncaissementEmargement</a></td>
+               <td>Bloc EncaissementEmargement.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTiers">TYPE TTiers</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc Tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoTiers</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoTiersRecette">TInfoTiersRecette</a></td>
+               <td>Les éléments renvoyés dans le cadre du PESRetour Recette sont&nbsp;:<br>- Les éléments du référentiel Tiers Hélios dans le cas où la pièce a été rattachée
+                  à un Tiers Hélios. Il s'agit des informations du Tiers sur lequel la pièce a été rattachée
+                  s'il est isolé, sinon du tiers de référence de son groupe de consolidation. <br>Dans ce cas, les balises NatIdTiers et IdTiers ne sont pas servies si elles représentent
+                  un NIR (NatIdTiers = 04 valeur HELIOS = 4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce ( tiers de l'encaissement) pour les pièces créées
+                  par le comptable (pièces à régulariser). Dans ce cas, les balises NatIdTiers et IdTiers
+                  ne sont pas servies si elles représentent un NIR (NatIdTiers = 04 valeur HELIOS =
+                  4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce (débiteur), pour les pièces rejetées ou mise en
+                  instance (dans ce cas en effet, aucun rattachement n'est effectué).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TAdresse">TAdresse</a></td>
+               <td>Adresse du tiers.<br>Si l'adresse principale du tiers a pour origine La Poste via les référentiels DGFIP,
+                  alors le bloc adresse n'est pas renseigné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteBancaire</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TCpteBancaire">TCpteBancaire</a></td>
+               <td>Compte bancaire du tiers.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEncaissementEmargement">TYPE TEncaissementEmargement</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc est présent pour les lignes de pièces du flux récurrent, dès lors qu'il y
+                  a une réalité d'émargement non neutralisée. <br>Il y a autant de bloc que d'encaissement/émargement.<br>Ce bloc est absent des lignes de pièces du retour quotidien (titres rejetés/mis en
+                  instance).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">OrgEma</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TOrgEma">TOrgEma</a></td>
+               <td>Origine de l'émargement.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteReco</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du recouvrement ou de l'émargement.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtReco</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant du recouvrement ou de l'émargement réalisé au niveau de la ligne de pièce.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocBordereau">TYPE TBlocBordereau</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Exer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Millésime de l'exercice de rattachement budgétaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdBord</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num12">Base_Num12</a></td>
+               <td>Identifiant du bordereau récapitulatif des titres. Pour les bordereaux de type 05
+                  «P503&nbsp;» et 04 «Bordereau de régularisation», le système dans Hélios attribue une valeur
+                  unique.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypBord</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TTypBord">TTypBord</a></td>
+               <td>Type de bordereau. Le types de bordereau 05 «&nbsp;P503&nbsp;» et 04 «Bordereau de régularisation»
+                  sont utilisés afin de transmettre à l'ordonnateur des demandes de régularisation.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBordereauORMCGlobal">TYPE TBordereauORMCGlobal</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Exer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Millésime de l'exercice de rattachement budgétaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdBord</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num12">Base_Num12</a></td>
+               <td>Identifiant du bordereau ORMC</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTTC</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant TTC</td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePec</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de PEC</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteRej</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de rejet (si le rejet global du bordereau intervient après la PEC,Dte Pec et
+                  DteRej seront valorisées simultanément)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteInst</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise en instance du bordereau ORMC</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocPiece">TYPE TBlocPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodServ</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Code d'identification du service de l'ordonnateur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPce</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num13">Base_Num13</a></td>
+               <td>Identifiant de la pièce. Pour le contexte « Type de bordereau = 05 _ P503&nbsp;» ou Type
+                  de Bordereau = 04_  Bordereau de régularisation » cette balise renvoie l'identifiant
+                  de l' encaissement avant émission de titre.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TTypPce">TTypPce</a></td>
+               <td>Type de pièce. Pour le contexte « Type de bordereau = 05_P503&nbsp;» ou « Type de bordereau
+                  = 04_Bordereau de régularisation » cette balise renvoie au type de pièce 13- Demande
+                  émission de titre<br><br>Note : dans le cas d'un TypPiece = 13 dans un flux retour, la valeur de la balise
+                  IdPiece transmise devra être reprise dans le flux ALLER de régularisation émis par
+                  l'ordonnateur ( balise IdPceOrig)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TNatPce">TNatPce</a></td>
+               <td>Nature de la pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Obj</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte160">Base_Texte160</a></td>
+               <td>Zone libre décrivant l'objet de la pièce : correspond à l'objet du titre, ou à l'identification
+                  du règlement pour les encaissements à régulariser.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePcePec</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de prise en charge de la pièce.<br>Remarque :<br>- Un titre vérifiant DtePcePec et DtePceRej renseignées est un titre qui a été rejeté
+                  suite à annulation de prise en charge dans Hélios ; dans ce cas, le titre ne pourra
+                  pas être ré-émis par l'ordonnateur avec le même identifiant de pièce (IdPce).<br>- Un titre vérifiant DtePcePec non renseignée et DtePceRej renseignée est un titre
+                  qui a été rejeté en Visa Recette depuis la bannette dans Hélios ; dans ce cas, après
+                  correction par l'ordonnateur le titre pourra être ré-émis par l'ordonnateur avec le
+                  même identifiant de pièce (IdPce).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">EtatPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TEtatPce">TEtatPce</a></td>
+               <td>Information retour sur l'état de la pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObsEtat</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Observation sur l'état de la pièce : codification des motifs. Possibilité de transmettre
+                  une pluralité de codification, avec le «&nbsp;-&nbsp;» tiret comme caractère séparateur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Commentaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte400">Base_Texte400</a></td>
+               <td>Commentaire saisi par le Comptable lors du visa.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePceRej</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du rejet de la pièce de recette.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePceInst</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de la mise en instance de la pièce de recette.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoORMC</td>
+               <td>0..1</td>
+               <td><a href="#TInfoORMC">TInfoORMC</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoORMC">TYPE TInfoORMC</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc est valorisé pour les  Titre ORMC  et les rôles-titres</td>
+            </tr>
+            <tr>
+               <td colspan="2">NumDette</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte15">Base_Texte15</a></td>
+               <td>Numéro de dette attribué au débiteur par l'ordonnateur &#x2013; ce numéro correspond au NuméroFacture
+                  de l'article de rôle dans Hélios.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Per</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num1">Base_Num1</a></td>
+               <td>Complément au numéro de dette attribué au débiteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Cle1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num1">Base_Num1</a></td>
+               <td>Clé de contrôle de l'article de rôle. Réservée aux titres ORMC et restituée telle
+                  que fournie à l'aller.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Cle2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum1">Base_Alphanum1</a></td>
+               <td>Clé de contrôle de l'article de rôle. Réservée aux titres ORMC et restituée telle
+                  que fournie à l'aller.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocLignePiece">TYPE TBlocLignePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoLignePiece</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoLignePiece">TInfoLignePiece</a></td>
+               <td>Identification de la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoRecouvrement</td>
+               <td>0..1</td>
+               <td><a href="#TInfoRecouvrement">TInfoRecouvrement</a></td>
+               <td>Bloc émargement recouvrement</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoEcheancier</td>
+               <td>0..1</td>
+               <td><a href="#TInfoEcheancier">TInfoEcheancier</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">RattachPiece</td>
+               <td>0..1</td>
+               <td><a href="#TRattachPiece">TRattachPiece</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">LiensIdent</td>
+               <td>0..1</td>
+               <td><a href="#TLiensIdent">TLiensIdent</a></td>
+               <td>Identifiants complémentaires&nbsp;: régie, n° d'inventaire, n° emprunt, marché&#x2026;)</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoSuspPour</td>
+               <td>0..1</td>
+               <td><a href="#TInfoSuspPour">TInfoSuspPour</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoContentieux</td>
+               <td>0..1</td>
+               <td><a href="#TInfoContentieux">TInfoContentieux</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoAmiableContentieux</td>
+               <td>0..1</td>
+               <td><a href="#TInfoAmiableContentieux">TInfoAmiableContentieux</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoLignePiece">TYPE TInfoLignePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc restitué pour les retours détaillés</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdLigne</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num6">Base_Num6</a></td>
+               <td>Numéro de la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodProdLoc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum4">Base_Alphanum4</a></td>
+               <td>Code produit local : Information destinée à identifier la nature du produit chez l'ordonnateur.
+                  <br>Non renseigner pour les lignes de pièces à régulariser.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">FinGeo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum9">Base_Alphanum9</a></td>
+               <td>Finess géographique.<br>Zone facultative concernant uniquement les hôpitaux. Cette donnée permet d'affiner
+                  le Finess juridique.<br>Elle reste purement facultative.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeEtGeo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte3">Base_Texte3</a></td>
+               <td>Code établissement géographique. <br>Cette zone concerne uniquement les hôpitaux. Elle reste purement facultative.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">EtatLigPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TEtatLigPce">TEtatLigPce</a></td>
+               <td>Information retour sur l'état de la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObsEtat</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Observation sur l'état de la ligne de pièce : codification des motifs (si codification,
+                  il est possible de transmettre une pluralité de motifs).<br>Remarque :En cas de pluralité, si le contenu contient une liste énumérée finie de
+                  code motif, il conviendra de définir un caractère séparateur (« - » le tiret par exemple)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Commentaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte400">Base_Texte400</a></td>
+               <td>Commentaire saisi par le Comptable lors du visa.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte12">Base_Texte12</a></td>
+               <td>Compte de tiers et financier transmis uniquement pour les pièces à régulariser. Ce
+                  compte doit être repris par l'ordonnateur lors de l'émission du titre de recette correspondant.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtHT</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTVA</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant TVA.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoCollBen</td>
+               <td>0..1</td>
+               <td><a href="#TInfoCollBen">TInfoCollBen</a></td>
+               <td>Bloc restitué dans le cadre des titres ORMC</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoCollBen">TYPE TInfoCollBen</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc valorisé pour les titres ORMC correspondant à un produit référencé dans une convention
+                  sur rôle multi collectivité, avec un budget bénéficiaire et un SIRET associé.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdCollBen</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num14">Base_Num14</a></td>
+               <td>Identifiant national de la collectivité bénéficiaire du produit (SIRET)</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodCollBen</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum3">Base_Alphanum3</a></td>
+               <td>Identifiant de la collectivité bénéficiaire du produit</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodBudBen</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Alphanum2">Base_Alphanum2</a></td>
+               <td>Identifiant du budget collectivité bénéficiaire du produit</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoRecouvrement">TYPE TInfoRecouvrement</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Il s'agit d'un bloc  Recouvrement lié aux émargements/encaissements.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NbrReco</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num4">Base_Num4</a></td>
+               <td>Nombre total des encaissements ou des émargements effectués sur la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtRecoTot</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant total des émargements ou des encaissements effectués sur la lignes de pièce
+                  recouvrements effectués sur la ligne de pièce.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoEcheancier">TYPE TInfoEcheancier</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Il s'agit d'un bloc échéancier.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteDerPai</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du dernier paiement enregistré sur une pièce de l'échéancier.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NbrePaiRest</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num4">Base_Num4</a></td>
+               <td>Nombre de paiements&nbsp;restants: nombre d'échéances non soldées de l'échéancier.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TRattachPiece">TYPE TRattachPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Identifiants de rattachement à un mandat d'ANV</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPceOrig</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TNatPceOrig">TNatPceOrig</a></td>
+               <td>Nature de la  pièce d'origine à rattacher, pour le PES retour Recette cette balise
+                  correspondrait à la nature du mandat d'admission en non valeur. ( 02)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">ExerRat</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Exercice de rattachement : Exercice d'origine du mandat d'admission en non valeur</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPceOrig</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num13">Base_Num13</a></td>
+               <td>N° de la pièce d'origine : Numéro du mandat d'admission en non valeur</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdLigneOrig</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num6">Base_Num6</a></td>
+               <td>N° de ligne de pièce : Numéro de ligne du mandat d'admission en non valeur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteRattach</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de prise en charge du mandat d'admission en non valeur.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLiensIdent">TYPE TLiensIdent</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Identifiants complémentaires&nbsp;: N°régie, n° d'inventaire, n° emprunt, N°marché, Convention</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdConv</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte25">Base_Texte25</a></td>
+               <td>N° de convention : Cette zone permet de faire le lien entre une ligne de pièce et
+                  une fiche convention.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypConv</td>
+               <td>0..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TTypConv">TTypConv</a></td>
+               <td>Type de convention : Cette zone permet d'identifier la nature de la convention</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjConv</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte255">Base_Texte255</a></td>
+               <td>Objet de convention : Cette zone permet de connaître la finalité de la convention.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdMarche</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Numéro de marché: cet identifiant permet de déterminer les marchés contractés et suivis
+                  par la collectivité.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdEmpruntOrdo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>N° d'emprunt ordonnateur : Cette zone permet de faire le lien entre une ligne de pièce
+                  et une fiche emprunt.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdActif</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte25">Base_Texte25</a></td>
+               <td>N° d'inventaire : Cette zone permet de faire le lien entre une ligne de pièce et une
+                  fiche inventaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdRegie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>N° de régie ordonnateur: Cette zone permet de faire le lien entre une ligne de pièce
+                  et une fiche régie.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoSuspPour">TYPE TInfoSuspPour</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Il s'agit d'un bloc d'information sur les suspensions de poursuites.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeSuspPour</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TCodeSuspPour">TCodeSuspPour</a></td>
+               <td>Code indiquant le motif de la suspension des poursuites par le comptable</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteSuspPour</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date à laquelle les poursuites ont été suspendues par le comptable</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteRepPour</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date à laquelle les poursuites sont reprises par le comptable, suite à suspension
+                  de poursuites.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoContentieux">TYPE TInfoContentieux</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Il s'agit d'un bloc d'information sur les sommes concernées par le contentieux. Ce
+                  bloc est renvoyé dès qu'un acte existe pour la ligne de pièce considérée.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtCtxTot</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant total des prises en charge incluant les frais de poursuites sur la ligne de
+                  pièce (principal + majoration + frais)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">SldPrinc</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Reste à recouvrer sur le principal</td>
+            </tr>
+            <tr>
+               <td colspan="2">SldFrais</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Reste à recouvrer sur les frais</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoAmiableContentieux">TYPE TInfoAmiableContentieux</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Il s'agit d'un bloc d'information sur les procédures amiables et contentieuses. Seul
+                  l'acte et l'étape courants sont renvoyés.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">EtapePce</td>
+               <td> 1..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TEtapePce">TEtapePce</a></td>
+               <td>Acte courant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteEtapePce</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de l'acte.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdAct</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte15">Base_Texte15</a></td>
+               <td>Identifiant métier de l'acte courant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodActu</td>
+               <td>0..1</td>
+               <td><a href="PES_RecetteRetour_codes.html#TCodActu">TCodActu</a></td>
+               <td>Code actualité porté par l'acte courant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteActu</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de saisie du code actualité porté par l'acte courant.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtFrais</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant des frais de l'acte</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteEnvoi</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'envoi de l'acte</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoTiersRecette">TYPE TInfoTiersRecette</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Les éléments renvoyés dans le cadre du PESRetour Recette sont&nbsp;:<br><br>les éléments du référentiel Tiers Hélios dans le cas où la pièce a été rattachée à
+                  un Tiers Hélios. Il s'agit des informations du Tiers sur lequel la pièce a été rattachée
+                  s'il est isolé, sinon du tiers de référence de son groupe de consolidation. Dans ce
+                  cas, les balises NatIdTiers et IdTiers ne sont pas servies si elles représentent un
+                  NIR (NatIdTiers = 04 valeur HELIOS = 4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce ( tiers de l'encaissement) pour les pièces créées
+                  par le comptable (pièces à régulariser). Dans ce cas, les balises NatIdTiers et IdTiers
+                  ne sont pas servies si elles représentent un NIR (NatIdTiers = 04 valeur HELIOS =
+                  4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce (débiteur), pour les pièces rejetées ou mise en
+                  instance (dans ce cas en effet, aucun rattachement n'est effectué).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte80">Base_Texte80</a></td>
+               <td>Identifiant national du tiers&nbsp;: Identifiant stable et national d'une personne de type
+                  SIREN, SIRET, FINESS, NFP, TVAIntraCo, Hors UE,TAHITI, RIDET&nbsp;, FRWF, EnCoursImm, ou
+                  IREP <br>Le NFP, si disponible dans Hélios, sera privilégié dans le PES Retour pour les tiers
+                  «&nbsp;Personne Physique&nbsp;»
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteNaissance</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de naissance du débiteur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_codescommuns.html#TNatIdTiers">TNatIdTiers</a></td>
+               <td>Type d'identifiant national:01 02 03 05 06 07 08 09 10 11 12.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour de l'identifiant stable par le comptable.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Référence attribuée au tiers par l'ordonnateur : Zone destinée à recevoir une référence
+                  ou un identifiant, éventuellement géré par l'ordonnateur, autorisant le regroupement
+                  des pièces comptables.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CatTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_codescommuns.html#TCatTiers">TCatTiers</a></td>
+               <td>Information destinée à identifier la catégorie du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatJur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_codescommuns.html#TNatJur">TNatJur</a></td>
+               <td>Information destinée à identifier la nature juridique du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Civilite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Civilité du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Nom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Raison sociale / Nom : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ComplNom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément de nom : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom.</td>
+            </tr>
+            <tr>
+               <td colspan="2">AdrMel</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte256">Base_Texte256</a></td>
+               <td>Adresse de courrier électronique</td>
+            </tr>
+            <tr>
+               <td colspan="2">LieuNaissance</td>
+               <td>0..1</td>
+               <td><a href="#TLieuNaissance">TLieuNaissance</a></td>
+               <td>A ne renseigner que pour les tiers «&nbsp;Personne Physique&nbsp;» CatTiers=01</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLieuNaissance">TYPE TLieuNaissance</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">NeEnFrance</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Booleen">Base_Booleen</a></td>
+               <td>Zone permettant de déterminer si le tiers est né en France ou à l'étranger.<br>Valeurs '0' = Né à l'étranger / Valeur '1' = Né en France<br>Suivant la valeur utilisée, le bloc enfant MetropoleDomCom ou le bloc enfant Etranger
+                  sera éventuellement utilisé
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>MetropoleDomCom</td>
+               <td> 1..1</td>
+               <td><a href="#TMetropoleDomCom">TMetropoleDomCom</a></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '1'.</td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>Etranger</td>
+               <td> 1..1</td>
+               <td><a href="#TEtranger">TEtranger</a></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '0' (né à l'étranger).</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TMetropoleDomCom">TYPE TMetropoleDomCom</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '1', sinon rejet du bordereau.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeDeptDomCom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte_CodeDepartement_2_3">Base_Texte_CodeDepartement_2_3</a></td>
+               <td>Code INSEE du département ou COM de naissance&nbsp;:<br>- si naissance en métropole&nbsp;: XX dont 2A ou 2B et XX compris entre 01 (inclus) et
+                  95 (inclus)<br>- si naissance dans un DOM ou COM&nbsp;: XXX
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CodeCommune</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte_CodeCommune_2_3">Base_Texte_CodeCommune_2_3</a></td>
+               <td>Code INSEE de la commune de naissance<br>-si naissance en métropole&nbsp;: XXX<br>-si naissance dans un DOM ou COM&nbsp;: XX
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LibelleCommune</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte_Libelle_Naissance_70">Base_Texte_Libelle_Naissance_70</a></td>
+               <td>Libellé de la commune de naissance si le tiers est né en métropole, dans un DOM ou
+                  dans un COM (En majuscules)
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEtranger">TYPE TEtranger</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc servi uniquement si la valeur de &lt;NeEnFrance&gt; = '0' (né à l'étranger).</td>
+            </tr>
+            <tr>
+               <td colspan="2"><b><i>CHOIX (du n°1 au n°2)</i></b></td>
+               <td> 1..1</td>
+               <td><a href="#"></a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°1</b></td>
+               <td>CodePays</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte_CodePays_3">Base_Texte_CodePays_3</a></td>
+               <td>Code du pays de naissance</td>
+            </tr>
+            <tr>
+               <td nowrap><b>n°2</b></td>
+               <td>LibellePays</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte_Libelle_Naissance_70">Base_Texte_Libelle_Naissance_70</a></td>
+               <td>Libellé du pays de naissance (En majuscules)</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

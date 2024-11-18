@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_global.css">
+  <link rel="icon" href="favicon.ico"/>
+  <title>Domaine Global du PES Aller</title>
+  
+  <script type="text/javascript">
+    <!--
+	    function chgEnveloppe(num_image) 
+	    {
+	      document.docimageEnveloppe.src = 'src/img/communaller/enveloppe/TEnveloppe_'+num_image+'.png';
+	    }
+	    function rstEnveloppe()
+	    {
+	      document.docimageEnveloppe.src = 'src/img/communaller/enveloppe/TEnveloppe.png';
+	    }
+	    
+	    function chgEnTetePES(num_image) 
+	    {
+	      document.docimageEnTetePES.src = 'src/img/communaller/entetepes/TEnTetePES_'+num_image+'.png';
+	    }
+	    function rstEnTetePES()
+	    {
+	      document.docimageEnTetePES.src = 'src/img/communaller/entetepes/TEnTetePES.png';
+	    }
+	    
+	    function chgAdresse(num_image) 
+	    {
+	      document.docimageAdresse.src = 'src/img/communaller/adresse/TAdresse_'+num_image+'.png';
+	    }
+	    function rstAdresse()
+	    {
+	      document.docimageAdresse.src = 'src/img/communaller/adresse/TAdresse.png';
+	    }
+	    
+	    function chgBancaire(num_image) 
+	    {
+	      document.docimageBancaire.src = 'src/img/communaller/bancaire/TBancaire_'+num_image+'.png';
+	    }
+	    function rstBancaire()
+	    {
+	      document.docimageBancaire.src = 'src/img/communaller/bancaire/TBancaire.png';
+	    }
+	    
+	    function chgPJReference(num_image) 
+	    {
+	      document.docimagePJReference.src = 'src/img/communaller/pjreference/TPJReference_'+num_image+'.png';
+	    }
+	    function rstPJReference()
+	    {
+	      document.docimagePJReference.src = 'src/img/communaller/pjreference/TPJReference.png';
+	    }
+    //-->
+    </script>
+</head>
+<body class="normal">
+<iframe src="EnTete.html" marginwidth="0" marginheight="0" frameborder="0" height="51" width="100%" scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Domaine Global du PES Aller</h1>
+<p class="normal">Nous représentons ci-dessous un certain nombre de blocs transverses aux différents domaines du PES Aller. Il s'agit des blocs représentant :</p>
+<ul>
+  <li>La modélisation des informations communes aux grammaires du PES : Class_SchemasCommuns associée à l'espace de noms d'URI "http://www.minefi.gouv.fr/cp/helios/pes_v2/commun"</li>
+  <li>L'en-tête commun d'un message PES aller.</li>
+  <li>Une adresse.</li>
+  <li>Un compte bancaire.</li>
+  <li>La codification des domaines du PES.</li>
+  <li>Référence de pièce jointe</li>
+  <li>La modélisation d'une pièce jointe</li>
+</ul>
+<p class="normal">Ces éléments sont stockés à la racine du répertoire PES_V2</p>
+
+<h2 class="titreligne num" id="h2ClassSchemasCommuns">Class_SchemasCommuns</h2>
+
+<p class="normal">La classe Class_SchemasCommuns sert de conteneur pour la modélisation d'un ensemble de structures communes aux différents domaines du PES. Elle est est associé à l'espace de noms d'URI <i>"http://www.minefi.gouv.fr/cp/helios/pes_v2/commun"</i>.</p>
+<p class="normal">Elle est incorporable via des directives "xsi:import" dans les schémas l'utilisant.</p>
+<p class="normal">La classe Class_SchemasCommuns.xsd inclus les classes présentées ci-dessous.</p>
+
+<h3 class="titreligne num" id="h3SimpleType">Simple_Type</h3>
+<p class="normal">La classe <i>Simple_Type.xsd</i> a été définie ici : 
+	<button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesAller.html#h2RepresentationDonneesElementaires'">Descriptif des données élémentaires</button>
+</p>
+
+<h3 class="titreligne num" id="h3CodificationDomainesPES">Codification des domaines du PES</h3>
+<p class="normal">Le schéma XML <i>CommunPes.xsd</i> fournit les codifications communes à l'ensemble des domaines du PES.</p>
+<p class="normal">Pour visualiser les codifications communes, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_CodesCommuns.html'">Visualiser les codifications communes</button> 
+</p>
+
+<h3 class="titreligne num" id="h3TEnveloppe">Class_Enveloppe</h3>
+<p class="normal">La classe <i>Class_Enveloppe.xsd</i> modélise l'enveloppe technique d'un message XML.</p>
+<p class="normal">Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communaller/enveloppe/TEnveloppe.png" alt="TEnveloppe" border="0" usemap="#mapEnveloppe" id="docimageEnveloppe" name="docimageEnveloppe">
+<map name="mapEnveloppe" id="mapEnveloppe">
+  <area shape=rect coords="11,190,92,211" href="DomaineGlobalAller_BlocsCommuns.html#TEnveloppe" alt="TEnveloppe" title="TEnveloppe" onMouseOver="chgEnveloppe('00')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="175,70,261,90" href="DomaineGlobalAller_BlocsCommuns.html#TParametres" alt="TParametres" title="TParametres" onMouseOver="chgEnveloppe('01')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="175,198,247,219" href="DomaineGlobalAller_BlocsCommuns.html#TCarteVisite" alt="Emetteur" title="Emetteur" onMouseOver="chgEnveloppe('02')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="175,311,253,332" href="DomaineGlobalAller_BlocsCommuns.html#TCarteVisite" alt="Recepteur" title="Recepteur" onMouseOver="chgEnveloppe('03')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="276,5,435,138" href="DomaineGlobalAller_BlocsCommuns.html#TParametres" alt="TParametres" title="TParametres" onMouseOver="chgEnveloppe('01')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="262,150,425,250" href="DomaineGlobalAller_BlocsCommuns.html#TCarteVisite" alt="TCarteVisite" title="TCarteVisite" onMouseOver="chgEnveloppe('02')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="268,262,431,364" href="DomaineGlobalAller_BlocsCommuns.html#TCarteVisite" alt="TCarteVisite" title="TCarteVisite" onMouseOver="chgEnveloppe('03')" onMouseOut="rstEnveloppe()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>Enveloppe</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_BlocsCommuns.html#TEnveloppe'">Détail Enveloppe</button> 
+</p>
+
+
+<h3 class="titreligne num" id="h3TEnTetePES">En-tête PES</h3>
+<p class="normal">Le bloc EntêtePES comprend l'identifiant de la collectivité. Le Bloc Parent est PES_Aller ou PES_Retour. Il n'a pas de bloc enfant.</p>
+<p class="normal">Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communaller/entetepes/TEnTetePES.png" alt="TEnTetePES" border="0" usemap="#mapEnTetePES" id="docimageEnTetePES" name="docimageEnTetePES">
+<map name="mapEnTetePES" id="mapEnTetePES">
+  <area shape=rect coords="0,0,281,255" href="DomaineGlobalAller_BlocsCommuns.html#TEnTetePES" alt="TEnTetePES" title="TEnTetePES" onMouseOver="chgEnTetePES('00')" onMouseOut="rstEnTetePES()">
+</map>
+
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>En-tête PES</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_BlocsCommuns.html#TEnTetePES'">Détail En-tête PES</button> 
+</p>
+
+<h3 class="titreligne num" id="h3BlocAdresse">Bloc Adresse</h3>
+<p class="normal">Le bloc Adresse comprend l'adresse du tiers. Le bloc parent est le bloc Tiers. Il n'a pas de bloc enfant.
+<br />
+<img src="src/img/communaller/adresse/TAdresse.png" alt="TAdresse" border="0" usemap="#mapAdresse" id="docimageAdresse" name="docimageAdresse">
+<map name="mapAdresse" id="mapAdresse">
+  <area shape=rect coords="0,0,245,290" href="DomaineGlobalAller_BlocsCommuns.html#TAdresse" alt="TAdresse" title="TAdresse" onMouseOver="chgAdresse('00')" onMouseOut="rstAdresse()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>Adresse</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_BlocsCommuns.html#TAdresse'">Détail Adresse</button> 
+</p>
+
+<h3 class="titreligne num" id="h3CompteBancaire">Compte bancaire</h3>
+<p class="normal">Le bloc CpteBancaire représente les information bancaires. Le bloc parent est le bloc Tiers. Il n'a pas de bloc enfant.
+<br />
+<u>Note :</u> L'IBAN (numéro de compte bancaire international) peut être reconstitué à partir des zones <i>IdPayInt</i>, <i>IdBancInt</i>, <i>CodeEtab</i>, <i>CodeGuic</i> et <i>IdCpte</i> correspondant au découpage français de l'IBAN. Pour les IBAN provenant d'autres pays, il convient de remplir les zones <i>IdBancInt</i>, <i>IdPayInt</i> puis de remplir les 21 caractères restants du numéro IBAN dans les trois zones <i>CodeEtab</i>, <i>CodeGuic</i> et <i>IdCpte</i>.
+<br />
+Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communaller/bancaire/TBancaire.png" alt="TBancaire" border="0" usemap="#mapBancaire" id="docimageBancaire" name="docimageBancaire">
+<map name="mapBancaire" id="mapBancaire">
+  <area shape=rect coords="0,0,391,352" href="DomaineGlobalAller_BlocsCommuns.html#TBancaire" alt="TBancaire" title="TBancaire" onMouseOver="chgBancaire('00')" onMouseOut="rstBancaire()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>Compte bancaire</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_BlocsCommuns.html#TBancaire'">Détail Compte bancaire</button> 
+</p>
+
+<h3 class="titreligne num" id="h3BlocReferencePJ">Bloc référence de pièce jointe</h3>
+<p class="normal">Le bloc PJRef donne la référence des pièces justificatives. Le bloc parent est différent selon le domaine, auquel il faut se référer au cas par cas. Il n'y a pas de bloc enfant.
+<br />
+Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communaller/pjreference/TPJReference.png" alt="TPJReference" border="0" usemap="#mapPJReference" id="docimagePJReference" name="docimagePJReference">
+<map name="mapPJReference" id="mapPJReference">
+  <area shape=rect coords="0,0,267,97" href="DomaineGlobalAller_BlocsCommuns.html#TPJReference" alt="TPJReference" title="TPJReference" onMouseOver="chgPJReference('00')" onMouseOut="rstPJReference()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>PJ Référence</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_BlocsCommuns.html#TPJReference'">Détail PJ Référence</button> 
+</p>
+
+</div>
+</body></html>

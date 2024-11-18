@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_global_retour.css">
+  <link rel="icon" href="favicon.ico"/>
+  <title>Domaine Global du PES Retour</title>
+  
+  <script type="text/javascript">
+    <!--
+	    function chgEnveloppe(num_image) 
+	    {
+	      document.docimageEnveloppe.src = 'src/img/communretour/enveloppe/TEnveloppe_retour_'+num_image+'.png';
+	    }
+	    function rstEnveloppe()
+	    {
+	      document.docimageEnveloppe.src = 'src/img/communretour/enveloppe/TEnveloppe_retour.png';
+	    }
+	    
+	    function chgEnTetePES(num_image) 
+	    {
+	      document.docimageEnTetePES.src = 'src/img/communretour/entetepes/TEnTetePES_retour_'+num_image+'.png';
+	    }
+	    function rstEnTetePES()
+	    {
+	      document.docimageEnTetePES.src = 'src/img/communretour/entetepes/TEnTetePES_retour.png';
+	    }
+	    
+	    function chgAdresse(num_image) 
+	    {
+	      document.docimageAdresse.src = 'src/img/communretour/adresse/TAdresse_retour_'+num_image+'.png';
+	    }
+	    function rstAdresse()
+	    {
+	      document.docimageAdresse.src = 'src/img/communretour/adresse/TAdresse_retour.png';
+	    }
+	    
+	    function chgBancaire(num_image) 
+	    {
+	      document.docimageBancaire.src = 'src/img/communretour/bancaire/TCpteBancaire_retour_'+num_image+'.png';
+	    }
+	    function rstBancaire()
+	    {
+	      document.docimageBancaire.src = 'src/img/communretour/bancaire/TCpteBancaire_retour.png';
+	    }
+    //-->
+    </script>
+</head>
+<body class="normal">
+<iframe src="EnTete.html" marginwidth="0" marginheight="0" frameborder="0" height="51" width="100%" scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Domaine Global du PES Retour</h1>
+<p class="normal">Nous représentons ci-dessous un certain nombre de blocs transverses aux différents domaines du PES Retour. Il s'agit des blocs représentant :</p>
+<ul>
+  <li>La modélisation des informations communes aux grammaires du PES : Class_SchemasCommuns_Retour associée à l'espace de noms d'URI "http://www.minefi.gouv.fr/cp/helios/pes_v2/commun/retour"</li>
+  <li>L'en-tête commun d'un message PES retour.</li>
+  <li>Une adresse.</li>
+  <li>Un compte bancaire.</li>
+  <li>La codification des domaines du PES Retour.</li>
+</ul>
+<p class="normal">Ces éléments sont stockés à la racine du répertoire PES_V2/Retour.</p>
+
+<h2 class="titreligne num" id="h2ClassSchemasCommunsRetour">Class_SchemasCommuns_Retour</h2>
+
+<p class="normal">La classe Class_SchemasCommuns_Retour sert de conteneur pour la modélisation d'un ensemble de structures communes aux différents domaines du PES. Elle est est associé à l'espace de noms d'URI <i>"http://www.minefi.gouv.fr/cp/helios/pes_v2/commun/retour"</i>.</p>
+<p class="normal">Elle est incorporable via des directives "xsi:import" dans les schémas l'utilisant.</p>
+<p class="normal">La classe Class_SchemasCommuns_Retour.xsd inclus les classes présentées ci-dessous.</p>
+
+<h3 class="titreligne num" id="h3SimpleType">Simple_Type_Retour</h3>
+<p class="normal">La classe <i>Simple_Type_Retour.xsd</i> a été définie ici : 
+	<button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour.html#h2RepresentationDonneesElementaires'">Descriptif des données élémentaires du PES Retour</button>
+</p>
+
+<h3 class="titreligne num" id="h3CodificationDomainesPES">Codification des domaines du PES Retour</h3>
+<p class="normal">Le schéma XML <i>CommunPES_Retour.xsd</i> fournit les codifications communes à l'ensemble des domaines du PES.</p>
+<p class="normal">Pour visualiser les codifications communes, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_CodesCommuns.html'">Visualiser les codifications communes du PES Retour</button> 
+</p>
+
+<h3 class="titreligne num" id="h3TEnveloppe">Class_Enveloppe_Retour</h3>
+<p class="normal">La classe <i>Class_Enveloppe_Retour.xsd</i> modélise l'enveloppe technique d'un message XML.</p>
+<p class="normal">Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communretour/enveloppe/TEnveloppe_retour.png" alt="TEnveloppe" border="0" usemap="#mapEnveloppe" id="docimageEnveloppe" name="docimageEnveloppe">
+<map name="mapEnveloppe" id="mapEnveloppe">
+  <area shape=rect coords="11,190,92,211" href="DomaineGlobalRetour_BlocsCommuns.html#TEnveloppe" alt="TEnveloppe" title="TEnveloppe" onMouseOver="chgEnveloppe('00')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="175,70,261,90" href="DomaineGlobalRetour_BlocsCommuns.html#TParametres" alt="TParametres" title="TParametres" onMouseOver="chgEnveloppe('01')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="175,198,247,219" href="DomaineGlobalRetour_BlocsCommuns.html#TCarteVisite" alt="Emetteur" title="Emetteur" onMouseOver="chgEnveloppe('02')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="175,311,253,332" href="DomaineGlobalRetour_BlocsCommuns.html#TCarteVisite" alt="Recepteur" title="Recepteur" onMouseOver="chgEnveloppe('03')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="276,5,435,138" href="DomaineGlobalRetour_BlocsCommuns.html#TParametres" alt="TParametres" title="TParametres" onMouseOver="chgEnveloppe('01')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="262,150,425,250" href="DomaineGlobalRetour_BlocsCommuns.html#TCarteVisite" alt="TCarteVisite" title="TCarteVisite" onMouseOver="chgEnveloppe('02')" onMouseOut="rstEnveloppe()">
+<area shape=rect coords="268,262,431,364" href="DomaineGlobalRetour_BlocsCommuns.html#TCarteVisite" alt="TCarteVisite" title="TCarteVisite" onMouseOver="chgEnveloppe('03')" onMouseOut="rstEnveloppe()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>Enveloppe</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_BlocsCommuns.html#TEnveloppe'">Détail Enveloppe</button> 
+</p>
+
+
+<h3 class="titreligne num" id="h3TEnTetePES">En-tête PES Retour</h3>
+<p class="normal">Le bloc EntêtePES comprend l'identifiant de la collectivité. Le Bloc Parent est PES_Retour ou PES_Retour. Il n'a pas de bloc enfant.</p>
+<p class="normal">Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communretour/entetepes/TEnTetePES_retour.png" alt="TEnTetePES" border="0" usemap="#mapEnTetePES" id="docimageEnTetePES" name="docimageEnTetePES">
+<map name="mapEnTetePES" id="mapEnTetePES">
+  <area shape=rect coords="0,0,275,224" href="DomaineGlobalRetour_BlocsCommuns.html#TEnTetePES" alt="TEnTetePES" title="TEnTetePES" onMouseOver="chgEnTetePES('00')" onMouseOut="rstEnTetePES()">
+</map>
+
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>En-tête PES Retour</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_BlocsCommuns.html#TEnTetePES'">Détail En-tête PES Retour</button> 
+</p>
+
+<h3 class="titreligne num" id="h3BlocAdresse">Bloc Adresse Retour</h3>
+<p class="normal">Le bloc Adresse comprend l'adresse du tiers. Le bloc parent est le bloc Tiers. Il n'a pas de bloc enfant.
+<br />
+<img src="src/img/communretour/adresse/TAdresse_retour.png" alt="TAdresse" border="0" usemap="#mapAdresse" id="docimageAdresse" name="docimageAdresse">
+<map name="mapAdresse" id="mapAdresse">
+  <area shape=rect coords="0,0,244,321" href="DomaineGlobalRetour_BlocsCommuns.html#TAdresse" alt="TAdresse" title="TAdresse" onMouseOver="chgAdresse('00')" onMouseOut="rstAdresse()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>Adresse Retour</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_BlocsCommuns.html#TAdresse'">Détail Adresse Retour</button> 
+</p>
+
+<h3 class="titreligne num" id="h3CompteBancaire">Compte bancaire Retour</h3>
+<p class="normal">Le bloc CpteBancaire représente les information bancaires. Le bloc parent est le bloc Tiers. Il n'a pas de bloc enfant.
+<br />
+Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+<img src="src/img/communretour/bancaire/TCpteBancaire_retour.png" alt="TCpteBancaire" border="0" usemap="#mapCpteBancaire" id="docimageBancaire" name="docimageBancaire">
+<map name="mapCpteBancaire" id="mapCpteBancaire">
+  <area shape=rect coords="0,0,264,191" href="DomaineGlobalRetour_BlocsCommuns.html#TCpteBancaire" alt="TCpteBancaire" title="TCpteBancaire" onMouseOver="chgBancaire('00')" onMouseOut="rstBancaire()">
+</map>
+</p>
+<p class="normal">Pour visualiser le détail de cette classe <i>Compte bancaire Retour</i>, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DomaineGlobalRetour_BlocsCommuns.html#TCpteBancaire'">Détail Compte bancaire Retour</button> 
+</p>
+
+</div>
+</body></html>

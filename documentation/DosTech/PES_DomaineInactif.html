@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link rel="icon" href="favicon.ico"/>
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <script type="text/javascript">
+  <!--
+    // Les cookies de mise à jour sont supprimés
+    eraseCookie('v_doc');
+    eraseCookie('hd_maj');
+    eraseCookie('v_helios');
+  
+    var pes_ar = '';
+    var domaine = '';
+    var p_pes = readCookie('p_pes');
+    var p_domaine = readCookie('p_domaine');
+    var p_h1 = readCookie('p_h1');
+    var p_h2 = readCookie('p_h2');
+    
+    if (p_pes != null && p_pes != '')
+    {
+      if (p_pes == 'aller')
+      {
+        pes_ar = 'Pour revenir au PES Aller, cliquer <a href="DomainePESAller.html">ici</a>.';
+      }
+      
+      else if (p_pes == 'retour')
+      {
+        pes_ar = 'Pour revenir au PES Retour, cliquer <a href="DomainePESRetour.html">ici</a>.';
+      }
+      
+      pes_aller_retour = p_pes ;
+    }
+    if (p_domaine != null && p_domaine != '') { domaine = p_domaine; }
+    if (p_h2 != null && p_h2 != '') { domaine = p_h2 + '. '+ domaine}
+    if (p_h1 != null && p_h1 != '') { domaine = p_h1 + '.'+ domaine}
+
+    // Mise à jour du titre
+    if (p_domaine != null && p_domaine != '') {
+      document.write ('<title>' + p_domaine + '</title>');
+    }
+  //-->
+  </script>
+</head>
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+<div class="section">
+<h2 class="titreligne" id="h2DomaineInactif">
+  <script type="text/javascript">
+    <!--
+    document.write (domaine);
+    //-->
+  </script>
+</h2>
+<p class="normal">
+Ce domaine est inactif.
+<script type="text/javascript">
+  <!--
+  document.write (pes_ar);
+  //-->
+</script>
+
+</p>
+
+</div>
+</body></html>

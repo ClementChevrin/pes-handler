@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_dictionnaire_donnees_retour.css">
+  <link rel="icon" href="favicon.ico"/>
+  <title>Dictionnaire des données</title> 
+</head>
+<body class="normal">
+<iframe src="EnTete.html" marginwidth="0" marginheight="0" frameborder="0" height="51" width="100%" scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Dictionnaire des données du PES Retour</h1>
+<p class="normal">Ce chapitre fournit une présentation progressive, par domaine fonctionnel, des entités utilisées dans le cadre du Protocole d'Echange, indépendamment des modalités de transmission les concernant.</p>
+<p class="normal">Pour visualiser le détail des types simples élémentaires du PES Retour, cliquez sur le bouton :
+	<button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html'">Visualiser le détail des types simples élémentaires du PES Retour</button> 
+</p>
+
+<h2 class="titreligne num" id="h2RepresentationDonneesElementaires">Représentation des données élémentaires</h2>
+<p class="normal">Le paragraphe qui suit est applicable à la modélisation des données du PES retour (espaces de noms "propriétaires" et ne concerne pas les données associées à l'utilisation des schémas normalisés.</p>
+
+
+<h3 class="titreligne num" id="h3Generalites">Généralités</h3>
+<p class="normal">Les données élémentaires représentent les structures atomiques à partir desquelles les structures plus complexes (classes, messages) sont construites.</p>
+<p class="normal">Ces données élémentaires sont représentées sous forme d'éléments vides XML accompagnés d'un attribut de nom V dont le contenu est la valeur de la donnée.</p>
+
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">CodePostal</font> <font class="red">V</font><font class="blue">="</font>75001<font class="blue">"/&gt;</font></font></p>
+
+<p class="normal">Les types XML de données correspondant sont construits sous forme de types complexes XML dont le rôle est de déclarer l'attribut V. Cet attribut est lui-même un type simple XML construit à partir des types préconstruit XML auxquels peuvent s'appliquer des contraintes (facettes).</p>
+
+
+<p class="normal">Le tableau suivant présente dans ce cadre les correspondances suivantes :</p>
+<ul>
+  <li>Des types de données présentés dans la modélisation du PES.</li>
+  <li>Des types préconstruits XML correspondant servant de base à la modélisation.</li>
+  <li>Des contraintes appliquées (facettes) en fonction du type de donnée initial.</li>
+  <li>Une référence sur le type XML résultant de la construction.</li>
+</ul>
+<br/>
+
+<table class="bordure" border="1" cellpadding="5" cellspacing="0">
+  <tr class="titre" align="center" valign="middle"><td width="150">Type de données</td>
+    <td class="bordure" width="400">Définition</td>
+    <td class="bordure" width="80">Type préconstruit XML</td>
+    <td class="bordure" width="95">Facettes</td>
+    <td class="bordure" width="195">Nom du type XML</td>
+  </tr>
+
+  <tr>
+    <td class="bordure">Alphanumérique</td>
+    <td class="bordure">Chaîne de nombre et de lettres de taille maximale = <b><i>X</i></b>.<br/><br/>
+    	Les caractères autorisés sont uniquement :<br/>
+    	<ul class="nomargin">
+	    	<li>les lettres de a à z (minuscule et majuscule),</li>
+	    	<li>les chiffres de 0 à 9.</li>
+    	</ul>
+    	<br/>Le champ :
+    	<ul class="nomargin">
+	    	<li>peut être vide.</li>
+    	</ul>
+    </td>
+    <td class="bordure">string</td>
+    <td class="bordure">
+      - maxLength<br/>
+      - pattern
+    </td>
+    <td class="bordure">Base_Alphanum<b><i>X</i></b>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4Alphanumerique'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Alphanum1'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr> 
+  
+  <tr>
+    <td class="bordure">Numérique</td>
+    <td class="bordure">Entier de taille maximale = <b><i>X</i></b>, sous forme de chaine de caractères.<br/><br/>
+    	Les 0 à gauche sont significatifs et comptabilisés dans la taille.<br/><br/>
+		Par exemple,
+		<ul class="nomargin">
+	    	<li>00015 a une taille = 5.</li>
+	    	<li>15 a une taille = 2.</li>
+			<li>150 a une taille = 3.</li>
+		</ul>
+    </td>
+    <td class="bordure">string</td>
+    <td class="bordure"> - maxLength<br/>
+         - pattern
+    </td>
+    <td class="bordure">Base_Num<b><i>X</i></b>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4Numerique'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Num1'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="bordure">Décimal Montant</td>
+    <td class="bordure">Nombre décimal comportant au maximum 14 chiffres dont 2 chiffres après la virgule.
+		<br/><br/>Les 0 à gauche sont non significatifs et non comptabilisés dans la taille.
+	</td>
+    <td class="bordure">decimal</td>
+    <td class="bordure">
+      - totalDigits<br/>
+      - fractionDigits
+    </td>
+    <td class="bordure">Base_Montant
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4DecimalMontant'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Montant'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="bordure">Texte</td>
+    <td class="bordure">Chaîne de lettres et de nombres de taille maximale = <b><i>X</i></b>.
+    </td>
+    <td class="bordure">string</td>
+    <td class="bordure">- maxlength
+    </td>
+    <td class="bordure">Base_Texte<b><i>X</i></b>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4Texte'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Texte10'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+  
+
+  <tr>
+    <td class="bordure">Alphanumérique Tiers</td>
+    <td class="bordure">Chaîne de taille maximale = <b><i>15</i></b> et de taille minimale = <b><i>9</i></b>.
+    </td>
+    <td class="bordure">string</td>
+    <td class="bordure">
+      - maxLength<br/>
+      - minLength
+    </td>
+    <td class="bordure">Base_Texte9_15
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4AlphanumeriqueTiers'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Texte9_15'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="bordure">Année</td>
+    <td class="bordure">Année au format AAAA</td>
+    <td class="bordure">gyear</td>
+    <td class="bordure">&nbsp;</td>
+    <td class="bordure">Base_Annee
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4Annee'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Annee'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="bordure">Booléen</td>
+    <td class="bordure">Choix de quatre valeurs possibles (0, 1, TRUE ou FALSE)</td>
+    <td class="bordure">boolean</td>
+    <td class="bordure">&nbsp;</td>
+    <td class="bordure">Base_Booleen
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4Booleen'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Booleen'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+  <tr>
+    <td class="bordure">Date</td>
+    <td class="bordure">Date au format AAAA-MM-JJ</td>
+    <td class="bordure">date</td>
+    <td class="bordure">&nbsp;</td>
+    <td class="bordure">Base_Date
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='#h4Date'">Visualiser la déclaration XML</button>
+    <br/><br/>
+    <button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesRetour_simples.html#Base_Date'">&nbsp;&nbsp;Visualiser le détail du type&nbsp;&nbsp;&nbsp;</button>
+    </td>
+  </tr>
+</table>
+
+<h2 class="titreligne num" id="h2BlocDeclarationTypesElementaires">Bloc de déclaration des types élémentaires</h2>
+<p class="normal">Nous précisons dans les paragraphes suivants les blocs de déclarations associés à ces types élémentaires.</p>
+<p class="normal">Ces derniers sont regroupés dans un même schéma XML <i>"simple_type.xsd"</i>. Ce schéma est lui même incorporé inclus (directive "xsd:include") dans la classe Class_SchemasCommunsRetour (cf. <a href="DomaineGlobalRetour.html#h2ClassSchemasCommuns">ici</a>) associée à l'espace de noms d'URI <i>"http://www.minefi.gouv.fr/cp/commun/retour"</i></p>
+
+
+<h3 class="titreligne num" id="h3TypesDonnees">Types de données</h3>
+<h4 class="titreligne num" id="h4Alphanumerique">Variable de type alphanumérique</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">IdPost</font> <font class="red">V</font><font class="blue">="</font>1234AB<font class="blue">"/&gt;</font></font></p>
+<p class="normal">La modélisation XML d'une chaîne alphanumérique de longueur maximale <i>max</i> se fait comme suit :</p>
+
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Alphanum<b><i>max</i></b><font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Alphanum<b><i>max</i></b><font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Alphanum<b><i>max</i></b><font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:string<font class="blue">"&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:maxLength</font> <font class="red">value</font><font class="blue">="</font><b><i>max</i></b><font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:pattern</font> <font class="red">value</font><font class="blue">="</font>[0-9a-zA-Z]*<font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;<font class="blue">&lt;/</font><font class="maroon">xs:restriction</font><font class="blue">"&gt;</font><br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">"&gt;</font><br/>
+</font>
+</div>
+
+
+<h4 class="titreligne num" id="h4Numerique">Variable de type numérique</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">CleRib</font> <font class="red">V</font><font class="blue">="</font>00<font class="blue">"/&gt;</font></font></p>
+<p class="normal">La modélisation XML d'une chaîne numérique de longueur maximale <i>max</i> se fait comme suit :</p>
+
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Num<b><i>max</i></b><font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Num<b><i>max</i></b><font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Num<b><i>max</i></b><font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:string<font class="blue">"&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:maxLength</font> <font class="red">value</font><font class="blue">="</font><b><i>max</i></b><font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:pattern</font> <font class="red">value</font><font class="blue">="</font>[0-9]*<font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;<font class="blue">&lt;/</font><font class="maroon">xs:restriction</font><font class="blue">&gt;</font><br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">&gt;</font><br/>
+</font>
+</div>
+
+<h4 class="titreligne num" id="h4DecimalMontant">Variable de type décimal montant</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">MtPayTot</font> <font class="red">V</font><font class="blue">="</font>1254.67<font class="blue">"/&gt;</font></font></p>
+<p class="normal">Ce type de variable est défini dans comme décimal avec 14 chiffres maximum, dont deux après la virgule et strictement positif.</p>
+<p class="normal">La modélisation XML se présente comme suit :</p>
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Montant<font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Montant<font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Montant<font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:decimal<font class="blue">"&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:totalDigits</font> <font class="red">value</font><font class="blue">="</font>14<font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:fractionDigits</font> <font class="red">value</font><font class="blue">="</font>2<font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;<font class="blue">&lt;/</font><font class="maroon">xs:restriction</font><font class="blue">&gt;</font><br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">&gt;</font><br/>
+</font>
+</div>
+
+
+<h4 class="titreligne num" id="h4Texte">Variable de type texte</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">Objet</font> <font class="red">V</font><font class="blue">="</font>Ceci est un texte<font class="blue">"/&gt;</font></font></p>
+<p class="normal">La modélisation XML d'une variable de type texte avec une longueur maximale <i>max</i> se fait comme suit :</p>
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Texte<b><i>max</i></b><font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Texte<b><i>max</i></b><font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Texte<b><i>max</i></b><font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:string<font class="blue">"&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:maxLength</font> <font class="red">value</font><font class="blue">="</font><b><i>max</i></b><font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;<font class="blue">&lt;/</font><font class="maroon">xs:restriction</font><font class="blue">&gt;</font><br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">&gt;</font><br/>
+</font>
+</div>
+
+<h4 class="titreligne num" id="h4AlphanumeriqueTiers">Variable de type Alphanumérique Tiers</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">IdTiers</font> <font class="red">V</font><font class="blue">="</font>123456789<font class="blue">"/&gt;</font></font></p>
+<p class="normal">La modélisation XML d'une variable de type Alphanumérique Tiers se fait comme suit :</p>
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Texte9_15<font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Texte9_15<font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Texte9_15<font class="blue">"&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:string<font class="blue">"&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:maxLength</font> <font class="red">value</font><font class="blue">="</font>15<font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:minLength</font> <font class="red">value</font><font class="blue">="</font>9<font class="blue">"/&gt;</font>
+            <br/>
+&nbsp;&nbsp;<font class="blue">&lt;/</font><font class="maroon">xs:restriction</font><font class="blue">&gt;</font><br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">&gt;</font><br/>
+</font>
+</div>
+
+<h4 class="titreligne num" id="h4Annee">Variable Année</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">Exercice</font> <font class="red">V</font><font class="blue">="</font>2013<font class="blue">"/&gt;</font></font></p>
+<p class="normal">Ce type de variable est défini comme Date au format AAAA.</p>
+<p class="normal">La modélisation XML se présente comme suit :</p>
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Annee<font class="blue">"/&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Annee<font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"/&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Annee<font class="blue">"/&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:gYear<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">"/&gt;</font><br/>
+</font>
+</div>
+
+<h4 class="titreligne num" id="h4Booleen">Variable booléen</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">MarAlim</font> <font class="red">V</font><font class="blue">="</font>1<font class="blue">"/&gt;</font></font></p>
+<p class="normal">La modélisation XML se présente comme suit :</p>
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Booleen<font class="blue">"/&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Booleen<font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"/&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Booleen<font class="blue">"/&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:boolean<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">"/&gt;</font><br/>
+</font>
+</div>
+
+<h4 class="titreligne num" id="h4Date">Variable Date</h4>
+<p class="normal"><b>Exemple</b> : <font class="xml"><font class="blue">&lt;</font><font class="maroon">DtePcePEC</font> <font class="red">V</font><font class="blue">="</font>2013-12-04<font class="blue">"/&gt;</font></font></p>
+<p class="normal">Ce type de variable est défini comme Date au format AAAA-MM-JJ.</p>
+<p class="normal">La modélisation XML se présente comme suit :</p>
+<div class="margeleft">
+<font class="xml">
+<font class="blue">&lt;</font><font class="maroon">xs:complexType</font> <font class="red">name</font><font class="blue">="</font>Base_Date<font class="blue">"/&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:attribute</font>
+                <font class="red">name</font><font class="blue">="</font>V<font class="blue">"</font>
+                <font class="red">type</font><font class="blue">="</font>V_Date<font class="blue">"</font>
+                <font class="red">use</font><font class="blue">="</font>required<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:complexType</font><font class="blue">"/&gt;</font><br/>
+<font class="blue">&lt;</font><font class="maroon">xs:simpleType</font> <font class="red">name</font><font class="blue">="</font>V_Date<font class="blue">"/&gt;</font><br/>
+&nbsp;&nbsp;<font class="blue">&lt;</font><font class="maroon">xs:restriction</font>
+                <font class="red">base</font><font class="blue">="</font>xs:date<font class="blue">"/&gt;</font>
+            <br/>
+<font class="blue">&lt;/</font><font class="maroon">xs:simpleType</font><font class="blue">"/&gt;</font><br/>
+</font>
+</div>
+
+</div></body></html>

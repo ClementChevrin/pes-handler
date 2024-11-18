@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/ns_pes_depenseretour.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/depenseretour/TPES_DepenseRetour_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/depenseretour/TPES_DepenseRetour_xmlspy.png';
+      }
+    //-->
+    </script>
+    <title>PES Dépense Retour</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h2 class="titreligne num" id="h2PES_DepenseRetour">PES Dépense Retour</h2>
+<h3 class="titreligne num" id="h3SchemaXML">Schéma XML</h3>
+<p class="normal">
+<img src="src/img/depenseretour/TPES_DepenseRetour_xmlspy.png" alt="PES Depense Retour" border="0" usemap="#mapPESDepenseRetour" id="docimage" name="docimage">
+<map name="mapPESDepenseRetour" id="mapPESDepenseRetour">
+  	<area shape=rect coords="11,65,147,86"    href="PES_DepenseRetour_blocs.html#TPES_DepenseRetour" alt="PES_DepenseRetour" title="PES_DepenseRetour" onMouseOver="chg('00')" onMouseOut="rst()">
+	<area shape=rect coords="230,5,338,25"    href="PES_DepenseRetour_blocs.html#TEnTeteDepense" alt="EnTeteDepense" title="EnTeteDepense" onMouseOver="chg('01')" onMouseOut="rst()">
+	<area shape=rect coords="230,126,309,146" href="PES_DepenseRetour_blocs.html#TBordereau" alt="Bordereau" title="Bordereau" onMouseOver="chg('02')" onMouseOut="rst()">
+	<area shape=rect coords="400,70,500,90"   href="PES_DepenseRetour_blocs.html#TBlocBordereau" alt="BlocBordereau" title="BlocBordereau" onMouseOver="chg('03')" onMouseOut="rst()">
+	<area shape=rect coords="399,183,452,202" href="PES_DepenseRetour_blocs.html#TPiece" alt="Piece" title="Piece" onMouseOver="chg('04')" onMouseOut="rst()">
+	<area shape=rect coords="542,135,614,154" href="PES_DepenseRetour_blocs.html#TInfoPiece" alt="InfoPiece" title="InfoPiece" onMouseOver="chg('05')" onMouseOut="rst()">
+	<area shape=rect coords="542,232,638,251" href="PES_DepenseRetour_blocs.html#TLigneDePiece" alt="LigneDePiece" title="LigneDePiece" onMouseOver="chg('06')" onMouseOut="rst()">
+	<area shape=rect coords="731,200,835,219" href="PES_DepenseRetour_blocs.html#TBlocLignePiece" alt="BlocLignePiece" title="BlocLignePiece" onMouseOver="chg('07')" onMouseOut="rst()">
+	<area shape=rect coords="731,232,782,251" href="PES_DepenseRetour_blocs.html#TTiers" alt="Tiers" title="Tiers" onMouseOver="chg('08')" onMouseOut="rst()">
+	<area shape=rect coords="731,264,877,286" href="PES_DepenseRetour_blocs.html#TPaiementEmargement" alt="PaiementEmargement" title="PaiementEmargement" onMouseOver="chg('09')" onMouseOut="rst()">
+  
+</map>
+</p>
+
+<h3 class="titreligne num" id="h3Details">Détails</h3>
+<p class="normal">Pour visualiser les blocs ou les codes de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='PES_DepenseRetour_blocs.html'">Visualiser les blocs</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='PES_DepenseRetour_codes.html'">Visualiser les codes</button>
+
+
+</div>
+</body></html>

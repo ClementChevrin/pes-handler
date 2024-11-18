@@ -1,0 +1,712 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_depenseretour_blocs.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Dépense Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailBlocs">Détail des blocs</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPES_DepenseRetour">TYPE TPES_DepenseRetour</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">EnTeteDepense</td>
+               <td> 1..1</td>
+               <td><a href="#TEnTeteDepense">TEnTeteDepense</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">Bordereau</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TBordereau">TBordereau</a></td>
+               <td>Bordereau. Un bordereau comprend n pièces, constituées elle même de n lignes de pièces.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TEnTeteDepense">TYPE TEnTeteDepense</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">TypRestit</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte2">Base_Texte2</a></td>
+               <td>Information permettant de préciser le type de restitution effectué par le flux retour</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdVer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num2">Base_Num2</a></td>
+               <td>N° de version du PES dépense &#x2013; Mettre à « 2 »</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatInf</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TNatInf">TNatInf</a></td>
+               <td>Nature du retour d'information demandé par l'ordonnateur (informatif). Le type de
+                  retour d'information est paramétré dans l'application.La valeur est « 0 » pour le
+                  stock détaillé, ou "2" pour le flux détaillé (retours périodiques).
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBordereau">TYPE TBordereau</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bordereau. Un bordereau comprend n pièces, constituées elle même de n lignes de pièces.</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocBordereau</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocBordereau">TBlocBordereau</a></td>
+               <td>Caractéristiques du bordereau.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Piece</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TPiece">TPiece</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPiece">TYPE TPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoPiece</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoPiece">TInfoPiece</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">LigneDePiece</td>
+               <td>1..&#x221e;</td>
+               <td><a href="#TLigneDePiece">TLigneDePiece</a></td>
+               <td></td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLigneDePiece">TYPE TLigneDePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">BlocLignePiece</td>
+               <td> 1..1</td>
+               <td><a href="#TBlocLignePiece">TBlocLignePiece</a></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="2">Tiers</td>
+               <td>0..1</td>
+               <td><a href="#TTiers">TTiers</a></td>
+               <td>Bloc Tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">PaiementEmargement</td>
+               <td>0..&#x221e;</td>
+               <td><a href="#TPaiementEmargement">TPaiementEmargement</a></td>
+               <td>Bloc PaiementEmargement.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TTiers">TYPE TTiers</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc Tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoTiers</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoTiersDepense">TInfoTiersDepense</a></td>
+               <td>Les éléments renvoyés dans le cadre du PESRetour Dépense sont :<br>- les éléments du référentiel Tiers Hélios dans le cas où la pièce a été rattachée
+                  à un Tiers Hélios. Il s'agit des informations du Tiers sur lequel la pièce a été rattachée
+                  s'il est isolé, sinon du tiers de référence de son groupe de consolidation. Dans ce
+                  cas, les balises NatIdTiers et IdTiers ne sont pas servies si elles représentent un
+                  NIR (NatIdTiers = 04 valeur HELIOS = 4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce pour les pièces créées par le comptable (pièces
+                  à régulariser). Dans ce cas, les balises NatIdTiers et IdTiers ne sont pas servies
+                  si elles représentent un NIR (NatIdTiers = 04 valeur HELIOS = 4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce (créancier), pour les mandats rejetés ou mis en
+                  instance (dans ce cas en effet, aucun rattachement n'est effectué).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Adresse</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TAdresse">TAdresse</a></td>
+               <td>Adresse du tiers. Si l'adresse principale du tiers a pour origine La Poste via les
+                  référentiels DGFIP, alors le bloc adresse n'est pas renseigné.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteBancaire</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_blocscommuns.html#TCpteBancaire">TCpteBancaire</a></td>
+               <td>Compte bancaire du tiers.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TPaiementEmargement">TYPE TPaiementEmargement</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Ce bloc est présent  pour les lignes de pièces du flux récurrent., dès lors qu'il
+                  y a une réalité d'émargement non neutralisée. <br>Il y a autant de bloc que  de paiement/émargement.<br>Ce bloc est absent des lignes de pièces du retour quotidien (mandats rejetés/mis en
+                  instance).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">OrgEma</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TOrgEma">TOrgEma</a></td>
+               <td>Origine de l'émargement.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePay</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date  du paiement ou de l'émargement.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtPay</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant du paiement ou de l'émargement.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocBordereau">TYPE TBlocBordereau</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">Exer</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Annee">Base_Annee</a></td>
+               <td>Millésime de l'exercice de rattachement budgétaire</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdBord</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num7">Base_Num7</a></td>
+               <td>Identifiant du bordereau récapitulatif des mandats.Pour les bordereaux de type 04
+                  «Bordereau de régularisation», le système dans Hélios attribue une valeur unique.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypBord</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TTypBord">TTypBord</a></td>
+               <td>Type de bordereau.Le type de bordereau 04 «Bordereau de régularisation» est utilisé
+                  afin de transmettre à l'ordonnateur des demandes de régularisation.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoPiece">TYPE TInfoPiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">CodServ</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Code d'identification du service de l'ordonnateur.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdPce</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num13">Base_Num13</a></td>
+               <td>Identifiant de la pièce ;Pour le contexte « Type de bordereau = 04 Bordereau de régularisation
+                  » cette balise renvoie :<br> - soit l'Identifiant de l'ordre de paiement payé nécessitant la régularisation par
+                  l'ordonnateur (via un mandat émis après paiement de nature FONCTIONNEMENT ou INVESTISSEMENT
+                  ou INVENTAIRE ou EMPRUNT ou REGIE ou AUTRE),<br> - soit l'identifiant du mandat de type « ordre de paiement de pénalités de retard
+                  » nécessitant une régularisation par l'ordonnateur via un titre ordinaire de fonctionnement.<br>Dans ces deux cas, l'identifiant de la pièce devra être repris par l'ordonnateur lors
+                  de l'émission de la pièce de régularisation (IdPceOrig).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TTypPce">TTypPce</a></td>
+               <td>Type de pièce.Pour le contexte « Type de bordereau = 04 Bordereau de régularisation
+                  » cette balise renvoie :<br> - soit au type de pièce 12 « Demande d'émission de mandat » utilisé pour transmettre
+                  des demandes d'émission de mandats lors d'un paiement avant émission de mandat,<br> - soit au type de pièce 14 « Demande d'émission de titre » utilisé pour transmettre
+                  des demandes d'émission de titre lors de la prise en charge des pénalités de retard
+                  pour un  mandat sur marché.<br><br>Note : dans le cas d'un TypPiece = 12 ou 14 dans un flux retour, la valeur de la balise
+                  IdPiece transmise devra être reprise dans le flux ALLER de régularisation émis par
+                  l'ordonnateur.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TNatPce">TNatPce</a></td>
+               <td>Nature de la pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Obj</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Zone libre décrivant l'objet de la pièce : elle est sélectionnée comme nécessaire
+                  à l'information de l'ordonnateur sur les pièces que le comptable lui transmet pour
+                  régularisation.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePcePec</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de prise en charge de la pièce.<br>Remarque :<br> - Un mandat vérifiant DtePcePec et DtePceRej renseignées est un mandat qui a été
+                  rejeté suite à annulation de prise en charge dans Hélios ; dans ce cas, le mandat
+                  ne pourra pas être ré-émis par l'ordonnateur avec le même identifiant de pièce (IdPce).<br> - Un mandat vérifiant DtePcePec non renseignée et DtePceRej renseignée est un mandat
+                  qui a été rejeté en Visa Dépense depuis la bannette dans Hélios ; dans ce cas, après
+                  correction par l'ordonnateur le mandat pourra être ré-émis par l'ordonnateur avec
+                  le même identifiant de pièce (IdPce).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">EtatPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TEtatPce">TEtatPce</a></td>
+               <td>Information retour sur l'état de la pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObsEtat</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Observation sur l'état de la pièce  : codification des motifs (si codification, il
+                  est possible de transmettre une pluralité de motifs).<br>Remarque : En cas de pluralité, si le contenu contient une liste énumérée finie de
+                  code motif, il conviendra de définir un caractère séparateur (« - » le tiret  par
+                  exemple)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Commentaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte400">Base_Texte400</a></td>
+               <td>Commentaire saisi par le Comptable lors du visa.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePceRej</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date du rejet du mandat.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DtePceInst</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de la mise en instance du mandat.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TBlocLignePiece">TYPE TBlocLignePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoLignePiece</td>
+               <td> 1..1</td>
+               <td><a href="#TInfoLignePiece">TInfoLignePiece</a></td>
+               <td>Bloc restitué pour les retours détaillés</td>
+            </tr>
+            <tr>
+               <td colspan="2">InfoPaiement</td>
+               <td>0..1</td>
+               <td><a href="#TInfoPaiement">TInfoPaiement</a></td>
+               <td>Il s'agit d'un bloc émargement/paiement.<br>Ce bloc est obligatoirement présent  pour les lignes de pièces du flux récurrent.<br>Il est absent des lignes de pièces du retour quotidien (mandats rejetés/mis en instance).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">LiensIdent</td>
+               <td>0..1</td>
+               <td><a href="#TLiensIdent">TLiensIdent</a></td>
+               <td>Identifiants complémentaires&nbsp;: régie, n° d'inventaire, n° emprunt, marché&#x2026;).</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoLignePiece">TYPE TInfoLignePiece</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Bloc restitué pour les retours détaillés</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdLigne</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num6">Base_Num6</a></td>
+               <td>Numéro de la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">EtatLigPce</td>
+               <td> 1..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TEtatLigPce">TEtatLigPce</a></td>
+               <td>Information retour sur l'état de la ligne de pièce.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObsEtat</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte100">Base_Texte100</a></td>
+               <td>Observation sur l'état de la ligne de pièce : codification des motifs (si codification,
+                  il est possible de transmettre une pluralité de motifs).<br>Remarque :En cas de pluralité, si le contenu contient une liste énumérée finie de
+                  code motif, il conviendra de définir un caractère séparateur (« - » le tiret  par
+                  exemple)
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">Commentaire</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte400">Base_Texte400</a></td>
+               <td>Commentaire saisi par le Comptable lors du visa.</td>
+            </tr>
+            <tr>
+               <td colspan="2">LibVir1</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte70">Base_Texte70</a></td>
+               <td>Libellé du virement en retour des pièces à régulariser.</td>
+            </tr>
+            <tr>
+               <td colspan="2">LibVir2</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte70">Base_Texte70</a></td>
+               <td>Libellé du virement en retour des pièces à régulariser.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CpteTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte12">Base_Texte12</a></td>
+               <td>Compte de tiers et financier en retour des pièces à régulariser.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtHT</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant HT.</td>
+            </tr>
+            <tr>
+               <td colspan="2">MtTVA</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant TVA.</td>
+            </tr>
+            <tr>
+               <td colspan="2">CessOpp</td>
+               <td>0..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TCessOpp">TCessOpp</a></td>
+               <td>Code cession de créance. Cette information permet d'indiquer à l'ordonnateur l'existence
+                  d'une cession ou d'une opposition sur une ligne de pièce.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoPaiement">TYPE TInfoPaiement</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Il s'agit d'un bloc émargement/paiement.<br>Ce bloc est obligatoirement présent  pour les lignes de pièces du flux récurrent.<br>Il est absent des lignes de pièces du retour quotidien (mandats rejetés/mis en instance).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NbrPay</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num4">Base_Num4</a></td>
+               <td>Nombre total des paiements ou des émargements effectués sur la ligne de pièce.<br>Si pas d'émargement ou émargement neutralisé,la balise est renseignée à 0.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">MtPayTot</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Montant">Base_Montant</a></td>
+               <td>Montant total des paiements ou des émargements effectués sur la ligne de pièce.<br>Il s'agit de la somme algébrique des paiements et émargements. Si les événements se
+                  sont neutralisés, la balise est renseignée à 0.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TLiensIdent">TYPE TLiensIdent</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Identifiants complémentaires&nbsp;: régie, n° d'inventaire, n° emprunt, marché&#x2026;).</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdConv</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte25">Base_Texte25</a></td>
+               <td>N° de convention : Cette zone permet de faire le lien entre une ligne de pièce et
+                  une fiche convention.<br>Exemple : Convention sur mandat global, autorisation de paiement.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">TypConv</td>
+               <td>0..1</td>
+               <td><a href="PES_DepenseRetour_codes.html#TTypConv">TTypConv</a></td>
+               <td>Type de convention : Cette zone permet de caractériser la  convention.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ObjConv</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte255">Base_Texte255</a></td>
+               <td>Objet de convention : Cette zone permet de connaître la finalité de la convention.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdMarche</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Numéro de marché: cet identifiant permet de déterminer les marchés contractés et suivis
+                  par la collectivité.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdEmpruntOrdo</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte24">Base_Texte24</a></td>
+               <td>N° d'emprunt ordonnateur : Cette zone permet de faire le lien entre une ligne de pièce
+                  et une fiche emprunt.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NumEchEmprunt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Num5">Base_Num5</a></td>
+               <td>Numéro d'échéance d'emprunt pour lequel le paiement avant mandatement a été effectué
+                  par le comptable et qui nécessite une régularisation par l'Ordonnateur via l'émission
+                  d'un mandat émis après paiement.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">DteEchEmprunt</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date d'échéance pour le remboursement de l'emprunt.</td>
+            </tr>
+            <tr>
+               <td colspan="2">IdActif</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte25">Base_Texte25</a></td>
+               <td>N° d'inventaire : Cette zone permet de faire le lien entre une ligne de pièce et une
+                  fiche inventaire.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdRegie</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>N° de régie : Cette zone permet de faire le lien entre une ligne de pièce et une fiche
+                  régie.
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="5" id="TInfoTiersDepense">TYPE TInfoTiersDepense</td>
+            </tr>
+            <tr class="titre">
+               <td class="nom" colspan="2">Nom zone</td>
+               <td class="of">Card<sup><a href="#(1)Cardinalite">(1)</a></sup></td>
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td colspan="2"></td>
+               <td></td>
+               <td></td>
+               <td>Les éléments renvoyés dans le cadre du PESRetour Dépense sont :<br>les éléments du référentiel Tiers Hélios dans le cas où la pièce a été rattachée à
+                  un Tiers Hélios. Il s'agit des informations du Tiers sur lequel la pièce a été rattachée
+                  s'il est isolé, sinon du tiers de référence de son groupe de consolidation. Dans ce
+                  cas, les balises NatIdTiers et IdTiers ne sont pas servies si elles représentent un
+                  NIR (NatIdTiers = 04 valeur HELIOS = 4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce pour les pièces créées par le comptable (pièces
+                  à régulariser). Dans ce cas, les balises NatIdTiers et IdTiers ne sont pas servies
+                  si elles représentent un NIR (NatIdTiers = 04 valeur HELIOS = 4 NUMERO_SS).<br>- Les éléments du Tiers de la pièce (créancier), pour les mandats rejetés ou mis en
+                  instance (dans ce cas en effet, aucun rattachement n'est effectué).
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">IdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte80">Base_Texte80</a></td>
+               <td>Identifiant national du tiers&nbsp;: Identifiant stable et national d'une personne de type
+                  siret, siren ,finess, NFP,TVAIntraCo, Hors UE,TAHITI, RIDET, FRWF, EnCoursImm. ou
+                  IREP.<br>Le NFP,si disponible dans Hélios,sera privilégié dans le PES Retour pour les tiers
+                  «&nbsp;personne physique&nbsp;»
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">NatIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DomaineGlobalRetour_codescommuns.html#TNatIdTiers">TNatIdTiers</a></td>
+               <td>Type d'identifiant national 01 02 03 05 06 07 08 09 10 11 12.</td>
+            </tr>
+            <tr>
+               <td colspan="2">DteIdTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Date">Base_Date</a></td>
+               <td>Date de mise à jour de l'identifiant stable par le comptable.</td>
+            </tr>
+            <tr>
+               <td colspan="2">RefTiers</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte30">Base_Texte30</a></td>
+               <td>Référence attribuée au tiers par l'ordonnateur : Zone destinée à recevoir une référence
+                  ou un identifiant, éventuellement géré par l'ordonnateur, autorisant le regroupement
+                  des pièces comptables.
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">CatTiers</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_codescommuns.html#TCatTiers">TCatTiers</a></td>
+               <td>Information destinée à identifier la catégorie du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">NatJur</td>
+               <td> 1..1</td>
+               <td><a href="DomaineGlobalRetour_codescommuns.html#TNatJur">TNatJur</a></td>
+               <td>Information destinée à identifier la nature juridique du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Civilite</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte10">Base_Texte10</a></td>
+               <td>Etat civil du tiers.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Nom</td>
+               <td> 1..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Raison sociale / Nom : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">ComplNom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Complément de nom : Norme postale.</td>
+            </tr>
+            <tr>
+               <td colspan="2">Prenom</td>
+               <td>0..1</td>
+               <td><a href="DictionnaireDesDonneesRetour_simples.html#Base_Texte38">Base_Texte38</a></td>
+               <td>Prénom.</td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_DepenseRetour.html#docimage'">Retour Domaine Dépense Retour</button><hr class="separateur">
+         </div><br><div class="notebaspage decalagegauche" id="(1)Cardinalite"><sup>(1)</sup> Cardinalités : 1..1 : Obligatoire
+            <br>0..1 : Facultatif
+            <br>0..&#x221e; : Facultatif Multiple
+            <br>1..&#x221e; : Obligatoire Multiple
+            
+         </div>
+      </div>
+   </body>
+</html>

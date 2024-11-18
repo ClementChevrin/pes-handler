@@ -1,0 +1,868 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_recetteretour_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Recette Retour</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCodActu">TYPE TCodActu</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Code indiquant l'état d'un acte de poursuite</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Acte envoyé
+                     </li>
+                     <li><b>02</b> : 
+                        Autorisations de poursuites demandées
+                     </li>
+                     <li><b>03</b> : 
+                        Autorisations de poursuites acceptées
+                     </li>
+                     <li><b>04</b> : 
+                        Autorisations de poursuites refusées
+                     </li>
+                     <li><b>05</b> : 
+                        Acte positif
+                     </li>
+                     <li><b>06</b> : 
+                        Acte négatif
+                     </li>
+                     <li><b>07</b> : 
+                        PND
+                     </li>
+                     <li><b>08</b> : 
+                        RJ/LJ ou surendettement
+                     </li>
+                     <li><b>09</b> : 
+                        Divers
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCodeSuspPour">TYPE TCodeSuspPour</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Délais accordés
+                     </li>
+                     <li><b>02</b> : 
+                        Réclamation transmise ordo
+                     </li>
+                     <li><b>03</b> : 
+                        Suspension demandée ordo
+                     </li>
+                     <li><b>04</b> : 
+                        Opposition à poursuites
+                     </li>
+                     <li><b>05</b> : 
+                        Redressement judiciaire avec plan d'apurement
+                     </li>
+                     <li><b>06</b> : 
+                        Redressement judiciaire sans plan d'apurement
+                     </li>
+                     <li><b>07</b> : 
+                        Liquidation de biens
+                     </li>
+                     <li><b>08</b> : 
+                        Liquidation judiciaire
+                     </li>
+                     <li><b>09</b> : 
+                        Commission surendettement
+                     </li>
+                     <li><b>10</b> : 
+                        NPAI
+                     </li>
+                     <li><b>11</b> : 
+                        Annulation attendue
+                     </li>
+                     <li><b>12</b> : 
+                        Admission en non valeur demandée
+                     </li>
+                     <li><b>13</b> : 
+                        Débiteur décédé
+                     </li>
+                     <li><b>14</b> : 
+                        Autorisation de poursuite non accordée
+                     </li>
+                     <li><b>15</b> : 
+                        Créance minime
+                     </li>
+                     <li><b>16</b> : 
+                        PV carence
+                     </li>
+                     <li><b>17</b> : 
+                        Personne disparue
+                     </li>
+                     <li><b>18</b> : 
+                        Admission en non valeur
+                     </li>
+                     <li><b>19</b> : 
+                        Assignation RJ LJ
+                     </li>
+                     <li><b>20</b> : 
+                        Cession fonds
+                     </li>
+                     <li><b>21</b> : 
+                        Pourvoi tribunaux
+                     </li>
+                     <li><b>22</b> : 
+                        DR demandée
+                     </li>
+                     <li><b>23</b> : 
+                        Tiers non rattaché
+                     </li>
+                     <li><b>24</b> : 
+                        Plan de recouvrement inconnu
+                     </li>
+                     <li><b>25</b> : 
+                        Poursuite initiative poste
+                     </li>
+                     <li><b>26</b> : 
+                        Règle aide médicale
+                     </li>
+                     <li><b>27</b> : 
+                        Production notaire
+                     </li>
+                     <li><b>28</b> : 
+                        Attente réponse huissier
+                     </li>
+                     <li><b>29</b> : 
+                        PV perquisition
+                     </li>
+                     <li><b>30</b> : 
+                        PV Recherche
+                     </li>
+                     <li><b>31</b> : 
+                        Transféré BC bénéficiaire
+                     </li>
+                     <li><b>32</b> : 
+                        Contestation créance
+                     </li>
+                     <li><b>33</b> : 
+                        Empêchement technique
+                     </li>
+                     <li><b>34</b> : 
+                        Divers
+                     </li>
+                     <li><b>35</b> : 
+                        Paiement partiel ou nul Hôpital public
+                     </li>
+                     <li><b>36</b> : 
+                        SATD Positive
+                     </li>
+                     <li><b>37</b> : 
+                        Paiement rejeté hôpital public
+                     </li>
+                     <li><b>38</b> : 
+                        Action de justice
+                     </li>
+                     <li><b>39</b> : 
+                        Action de poursuites hors Hélios
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEtapePce">TYPE TEtapePce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>00</b> : 
+                        Avis Sommes à payer
+                     </li>
+                     <li><b>01</b> : 
+                        Lettre rappel ou lettre de relance&nbsp;
+                     </li>
+                     <li><b>02</b> : 
+                        Commandement
+                     </li>
+                     <li><b>03</b> : 
+                        Mise en demeure
+                     </li>
+                     <li><b>04</b> : 
+                        Saisie Attribution
+                     </li>
+                     <li><b>05</b> : 
+                        Saisie Attribution CAF
+                     </li>
+                     <li><b>06</b> : 
+                        Saisie Vente
+                     </li>
+                     <li><b>07</b> : 
+                        Saisie Rémunération
+                     </li>
+                     <li><b>08</b> : 
+                        Vente
+                     </li>
+                     <li><b>09</b> : 
+                        Poursuites extérieures
+                     </li>
+                     <li><b>10</b> : 
+                        Saisie des coffres forts
+                     </li>
+                     <li><b>11</b> : 
+                        Saisie des véhicules à moteur
+                     </li>
+                     <li><b>12</b> : 
+                        Saisie des valeurs mobilières de placement et autres biens d'associés
+                     </li>
+                     <li><b>13</b> : 
+                        Autorisation commandement
+                     </li>
+                     <li><b>14</b> : 
+                        Autorisation saisie
+                     </li>
+                     <li><b>15</b> : 
+                        Avis avant état de poursuites extérieures
+                     </li>
+                     <li><b>16</b> : 
+                        Phase comminatoire
+                     </li>
+                     <li><b>17</b> : 
+                        SATD employeur
+                     </li>
+                     <li><b>18</b> : 
+                        SATD bancaire
+                     </li>
+                     <li><b>19</b> : 
+                        SATD Autres Tiers
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEtatLigPce">TYPE TEtatLigPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Information retour sur l'état de la ligne de pièce</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Rejeté
+                     </li>
+                     <li><b>02</b> : 
+                        Annulé
+                     </li>
+                     <li><b>03</b> : 
+                        Mis en instance
+                     </li>
+                     <li><b>04</b> : 
+                        Non soldée
+                     </li>
+                     <li><b>05</b> : 
+                        Soldée
+                     </li>
+                     <li><b>06</b> : 
+                        Soldée en Non valeur
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TEtatPce">TYPE TEtatPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Information retour sur l'état de la pièce</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        En instance
+                     </li>
+                     <li><b>02</b> : 
+                        Prise en charge
+                     </li>
+                     <li><b>03</b> : 
+                        Prise en charge partielle
+                     </li>
+                     <li><b>04</b> : 
+                        Rejeté
+                     </li>
+                     <li><b>05</b> : 
+                        Annulé
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatInf">TYPE TNatInf</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du retour d'information demandé par l'ordonnateur. La valeur 2 'flux détaillé'
+                  est utilisée pour les flux périodiques et les flux de rejets ( titres ou ORMC). La
+                  valeur 1 'stock détaillé' est utilisée pour les stocks ( titres ou ORMC).
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>1</b> : 
+                        Stock détaillé
+                     </li>
+                     <li><b>2</b> : 
+                        Flux détaillé
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatPce">TYPE TNatPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du titre pour les retours</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Fonctionnement
+                     </li>
+                     <li><b>02</b> : 
+                        Investissement
+                     </li>
+                     <li><b>03</b> : 
+                        Inventaire
+                     </li>
+                     <li><b>04</b> : 
+                        Emprunt
+                     </li>
+                     <li><b>05</b> : 
+                        Régie
+                     </li>
+                     <li><b>06</b> : 
+                        Annulation/réduction
+                     </li>
+                     <li><b>07</b> : 
+                        Complémentaire
+                     </li>
+                     <li><b>08</b> : 
+                        Réémis
+                     </li>
+                     <li><b>09</b> : 
+                        Annulant un mandat
+                     </li>
+                     <li><b>10</b> : 
+                        Annulation du titre de rattachement
+                     </li>
+                     <li><b>11</b> : 
+                        Marché
+                     </li>
+                     <li><b>12</b> : 
+                        Autres
+                     </li>
+                     <li><b>18</b> : 
+                        Opération d'ordre liée aux cessions
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatPceOrig">TYPE TNatPceOrig</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature de la pièce d'origine</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>02</b> : 
+                        Mandat
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TObsEtat">TYPE TObsEtat</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Motif de rejet ou de mise en instance.  Les motif (s) d'erreur (1 à n) sont sélectionnable(s)
+                  par le Comptable pour une décision de rejet ou de mise en instance d'un titre.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Absence caractère exécutoire
+                     </li>
+                     <li><b>02</b> : 
+                        Absence indication créance
+                     </li>
+                     <li><b>03</b> : 
+                        Absence indication débiteur
+                     </li>
+                     <li><b>04</b> : 
+                        Iputation budgétaire erronée
+                     </li>
+                     <li><b>05</b> : 
+                        Prescription
+                     </li>
+                     <li><b>06</b> : 
+                        Autres
+                     </li>
+                     <li><b>07</b> : 
+                        Absence de référence à la pièce d'origine
+                     </li>
+                     <li><b>08</b> : 
+                        Type de bordereau de titre inexistant
+                     </li>
+                     <li><b>09</b> : 
+                        Exercice Bordereau non ouvert
+                     </li>
+                     <li><b>10</b> : 
+                        Bordereau sans date d'émission
+                     </li>
+                     <li><b>11</b> : 
+                        Montant du bordereau incohérent
+                     </li>
+                     <li><b>12</b> : 
+                        Absence de signature sur bordereau
+                     </li>
+                     <li><b>13</b> : 
+                        Absence de TVA pour collectivités assujetties
+                     </li>
+                     <li><b>14</b> : 
+                        Incompétence du donneur d'ordre
+                     </li>
+                     <li><b>15</b> : 
+                        Insuffisance pièces justificatives
+                     </li>
+                     <li><b>16</b> : 
+                        Absence ou invalidité des pièces justificatives
+                     </li>
+                     <li><b>17</b> : 
+                        Domiciliation bancaire absente ou erronée
+                     </li>
+                     <li><b>18</b> : 
+                        Numéro de bordereau en doublon
+                     </li>
+                     <li><b>19</b> : 
+                        Complément information nécessaire
+                     </li>
+                     <li><b>20</b> : 
+                        Attente titre récapitulatif
+                     </li>
+                     <li><b>21</b> : 
+                        Titre incomplet
+                     </li>
+                     <li><b>22</b> : 
+                        Exercice rôle clôturé
+                     </li>
+                     <li><b>23</b> : 
+                        Numéro de rôle non unique
+                     </li>
+                     <li><b>24</b> : 
+                        Exercice rôle initial clôturé
+                     </li>
+                     <li><b>25</b> : 
+                        Rôle initial inexistant
+                     </li>
+                     <li><b>26</b> : 
+                        Rôle initial non pris en compte
+                     </li>
+                     <li><b>27</b> : 
+                        Date prélèvement incorrect
+                     </li>
+                     <li><b>28</b> : 
+                        Numéro article non unique
+                     </li>
+                     <li><b>29</b> : 
+                        Date ASP incorrecte
+                     </li>
+                     <li><b>30</b> : 
+                        Code produit inconnu
+                     </li>
+                     <li><b>31</b> : 
+                        SIRET collectivité bénéficiaire inexistant
+                     </li>
+                     <li><b>32</b> : 
+                        Collectivité non assujettie à TVA
+                     </li>
+                     <li><b>33</b> : 
+                        Montant majorable
+                     </li>
+                     <li><b>34</b> : 
+                        Montant prélèvement
+                     </li>
+                     <li><b>35</b> : 
+                        Domiciliation erronée
+                     </li>
+                     <li><b>36</b> : 
+                        Domiciliation inexistante
+                     </li>
+                     <li><b>37</b> : 
+                        Rapprochement rôle impossible
+                     </li>
+                     <li><b>38</b> : 
+                        Forçage accordé par ordonnateur
+                     </li>
+                     <li><b>39</b> : 
+                        Accord pour forçage du responsable du poste comptable
+                     </li>
+                     <li><b>40</b> : 
+                        Accord pour forçage par ordonnateur à venir
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TOrgEma">TYPE TOrgEma</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nouvelle codification pour le domaine Recette dédiée à la définition de l'origine
+                  de l'émargement portant sur une ligne dont le titre doit être pris en compte dans
+                  les retours PES périodiques.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Encaissement avant émission de titre (dans le cas où la pièce émargeante est un encaissement
+                        avant émission de titre)
+                     </li>
+                     <li><b>02</b> : 
+                        Encaissement (encaissement sur pièce)
+                     </li>
+                     <li><b>03</b> : 
+                        Flux d'encaissement ( sauf TIPI)
+                     </li>
+                     <li><b>04</b> : 
+                        Mandat correctif (dans le cas où la pièce émargeante est un mandat correctif)
+                     </li>
+                     <li><b>05</b> : 
+                        Mandat  (dans le cas où la pièce émargeante est un mandat ordinaire, mandat sur marché,
+                        mandat d'ordre budgétaire ou tout autre mandat sauf mandat correctif)
+                     </li>
+                     <li><b>06</b> : 
+                        Liste non valeur (dans le cas où le titre est émargé avec une liste de non valeur)
+                     </li>
+                     <li><b>07</b> : 
+                        Titre correctif (dans le cas où la pièce émargeante est un titre correctif)
+                     </li>
+                     <li><b>08</b> : 
+                        Titre  (dans le cas où la pièce émargeante est un titre ordinaire ou titre de majoration
+                        ou titre en plusieurs années, ou tout autre titre autre que titre correctif)
+                     </li>
+                     <li><b>09</b> : 
+                        Annulation frais de poursuite ou acte de poursuite
+                     </li>
+                     <li><b>10</b> : 
+                        TIPI (encaissement par paiement sur internet) &#x2013; lorsque l'origine de l'émargement
+                        est un encaissement TIPI
+                     </li>
+                     <li><b>11</b> : 
+                        Encaissement technique -lorsque la ligne de pièce est soldée suite à un reversement
+                        vers un budget collectivité bénéficiaire ( ligne de titre ORMC)
+                     </li>
+                     <li><b>12</b> : 
+                        Divers (pour tous les cas autres que ceux cités dans les différentes codifications)
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypBord">TYPE TTypBord</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de bordereau.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Annulation-réduction
+                     </li>
+                     <li><b>03</b> : 
+                        Ordre de Recette
+                     </li>
+                     <li><b>04</b> : 
+                        Bordereau de Régularisation
+                     </li>
+                     <li><b>05</b> : 
+                        P503
+                     </li>
+                     <li><b>06</b> : 
+                        Ordres de recette multi créanciers
+                     </li>
+                     <li><b>07</b> : 
+                        Ordres de recette multi créanciers_Reversement BC bénéficiaire
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypConv">TYPE TTypConv</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Types de convention exploitées dans le domaine Recette.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Convention sur titres en plusieurs années
+                     </li>
+                     <li><b>02</b> : 
+                        Convention sur rôles multi collectivités
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypPce">TYPE TTypPce</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Informations destinées à déterminer le type de pièce.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Titre ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        Titre correctif
+                     </li>
+                     <li><b>03</b> : 
+                        Titre d'ordre budgétaire
+                     </li>
+                     <li><b>04</b> : 
+                        Titre d'ordre mixte
+                     </li>
+                     <li><b>05</b> : 
+                        Titre émis après encaissement
+                     </li>
+                     <li><b>06</b> : 
+                        Titre récapitulatif avec rôle
+                     </li>
+                     <li><b>07</b> : 
+                        Titre récapitulatif sans rôle
+                     </li>
+                     <li><b>08</b> : 
+                        Rôle Titre
+                     </li>
+                     <li><b>09</b> : 
+                        Titre de majoration
+                     </li>
+                     <li><b>10</b> : 
+                        Titre en plusieurs années
+                     </li>
+                     <li><b>11</b> : 
+                        Titre de rattachement
+                     </li>
+                     <li><b>12</b> : 
+                        Ordre de recette ordonnateur
+                     </li>
+                     <li><b>13</b> : 
+                        Demande émission de titre
+                     </li>
+                     <li><b>14</b> : 
+                        Titres produits constatés d'avance
+                     </li>
+                     <li><b>15</b> : 
+                        Titre ORMC (Ordre de recette multi créanciers)
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypRestit">TYPE TTypRestit</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de restitution offerte par le flux retour. Il s'agit du type de flux qui est
+                  généré.<br>Rejet =titres ou ORMC rejetés et mis en instance.<br>Périodique = titres ou ORMC ayant eu des événements sur la période et recettes à régulariser
+                  sur la période<br>Stock = titres ou ORMC
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Rejet
+                     </li>
+                     <li><b>02</b> : 
+                        Périodique
+                     </li>
+                     <li><b>03</b> : 
+                        Stock
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_RecetteRetour.html#docimage'">Retour Domaine Recette Retour</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>

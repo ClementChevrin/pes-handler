@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/cm_domaine_pes_aller.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <script type="text/javascript">
+    <!--
+      function chg(num_image) 
+      {
+        document.docimage.src = 'src/img/pesaller/PES_Aller_xmlspy_'+num_image+'.png';
+      }
+      function rst()
+      {
+        document.docimage.src = 'src/img/pesaller/PES_Aller_xmlspy.png';
+      }
+    //-->
+    </script>
+    <title>Domaines PES Aller</title>
+  </head>
+  
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Domaines PES Aller</h1>
+
+<h2 class="titreligne num" id="h2PresentationPESAller">Présentation du PES Aller</h2>
+
+<p class="normal">Pour visualiser les différents blocs, cliquer sur les blocs de l'image ci-dessous.<br/><br/>
+
+<img src="src/img/pesaller/PES_Aller_xmlspy.png" alt="PES Aller" border="0" usemap="#mapPESAller" id="docimage" name="docimage">
+<map name="mapPESAller" id="mapPESAller">
+  <area shape="rect" coords="10,69,83,88" href="DomainePESAller_domaines.html#PES_Aller" alt="PES Aller" title="PES Aller" onMouseOver="chg('00')" onMouseOut="rst()">
+  <area shape="rect" coords="181,37,258,57" href="DomaineGlobalAller.html#h3TEnveloppe" alt="Enveloppe" title="Enveloppe" onMouseOver="chg('01')" onMouseOut="rst()">
+  <area shape="rect" coords="180,69,260,89" href="DomaineGlobalAller.html#h3TEnTetePES" alt="En Tete PES" title="En Tete PES" onMouseOver="chg('02')" onMouseOut="rst()">
+  <area shape="rect" coords="181,101,302,121" href="PES_DepenseAller.html" alt="PES Depense Aller" title="PES Depense Aller" onMouseOver="chg('03')" onMouseOut="rst()">
+  <area shape="rect" coords="180,133,296,153" href="PES_RecetteAller.html" alt="PES Recette Aller" title="PES Recette Aller" onMouseOver="chg('04')" onMouseOut="rst()">
+  <area shape="rect" coords="180,165,269,185" href="PES_FactureAller.html" alt="PES Facture" title="PES Facture" onMouseOver="chg('05')" onMouseOut="rst()">
+  <area shape="rect" coords="180,193,269,213" href="PES_MarcheAller.html" alt="PES Marche" title="PES Marche" onMouseOver="chg('06')" onMouseOut="rst()">
+  <area shape="rect" coords="180,220,241,239" href="PES_PJAller.html" alt="PES PJ" title="PES PJ" onMouseOver="chg('07')" onMouseOut="rst()">
+  <area shape="rect" coords="181,252,467,271" href="BlocSignatureElectronique.html#PESSignatureGroup" alt="PES Signature Group" title="PES Signature Group" onMouseOver="chg('08')" onMouseOut="rst()">
+</map>
+</p>
+
+<h3 class="titreligne num" id="h3Details">Détails</h3>
+<p class="normal">Pour visualiser les blocs de ce domaine, cliquez sur le bouton ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='DomainePESAller_domaines.html'">Visualiser les blocs</button>
+
+<h3 class="titreligne num" id="h3Details">Détails communs aller</h3>
+<p class="normal">Pour visualiser les blocs, les codes ou les types simples communs de ce domaine, cliquez sur les boutons ci-dessous.</p>
+<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_blocscommuns.html'">Visualiser les blocs communs aller</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='DomaineGlobalAller_codescommuns.html'">Visualiser les codes communs aller</button>
+&nbsp;&nbsp;&nbsp;<button type="button" class="encadre" onclick="self.location='DictionnaireDesDonneesAller_simples.html'">Visualiser les types simples communs aller</button>
+
+
+</div>
+</body></html>

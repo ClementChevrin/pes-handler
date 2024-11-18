@@ -1,0 +1,4 @@
+body
+{
+  counter-reset: h1counter 9 h2counter 6 h3counter 2;
+}

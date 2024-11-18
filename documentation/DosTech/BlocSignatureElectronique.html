@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+<head>
+  <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <script type="text/javascript" src="src/js/version.j"></script>
+  <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+  <link type="text/css" rel="stylesheet" href="src/css/cm_bloc_signature_electronique.css">
+  <link rel="icon" href="favicon.ico"/>
+  <title>Bloc signature électronique</title>
+</head>
+<body class="normal">
+<iframe src="EnTete.html" marginwidth="0" marginheight="0" frameborder="0" height="51" width="100%" scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Bloc signature électronique</h1>
+<h2 class="titreligne num" id="h2FormatSignatureEspaceNoms">Format de signature et espace de noms</h2>
+
+<p class="normal"> Le PES V2 permet de véhiculer (import du schéma <b>Class_Signature.xsd</b>) des informations de signature électronique sur les niveaux suivants :</p>
+<ul>
+  <li>Signature technique du flux PES Aller</li>
+  <li>Signature d'un élément de type bordereau de dépense ou de recette</li>
+  <li>Signature d'une pièce justificative (externe)</li>
+</ul>
+
+<p class="normal">L'information de signature respecte les spécifications XML Signature [R4] du W3C (<a target="_blank" href="http://www.w3.org/">www.W3.org</a>) ainsi que les extensions de format de signatures spécifiées dans le standard européen XML Advanced Electronic Signature (XADES, [R5]) de l'ETSI (<a target="_blank" href="http://www.etsi.org">www.etsi.org</a>).</p>
+<p class="normal">Un élément ds:<b>Signature</b> est modélisé au travers du schéma <b>Class_Signature.xsd</b>. Il appartient à l'espace de nom XML Signature (<i>http://www.w3.org/2000/09/xmldsig#</i>). Le préfixe utilisé pour les éléments appartenant à l'espace de noms XMLDSIG est le préfixe <i>"ds:"</i></p>
+<p class="normal">L'élément xad:<b>QualifyingProperties</b> appartient à l'espace de noms XADES (<i>http://uri.etsi.org/01903/v1.2.2#</i> ou <i>http://uri.etsi.org/01903/v1.1.1#</i>). Le préfixe utilisé pour les éléments appartenant à l'espace de noms XADES est le préfixe <i>"xad:"</i>.</p>
+<p class="normal">Les signatures sont des signatures enveloppées, conformément à la norme XML Signature.</p>
+
+<p class="normal">
+  <img src="src/PESSignatureGroup.png" height="411" width="664" title="PESSignatureGroup" alt="PESSignatureGroup" id="PESSignatureGroup">
+</p>
+
+
+<h2 class="titreligne num" id="h2GenerationElementSignature">Génération de l'élément ds:signature</h2>
+
+<p class="normal">La génération de la signature est effectuée dans tous les cas comme suit :</p>
+<ul>
+  <li>Création élément xad:<b>QualifyingProperties</b> contenant les propriétés signées de la signature (cf. <a href="#h3QualifyingProperties">ici</a>).</li>
+  <li>Création d'un élément ds:<b>SignedInfo</b> contenant les éléments ds:<b>CanonicalizationMethod</b>, ds:<b>SignatureMethod</b> et deux éléments ds:<b>Reference</b>.</li>
+  <li>Génération des éléments ds:<b>Reference </b>(cf. <a href="#h4SignedSignatureProperties">ici</a>)</li>
+  <li>Mise sous forme canonique de l'élément ds:<b>SignedInfo</b> et calcul de <b>ds:SignatureValue</b> sur cet élément en appliquant les algorithmes définis dans l'élément ds:<b>SignedInfo</b></li>
+  <li>Intégration dans le message de l'élément ds:<b>Signature</b>contenant :
+    <ul>
+      <li>L'élément ds:<b>SignedInfo</b></li>
+      <li>Un élément ds:<b>KeyInfo</b> contenant la valeur du certificat de signature encodé en base 64</li>
+      <li>L'élément ds:<b>Object</b>/xad:<b>QualifyingProperties</b></li>
+    </ul>
+  </li>
+</ul>
+
+<p class="normal">L'algorithme de mise sous forme canonique appliqué à l'élément ds:<b>SignedInfo</b> est fixé à :
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:CanonicalizationMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/10/xml-exc-c14n#<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">L'algorithme de signature est fixé à :
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:SignatureMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2000/09/xmldsig#rsa-sha1<font class="blue">"/&gt;</font></font>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:SignatureMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256<font class="blue">"/&gt;</font></font>
+</p>
+
+<h3 class="titreligne num" id="h3GenerationElementsReferences">Génération des éléments références</h3>
+<h4 class="titreligne num" id="h4GenerationPremiereReference">Génération de la première réference</h4>
+
+<p class="normal">Le premier élément ds:<b>Reference</b> identifie l'objet comportant des données à signer (PES_Aller, Bordereau, PJ)</p>
+<p class="normal">Il est constitué de :</p>
+  <ul>
+    <li>Un attribut <b>URI</b></li>
+    <li>Un élément ds:<b>Transforms</b></li>
+    <li>Un élément ds:<b>DigestMethod</b></li>
+    <li>Un élément ds:<b>DigestValue</b></li>
+  </ul>
+
+<p class="normal">L'attribut obligatoire <b>URI</b> pointe selon les cas :</p>
+  <ul>
+    <li>Sur l'attribut Id de l'élément pes:<b>PES_Aller</b> (cf. <a href="DomainePESAller_domaines.html">ici</a>).</li>
+    <li>Sur l'attribut Id de l'élément pes/dep/<b>Bordereau</b> ou pes/rec/<b>Bordereau </b>(cf. <a href="PES_DepenseAller_blocs.html#TBordereau">ici</a> et <a href="PES_RecetteAller_blocs.html#TBordereau">ici</a>).</li>
+  </ul>
+
+<p class="normal">L'attribut obligatoire ds:<b>Transforms</b> comprend deux éléments ds:<b>Transform</b> :</p>
+  <ul>
+    <li>
+      Le premier élément obligatoire ds:<b>Transform </b>permet de sélectionner les données de l'objet (identifié par l'attribut <b>URI</b>) que l'on souhaite signer, en en soustrayant l'élément ds:<b>Signature </b>lui-même. Cet algorithme est l'algorithme standard de création d'une signature enveloppée :<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:Transforms</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2000/09/xmldsig#enveloped-signature<font class="blue">"/&gt;</font></font>
+    </li>
+    <li>
+      Le deuxième élément obligatoire ds:<b>Transform </b>indique l'algorithme de mise sous forme canonique à appliquer aux données.<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:Transforms</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/10/xml-exc-c14n#<font class="blue">"/&gt;</font></font>
+    </li>
+  </ul>
+
+
+<p class="normal">Une empreinte du résultat de ces transformations successives est ensuite calculée, en suivant l'algorithme défini en attribut obligatoire de ds:<b>DigestMethod</b>. Cet algorithme est fixé à :<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2000/09/xmldsig#sha1<font class="blue">"/&gt;</font></font>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmlenc#sha256<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">L'élément obligatoire ds:<b> DigestValue </b>contient alors la valeur de l'empreinte ainsi créée.</p>
+
+
+<h4 class="titreligne num" id="h4GenerationSecondeReference">Génération de la seconde réference</h4>
+
+
+<p class="normal">Le deuxième élément ds:<b>Reference</b> identifie les propriétés signées.</p>
+<p class="normal">Il est constitué :</p>
+  <ul>
+    <li>Un attribut <b>URI</b></li>
+    <li>Un attribut<b>Type</b></li>
+    <li>Un élément ds:<b>Transforms</b></li>
+    <li>Un élément ds:<b>DigestMethod</b></li>
+    <li>Un élément ds:<b>DigestValue</b></li>
+  </ul>
+
+<p class="normal">L'attribut obligatoire <b>URI</b> pointe sur l'attribut Id de l'élément xad:<b>SignedProperties</b> (cf. <a href="#h4SignedSignatureProperties">ici</a>)</p>
+<p class="normal">L'attribut obligatoire <b>Type</b> est fixé à la valeur <i>"http://uri.etsi.org/01903/v1.1.1#SignedProperty"</i></p>
+
+<p class="normal">L'attribut obligatoire ds:<b>Transforms</b> comprend un élément ds:<b>Transform</b> indiquant l'algorithme de mise sous forme canonique à appliquer aux données.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:Transforms</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/10/xml-exc-c14n#<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">Une empreinte du résultat de cette transformation est ensuite calculée, en suivant l'algorithme défini en attribut obligatoire de ds:<b>DigestMethod</b>
+. Cet algorithme est fixé à :<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2000/09/xmldsig#sha1<font class="blue">"/&gt;</font></font>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmlenc#sha256<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">L'élément obligatoire ds:<b>DigestValue</b> contient alors la valeur de l'empreinte ainsi créée.</p>
+
+
+<h3 class="titreligne num" id="h3QualifyingProperties">Elément xad:QualifyingProperties</h3>
+
+<p class="normal">L'élément xad:<b>QualifyingProperties</b>appartient à l'espace de noms XADES (<i>http://uri.etsi.org/01903/v1.1.1#</i>)</p>
+<p class="normal">Il est constitué de :</p>
+  <ul>
+    <li>Un attribut <b>Target</b>qui est une URI sur l'attribut Id de la signature à laquelle l'élément <b>QualifyingProperties</b> est associé.</li>
+    <li>Un élément xad:<b>SignedProperties</b>, contenant lui-même un élément xad:<b>SignedSignatureProperties</b>.</li>
+    <li>Optionnellement un élément xad:<b>UnsignedProperties</b>, contenant lui-même un élément xad:<b>UnsignedSignatureProperties</b>.</li>
+  </ul>
+
+<h4 class="titreligne num" id="h4SignedSignatureProperties">Element SignedSignatureProperties</h4>
+<p class="normal">Est composé de :</p>
+  <ul>
+    <li>Un élément xad:<b>SigningTime</b></li>
+    <li>Un élément xad:<b>SigningCertificate</b></li>
+    <li>Un élément xad:<b>SignaturePolicyIdentifier</b></li>
+    <li>Un élément xad:<b>SignatureProductionPlace</b></li>
+    <li>Un élément xad:<b>SignerRole</b></li>
+  </ul>
+
+<h4 class="titreligne num" id="h4SigningTime">Element SigningTime</h4>
+<p class="normal">L'élement xad:<b>SigningTime </b>contient la date et l'heure de création de l'élément de signature.</p>
+
+<h4 class="titreligne num" id="h4SigninGCertificate">Element SigningCertificate</h4>
+<p class="normal">L'élément xad:<b> SigningCertificate</b> contient un élément xad:<b>Cert</b> lui-même constitué de :</p>
+  <ul>
+    <li>Un élément xad:<b>CertDigest</b></li>
+    <li>Un élément xad:<b>IssuerSerial</b></li>
+  </ul>
+
+<p class="normal">L'élément xad:<b>CertDigest</b> contient l'empreinte du certificat de signature ainsi que l'algorithme utilisé pour calculer cette empreinte. Cet algorithme est fixé à :<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2000/09/xmldsig#sha1<font class="blue">"/&gt;</font></font>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ou
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font class="xml"><font class="blue">&lt;</font><font class="maroon">ds:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmlenc#sha256<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">L'élément obligatoire xad:<b>IssuerSerial </b>contient le DN (DistinguishedName) du certificat de l'autorité de certification émettrice du certificat de signature (ds:<b>X509IssuerName</b>) ainsi que le numéro de série du certificat de signature (ds:<b>X509SerialNumber</b>)</p>
+
+
+<h4 class="titreligne num" id="h4SignaturePolicyIdentifier">Element SignaturePolicyIdentifier</h4>
+<p class="normal">L'élément xad:<b>SignaturePolicyIdentifier </b>est constitué de l'élement xad:<b>SignaturePolicyId, </b>qui est lui-même constitué de :</p>
+  <ul>
+    <li>Un élément xad:<b>SigPolicyId</b></li>
+    <li>Un élément xad:<b>SigPolicyHash</b></li>
+    <li>Un élément xad:<b>SigPolicyQualifiers</b></li>
+  </ul>
+
+<p class="normal">L'élément xad:<b>SigPolicyId </b>contient :</p>
+  <ul>
+    <li>Un élément xad:<b>identifier</b> possédant un attribut xad:<b>Qualifier </b>fixé à "OIDAsURN" contenant l'URN de la politique de signature utilisée.</li>
+    <li>Un élément xad:<b>Description</b> contenant une chaîne de caractères décrivant la politique de signature.</li>
+    <li>
+      L'élement xad:<b>SigPolicyHash</b> contient l'empreinte de la politique de signature utilisée ainsi que l'algorithme utilisé pour calculer cette empreinte. Cet algorithme est fixé:<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font class="xml"><font class="blue">&lt;</font><font class="maroon">xad:DigestMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmlenc#sha256<font class="blue">"/&gt;</font></font>      
+    </li>
+    <li>L'élement xad:<b>SigPolicyQualifiers</b> contient un élément xad:<b>SigPolicyQualifier</b> contenant un élement xad:<b>SPURI</b>. Ce dernier contient l'URL de publication de la politique de signature 
+        <a href="https://www.collectivites-locales.gouv.fr/files/files/finances_locales/dematerialisation/ps_helios_dgfip.pdf" target="_blank">https://www.collectivites-locales.gouv.fr/files/files/finances_locales/dematerialisation/ps_helios_dgfip.pdf</a></li>
+  </ul>
+
+<h4 class="titreligne num" id="h4Signatureproductionplace">Element SignatureProductionPlace</h4>
+<p class="normal">L'élément xad&nbsp;:<b> SignatureProductionPlace </b>contient&nbsp;:</p>
+  <ul>
+    <li>Un élément xad:<b>City</b></li>
+    <li>Un élément xad:<b>PostalCode</b></li>
+    <li>Un élément xad:<b>CountryName</b></li>
+  </ul>
+
+<h4 class="titreligne num" id="h4Signerrole">Element SignerRole</h4>
+<p class="normal">L'élément xad:<b>SignerRole</b> contient un élément xad:<b>ClaimedRoles</b> lui-même constitué d'un élément xad:<b>ClaimedRole</b>. Ce dernier contient une chaîne de caractères indiquant le rôle du signataire.</p>
+
+<h4 class="titreligne num" id="h4UnsignedSignatureProperties">Element UnsignedSignatureProperties</h4>
+<p class="normal">L'élément xad:<b>UnsignedSignatureProperties</b> contient :</p>
+  <ul>
+    <li>Un élément xad:<b>SignatureTimeStamp</b></li>
+  </ul>
+
+<h4 class="titreligne num" id="h4SignatureTimeStamp">Element SignatureTimeStamp</h4>
+<p class="normal">L'élément xad:<b>SignatureTimestamp</b> contient :</p>
+  <ul>
+    <li>Un élément xad:<b>HashDataInfo</b></li>
+    <li>Un élément xad:<b>EncapsulatedTimeStamp</b></li>
+  </ul>
+
+<p class="normal">L'élément xad:<b>HashDataInfo</b> contient :</p>
+  <ul>
+    <li>Un attribut <b>URI</b></li>
+    <li>Un élément ds:<b>Transforms</b></li>
+  </ul>
+
+<p class="normal">Ces éléments contiennent les informations nécessaires à l'extraction et la mise sous forme canonique suivant l'algorithme <i>http://www.w3.org/2001/10/xml-exc-c14n#</i> de l'élément ds:<b>SignatureValue</b> de la signature horodatée.</p>
+<p class="normal">L'élément xad:<b>EncapsulatedTimeStamp</b> contient un jeton d'horodatage conforme à la RFC 3161, encodé en base64.</p>
+
+<h2 class="titreligne num" id="h2BlocChiffrement">Bloc chiffrement</h2>
+<p class="normal">Le bloc Chiffrement contient les éléments de chiffrement du fichier contenant les données de pièces jointes, quand ces dernières sont véhiculées par le flux.</p>
+<p class="normal">Le format de chiffrement respecte les spécifications XML Encryption [R5] du W3C (www.W3.org) :</p>
+
+<p class="normal"><img src="src/PESEncryptedDataType.png" width="490" height="206" alt="PESEncryptedDataType" title="PESEncryptedDataType"></p>
+
+<p class="normal">Un élément <b>EncryptedData</b> est modélisé au travers du schéma <b>Class_Chiffrement.xsd</b>. Il appartient à l'espace de nom XML Encryption (<i>http://www.w3.org/2001/04/xmlenc#</i>). Le préfixe utilisé pour les éléments appartenant à l'espace de noms XMLENC est le préfixe <i>"xenc:"</i></p>
+
+<p class="normal">L'élément xenc:<b>EncryptedData</b> est constitué de :</p>
+  <ul>
+    <li>Un élément xenc:<b>EncryptionMethod</b></li>
+    <li>Un élément ds:<b>KeyInfo</b></li>
+    <li>Un élément xenc:<b>CipherData</b></li>
+  </ul>
+
+<p class="normal">L'élément obligatoire xenc:<b>CipherData</b> contient la donnée métier chiffrée avec une clé de chiffrement symétrique, suivant l'algorithme précisé dans l'élément xenc:<b>EncryptionMethod</b>.</p>
+
+
+<p class="normal">L'élément obligatoire xenc:<b>EncryptionMethod</b> possède un attribut <b>Algorithm</b> indiquant l'algorithme de chiffrement symétrique utilisé, à savoir 3-DES.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <font class="xml"><font class="blue">&lt;</font><font class="maroon">xenc:EncryptionMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmlenc#tripledes-cbc<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">L'élément obligatoire ds:<b>KeyInfo</b> contient, pour chaque destinataire de la donnée, un élément xenc:<b>EncryptedKey </b>contenant la clé de déchiffrement symétrique, elle-même chiffrée avec le certificat du destinataire.</p>
+
+<p class="normal">L'élément xenc:<b>EncryptedKey</b> est constitué de :</p>
+  <ul>
+    <li>Un attribut xenc:<b>EncryptionMethod</b></li>
+    <li>Un élément ds:<b>KeyInfo</b></li>
+    <li>Un élément xenc:<b>CipherValue</b></li>
+  </ul>
+
+<p class="normal">L'élément obligatoire xenc:<b>CipherValue</b> contient la valeur de la clé de déchiffrement symétrique, elle-même chiffrée avec le certificat du destinataire suivant l'algorithme asymétrique indiqué dans l'élément xenc:<b>EncryptionMethod</b>.</p>
+
+
+<p class="normal">L'attribut obligatoire xenc:<b>EncryptionMethod</b> indique l'algorithme de chiffrement asymétrique utilisé pour chiffrer la clé symétrique, à savoir RSA 1.5 :<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <font class="xml"><font class="blue">&lt;</font><font class="maroon">xenc:EncryptionMethod</font> <font class="red">Algorithm</font><font class="blue">="</font>http://www.w3.org/2001/04/xmlenc#rsa-1_5<font class="blue">"/&gt;</font></font>
+</p>
+
+<p class="normal">L'élément obligatoire xenc:<b>KeyInfo</b> contient le certificat du destinataire auquel cette version de la clé symétrique chiffrée et destinée.</p>
+
+
+<h2 class="titreligne num" id="h2InformationsObligatoires">Informations obligatoires pour la signature électronique</h2>
+<p class="normal">Parmi les informations obligatoires d'une signature électronique et qui doivent être rendues lisibles :</p>
+  <ul>
+    <li> Nom du signataire</li>
+    <li>Qualité ou rôle du signataire</li>
+    <li>Lieu de signature</li>
+  </ul>
+
+<p class="normal">Ces éléments sont issus des blocs de la signature électronique décrite supra.</p>
+<p class="normal">Il convient d'y ajouter le montant cumul annuel pour chaque bordereau signé.</p>
+<p class="normal">En l'absence de l'un ou de tous ces éléments, la signature est considérée comme invalide en terme fonctionnel et les bordereaux doivent être rejetés.</p>
+
+
+<h2 class="titreligne num" id="h2ListeCertificatsSignature">Liste des certificats de signature</h2>
+<!-- <p class="normal">La liste des certificats acceptés est la suivante (disponible sous format texte <a target="_blank" href="src/doc/liste_certificats_acceptes.txt">ici</a>).</p> -->
+<p class="normal">La liste des certificats acceptés est la suivante (disponible sous format open document <a target="_blank" href="src/doc/InventaireCertificat.ods">ici</a>).</p>
+<pre style="font-size: small;">
+Alias name: ACD_CertinomisClasse3G3.cer                                  Alias name: CSF-Classe-III-Sign-Et-Crypt-2016.cer
+Alias name: ACD_Certinomis_1_etoile-2.cer                                Alias name: CSOV.cer
+Alias name: ACD_Certinomis_2_etoiles-2.cer                               Alias name: CSOVRacine.cer
+Alias name: ACF-ST-P.cer                                                 Alias name: Certeurope_Root_CA.cer
+Alias name: ACR-ST.cer                                                   Alias name: CertiNomis_Classe3_sub.cer
+Alias name: ACR_Certinomis.cer                                           Alias name: CertiNomis_root.cer
+Alias name: ACR_CertinomisG2.cer                                         Alias name: Certification_ChamberSign_France_root.cer
+Alias name: ACRacine_groupe_CREDIT_AGRICOLE_v1.crt                       Alias name: ChamberSignFrance.cer
+Alias name: AC_AGENTS.cer                                                Alias name: ChamberSignFranceAC1Etoile.cer
+Alias name: AC_Certeurope_Classe_3Plus.cer                               Alias name: ChamberSignFranceAC2Etoiles.cer
+Alias name: AC_Certigreffe_Classe_3Plus_sub.cer                          Alias name: ChamberSignFranceAC3Etoiles.cer
+Alias name: AC_EASY.cer                                                  Alias name: ChamberSign_France_Initio_sub.cer
+Alias name: AC_IAS1_C.cer                                                Alias name: KEYNECTIS_CDS_CA.cer
+Alias name: AC_IAS1_D.cer                                                Alias name: KEYNECTIS_ICS_ADVANCED_Class_3_CA.cer
+Alias name: AC_IAS1_E.cer                                                Alias name: KEYNECTIS_ICS_CA.cer
+Alias name: AC_MINEFI_B.cer                                              Alias name: KEYNECTIS_QUALIFIED_CDS.cer
+Alias name: AC_PRIME.cer                                                 Alias name: KEYNECTIS_ROOT_CA.cer
+Alias name: AC_Racine_G3.cer                                             Alias name: LCL_AuthentysEntreprise.crt
+Alias name: AC_Racine_groupe_CREDIT_AGRICOLE_v2.509                      Alias name: SG_TRUST_SERVICES_AUTHENTIFICATION_ET_CHIFFREMENT_DE_CLEF_sub.cer
+Alias name: AC_Racine_groupe_CREDIT_AGRICOLE_v2.cer                      Alias name: SG_TRUST_SERVICES_RACINE.cer
+Alias name: AC_STANDARD.cer                                              Alias name: SG_TRUST_SERVICES_RACINE2.cer
+Alias name: AC_racine_Helios_DGFiP.cer                                   Alias name: SG_TRUST_SERVICES_RACINE_PRIS.cer
+Alias name: AC_signature_Helios_DGFiP.cer                                Alias name: SG_TS_2_ETOILES.cer
+Alias name: ACcertigna.crt                                               Alias name: SG_TS_PRIS.cer
+Alias name: ACcertignaidpris2.crt                                        Alias name: SIGN-TOKEN-CLICK_AND_TRUST.cer
+Alias name: ACcertignaidpris2pro.crt                                     Alias name: ac_certeurope_3P_v2.cer
+Alias name: ACcertignaidpris3.crt                                        Alias name: atos_sub_TelePro_Entreprise.cer
+Alias name: ACcertignaidpris3pro.crt                                     Alias name: banque_populaire.cer
+Alias name: ACcertignaidprispro.crt                                      Alias name: ca-certificat.cer
+Alias name: AUTH-TOKEN-CLICK_AND_TRUST.cer                               Alias name: ca-root-credit-agricole.crt
+Alias name: Adobe_root_CA.cer                                            Alias name: cdc-legalia.crt
+Alias name: Atos_Racine_Mediacert.cer                                    Alias name: cdc-racine.crt
+Alias name: BANQUE_POPULAIRE-AUTORITE_DE_CERTIFICATION.cer               Alias name: certeurope_advanced_v3.cer
+Alias name: BANQUE_POPULAIRE-CLICK_AND_TRUST-PAIEMENTS_SECURISES.cer     Alias name: certeurope_advanced_v4.cer
+Alias name: BANQUE_POPULAIRE_AUTORITE_DE_CERTIFICATION.crt               Alias name: certeurope_root_ca_2.cer
+Alias name: BANQUE_POPULAIRE_CLICK_AND_TRUST_PAIEMENTS_SECURISES.crt     Alias name: certeurope_root_ca_3.cer
+Alias name: BANQUE_POPULAIRE_CLICK_AND_TRUST_TVA.crt                     Alias name: certificatACgtce.cer
+Alias name: BNPPARIBAS-ROOTAC.cer                                        Alias name: certigreffe_v2.cer
+Alias name: BNP_PARIBAS_AUTHORITY_ENTERPRISE.cer                         Alias name: natexis_banques_populaires_nxbp_cesam_relations_fiscales_ac.cer
+Alias name: CA_Certificat.crt                                            Alias name: certificatACracine.cer
+Alias name: CA_LCL_Certificat_RGS_Usage_Mixte.crt                        Alias name: identca_rootca.der
+Alias name: CA_LCL_Certificat_RGS_Usage_Separe.509                       Alias name: identityplusca_rootca.der
+Alias name: CA_LCL_Certificat_RGS_Usage_Separe.cer                       Alias name: EU-SIGN-CLICK_AND_TRUST.cer
+Alias name: CA_root_Credit_Agricole.cer                                  Alias name: ACF_PORTEURS_ACT_V2_Qualif.cer
+Alias name: CCF_Elys_CERTIFICATION.cer                                   Alias name: AC_DGFIP_SHA2.cer
+Alias name: CERTIFICATION_AUTHORITY-CLICK_AND_TRUST.cer                     
+</pre>
+
+</div>
+</body></html>

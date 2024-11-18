@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <link type="text/css" rel="stylesheet" href="src/css/cm_objet.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <title>Objet</title>
+  </head>
+<body class="normal">
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1Objet">Objet</h1>
+
+<p class="normal">
+  Ce document a pour objet de décrire la mise en &#339;uvre de la version 2 du Protocole d'Echanges Standard (PES). Cette version définit le format des données comptables échangées sur les principes de la norme PES V1 et étend cette définition sur les axes suivants :
+</p>
+<ul>
+  <li>Transport des descriptions des pièces justificatives dématérialisées associées aux objets comptables (domaines Dépense, Recette et Marché) et le cas échéant des pièces justificatives elles-mêmes.</li>
+  <li>Référence aux pièces justificatives dans chaque objet comptable</li>
+  <li>Possibilités de signature électronique&nbsp;:
+    <ul>
+      <li>Des bordereaux de dépense et de recette</li>
+      <li>Des pièces justificatives (externes)</li>
+      <li>De l'enveloppe de transport.</li>
+    </ul>
+    Sur ce dernier cas, en l'absence d'enveloppe de transport normalisée, une signature "technique" du flux PES_Aller a été définie afin de garantir l'intégrité du flux. Cette signature aura vocation à disparaître dès que l'enveloppe de transport sera normalisée et intégrée par Helios.
+  </li>
+</ul>
+
+<br />
+<p class="normal">Le présent document décrit :</p>
+<ul>
+  <li>Les données du PES V2 sous forme de syntaxes XML, selon la notation XML Schema. Les syntaxes XML utilisées sont :
+    <ul>
+      <li>Spécifiques au PES et font l&#8217;objet d&#8217;une description dans le document et regroupées dans l'annexe [R2].</li>
+      <li>Normalisées par les recommandations W3C : XML Signature [R4] et XADES [R5]</li>
+      <li>Signatures électronique : XML Signature [R4] et XADES [R5].</li>
+    </ul>
+  </li>
+  <li>Chiffrement : syntaxes de chiffrements XML (cas des pièces justificatives véhiculées par les flux).</li>
+  <li>Le regroupement des données du PES V2 sous forme de messages et les règles d'échanges associées.</li>
+</ul>
+
+<br />
+<p class="normal">Le présent document est structuré comme suit :</p>
+<ul>
+  <li>Le <a href="PrincipesGenerauxDesEchanges.html">chapitre</a> présente les principes généraux gouvernant les échanges entre ordonnateurs et HELIOS.</li>
+  <li>Le <a href="PrincipesOrganisationDesSchemasXML_PESv2.html">chapitre</a> précise l'organisation générale des schémas XML constitutifs du PES V2.</li>
+  <li>Le chapitre présente de façon progressive, par domaine, la modélisation XML des blocs de données utilisés dans le cadre du PES. Ce chapitre est divisé en deux :
+	  <ul>
+	  	<li>Le <a href="DictionnaireDesDonneesAller.html">chapitre</a> des données du PES Aller.</li>
+	  	<li>Le <a href="DictionnaireDesDonneesRetour.html">chapitre</a> des données du PES Retour.</li>
+	  </ul>
+  </li>
+  <li>Le chapitre présente le regroupement de données sous forme de messages XML. Ce chapitre est divisé en deux :
+  	<ul>
+  		<li>Le <a href="DomaineGlobalAller.html">chapitre</a> des regroupement de données du PES Aller.</li>
+  		<li>Le <a href="DomaineGlobalRetour.html">chapitre</a> des regroupement de données du PES retour.</li>
+  	</ul>
+  
+  </li>
+</ul>
+
+
+<br />
+<p class="normal">L'ensemble des schémas XML du PES V2 ainsi que des exemples de messages XML en conformité aux schémas du PES sont reproduits en annexe de ce document.
+</p>
+
+</div>
+</body></html>

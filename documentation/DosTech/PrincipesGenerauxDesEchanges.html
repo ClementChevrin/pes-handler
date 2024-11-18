@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="src/css/cm_all.css" />
+    <script type="text/javascript" src="src/js/version.j"></script>
+    <link type="text/css" rel="stylesheet" href="src/css/cm_principes_generaux.css" />
+    <link rel="icon" href="favicon.ico"/>
+    <title>Principes généraux des échanges</title>
+  </head>
+
+<body class="normal">
+
+<iframe src="EnTete.html" height="51" width="100%" frameborder=0 marginwidth=0 marginheight=0 scrolling="no"></iframe>
+
+<div class="section">
+<h1 class="titreligne num" id="h1">Principes généraux des échanges</h1>
+<h2 class="titreligne num" id="h2CanauxCommunication">Canaux de communication Ordonnateur / HELIOS</h2>
+<p class="normal">Les données à échanger entre ordonnateurs et HELIOS sont véhiculées sous forme de fichiers informatique.</p>
+<p class="normal">Un ordonnateur a le choix, pour effectuer la transmission et la réception de données et de documents électroniques, de recourir soit à un dispositif de transmission mis en &#339;uvre par un opérateur «tiers de transmission», soit à la passerelle de transmission sécurisée d'Hélios. L'ordonnateur peut assumer directement la fonction de tiers de transmission en mettant en oeuvre un dispositif de transmission. Le recours à un dispositif de transmission par un tiers de transmission est recommandé dans la logique d'interopérabilité des échanges entre administrations.</p>
+<p class="normal">La description de l'infrastructure de transfert ainsi que la définition des canaux sont en dehors du cadre de ce document.</p>
+<p class="normal">Les fichiers échangés entre l'ordonnateur et HELIOS sont construits selon la syntaxe XML, selon des dispositions décrites dans ce document.</p>
+
+<h2 class="titreligne num" id="h2FluxCommunication">Flux de communication</h2>
+<p class="normal">Le PES n'introduit aucun changement par rapport à l'existant dans les procédures d'échanges utilisant un support de type disquette.</p>
+<p class="normal">Nous décrivons ci-dessous les flux d'échanges associés à la transmission en mode fil (synchrone ou asynchrone).</p>
+
+<h3 class="titreligne num" id="h3FluxAller">Flux Aller</h3>
+
+<h4 class="titreligne num" id="h4PrincipesBase">Principes de base</h4>
+
+<p class="normal">La figure numéro 1 présente le modèle général d'échanges de données entre un ordonnateur et le système HELIOS (intégration réussie), dans le cadre d'une transmission en mode fil (synchrone ou asynchrone) entre l'ordonnateur et HELIOS.</p>
+
+<table cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+  <td align="center"><b>Figure 1</b></td>
+</tr>
+<tr>
+  <td align="center"><img src="src/2_image1.png" height="184" width="414"></td>
+</tr>
+</table>
+<br />
+
+<p class="normal">Le message PES Aller est transmis par l'ordonnateur à HELIOS selon la règle d'acheminement sélectionnée entre l'ordonnateur et le comptable. Le fichier correspondant peut regrouper des objets comptables de domaines fonctionnels distincts pour une collectivité budget donnée.</p>
+<p class="normal">La zone d'échange HELIOS exerce un contrôle d'acceptabilité sur le fichier reçu. Ce contrôle porte sur les éléments suivants :</p>
+<ul>
+<li>Conformité du message reçu à la syntaxe du PES (validation du schéma XML correspondant à la version référencée).</li>
+<li>Validation des éléments d'en-tête (codique du poste, code collectivité &amp; code budget, ainsi que identifiant collectivité le cas échéant).</li>
+<li>Contrôle des éléments de signature du flux, quand ces derniers sont présents. Dans le cadre de cette version, ces contrôles sont limités à une vérification d'empreinte sur l'objet PES_Aller.</li>
+<li>Contrôles exercés par le guichet xml restitués en cas d'erreur dans les ElementAcquit.</li>
+</ul>
+
+<p class="normal">Lorsque le fichier a été traité par le guichet xml, HELIOS délivre vers l'émetteur du fichier un message d'acquittement des données ordonnateur par ElementAcquit (bordereau, PJ) que l'ElementAcquit soit intégré ou non dans Hélios. Le mode de délivrance de l'acquit est fonction du type de canal d'acheminement. Il garantit à l'ordonnateur que les données véhiculées par le flux seront en visibilité du comptable.</p>
+
+<h4 class="titreligne num" id="h4ModeDelivranceAcquit">Mode de délivrance des messages d'acquit</h4>
+<p class="normal">Dans le cas des transmissions asynchrone, les messages d'acquittement sont transportés dans des fichiers séparés selon des syntaxes XML décrites.</p>
+<p class="normal">Dans le cas d'une transmission synchrone (formulaire HTML), l'acquit figure dans le statut de retour de la requête HTML. Il ne nécessite pas un message séparé.</p>
+
+
+<h3 class="titreligne num" id="h3FluxRetour">Flux retour</h3>
+
+<p class="normal">Les retours d'information vers l'ordonnateur sont transmis (cf. <a href="#figure2">figure 2</a>) via des messages PES Retour selon la règle d'acheminement sélectionnée entre l'ordonnateur et le comptable. Le mode de délivrance de ce message est fonction du type de canal d'acheminement (synchrone, asynchrone)</p>
+
+<table cellpadding="0" cellspacing="0" border="0" align="center" id="figure2">
+<tr>
+  <td align="center"><b>Figure 2</b></td>
+</tr>
+<tr>
+  <td align="center"><img src="src/2_image2.png" height="72" width="292" alt="PES Retour"></td>
+</tr>
+</table>
+<br />
+
+<h2 class="titreligne num" id="h2SecuriteEchange">Sécurité des échanges</h2>
+<p class="normal">La version 2 du PES ne met pas en &#339;uvre des fonctionnalités de cryptage applicatif des données comptables échangées. Si nécessaire, la confidentialité est supposée assurée par l'architecture de transfert.</p>
+<p class="normal">Le fichier PES_V2 permet de véhiculer des pièces justificatives chiffrées.</p>
+<p class="normal">La version 2 du PES intègre des fonctionnalités de signature électronique portant sur :</p>
+  <ul>
+    <li>Les objets comptables (signature XML), sous forme de signature enveloppée.</li>
+    <li>Les pièces justificatives (signature XML externe ou signature binaire)</li>
+    <li>L'objet PES Aller lui même sous forme de signature enveloppée portant sur l'intégralité du flux.</li>
+  </ul>
+
+<p class="normal">La génération des signatures est du ressort de l'ordonnateur.</p>
+
+</div>
+</body></html>

@@ -1,0 +1,87 @@
+table.bloc
+{
+	border-width:1px;
+	border-color: #000000;
+	border-collapse: collapse;
+  width:950px;
+  padding: 2px 0;
+  vertical-align: middle;
+}
+
+tr.titre
+{
+	background-color: #CFCFCF;
+	height:30px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+tr.titreattribut
+{
+	background-color: #CFCFCF;
+	text-align: center;
+	vertical-align: middle;
+}
+
+tr.justifie
+{
+  text-align: justify;
+	vertical-align: top;
+  height:0px;
+}
+
+td.nom
+{
+	width:100px;
+}
+
+td.of
+{
+	width:50px;
+}
+
+td.type
+{
+	width:100px;
+}
+
+td.description
+{
+	width:700px;
+}
+
+.notebaspage
+{
+  font-size:8pt;
+}
+
+
+a.fichier:link {color:#000000;}      /* unvisited link */
+a.fichier:visited {color:#000000;}  /* visited link */
+a.fichier:hover {color:#000080;}  /* mouse over link */
+a.fichier:active {color:#800080;}  /* selected link */ 
+
+a.fichier
+{
+  text-decoration: none;
+}
+
+div.retourhautpage
+{
+  width: 950px;
+	text-align: right;
+}
+
+hr.separateur
+{
+  width: 950px;
+  height: 1px;
+  /*background-color: #ff0000;*/
+  text-align: left;
+}
+
+.decalagegauche
+{
+  text-indent:-78px;
+  margin-left:78px;
+}

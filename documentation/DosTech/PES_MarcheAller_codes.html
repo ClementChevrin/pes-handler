@@ -1,0 +1,658 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link type="text/css" rel="stylesheet" href="src/css/cm_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_all.css">
+      <link type="text/css" rel="stylesheet" href="src/css/ns_pes_marchealler_codes.css">
+      <link rel="icon" href="favicon.ico"><script type="text/javascript" src="src/js/version.j"></script><title>Domaine Marché Aller</title>
+   </head>
+   <body class="normal"><iframe src="EnTete.html" height="51" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe><div class="section">
+         <h3 class="titreligne num" id="h3DetailCodes">Détail des codes</h3>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TCCAGReference">TYPE TCCAGReference</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Référence de CCAG (Cahier des Clauses Administratives Générales) pour un marché public.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        T&nbsp;     : CCAG Travaux
+                     </li>
+                     <li><b>02</b> : 
+                        FCS&nbsp;: CCAG Fournitures courantes et prestations de Services
+                     </li>
+                     <li><b>03</b> : 
+                        MI&nbsp;   :  CCAG Marchés publics Industriels
+                     </li>
+                     <li><b>04</b> : 
+                        PI&nbsp;    :  CCAG Prestations intellectuelles
+                     </li>
+                     <li><b>05</b> : 
+                        TIC&nbsp;  :  CCAG Techniques de l'information et de la communication
+                     </li>
+                     <li><b>06</b> : 
+                        A&nbsp;    :  Aucun CCAG visé
+                     </li>
+                     <li><b>07</b> : 
+                        MOE&nbsp;: CCAG Maîtrise d'oeuvre
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TFormePrix">TYPE TFormePrix</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Forme du prix du marché public.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Unitaire
+                     </li>
+                     <li><b>02</b> : 
+                        Forfaitaire
+                     </li>
+                     <li><b>03</b> : 
+                        Mixte
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TModaliteExecution">TYPE TModaliteExecution</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Modalité d'exécution du marché public.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Ordinaire
+                     </li>
+                     <li><b>02</b> : 
+                        À Bon De Commande
+                     </li>
+                     <li><b>03</b> : 
+                        À Tranches
+                     </li>
+                     <li><b>04</b> : 
+                        À Tranches Et Bons De Commandes
+                     </li>
+                     <li><b>05</b> : 
+                        Autre
+                     </li>
+                     <li><b>06</b> : 
+                        À phase
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatIdTiersMarche">TYPE TNatIdTiersMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type d'identifiant du tiers.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        SIRET
+                     </li>
+                     <li><b>05</b> : 
+                        TVA INTRA COMMUNAUTAIRE
+                     </li>
+                     <li><b>06</b> : 
+                        HORS UE
+                     </li>
+                     <li><b>07</b> : 
+                        TAHITI
+                     </li>
+                     <li><b>08</b> : 
+                        RIDET
+                     </li>
+                     <li><b>09</b> : 
+                        EN COURS IMMATRICULATION
+                     </li>
+                     <li><b>10</b> : 
+                        FRWF
+                     </li>
+                     <li><b>11</b> : 
+                        IREP
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatureConcession">TYPE TNatureConcession</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du contrat de concession</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Concession de travaux
+                     </li>
+                     <li><b>02</b> : 
+                        Concession de service
+                     </li>
+                     <li><b>03</b> : 
+                        Concession de service public
+                     </li>
+                     <li><b>04</b> : 
+                        Délégation de service public
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TNatureMarche">TYPE TNatureMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Nature du marché public</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Marché
+                     </li>
+                     <li><b>02</b> : 
+                        Marché De Partenariat
+                     </li>
+                     <li><b>03</b> : 
+                        Accord Cadre À Bons De Commande
+                     </li>
+                     <li><b>04</b> : 
+                        Accord Cadre Avec Marché Subséquent Ou Mixte
+                     </li>
+                     <li><b>05</b> : 
+                        Marché Subséquent
+                     </li>
+                     <li><b>06</b> : 
+                        Complémentaire
+                     </li>
+                     <li><b>07</b> : 
+                        Autre
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TPJMarche">TYPE TPJMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de PJ Marché.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>009</b> : 
+                        Pièce contractuelle Marché
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TProcedureConcession">TYPE TProcedureConcession</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Procédure de passation du contrat de concession.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Procédure négociée ouverte
+                     </li>
+                     <li><b>02</b> : 
+                        Procédure non négociée ouverte
+                     </li>
+                     <li><b>03</b> : 
+                        Procédure négociée restreinte
+                     </li>
+                     <li><b>04</b> : 
+                        Procédure non négociée restreinte
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TProcedureMarche">TYPE TProcedureMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Procédure de passation du marché public</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Procédure adaptée
+                     </li>
+                     <li><b>02</b> : 
+                        Appel d'offres ouvert
+                     </li>
+                     <li><b>03</b> : 
+                        Appel d'offres restreint
+                     </li>
+                     <li><b>04</b> : 
+                        Procédure concurrentielle avec négociation
+                     </li>
+                     <li><b>05</b> : 
+                        Procédure négociée avec mise en concurrence préalable
+                     </li>
+                     <li><b>06</b> : 
+                        Marché négocié sans publicité ni mise en concurrence
+                     </li>
+                     <li><b>07</b> : 
+                        Dialogue compétitif
+                     </li>
+                     <li><b>08</b> : 
+                        Concours
+                     </li>
+                     <li><b>09</b> : 
+                        Système d'acquisition dynamique
+                     </li>
+                     <li><b>10</b> : 
+                        Autre
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TReconductibilite">TYPE TReconductibilite</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Reconduction du marché</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        non reconductible
+                     </li>
+                     <li><b>02</b> : 
+                        reconductible tacite
+                     </li>
+                     <li><b>03</b> : 
+                        reconductible expresse
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TRegimeAvance">TYPE TRegimeAvance</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type d'avance</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Aucune
+                     </li>
+                     <li><b>02</b> : 
+                        Obligatoire
+                     </li>
+                     <li><b>03</b> : 
+                        Facultative
+                     </li>
+                     <li><b>04</b> : 
+                        A chaque bon de commande
+                     </li>
+                     <li><b>05</b> : 
+                        Refusée
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypeCode">TYPE TTypeCode</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de code pour désigner le lieu d'exécution, hormis "code postal", les codes sont
+                  des codes géographiques gérés par l'INSEE.
+               </td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Code postal
+                     </li>
+                     <li><b>02</b> : 
+                        Code commune
+                     </li>
+                     <li><b>03</b> : 
+                        Code canton
+                     </li>
+                     <li><b>04</b> : 
+                        Code arrondissement
+                     </li>
+                     <li><b>05</b> : 
+                        Code  département
+                     </li>
+                     <li><b>06</b> : 
+                        Code région
+                     </li>
+                     <li><b>07</b> : 
+                        Code pays
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypeGarantie">TYPE TTypeGarantie</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de garantie applicable.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Aucune
+                     </li>
+                     <li><b>02</b> : 
+                        Retenue de garantie
+                     </li>
+                     <li><b>03</b> : 
+                        Garantie à première demande
+                     </li>
+                     <li><b>04</b> : 
+                        Caution Personnelle et solidaire
+                     </li>
+                     <li><b>05</b> : 
+                        Autres
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypeGarantieAvance">TYPE TTypeGarantieAvance</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de garantie liée à l'avance</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Aucune
+                     </li>
+                     <li><b>02</b> : 
+                        Garantie a Première Demande
+                     </li>
+                     <li><b>03</b> : 
+                        Caution Personnelle et Solidaire
+                     </li>
+                     <li><b>04</b> : 
+                        Autres
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypeGroupement">TYPE TTypeGroupement</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type de groupement pour les marchés publics uniquement.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Aucun groupement
+                     </li>
+                     <li><b>02</b> : 
+                        Groupement solidaire
+                     </li>
+                     <li><b>03</b> : 
+                        Groupement conjoint
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TTypeTitulaireMarche">TYPE TTypeTitulaireMarche</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Type opérateur économique intervenant sur un marché public.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Titulaire du marché
+                     </li>
+                     <li><b>02</b> : 
+                        Co-traitant
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+         <table cellspacing="0" cellpadding="5" border="1" class="bloc">
+            <tr class="titre">
+               <td colspan="2" id="TVariationPrix">TYPE TVariationPrix</td>
+            </tr>
+            <tr class="titre">
+               <td class="type">Type</td>
+               <td class="description">Description</td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>Variation du prix du marché public.</td>
+            </tr>
+            <tr>
+               <td>String</td>
+               <td>
+                  Enumération avec les valeurs suivantes :
+                  
+                  <ul style="margin-top:0px; margin-bottom:0px;">
+                     <li><b>01</b> : 
+                        Ferme
+                     </li>
+                     <li><b>02</b> : 
+                        Ferme et actualisable
+                     </li>
+                     <li><b>03</b> : 
+                        Révisable
+                     </li>
+                     <li><b>04</b> : 
+                        Provisoire (Article 19 du décret 2016-360)
+                     </li>
+                  </ul>
+               </td>
+            </tr>
+         </table><br><div class="retourhautpage"><button type="button" class="encadrepetit" onclick="self.location='PES_MarcheAller.html#docimage'">Retour Domaine Marché Aller</button><hr class="separateur">
+         </div>
+      </div>
+   </body>
+</html>
